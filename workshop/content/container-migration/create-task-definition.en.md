@@ -1,0 +1,74 @@
++++
+title = "Create an Amazon ECS Task Definition"
+weight = 50
++++
+
+From **AWS console**, go to **Services**, select **ECS**, then click **Task Definitions** and **Create new Task Definition**.
+
+![create-task-def](/ecs/create-task-def.png)
+
+Choose **EC2** launch type compatibility and click **Next step**
+
+In the **Step 2: Configure task and container definition**, enter the **Task Definition Name** (e.g. unicron-task-def) and select **ecsTaskExcutionRole** for both **Task Role** and **Task execution role**. For Network Mode, select **awsvpc**.
+
+
+![configure-task-def](/ecs/configure-task-def.png)
+
+As we are looking to mount the **Amazon EFS** volume to the container, we have to add the volume first to the task definition before adding the container.
+
+Scroll down to **Volumes** section in the task definition configuration, and click **Configure via JSON** button.
+
+![volumes](/ecs/volumes.png)
+
+Find the volumes section in the json file and add the following:
+
+{{% notice note %}}
+You need to change the Amazon EFS DNS name in the below code and replace it with the one you copied when creating Amazon EFS filesystem.
+{{% /notice %}}   
+
+```
+        "volumes": [
+            {
+              "name": "wp-content",
+              "host": null,
+              "dockerVolumeConfiguration": {
+                "autoprovision": null,
+                "labels": null,
+                "scope": "task",
+                "driver": "local",
+                "driverOpts": {
+                  "type": "nfs",
+                  "device": "fs-xxxx.efs.<region>.amazonaws.com:/",
+                  "o": "addr=fs- xxxx.efs.<region> .amazonaws.com,nfsvers=4.0,rsize=1048576,wsize=1048576,hard,timeo=600,retrans=2"
+                }
+              }
+            }
+          ],
+```
+
+After adding the volume, now scroll up to **Container definition** in the task definition page.
+
+![add-container](/ecs/add-container.png)
+
+Click **Add container** in the Container definitions section, enter **Container name** (e.g. unicorn-web-container) and **Image** (must be **wordpress:latest** - we're using the <a href="https://hub.docker.com/_/wordpress" target="_blank">WordPress docker official image</a>). **Memory Limits** and **Port mappings** should be configured as on the screenshot below.
+
+![add-container-details](/ecs/add-container-details.png)
+
+In the **Environment variables** section, configure parameters from the **Parameter Store**, that you've defined earlier, as on the screenshot below.
+
+![environment-variables](/ecs/environment-variables.png)
+
+
+| Key              | ValueFrom             | Value                          |
+| ---------------------- | ---------------- |--------------------------------|
+| WORDPRESS_DB_HOST| ValueFrom           | DB_HOST                  |
+| WORDPRESS_DB_NAME| ValueFrom           | DB_NAME    |
+| WORDPRESS_DB_PASSWORD| ValueFrom           | DB_PASSWORD          |
+| WORDPRESS_DB_USER| ValueFrom     | DB_USERNAME          |
+
+
+![storage-logging](/ecs/storage-logging.png)
+
+In the **STORAGE AND LOGGING**, select the **Mount point** and specify the container path **/var/www/html/wp-content** (this is where wordpress files that you have copied into Amazon EFS filesystem should be available for wordpress to pick them up).
+
+In the end click the **Add** button for the container and **Create** on the task definition page.

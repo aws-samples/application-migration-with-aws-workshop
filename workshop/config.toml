@@ -1,0 +1,65 @@
+RelativeURLs=true
+CanonifyURLs=true
+languageCode = "en-US"
+defaultContentLanguage = "en"
+
+title = "Application Migration Workshop"
+theme = "learn"
+metaDataFormat = "yaml"
+defaultContentLanguageInSubdir= true
+
+uglyurls = true
+sectionPagesMenu = "main"
+pygmentsCodeFences = true
+pygmentsStyle = "monokai"
+
+[markup.goldmark.renderer]
+unsafe= true
+
+[params]
+  editURL = "https://github.com/aws-samples/application-migration-with-aws-workshop/edit/master/content/"
+  description = "Application Migration Workshop"
+  author = "Ahmed Omran & Lech Migdal"
+  disableBreadcrumb = false
+  disableNextPrev = false
+  themeVariant = "aws"
+  disableSearch = false
+  disableAssetsBusting = true
+  disableLanguageSwitchingButton = false
+  disableShortcutsTitle = true
+  disableInlineCopyToClipBoard = true
+
+
+  [[menu.shortcuts]]
+  name = "<i class='fab fa-github'></i> GitHub Project"
+  url = "https://github.com/aws-samples/application-migration-with-aws-workshop"
+  weight = 30
+
+  [[menu.shortcuts]]
+  name = "<i class='fas fa-envelope'></i> Have questions?"
+  url = "mailto:application-migration-workshop@amazon.com"
+  weight = 40
+
+  [[menu.shortcuts]]
+  name = "<i class='fas fa-poll'></i> Rate the workshop"
+  url = "https://amazonmr.au1.qualtrics.com/jfe/form/SV_0dfrnubGKXavgR7"
+  weight = 50
+
+  [[menu.shortcuts]]
+  name = "<i class='fas fa-book-open'></i> More resources"
+  url = "https://aws.amazon.com/cloud-migration/resources/"
+  weight = 60
+
+
+[outputs]
+home = [ "HTML", "RSS", "JSON"]
+
+[blackfriday]
+plainIDAnchors = true
+hrefTargetBlank = false
+
+[Languages]
+[Languages.en]
+title = "Application Migration Workshop"
+weight = 1
+languageName = "English"

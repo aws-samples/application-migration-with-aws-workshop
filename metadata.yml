@@ -1,0 +1,27 @@
+#name - DNS-friendly name for the workshop. This will be used when generating the hosting URL (ie. https://my-first-workshop.workshops.aws/)
+name: Migration and Modernization Workshop Guide
+#title - The title of your workshop
+title: Migration and Modernization Workshop Guide
+#description - A short description that will be displayed in search results
+description: Migrating BuyMyUnicorns.com e-commerce web site to AWS!
+#categories - Refer to official AWS categories covered by the workshop content here
+categories:
+  - Application Migration
+  - Modernization
+#services - Refer to the official AWS service names covered by the workshop content here
+services:
+  - AWS Database Migration Service
+  - CloudEndure
+  - EC2, RDS, Autoscaling, CloudFront, CloudWatch, ..etc
+#level - Approximate skill level needed for this workshop
+level: 200
+#duration - Estimated duration in minutes
+duration: 240
+#cost - Cost in USD. If the content is offered without cost, enter 0
+cost: 0
+#author - Amazon alias of the primary author of the content
+author: @omrahmed, @lmigdal
+#audience - Names of the personas associated with this workshop
+audience:
+  - IT Professional
+  - Developer
