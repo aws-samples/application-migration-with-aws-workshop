@@ -17,7 +17,7 @@ pygmentsStyle = "monokai"
 unsafe= true
 
 [params]
-  editURL = "https://github.com/aws-samples/application-migration-with-aws-workshop/edit/master/content/"
+  editURL = "https://github.com/aws-samples/application-migration-with-aws-workshop/edit/master/workshop/content/"
   description = "Application Migration Workshop"
   author = "Ahmed Omran & Lech Migdal"
   disableBreadcrumb = false
