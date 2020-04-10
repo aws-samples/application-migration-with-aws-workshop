@@ -19,7 +19,7 @@ Before you configure **AWS DMS**, you will need to create your target database i
 
 
     {{% notice note %}}
-You can retrieve the information about the source MySQL version from the source database using SQL query - **SELECT@@version;**
+You can confirm the source MySQL version from the source database using SQL query - **SELECT@@version;**
 {{% /notice %}}
 
     In the **Settings** section, configure the DB instance identifier (e.g. database-1), Master username (e.g. admin) and Master password for your new database instance.
@@ -31,10 +31,14 @@ You can retrieve the information about the source MySQL version from the source 
 Make sure to write down **Master username** and **Master password**, as you will use it later.
 {{% /notice %}}
 
-    Select **db.t3.medium** from the standard DB instance class and leave the default values for Storage parameters.
+    Select **db.t3.medium** from the Burstable DB instance class and select **General Purpose (SSD)** for Storage Type.
     ![4_db](/db-mig/4_db.png)
 
-3. For the **Availability & durability**, leave the default value to create a standby instance (it's always safer to have a multi-AZ deployment).
+3. For the **Availability & durability**, switch to **Do not create a standby instance** to save costs. 
+
+    {{% notice note %}}
+For production workloads, we recommend enabling the standby instance to enable <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.MultiAZ.html" target="_blank">Multi-AZ Deployment</a> for higher availability.
+{{% /notice %}}  
 
     ![5_db](/db-mig/5_db.png)
 
@@ -53,7 +57,7 @@ Note: You will edit this VPC security group later to make sure that the DMS Repl
 {{% /notice %}}
 
 5. For the **Database authentication**, choose **Password authentication**.
-6. In the **Additional configuration**, make sure to uncheck **Enable Enhanced monitoring** under the **Monitoring** section as indicated below:
+6. (AWS hosted events only) In the **Additional configuration**, make sure to uncheck **Enable Enhanced monitoring** under the **Monitoring** section as indicated below:
 
     ![6_2_db](/db-mig/6_2_db.png)
 
@@ -61,7 +65,7 @@ Note: You will edit this VPC security group later to make sure that the DMS Repl
     ![8_db](/db-mig/8_db.png)
 
     {{% notice note %}}
-Make sure to **Uncheck** the **Enable Enhanced monitoring**, otherwise you might get an error due to the role creation is not permitted in this Workshop.
+Using <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Monitoring.OS.html" target="_blank">Enhanced monitoring</a> is a very good idea for production workloads, during AWS hosted events we uncheck it because of limitations of IAM Role that was provisioned for attendees.
 {{% /notice %}}
 
 6. Finally, review the **Estimated monthly costs** and click the **Create database** button.
