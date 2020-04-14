@@ -40,18 +40,7 @@ Add HTTP, and HTTPS access from anywhere to allow users to access the website.
 ![edit-lb-sg](/ecs/edit-lb-sg.png)
 
 
-#### 2. ECS-SG Inbound rules
-
-Add SSH access, to be able to connect to the ECS instances if needed.
-
-| Type    | Protocol      								   | Source            |
-| ---------------------- | ---------------- |----------------|
-| SSH                | TCP            | My IP   |
-
-![edit-ecs-sg](/ecs/edit-ecs-sg.png)
-
-
-#### 3. ECS-Tasks-SG Inbound rules
+#### 2. ECS-Tasks-SG Inbound rules
 
 Allow communication between the Load Balancer and ECS Tasks.
 
@@ -62,14 +51,13 @@ Allow communication between the Load Balancer and ECS Tasks.
 
 ![edit-task-sg](/ecs/edit-task-sg.png)
 
-#### 4. EFS-SG Inbound rules
+#### 3. EFS-SG Inbound rules
 
 Allow communication between ECS Tasks and Amazon EFS. Webserver access to the EFS is enabled temporarily only, to be able to mount the EFS volume and copy web application static files (you will remove it later).
 
 | Type    | Protocol      								   | Source            |
 | ---------------------- | ---------------- |----------------|
 | NFS                | TCP            | Custom > ECS-Tasks-SG  |
-| NFS                | TCP| Custom > ECS-SG  |
 | NFS                | TCP    | Custom > WebServer SG  |
 
 ![edit-efs-sg](/ecs/edit-efs-sg.png)
@@ -81,7 +69,6 @@ Modify the database security group (DB-SG) to allow inbound TCP port 3306 (MySQL
 | Type    | Protocol      								   | Source            |
 | ---------------------- | ---------------- |----------------|
 | MySQL                | TCP            | Custom > ECS-Tasks-SG   |
-| MYSQL               | TCP            | Custom > ECS-SG   |
 
 
 ![update-db-sg](/ecs/update-db-sg.png)

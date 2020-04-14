@@ -11,10 +11,11 @@ Select the **ECS cluster** that you created earlier, click the **Services** tab 
 
 ### Step 1: Configure service
 
-In the **Create Service** wizard, follow the below configuration (make sure you select **EC2** in the **Launch type**).  
-- Select the Task Definition that you created earlier  
-- Select the ECS Cluster that you created earlier Type a Service name (e.g. unicorns-svc)  
-- Select **REPLICA** in the Service type  
+In the **Create Service** wizard, follow the below configuration (make sure you select **FARGATE** in the **Launch type**).  
+
+- Select the **Task Definition** that you created earlier  
+- Select the **Platform version 1.4.0**                                                                           
+- Select the **ECS Cluster** that you created earlier and enter the **Service name** (e.g. unicorns-svc)                                   
 - Set Number of tasks to 2  
 - Leave the default for the remaining and click **Next step**  
 
