@@ -14,7 +14,6 @@ Enter the following parameters for the **Security group** (repeat steps to creat
 | Security group name    | Description      								   | VPC            |
 | ---------------------- | ---------------- |----------------------------------|
 | LB-SG                  | Load balancer security group            | Your VPC that you created earlier (e.g. TargetVPC)  |
-| ECS-SG                 | Allow SSH communication to the ECS nodes            | Your VPC that you created earlier (e.g. TargetVPC)  |
 | ECS-Tasks-SG           | Allow communication between the LB and the ECS Tasks| Your VPC that you created earlier (e.g. TargetVPC)  |
 | EFS-SG                 | Allow communication between ECS tasks and EFS       | Your VPC that you created earlier (e.g. TargetVPC)  |
 
