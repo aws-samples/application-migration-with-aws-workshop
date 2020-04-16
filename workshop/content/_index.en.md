@@ -1,12 +1,21 @@
 +++
-title = "Migration and Modernization Workshop Guide"
-weight = 1
+title = "Overview"
+date = 2019-10-21T09:54:54+02:00
+weight = 5
+pre = "<b>0. </b>"
 +++
 
-<img src="https://application-migration-with-aws-workshop.s3-us-west-2.amazonaws.com/static/migration_gameday_logo_small.png" alt="AWS MigrationGameDay Logo">
+We are thrilled that you're taking on this challenge to migrate our eCommerce system to the cloud. Below you will find some notes from the former BuyMyUnicorns IT team. We hope you'll find them useful!
 
-Unicorn.Rentals has acquired BuyMyUnicorns.com company and needs to quickly migrate their IT systems to AWS to ensure smooth business operations.
+## Source Environment
 
-Bring your laptop to this session so that you can get experience with our migration methodologies and tools to plan a highly available and scalable architecture.
+![source-env](/intro/source-env.png)
 
-You’ll migrate critical systems to AWS and help Unicorn.Rentals achieve their desired business outcomes.
+The Source Environment consist of a two tier e-commerce application; a webserver running Ubuntu with Apache, PHP, Wordpress, WooCommerce and a Database server running Ubuntu with MySQL version 5.7.
+
+
+## Target Environment
+
+![target-env](/intro/target-vpc.png)
+
+The above diagram shows the target VPC on AWS which consist of 6 subnets across two availability zone.
