@@ -1,6 +1,4 @@
-**Application Migration Workshop**
-
-Step-by-step instructions are available at https://application-migration-with-aws.workshop.aws/
+**Application Migration Workshop** - https://application-migration-with-aws.workshop.aws/
 
 Self-paced activity that allows you to learn how to migrate applications to AWS cloud:  
   - Re-hosting of webserver with [AWS CloudEndure Migration](https://aws.amazon.com/cloudendure-migration/)  
