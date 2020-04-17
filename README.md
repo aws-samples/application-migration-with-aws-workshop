@@ -1,9 +1,11 @@
 **Application Migration Workshop**
 
-Self-paced activity that allows you to learn how to migrate applications to AWS cloud:
-- Re-hosting of webserver with [AWS CloudEndure Migration](https://aws.amazon.com/cloudendure-migration/)
-- Re-platforming of database with [AWS Database Migration Service](https://aws.amazon.com/dms/)
-- Modernization of webserver to containers running on [Amazon Elastic Container Service](https://aws.amazon.com/ecs/) 
+Step-by-step instructions are available at https://application-migration-with-aws.workshop.aws/
+
+Self-paced activity that allows you to learn how to migrate applications to AWS cloud:  
+  - Re-hosting of webserver with [AWS CloudEndure Migration](https://aws.amazon.com/cloudendure-migration/)  
+  - Re-platforming of database with [AWS Database Migration Service](https://aws.amazon.com/dms/)  
+  - Modernization of webserver to containers running on [Amazon Elastic Container Service](https://aws.amazon.com/ecs/)   
 
 This repository includes:
  - **Application Migration Workshop** instructions deployed to https://application-migration-with-aws.workshop.aws/
