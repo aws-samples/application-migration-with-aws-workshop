@@ -32,7 +32,7 @@ Ga naar de <a href="https://console.cloudendure.com/#/register/register">CloudEn
 In deze workshop gebruik je **CloudEndure Migration** voor een migratie van een webserver dmv. re-hosting (ook wel bekend als **Lift and shift** migratie). Volg daarvoor de onderstaande stappen:
 
 1. [Configureer CloudEndure]({{< ref "/CE-Configuration.nl.md" >}})  
-2. [Installeer de SW-Agent in de bronomgaving]({{< ref "/CE-Agent-Installation.nl.md" >}})  
+2. [Installeer de SW-Agent in de bronomgeving]({{< ref "/CE-Agent-Installation.nl.md" >}})  
 3. [Maak de Blueprints aan]({{< ref "/CE-Blueprints.nl.md" >}})  
 4. [Voer de omschakeling uit]({{< ref "/CE-Cutover.nl.md" >}})  
 5. [Configureer de Applicatie]({{< ref "/CE-Webserver-config.nl.md" >}})  
