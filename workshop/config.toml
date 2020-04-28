@@ -67,7 +67,7 @@ languageName = "English"
 [Languages.ja]
 title = "アプリケーション移行ワークショップ"
 weight = 1
-languageName = "日本語"
+languageName = "Japanese（日本語）"
 
   [[Languages.ja.menu.shortcuts]]
   name = "<i class='fab fa-github'></i> GitHub リポジトリ"
@@ -80,7 +80,7 @@ languageName = "日本語"
   weight = 40
 
   [[Languages.ja.menu.shortcuts]]
-  name = "<i class='fas fa-poll'></i> ワークショップを評価する"
+  name = "<i class='fas fa-poll'></i> ワークショップの評価"
   url = "https://amazonmr.au1.qualtrics.com/jfe/form/SV_0dfrnubGKXavgR7"
   weight = 50
 
