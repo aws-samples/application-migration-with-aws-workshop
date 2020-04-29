@@ -10,6 +10,11 @@ Congratulation's, since you're here, you've managed to migrate (re-host the Webs
 
 Below you will find ideas about what you can do taking into account <a href="https://aws.amazon.com/architecture/well-architected/" target="_blank">5 AWS Well-Architected Pillars</a> - Operational Excellence, Security, Reliability, Performance Efficiency  and Cost Optimization.
 
+You can also learn more about **AWS Well Architected** by watching the video below.
+<center>
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/MfxF-FYEFjY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</center>
+
 ### Operational Excellence
 
 - Configure a <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Dashboards.html" target="_blank">CloudWatch dashboard</a> to monitor your resources in a single view, even across AWS regions.

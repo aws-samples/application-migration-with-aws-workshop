@@ -44,3 +44,5 @@ For the self-paced lab, at the end make sure to delete _all_ resources that you'
    - Delete the **ApplicationMigrationWorkshop** stack
   
 When the **ApplicationMigrationWorkshop** stack is deleted, review your AWS Account and **delete all remaining resources that were created during this lab**.
+
+Additionally we would appreciate if you would provide <a href="https://amazonmr.au1.qualtrics.com/jfe/form/SV_0dfrnubGKXavgR7">anonymous feedback for this lab</a>.

@@ -26,7 +26,10 @@ Whether you are migrating to AWS or across regions within AWS, **CloudEndure Mig
 Go to <a href="https://console.cloudendure.com/#/register/register">CloudEndure Migration Registration page</a> to create an account and start migrating to AWS in minutes!
 {{% /notice %}}  
 
-In this lab you will perform re-hosting (also known as Lift and shift migration) of the webserver using **CloudEndure Migration**, following the steps below:
+You can learn more about **CloudEndure Migration** by watching the video below.
+<center><iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/kIJ29q-Jsyo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center>
+
+In this lab you will perform re-hosting (also known as Lift and shift migration) of the webserver following the steps below:
 
 1. [CloudEndure Configuration]({{< ref "/CE-Configuration.en.md" >}})  
 2. [Install Agent on Source Machine(s)]({{< ref "/CE-Agent-Installation.en.md" >}})  
