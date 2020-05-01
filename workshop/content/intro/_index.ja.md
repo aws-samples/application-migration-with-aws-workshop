@@ -4,7 +4,7 @@ weight = 10
 pre = "<b>0. </b>"
 +++
 
-To start the workshop, follow one of the following depending on whether you are:
+以下のいずれかを選択して、ハンズオンを開始します。
 
-- [Running the workshop on your own (in your own AWS Account)]({{< ref "/on-your-own.ja.md" >}}), or
-- [Attending an AWS hosted event (using AWS provided AWS Accounts)]({{< ref "/at-aws-event.ja.md" >}})
+- [ご自身の環境でハンズオンを実行する場合（自前の AWS アカウントを使用）]({{< ref "/on-your-own.ja.md" >}})
+- [AWS 主催のイベントに参加している場合（AWS が提供するアカウントを使用）]({{< ref "/at-aws-event.ja.md" >}})
