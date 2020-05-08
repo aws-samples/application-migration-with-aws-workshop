@@ -1,14 +1,14 @@
 +++
-title = "Summary"
+title = "サマリー"
 weight = 60
 +++
 
-Congratulations, you have successfully:
+おめでとうございます！本セクションでは、以下のタスクを実施しました：
 
-1. Created a new managed database, using **Amazon Relational Database Service**
-2. Created an **AWS Database Migration Service replication instance** - that allows you to replicate data between databases
-3. Created the **source and target database endpoints**
-4. Modified the configuration of the source database to allow for **continuous replication of data**
-5. Started the replication of data through a **replication task**
+1. **Amazon Relational Database Service (RDS)** を使用して、Target となる**マネージドデータベース**を作成しました。
+2. データベース間のレプリケーションを可能にする **AWS Database Migration Service (DMS)** の**レプリケーションインスタンス**を作成しました。
+3. Source と Target の**データベースエンドポイント**を作成しました。
+4. データの**継続的なレプリケーション（CDC）** を可能にするために、Source データベースの構成を変更しました。
+5. DMS の**レプリケーションタスク**を作成し、データベース間のレプリケーションを開始しました。
 
-So now it's time to migrate and configure the webserver!
+次のセクションでは、Web サーバの移行と設定を行います!
