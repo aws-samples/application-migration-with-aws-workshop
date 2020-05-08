@@ -31,5 +31,5 @@ CloudEndure Migration を利用して AWS への移行を**無料**で行うこ�
 1. [CloudEndure の設定]({{< ref "/CE-Configuration.ja.md" >}})  
 2. [Source マシンへのエージェントインストール]({{< ref "/CE-Agent-Installation.ja.md" >}})  
 3. [Blueprint の準備]({{< ref "/CE-Blueprints.ja.md" >}})  
-4. [カットオーバーの実施]({{< ref "/CE-Cutover.ja.md" >}})  
+4. [カットオーバーの実行]({{< ref "/CE-Cutover.ja.md" >}})  
 5. [アプリケーションの設定]({{< ref "/CE-Webserver-config.ja.md" >}})  

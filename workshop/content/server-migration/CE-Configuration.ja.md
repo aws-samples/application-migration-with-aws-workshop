@@ -19,7 +19,7 @@ AWS の資格情報を使って CloudEndure を設定する必要があります
 
     ![CloudEndure Credentials](/ce/CE-console-credentials.png)
 
-    Event Engine の <A href="https://dashboard.eventengine.run/dashboard" target="_blank">Team Dashboard</a> に、資格情報が表示されていない場合は、イベント主催者に資格情報を提供してもらうよう依頼してください。
+    <A href="https://dashboard.eventengine.run/dashboard" target="_blank">Team Dashboard</a> に、資格情報が表示されていない場合は、イベント主催者に資格情報を提供してもらうよう依頼してください。
 
 2. 左のメニューから **Setup & Info** を選択し、**AWS Credentials** タブを開きます。
 
@@ -70,5 +70,5 @@ AWS 資格情報を保存すると、自動的に **Setup & Info → REPLICATION
 2. 画面下までスクロールして、**SAVE REPLICATION SETTINGS** ボタンをクリックします。
 
     {{% notice tip %}}
-画面上部に "AWS credentials must be refreshed" という通知が表示される場合は、ブラウザをリフレッシュしてください（F5）。
+画面上部に "AWS credentials must be refreshed" という通知が表示される場合は、ブラウザをリフレッシュしてください。
 {{% /notice %}}
