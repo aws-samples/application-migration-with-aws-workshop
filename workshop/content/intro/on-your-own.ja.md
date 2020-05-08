@@ -11,7 +11,7 @@ weight = 20
 
 本ハンズオンでは、AWS アカウントに<a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/getting-started_create-admin-group.html" target="_blank">管理者権限</a>でアクセスできることを前提としています。新しく AWS アカウントを作成する場合は、<a href="https://aws.amazon.com/premiumsupport/knowledge-center/create-and-activate-aws-account/" target="_blank">こちらの記事</a>を参考にしてください。
 
-以下の手順では、移行元となる環境（Source）を、AWS アカウント内にデプロイします。デプロイされるリソースは、２つの t3.micro インスタンス（Web サーバ用に１つ、データベース用に１つ）、NAT Gateway、API Gateway、２つの Lambda 関数（EC2 インスタンスにアクセスするための、キーペアの取得を簡略化するために使用）で構成されます。ハンズオン全体を通してデプロイされるリソースの総コストは、約４時間の作業で５ドル未満を想定しており、その一部は <a href="https://aws.amazon.com/free/" target="_blank">AWS 無料利用枠</a>でカバーされます。
+以下の手順では、移行元となる環境（Source）を、AWS アカウント内にデプロイします。デプロイされるリソースは、２つの t3.micro インスタンス（Web サーバ用に１つ、データベース用に１つ）、NAT Gateway、API Gateway、２つの Lambda 関数（EC2 インスタンスにアクセスする際に使用する、SSH キーペアの取得を簡略化するために使用）で構成されます。ハンズオン全体を通してデプロイされるリソースの総コストは、約４時間の作業で５ドル未満を想定しており、その一部は <a href="https://aws.amazon.com/free/" target="_blank">AWS 無料利用枠</a>でカバーされます。
 
 不要な請求を避けるために、ハンズオンの完了後は必ず AWS アカウントを[クリーンアップ]({{< ref "/cleanup/_index.ja.md" >}})してください。
 
