@@ -1,5 +1,5 @@
 +++
-title = "Migration Hub を有効化する"
+title = "Migration Hub を有効化"
 weight = 30
 +++
 
