@@ -1,36 +1,36 @@
 +++
-title = "Prepare Blueprint(s)"
+title = "Blueprint の準備"
 weight = 30
 +++
 
-While the instances are being replicated, let's configure a **CloudEndure Target Machine Blueprint**, which is the specification of your Target machine (replicated instance) that will be launched in AWS. It includes parameters such as machine type (for example t3.medium), **subnet** where the machine should be running, **private IP** address and disk types.
+インスタンスがレプリケートされている間に、AWS で起動するターゲットマシン（レプリケートされたインスタンス）のスペックとなる CloudEndure Target Machine Blueprint を設定しましょう。Blueprint にはマシンのタイプ（例：t3.medium）や、マシンが稼働するサブネット、プライベート IP アドレス、ディスクの種類などのパラメータが含まれています。
 
-To configure the Blueprint, go to the **Machines** tab and click on the name of the machine that you want to configure. Then navigate to the **BLUEPRINT** section.
+Blueprint を設定するには、左のメニューから **Machines** に移動し、設定したいマシンの名前をクリックします。
+ページが表示されたら、**BLUEPRINT** のセクションに移動します。
 
 ![CE-BluePrints](/ce/CE-BluePrints.png)
 
-Provide the following information:
+以下のパラメータを使用して、Blueprint の設定を行います：
 
-| Parameter                                  | Value                                                        |
+| パラメータ                                  | 入力値                                                        |
 | ------------------------------------------ | ------------------------------------------------------------ |
 | Machine Type                           | t3.small                                    |
 | Launch Type                            | On demand 
 | Target subnet                          | TargetVPC-public-subnet-b                                       |
 | Security group                         | Create new |
 | Private IP                             | Create new |
-| Tags                                    | Add a 'Name' Tag with value 'Webserver' |
+| Tags                                    | タグを追加（Key : 'Name' Value : 'Websever'） |
 
-
-Everything else will be left as default, but review it to understand the available configuration options available for your target instance.
+上記以外のパラメータは、すべてデフォルトのままにしますが、ターゲットマシンで利用可能な設定やオプションを理解するために、一通り確認を行ってください。
 
 {{% notice warning %}}
-If you're going through this workshop on an AWS Event, you must select **Machine type** not larger than *.large, otherwise your IAM privileges will prevent you from operating on created instances later in the workshop.
+本ハンズオンを AWS 主催のイベントで実施している場合は、***.large** よりもサイズの大きいマシンタイプを選択しないでください。
+割り当てられている IAM 権限の関係上、後の手順で作成されるインスタンスの操作ができなくなります。
 {{% /notice %}}
-
 
 
 {{% notice tip %}}
-If you don't see input fields on the BLUEPRINT page or it's hard to scroll through them, scale down your screen (Control -).
+BLUEPRINT のセクションでフィールドが表示されない場合や、フィールドのスクロールが難しい場合は、画面を縮小してください（Control -）。
 {{% /notice %}}
 
-When done, click the **SAVE BLUEPRINT** button at the bottom of the page.
+完了したら、ページ下部の **SAVE BLUEPRINT** ボタンをクリックします。
