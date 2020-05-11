@@ -51,7 +51,7 @@ weight = 40
 
     どちらのインスタンスも CloudEndure が管理しており、ユーザーがアクセスすることはできません。
 
-    カットオーバーが完了すると、リストに新しい EC2 インスタンスが表示されます - これはCloudEndure によって作成された Target の Web サーバです。後続のセクションで必要になるため、IPv4 パブリック IP とプライベートIP の値を、テキストエディタにコピーしておいてください。
+    カットオーバーが完了すると、リストに新しい EC2 インスタンスが表示されます - これはCloudEndure によって作成された Target の Web サーバです。後続のセクションで必要になるため、パブリック DNS (IPv4) とプライベートIP の値を、テキストエディタにコピーしておいてください。
 
     {{% notice tip %}}
 CloudEndure が管理するインスタンスや、その目的、ネットワーク要件の詳細は、<a href="https://docs.cloudendure.com/#Preparing_Your_Environments/Network_Requirements/Network_Requirements.htm" target="_blank">CloudEndure のドキュメント</a>を参照してください。
