@@ -5,17 +5,19 @@ weight = 5
 pre = "<b>0. </b>"
 +++
 
-We are thrilled that you're taking on this challenge to migrate our eCommerce system to the cloud. Below you will find some notes from the former BuyMyUnicorns IT team. We hope you'll find them useful!
+本ハンズオンでは、BuyMyUnicorns という eコマースシステムのクラウド移行にチャレンジいただきます！
+まずは、移行元（Source）と移行先の環境（Target）について、以下を確認してください。
 
-## Source Environment
+## 移行元環境：Source
 
 ![source-env](/intro/source-env.png)
 
-The Source Environment consist of a two tier e-commerce application; a webserver running Ubuntu with Apache, PHP, Wordpress, WooCommerce and a Database server running Ubuntu with MySQL version 5.7.
+Source 環境は、２層で構成される eコマースの Web アプリケーションです。  
+Apache、PHP、Wordpress、WooCommerce が稼働する Ubuntu ベースの Web サーバと、MySQL バージョン5.7 が稼働する Ubuntu ベースのデータベースサーバで、構成されています。
 
-
-## Target Environment
+## 移行先環境：Target
 
 ![target-env](/intro/target-vpc.png)
 
-The above diagram shows the target VPC on AWS which consist of 6 subnets across two availability zone.
+Source 環境で稼働する eコマースシステムを AWS Cloud に移行します。
+上の図は移行先のネットワークとなる VPC が、２つのアベイラビリティゾーンにまたがる６つのサブネットで構成されることを示しています。
