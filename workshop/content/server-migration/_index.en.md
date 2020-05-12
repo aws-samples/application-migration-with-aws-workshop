@@ -1,7 +1,7 @@
 +++
 title = "Server Migration"
 date = 2019-10-22T20:48:41+02:00
-weight = 15
+weight = 20
 pre = "<b>2. </b>"
 +++
 

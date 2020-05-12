@@ -1,6 +1,6 @@
 +++
 title = "Enable Migration Hub"
-weight = 40
+weight = 50
 +++
 
 #### AWS Migration Hub
