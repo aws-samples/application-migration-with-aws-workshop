@@ -1,5 +1,5 @@
 +++
-title = "Target データベースの作成"
+title = "ターゲットデータベースの作成"
 weight = 10
 +++
 
@@ -7,11 +7,11 @@ weight = 10
 
 データベースの移行には様々な方法がありますが、本ハンズオンでは <a href="https://aws.amazon.com/dms/" target="_blank">AWS Database Migrations Service (DMS)</a> を利用した継続的なデータレプリケーションによる移行を行います。
 
-### Target データベースの作成
+### ターゲットデータベースの作成
 
-AWS DMS の設定を行う前に、移行先の AWS アカウントで、Target データベースを作成する必要があります。**AWS Relational Database Service (RDS)** を使用することで、クラウド上でのリレーショナルデータベースのセットアップ、運用、スケーリングを簡単に行うことができます。
+AWS DMS の設定を行う前に、移行先の AWS アカウントで、ターゲットデータベースを作成する必要があります。**AWS Relational Database Service (RDS)** を使用することで、クラウド上でのリレーショナルデータベースのセットアップ、運用、スケーリングを簡単に行うことができます。
 
-1. マネジメントコンソール上部の **「サービス」** から **RDS** のページを開き、**「データベースの作成」** をクリックします。
+1. マネジメントコンソール上部の **「サービス」** から **<a href="https://console.aws.amazon.com/rds/home?region=us-west-2" target="_blank">RDS</a>** のページを開き、**「データベースの作成」** をクリックします。
 
 2. **「エンジンのタイプ」** で MySQL、**「バージョン」** で MySQL 5.7.22 を選択します。
 
@@ -19,7 +19,8 @@ AWS DMS の設定を行う前に、移行先の AWS アカウントで、Target 
 
 
     {{% notice note %}}
-Source データベースの MySQL バージョンは、次の SQL 文で確認することができます： **SELECT@@version;**
+ソースデータベースの MySQL バージョンは、次の SQL 文で確認することができます：  
+**SELECT @@version;**
 {{% /notice %}}
 
     **「設定」** のセクションでは、新しいデータベースインスタンスの DB インスタンス識別子（例：database-1）、マスターユーザー名（例：admin）、およびマスターパスワードを設定します。
@@ -51,7 +52,7 @@ Source データベースの MySQL バージョンは、次の SQL 文で確認�
 
 
     {{% notice note %}}
-後ほど、この VPC セキュリティグループを編集して、DMS レプリケーションインスタンスと Web サーバから Target データベースへのアクセスを許可するようにします。
+後ほど、この VPC セキュリティグループを編集して、DMS レプリケーションインスタンスと Web サーバーから ターゲットデータベースへのアクセスを許可するようにします。
 {{% /notice %}}
 
 5. **「データベース認証」** には、**「パスワード認証」** を選択してください。
@@ -63,7 +64,7 @@ Source データベースの MySQL バージョンは、次の SQL 文で確認�
     ![8_db](/db-mig/8_db.ja.png)
 
     {{% notice note %}}
-本番環境のワークロードでは、<a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Monitoring.OS.html" target="_blank">拡張モニタリング</a>を有効化することをお勧めしますが、AWS が主催するイベントでは、参加者用にプロビジョニングされている IAM Role に制限があるため、チェックを外しています。
+本番環境のワークロードでは、<a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Monitoring.OS.html" target="_blank">拡張モニタリング</a>を有効化することをお勧めしますが、AWS が主催するイベントでは、参加者用にプロビジョニングされている IAM ロールに制限があるため、チェックを外しています。
 {{% /notice %}}
 
 7. 最後に、月間コストの見積もりを確認して、**「データベースの作成」** ボタンをクリックします。

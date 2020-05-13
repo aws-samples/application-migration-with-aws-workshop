@@ -4,14 +4,14 @@ weight = 50
 
 +++
 
-### Target データベースへの接続を設定
+### ターゲットデータベースへの接続を設定
 
-カットオーバーが完了し、CloudEndure によって AWS アカウントに Web サーバのインスタンスが作成されたら、
-Web アプリケーションが、データベース移行のセクションで作成した **RDS インスタンス**を使用するよう、設定を更新します。
+カットオーバーが完了し、CloudEndure によって AWS アカウントに Web サーバーのインスタンスが作成されたら、
+Web アプリケーションが、データベース移行のセクションで作成した **Amazon Relational Database Service (RDS) インスタンス**を使用するよう、設定を更新します。
 
-1. **Web サーバのセキュリティグループ**を更新します。
+1. **Web サーバーのセキュリティグループ**を更新します。
 
-    a. AWS マネジメントコンソール上部の **「サービス」** から **EC2** のページを開き、**Webserver** インスタンスを選択します。  
+    a. AWS マネジメントコンソール上部の **「サービス」** から **<a href="https://console.aws.amazon.com/ec2/v2/home?region=us-west-2" target="_blank">EC2</a>** のページを開き、**Webserver** インスタンスを選択します。  
     b. **パブリック DNS (IPv4)** と **プライベート IP** の値を、テキストエディタにコピーしておきます。
     c. インスタンスに割り当てられている**セキュリティグループ**名をクリックします。
 
@@ -24,9 +24,9 @@ Web アプリケーションが、データベース移行のセクションで�
 
 2. CloudEndure によって作成された Webserver インスタンスにログインします。
 
-    Source 環境と同じユーザー（ubuntu）と SSH キー（.pem）を使用します。
+    ソース環境と同じユーザー（ubuntu）と SSH キー（.pem）を使用します。
 
-    SSH を使ってサーバにアクセスする方法がわからない場合は、以下を確認してください：
+    SSH を使ってサーバーにアクセスする方法がわからない場合は、以下を確認してください：
     - Microsoft Windows をお使いの場合は<a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/putty.html" target="_blank">こちら</a>
     - Mac OS をお使いの場合は<a href="https://docs.aws.amazon.com/quickstarts/latest/vmlaunch/step-2-connect-to-instance.html#sshclient" target="_blank">こちら</a>
 
@@ -42,11 +42,11 @@ Web アプリケーションが、データベース移行のセクションで�
 このファイルを編集するには、<a href="https://www.howtoforge.com/linux-nano-command/" target="_blank">nano</a> や <a href="https://www.washington.edu/computing/unix/vi.html" target="_blank">vi</a> などを使用することができます。
 {{% /notice %}}     
 
-4. Web サーバからのインバウンドトラフィックを許可するために、RDS インスタンスに紐づけている **VPC セキュリティグループ**を更新します。
+4. Web サーバーからのインバウンドトラフィックを許可するために、RDS インスタンスに紐づけている **Virtual Private Cloud (VPC) セキュリティグループ**を更新します。
 
-    a. AWS マネジメントコンソール上部の **「サービス」** から **EC2** のページを開き、左のメニューから **「セキュリティグループ」** を選択します。RDS インスタンスに紐づけている VPC セキュリティグループ（例：DB-SG）名をクリックします。  
+    a. AWS マネジメントコンソール上部の **「サービス」** から **<a href="https://console.aws.amazon.com/ec2/v2/home?region=us-west-2" target="_blank">EC2</a>** のページを開き、左のメニューから **「セキュリティグループ」** を選択します。RDS インスタンスに紐づけている VPC セキュリティグループ（例：DB-SG）名をクリックします。  
     b. **「インバウンドルール」** のタブを開き、 **「インバウンドのルールの編集」** ボタンをクリックします。  
-    c. Web サーバからのトラフィックを許可するインバウンドルールを追加します。Web サーバの**プライベート IP** または**所属するセキュリティグループ**からポート3306に対するトラフィックを許可します。編集が完了したら、**「ルールの保存」** ボタンをクリックします。
+    c. Web サーバーからのトラフィックを許可するインバウンドルールを追加します。Web サーバーの**プライベート IP** または**所属するセキュリティグループ**からポート3306に対するトラフィックを許可します。編集が完了したら、**「ルールの保存」** ボタンをクリックします。
     
     ![Inbound rules modification](/ce/database_update_security_group.ja.png)
 
@@ -58,13 +58,13 @@ RDS インスタンスに DB-SG とは別のセキュリティグループ名を
 
 5. 移行の検証を行います。
 
-    Web サーバのパブリック DNS（IPv4）名をブラウザで開き、Unicorn ストアが表示されることを確認してください。
+    Web サーバーのパブリック DNS（IPv4）名をブラウザで開き、Unicorn ストアが表示されることを確認してください。
 
 アプリケーションが正常に動作していれば、本セクションは完了です！  
 [最適化]({{< ref "../optimization/_index.ja.md" >}})のフェーズに進みましょう。
 
 ## トラブルシューティング
 
-1. Web サーバの **/var/www/html/wp-config.php** に RDS インスタンスの情報が正しく反映されていることを確認してください。
+1. Web サーバーの **/var/www/html/wp-config.php** に RDS インスタンスの情報が正しく反映されていることを確認してください。
 2. RDS インスタンスのセキュリティグループで、必要な通信が許可されていることを確認してください。
-3. Web サーバの **CloudEndure Blueprint** で、Subnet の設定が **TargetVPC** の **public-subnet-b** を指していることを確認してください。
+3. Web サーバーの **CloudEndure Blueprint** で、Subnet の設定が **TargetVPC** の **public-subnet-b** を指していることを確認してください。

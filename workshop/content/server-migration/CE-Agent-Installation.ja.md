@@ -1,14 +1,14 @@
 +++
-title = "Source マシンへのエージェントインストール"
+title = "ソースマシンへのエージェントインストール"
 weight = 20
 +++
 
-<a href="https://console.cloudendure.com">CloudEndure コンソール</a>から、Source マシンの追加方法と、マシンにエージェントをインストールするための手順が表示される **Machines** 画面に移動します。
+<a href="https://console.cloudendure.com">CloudEndure コンソール</a>から、ソースマシンの追加方法と、マシンにエージェントをインストールするための手順が表示される **Machines** 画面に移動します。
 ![CE-Agent-install](/ce/CE-Agent-install.png)
 
-#### Web サーバへのエージェントインストール
+#### Web サーバーへのエージェントインストール
 
-1. Web サーバに関する情報を確認します。
+1. Web サーバーに関する情報を確認します。
 
     **自身の環境**でハンズオンを実施している場合は、<a href="https://us-west-2.console.aws.amazon.com/cloudformation/home?region=us-west-2#/" target="_blank">CloudFormation スタック</a>（**ApplicationMigrationWorkshop**）の**出力**セクションから確認してください。
 
@@ -18,12 +18,12 @@ weight = 20
 
     ![Centos-pem](/ce/Centos-pem.png)
 
-2. Web サーバの SSH キー（.pem）をダウンロードして、ローカルに保存します（例： webserver.pem）
+2. Web サーバーの SSH キー（.pem）をダウンロードして、ローカルに保存します（例： webserver.pem）
 
     Microsoft Windows をお使いの場合は、PuttyGen を使って SSH キー（.pem）を .ppk に変換してから、 Putty を使って接続してください（詳細は<a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/putty.html" target="_blank">こちら</a>をご確認ください）。
     
 
-3. Web サーバに、SSH ターミナルを使って接続します。
+3. Web サーバーに、SSH ターミナルを使って接続します。
 
     - Microsoft Windows をお使いの場合は<a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/putty.html" target="_blank">こちら</a>
     - Mac OS をお使いの場合は<a href="https://docs.aws.amazon.com/quickstarts/latest/vmlaunch/step-2-connect-to-instance.html#sshclient" target="_blank">こちら</a>

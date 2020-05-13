@@ -22,14 +22,14 @@ CloudEndure Live Migration の主なメリットは以下の通りです：
 - 自動化された移行により、IT リソースとプロジェクト期間を最小限に抑えることが可能
 
 {{% notice note %}}
-CloudEndure Migration を利用して AWS への移行を**無料**で行うことができます。  
+AWS への移行の場合、CloudEndure Migration は**無料**で利用することができます。  
 <a href="https://console.cloudendure.com/#/register/register">登録ページ</a>にアクセスしてアカウントを作成し、数分で AWS への移行を開始しましょう。
 {{% /notice %}}  
 
-本セクションでは、以下の手順に従って、CloudEndure Migration を使用した Web サーバの Re-Host（Lift-and-Shift) を実行します：
+本セクションでは、以下の手順に従って、CloudEndure Migration を使用した Web サーバーの Re-Host（リフトアンドシフト) を実行します：
 
 1. [CloudEndure の設定]({{< ref "/CE-Configuration.ja.md" >}})  
-2. [Source マシンへのエージェントインストール]({{< ref "/CE-Agent-Installation.ja.md" >}})  
+2. [ソースマシンへのエージェントインストール]({{< ref "/CE-Agent-Installation.ja.md" >}})  
 3. [Blueprint の準備]({{< ref "/CE-Blueprints.ja.md" >}})  
 4. [カットオーバーの実行]({{< ref "/CE-Cutover.ja.md" >}})  
 5. [アプリケーションの設定]({{< ref "/CE-Webserver-config.ja.md" >}})  

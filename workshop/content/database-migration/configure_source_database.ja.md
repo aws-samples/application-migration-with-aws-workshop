@@ -1,17 +1,17 @@
 +++
-title = "Source データベースの設定"
+title = "ソースデータベースの設定"
 weight = 35
 +++
 
 ### Change Data Capture (CDC) を使用した DMS レプリケーションタスクの実行
 
-データベース移行のダウンタイムを最小限に抑えるために、Source データベースから Target データベースへの継続的なレプリケーション（Change Data Capture, CDC）を利用します。AWS DMS における CDC とネイティブ CDC のサポートについては、<a href="https://aws.amazon.com/blogs/database/aws-dms-now-supports-native-cdc-support/" target="_blank">こちらの記事</a>を参照してください。
+データベース移行のダウンタイムを最小限に抑えるために、ソースデータベースから ターゲットデータベースへの継続的なレプリケーション（Change Data Capture, CDC）を利用します。AWS Database Migration Service (DMS) における CDC とネイティブ CDC のサポートについては、<a href="https://aws.amazon.com/blogs/database/aws-dms-now-supports-native-cdc-support/" target="_blank">こちらの記事</a>を参照してください。
 
-#### Source データベースでのバイナリログ有効化
+#### ソースデータベースでのバイナリログ有効化
 
-MySQL データベース から **AWS DMS** で継続的なレプリケーションを行う場合は、バイナリログを有効化し、Source データベースの設定変更を行う必要があります。
+MySQL データベース から **AWS DMS** で継続的なレプリケーションを行う場合は、バイナリログを有効化し、ソースデータベースの設定変更を行う必要があります。
 
-1. Source データベースサーバにログインします。
+1. ソースデータベースサーバーにログインします。
 
     **自身の環境**でハンズオンを実施している場合、接続に必要な情報は <a href="https://us-west-2.console.aws.amazon.com/cloudformation/home?region=us-west-2#/" target="_blank">CloudFormation スタック</a>（**ApplicationMigrationWorkshop**）の**出力**セクションに表示されています。
     
@@ -21,13 +21,13 @@ MySQL データベース から **AWS DMS** で継続的なレプリケーショ
     
     ![Database Server login information](/db-mig/db-server-ssh-event.png)
 
-    SSH を使ってサーバにアクセスする方法がわからない場合は、以下を確認してください：
+    SSH を使ってサーバーにアクセスする方法がわからない場合は、以下を確認してください：
     - Microsoft Windows をお使いの場合は<a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/putty.html" target="_blank">こちら</a>
     - Mac OS をお使いの場合は<a href="https://docs.aws.amazon.com/quickstarts/latest/vmlaunch/step-2-connect-to-instance.html#sshclient" target="_blank">こちら</a>
 
 2. **wordpress-user** データベースユーザに追加の権限を付与します。
 
-    データベースサーバで、以下のコマンドを実行します：
+    データベースサーバーで、以下のコマンドを実行します：
 
     ```
     sudo mysql -u root -pAWSRocksSince2006
@@ -40,7 +40,7 @@ MySQL データベース から **AWS DMS** で継続的なレプリケーショ
 
 3. **バイナリログ**用のディレクトリを作成します。 
 
-    データベースサーバで、以下のコマンドを実行します：
+    データベースサーバーで、以下のコマンドを実行します：
 
     ```
     sudo su - 
@@ -85,7 +85,7 @@ MySQL データベース から **AWS DMS** で継続的なレプリケーショ
     ```
 
     {{% notice warning %}}
-変更を適用するには、mysql サービスの再起動が必要です。これにより、数秒間 Source データベースへのアクセスが中断されます。
+変更を適用するには、mysql サービスの再起動が必要です。これにより数秒間、ソースデータベースへのアクセスが中断されます。
 {{% /notice %}}    
 
 6. 変更点のテストを実施します。
