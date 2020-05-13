@@ -5,12 +5,12 @@ weight = 30
 +++
 
 {{% notice warning %}}
-AWS が主催するイベント（re:Invent、Gameday、ワークショップ、または AWS の従業員が主催するその他のイベント）に参加している場合にのみ、このセクションを実行してください。ご自身の環境でハンズオンを実施する場合は、[自身の環境でハンズオンを開始する]({{< ref "/on-your-own.ja.md" >}})に進んでください。
+AWS が主催するイベント（re:Invent、Gameday、ワークショップ、または AWS の従業員が主催するその他のイベント）に参加している場合にのみ、このセクションを実行してください。ご自身の環境でハンズオンを実施する場合は、[自身の環境でハンズオンを開始]({{< ref "/on-your-own.ja.md" >}})に進んでください。
 {{% /notice %}}
 
 ### ダッシュボードへのアクセス
 
-以下のセクションでは、移行元となる環境（Source）に関する情報へのアクセス方法について、説明します。
+以下のセクションでは、移行元となる環境（ソース）に関する情報へのアクセス方法について、説明します。
 
 - <a href="https://dashboard.eventengine.run/" target="_blank">https://dashboard.eventengine.run/</a> にアクセスします
 
@@ -21,9 +21,9 @@ AWS が主催するイベント（re:Invent、Gameday、ワークショップ、
 
 
 
-### 移行元（Source）環境へのアクセス
+### 移行元（ソース）環境へのアクセス
 
-**Migration GameDay** モジュールの、**Outputs** セクション配下に、Source 環境に関する詳細が表示されます：
+**Migration GameDay** モジュールの、**Outputs** セクション配下に、ソース環境に関する詳細が表示されます：
 
   ![dashboard-output](/intro/src-env-output.png)
 
@@ -44,7 +44,7 @@ AWS が主催するイベント（re:Invent、Gameday、ワークショップ、
 
 
 {{% notice note %}}
-<a href="https://aws.amazon.com/cli/" target="_blank">AWS Command Line Interface (AWS CLI)</a> を使用する場合は、ポップアップウィンドウに表示される認証情報を利用してください。なお、この認証情報は CloudEndure で使用するものとは異なりますので、CloudEndure コンソールの AWS 認証タブには入力しないで下さい。
+<a href="https://aws.amazon.com/cli/" target="_blank">AWS Command Line Interface (CLI)</a> を使用する場合は、ポップアップウィンドウに表示される認証情報を利用してください。なお、この認証情報は CloudEndure で使用するものとは異なりますので、CloudEndure コンソールの AWS Credentials タブには入力しないで下さい。
 {{% /notice %}}
 
 以上で環境の確認は完了です。 [AWS Migration Hub の有効化]({{< ref "/migration-hub.ja.md" >}})に進んでください。

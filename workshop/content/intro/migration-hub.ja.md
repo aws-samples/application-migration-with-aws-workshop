@@ -5,14 +5,14 @@ weight = 30
 
 #### AWS Migration Hub
 
-<a href="https://aws.amazon.com/migration-hub/" target="_blank">AWS Migration Hub</a> では、AWS およびパートナーの複数のソリューションにおける、アプリケーション移行の進行状況を１つの場所から追跡できます。  
-有効化するには、マネジメントコンソール上部の **「サービス」** から **AWS Migration Hub** のページを開きます。
+<a href="https://aws.amazon.com/migration-hub/" target="_blank">AWS Migration Hub</a> では、AWS およびパートナーの複数のソリューションにおける、アプリケーション移行の進行状況を1つの場所から追跡できます。  
+有効化するには、マネジメントコンソール上部の **「サービス」** から **<a href="https://console.aws.amazon.com/migrationhub/home?region=us-west-2" target="_blank">AWS Migration Hub</a>** のページを開きます。
 左のメニューから **「移行」** を選択し、**米国西部（オレゴン）** をホームリージョンに設定してください。
 
 ![Migration Hub - choose home region](/intro/migration-hub-choose-home-region.ja.png)
 
 次に、**「移行」 → 「ツール」** をクリックして、AWS Migration Hub に移行状況の更新情報を送信するツールを選択します。
-追加設定なしで使用できる CloudEndure Migration に加え、今回は **AWS Database Migration Service** との接続を設定します。
+追加設定なしで使用できる CloudEndure Migration に加え、今回は **AWS Database Migration Service (DMS)** との接続を設定します。
 
 ページの一番下までスクロールし、**AWS Database Migration Service** カードの **「接続」** ボタンをクリックします。
 
