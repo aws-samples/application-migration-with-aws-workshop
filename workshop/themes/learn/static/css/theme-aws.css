@@ -285,3 +285,70 @@ div.notices.info p {
   .btn-default:active {
     background-image: none !important;
   }
+
+div.notices.ja {
+    margin: 2rem 0;
+    position: relative;
+}
+
+div.notices.ja p {
+    padding: 15px;
+    display: block;
+    font-size: 1rem;
+    margin-top: 0rem;
+    margin-bottom: 0rem;
+    color: #666;
+}
+
+div.notices.ja p:first-child:before {
+    position: absolute;
+    top: 2px;
+    color: #fff;
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\f06a";
+    left: 10px;
+}
+
+div.notices.ja p:first-child:after {
+    position: absolute;
+    top: 2px;
+    color: #fff;
+    left: 2rem;
+}
+
+div.notices.ja.info p {
+    border-top: 30px solid #fd9827;
+    background: #FFF2DB;
+}
+
+div.notices.ja.info p:first-child:after {
+    content: '情報';
+}
+
+div.notices.ja.warning p {
+    border-top: 30px solid rgba(217, 83, 79, 0.8);
+    background: #FAE2E2;
+}
+
+div.notices.ja.warning p:first-child:after {
+    content: '注意';
+}
+
+div.notices.ja.note p {
+    border-top: 30px solid #6AB0DE;
+    background: #E7F2FA;
+}
+
+div.notices.ja.note p:first-child:after {
+    content: '備考';
+}
+
+div.notices.ja.tip p {
+    border-top: 30px solid rgba(92, 184, 92, 0.8);
+    background: #E6F9E6;
+}
+
+div.notices.ja.tip p:first-child:after {
+    content: 'ヒント';
+}
