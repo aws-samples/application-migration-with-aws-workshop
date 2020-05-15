@@ -59,6 +59,20 @@ h1 {
     font-family: "Amazon Ember", "Novacento Sans Wide", "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif;
 }
 
+body.ja {
+    font-family: "Work Sans", "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif;
+    color: var(--MAIN-TEXT-color) !important;
+}
+  
+body.ja > h2, h3, h4, h5, h6 {
+    font-family: "Work Sans", "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif;
+    color: var(--MAIN-TITLES-TEXT-color) !important;
+}
+
+body.ja > h1 {
+    font-family: "Work Sans", "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif;
+}
+
 a {
     color: var(--MAIN-LINK-color);
 }
