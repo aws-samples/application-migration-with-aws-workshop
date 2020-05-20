@@ -1,23 +1,25 @@
 +++
-title = "Create an AWS Elastic Load Balancer"
+title = "AWS Elastic Load Balancer の作成"
 weight = 35
 +++
 
+マネジメントコンソール上部の **「サービス」** から **<a href="https://console.aws.amazon.com/ec2/home?region=us-west-2" target="_blank">EC2</a>** のページを開き、左のメニューから **「ロードバランサー」** を選択します。
 
-From **AWS Console**, select **Services**, **EC2** and then **Load Balancers**
+**「ロードバランサーの作成」** ボタンをクリックし、以下のように **Application Load Balancer** を選択します。
 
-Click **Create Load Balancer** button and **Application Load Balancer** as indicated below:
+![create-loadbalancer](/ecs/create-lb.ja.png)
 
-![create-loadbalancer](/ecs/create-lb.png)
+**「手順 1: ロードバランサーの設定」** では、**名前**（例: unicorn-lb）を入力し、使用する **VPC**（例: TargetVPC）を選択したうえで、以下のように少なくとも2つのアベイラビリティゾーンで、パブリックサブネット (例: TargetVPC-public-a, TargetVPC-public-b) を選択します：
 
-In the **1. Configure Load Balancer** step, enter the load balancer **Name** (e.g. unicorn-lb), choose the VPC that you use (e.g TargetVPC) and select your public subnets for at least two subnets (public-a, public-b) as below:
+![configure-loadbalancer](/ecs/configure-lb.ja.png)
 
-![configure-loadbalancer](/ecs/configure-lb.png)
+**「手順 2: セキュリティ設定の構成」** では、何も変更せずに **「次の手順： セキュリティグループの設定」** をクリックします。
 
-In the **3. Configure Security Group** settings step, choose the LB-SG security group.
+**「手順 3: セキュリティグループの設定」** では、前頁で作成した **LB-SG** セキュリティグループを選択します。
 
-In the **4. Configure Routing** step, select **New target group** in the **Target group** and provide a name for the target group (e.g. unicorn-tg). For the **Target type**, select **IP**, leave the default for the other fiels and click **Next: Register Targets**
+**「手順 4: ルーティングの設定」** では、**ターゲットグループ** に **新しいターゲットグループ** を選択し、**名前**（例：unicorn-tg）を入力します。**ターゲットの種類**には、**IP** を選択し、他のフィールドはデフォルト値のままにして、**「次の手順: ターゲットの登録」** をクリックします。
 
-![configure-routing](/ecs/configure-routing.png)
+![configure-routing](/ecs/configure-routing.ja.png)
 
-Leave the default of register targets, click **Next: Review** and then click **Create** to create the load balancer.
+**「手順 5: ターゲットの登録」** では、何も変更せずに **「次の手順: 確認」** をクリックします。  
+最後に、設定内容に問題がないことを確認したら、**「作成」** をクリックして、ロードバランサーの作成を開始します。
