@@ -1,49 +1,47 @@
 +++
-title = "Create an Amazon ECS Task Definition"
+title = "Amazon ECS タスク定義の作成"
 weight = 50
 +++
 
-From **AWS console**, go to **Services**, select **ECS**, then click **Task Definitions** and **Create new Task Definition**.
+マネジメントコンソール上部の **「サービス」** から **<a href="https://console.aws.amazon.com/ecs/home?region=us-west-2" target="_blank">Elastic Container Service</a>** のページを開き、左のメニューから **「タスク定義」** を選択します。タスク定義の一覧が表示されたら、**「新しいタスク定義の作成」** をクリックします。
 
-![create-task-def](/ecs/create-task-def.png)
+![create-task-def](/ecs/create-task-def.ja.png)
 
-Choose **FARGATE** launch type compatibility and click **Next step**
+**「ステップ 1: 起動タイプの互換性の選択」** で、**FARGATE** 起動タイプを選択し、**「次のステップ」** をクリックします。
 
-In the **Step 2: Configure task and container definition**, enter the **Task Definition Name** (e.g. unicron-task-def) and select **ecsTaskExcutionRole** for both **Task Role** and **Task execution role**. For Network Mode, select **awsvpc**.
+**「ステップ 2: タスクとコンテナの定義の設定」** で、**タスク定義名**（例：unicorn-task-def）を入力し、**タスクロール**と**タスク実行ロール**の両方に **ecsTaskExcutionRole** を選択します。ネットワークモードには、**awsvpc** を選択します。
 
+![configure-task-def](/ecs/configure-task-def.ja.png)
 
-![configure-task-def](/ecs/configure-task-def.png)
+**タスクサイズ**のセクションでは、**タスクメモリ (GB)** と**タスク CPU (vCPU)** に、以下の値を指定します。
 
-In the **Task size** Specify the **Task memory (GB)** and the **Task CPU (vCPU)**
+![task-size](/ecs/task-size.ja.png)
 
-![task-size](/ecs/task-size.png)
+今回は **Amazon EFS** ボリュームをコンテナにマウントするため、コンテナの定義を追加する前に、タスク定義にボリュームを追加する必要があります。
 
-As we are looking to mount the **Amazon EFS** volume to the container, we have to add the volume first to the task definition before adding the container.
+**ボリューム**のセクションまでスクロールし、**「ボリュームの追加」** をクリックします。
 
-Scroll down to **Volumes** section in the task definition configuration, and click **Add volume** button.
+![volumes](/ecs/volumes.ja.png)
 
-![volumes](/ecs/volumes.png)
+**ボリュームの追加**ウィンドウで、ボリュームタイプに **EFS** を選択し、ボリュームの**名前**を指定します（例：wp-content）。
+**ファイルシステム ID** に、前頁で作成した EFS ファイルシステムを選択し、**Encryption in transit** を有効化します。
 
-In the **Add volume** window, select **volume type** as **EFS** and provide a name for the volume (eg. wp-content). In the **File system ID** select the EFS volume that you created earlier, and then enable the **Encrption in transit**.
+![add-volume](/ecs/add-volume.ja.png)
 
-![add-volume](/ecs/add-volume.png)
+**「追加」** をクリックして、ボリュームの追加が完了したら、上にスクロールして、**コンテナの定義**のセクションに戻ります。
 
-Finally press the **Add** button, now scroll up to **Container definition** in the task definition page.
+![add-container](/ecs/add-container.ja.png)
 
+**「コンテナの追加」** をクリックし、**コンテナ名**（例：unicorn-web-container）と**イメージ**（今回は <a href="https://hub.docker.com/_/wordpress" target="_blank">WordPress の 公式 Docker イメージ</a>を使用するため、**wordpress:latest** を指定する必要があります）を入力します。**メモリ制限（MiB）**と**ポートマッピング**を、以下のスクリーンショットのように設定します。
 
+![add-container-details](/ecs/add-container-details.ja.png)
 
-![add-container](/ecs/add-container.png)
+**環境変数**のセクションでは、以下のスクリーンショットのように、前頁で設定した**パラメータストア**に定義されているパラメータを指定します。
 
-Click **Add container** in the Container definitions section, enter **Container name** (e.g. unicorn-web-container) and **Image** (must be **wordpress:latest** - we're using the <a href="https://hub.docker.com/_/wordpress" target="_blank">WordPress docker official image</a>). **Memory Limits** and **Port mappings** should be configured as on the screenshot below.
-
-![add-container-details](/ecs/add-container-details.png)
-
-In the **Environment variables** section, configure parameters from the **Parameter Store**, that you've defined earlier, as on the screenshot below.
-
-![environment-variables](/ecs/environment-variables.png)
+![environment-variables](/ecs/environment-variables.ja.png)
 
 
-| Key              | ValueFrom             | Value                          |
+| Key              | ValueFrom             | 設定値                          |
 | ---------------------- | ---------------- |--------------------------------|
 | WORDPRESS_DB_HOST| ValueFrom           | DB_HOST                  |
 | WORDPRESS_DB_NAME| ValueFrom           | DB_NAME    |
@@ -51,8 +49,9 @@ In the **Environment variables** section, configure parameters from the **Parame
 | WORDPRESS_DB_USER| ValueFrom     | DB_USERNAME          |
 
 
-![storage-logging](/ecs/storage-logging.png)
+![storage-logging](/ecs/storage-logging.ja.png)
 
-In the **STORAGE AND LOGGING**, select the **Mount point** and specify the container path **/var/www/html/wp-content** (this is where wordpress files that you have copied into Amazon EFS filesystem should be available for wordpress to pick them up).
+**ストレージとログ**のセクションで、**マウントポイント**のソースボリュームに、上で追加した **wp-content** ボリュームを指定し、
+コンテナパスに **/var/www/html/wp-content** を指定します（Amazon EFS ファイルシステムにコピーした WordPress のコンテンツファイルを、コンテナからアクセス可能にします）。
 
-In the end click the **Add** button for the container and **Create** on the task definition page.
+最後に、**「追加」** をクリックして、タスク定義の画面に戻り、画面下の **「作成」** をクリックして、タスク定義の追加を完了します。
