@@ -12,9 +12,9 @@ weight = 10
 
 | セキュリテイグループ名    | 説明      								   | VPC            |
 | ---------------------- | ---------------- |----------------------------------|
-| LB-SG                  | Load balancer security group            | 事前準備で自動作成された VPC を選択 （例：TargetVPC）  |
-| ECS-Tasks-SG           | Allow communication between the LB and the ECS Tasks| 事前準備で自動作成された VPC を選択 （例：TargetVPC）  |
-| EFS-SG                 | Allow communication between ECS tasks and EFS       | 事前準備で自動作成された VPC を選択 （例：TargetVPC）  |
+| LB-SG                  | Load balancer security group            | 事前準備で作成した VPC を選択 （例：TargetVPC）  |
+| ECS-Tasks-SG           | Allow communication between the LB and the ECS Tasks| 事前準備で作成した VPC を選択 （例：TargetVPC）  |
+| EFS-SG                 | Allow communication between ECS tasks and EFS       | 事前準備で作成した VPC を選択 （例：TargetVPC）  |
 
 ![create-lb-sg](/ecs/create-lb-sg.ja.png)
 
@@ -28,7 +28,7 @@ weight = 10
 
 #### 1. LB-SG インバウンドルール
 
-HTTP、HTTPS を追加し、ユーザが任意の場所からウェブサイトにアクセスできるようにします。
+HTTP、HTTPS を追加し、ユーザーが任意の場所からウェブサイトにアクセスできるようにします。
 
 | タイプ    | プロトコル      								   | ソース            |
 | ---------------------- | ---------------- |----------------|
@@ -40,7 +40,7 @@ HTTP、HTTPS を追加し、ユーザが任意の場所からウェブサイト�
 
 #### 2. ECS-Tasks-SG インバウンドルール
 
-Elastic Load Balancer と ECS タスク間の通信を許可します。
+Application Load Balancer と ECS タスク間の通信を許可します。
 
 | タイプ    | プロトコル      								   | ソース            |
 | ---------------------- | ---------------- |----------------|
@@ -69,7 +69,7 @@ AWS マネジメントコンソール上部の **「サービス」** から **<
 
 ### データベース用のセキュリテイグループの変更
 
-ECS タスクとターゲットデータベース間の通信を可能にするため、
+Amazon Elastic Container Service (ECS) タスクとターゲットデータベース間の通信を可能にするため、
 ECS-Tasks-SG からポート3306 (MySQL) に対するトラフィックを許可するよう、
 データベース用のセキュリティグループ (DB-SG) を変更します。
 

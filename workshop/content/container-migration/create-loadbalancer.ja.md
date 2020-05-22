@@ -1,5 +1,5 @@
 +++
-title = "AWS Elastic Load Balancer の作成"
+title = "Elastic Load Balancing の設定"
 weight = 35
 +++
 
