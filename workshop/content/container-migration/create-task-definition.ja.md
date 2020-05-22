@@ -3,7 +3,7 @@ title = "Amazon ECS タスク定義の作成"
 weight = 50
 +++
 
-マネジメントコンソール上部の **「サービス」** から **<a href="https://console.aws.amazon.com/ecs/home?region=us-west-2" target="_blank">Elastic Container Service</a>** のページを開き、左のメニューから **「タスク定義」** を選択します。タスク定義の一覧が表示されたら、**「新しいタスク定義の作成」** をクリックします。
+マネジメントコンソール上部の **「サービス」** から **<a href="https://console.aws.amazon.com/ecs/home?region=us-west-2" target="_blank">Elastic Container Service (ECS)</a>** のページを開き、左のメニューから **「タスク定義」** を選択します。タスク定義の一覧が表示されたら、**「新しいタスク定義の作成」** をクリックします。
 
 ![create-task-def](/ecs/create-task-def.ja.png)
 
@@ -17,7 +17,7 @@ weight = 50
 
 ![task-size](/ecs/task-size.ja.png)
 
-今回は **Amazon EFS** ボリュームをコンテナにマウントするため、コンテナの定義を追加する前に、タスク定義にボリュームを追加する必要があります。
+今回は **Amazon Elastic File System (EFS)** ボリュームをコンテナにマウントするため、コンテナの定義を追加する前に、タスク定義にボリュームを追加する必要があります。
 
 **ボリューム**のセクションまでスクロールし、**「ボリュームの追加」** をクリックします。
 

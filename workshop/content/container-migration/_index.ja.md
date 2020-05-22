@@ -16,7 +16,7 @@ pre = "<b>3. </b>"
 以下の起動タイプを選択して、ECS クラスターを実行することができます：
 
 - コンテナにサーバーレスコンピューティングを提供する Fargate 起動タイプ
-- ユーザが管理する Amazon EC2 インスタンスで、クラスターを実行する EC2 起動タイプ
+- ユーザーが管理する Amazon EC2 インスタンスで、クラスターを実行する EC2 起動タイプ
   
 本ハンズオンでは、**Fargate** 起動タイプを使用して、プロビジョニング、スケーリング、バックエンドインフラストラクチャの管理やセキュリティの確保など、煩雑かつ差別化が難しいタスクを行うことなく、アプリケーションを実行します。
 
@@ -44,7 +44,7 @@ Web アプリケーションをコンテナに移行するには、以下の手�
 
 3. [**AWS Systems Manager** パラメータストアへのデータベース変数の追加]({{< ref "/configure-parameters-store.ja.md" >}})
 
-4. [**AWS Elastic Load Balancer** の作成]({{< ref "/create-loadbalancer.ja.md" >}})
+4. [**Elastic Load Balancing** の設定]({{< ref "/create-loadbalancer.ja.md" >}})
 
 5. [**Amazon Elastic Container Service (ECS)** クラスターの作成]({{< ref "/create-ecs-cluster.ja.md" >}})
 

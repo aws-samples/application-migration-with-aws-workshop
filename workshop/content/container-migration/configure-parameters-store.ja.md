@@ -6,7 +6,7 @@ weight = 30
 本ハンズオンでは、 Wordpress の公式 Docker イメージと RDS データベースを使用するため、
 Wordpress の設定を行う際にデータベースの認証情報、データベース名や、サーバーのホスト名を提供する必要があります。
 
-これを実現するための最良の方法は、上記のパラメータを Docker イメージや ECS タスク定義の中に保持するのではなく、
+これを実現するための最良の方法は、上記のパラメータを Docker イメージや Amazon Elastic Container Service (ECS) タスク定義の中に保持するのではなく、
 **AWS Systems Manager** パラメータストアで管理することです。
 
 マネジメントコンソール上部の **「サービス」** から **<a href="https://console.aws.amazon.com/systems-manager/home?region=us-west-2" target="_blank">Systems Manager</a>** のページを開き、左のメニューから **「パラメータストア」** を選択します。
@@ -21,5 +21,5 @@ Wordpress の設定を行う際にデータベースの認証情報、データ�
 | ---------------------- | --------------- |--------------------------------|
 | DB_HOST                | 文字列           | データベース移行のセクションで作成した <br>RDS インスタンスのエンドポイント                   |
 | DB_NAME                | 文字列           | ターゲットデータベース名（例： wordpress-db） |
-| DB_USERNAME            | 文字列           | RDS インスタンス作成時に設定したユーザ名      |
+| DB_USERNAME            | 文字列           | RDS インスタンス作成時に設定したユーザー名      |
 | DB_PASSWORD            | 安全な文字列      | RDS インスタンス作成時に設定したパスワード    |

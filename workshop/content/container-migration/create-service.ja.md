@@ -3,7 +3,7 @@ title = "Amazon ECS サービスの作成"
 weight = 60
 +++
 
-**Amazon ECS タスク定義**の作成が完了したら、いよいよ **Amazon ECS サービス**の作成に移ります。
+**Amazon Elastic Container Service (ECS) タスク定義**の作成が完了したら、いよいよ **Amazon ECS サービス**の作成に移ります。
 
 マネジメントコンソール上部の **「サービス」** から **<a href="https://console.aws.amazon.com/ecs/home?region=us-west-2" target="_blank">Elastic Container Service</a>** のページを開き、左のメニューから **「クラスター」** を選択します。前頁で作成した **unicorn-cluster** を選択し、**「サービス」** タブの **「作成」** ボタンをクリックします。
 
