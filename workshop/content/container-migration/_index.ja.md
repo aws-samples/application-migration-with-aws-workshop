@@ -34,6 +34,11 @@ pre = "<b>3. </b>"
 
 Amazon ECS <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs_services.html" target="_blank">**サービス**</a>を使用すると、タスク定義で指定した数のインスタンスを、Amazon ECS クラスター内で同時に実行し、維持することができます。タスクが何らかの理由で失敗または停止した場合、Amazon ECS サービススケジューラは、タスク定義の別のインスタンスを起動してそれに置き換え、サービスの作成時に指定したスケジュール戦略に基づいて、必要数のタスクを維持します。
 
+**AWS Fargate** の詳細については、以下の動画をご覧ください：
+<center>
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/IEvLkwdFgnU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</center>
+
 #### Web アプリケーションのコンテナへの移行
 
 Web アプリケーションをコンテナに移行するには、以下の手順を実行します：

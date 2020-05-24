@@ -26,6 +26,9 @@ AWS への移行の場合、CloudEndure Migration は**無料**で利用する�
 <a href="https://console.cloudendure.com/#/register/register">登録ページ</a>にアクセスしてアカウントを作成し、数分で AWS への移行を開始しましょう。
 {{% /notice %}}  
 
+**CloudEndure Migration** の詳細については、以下の動画をご覧ください：
+<center><iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/kIJ29q-Jsyo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center>
+
 本セクションでは、以下の手順に従って、CloudEndure Migration を使用した Web サーバーの Re-Host（リフトアンドシフト) を実行します：
 
 1. [CloudEndure の設定]({{< ref "/CE-Configuration.ja.md" >}})  

@@ -1,6 +1,6 @@
 +++
-title = "Migration Hub を有効化"
-weight = 30
+title = "Migration Hub の有効化"
+weight = 50
 +++
 
 #### AWS Migration Hub
