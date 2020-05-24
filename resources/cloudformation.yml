@@ -22,10 +22,14 @@ Mappings:
       CIDR: "10.0.0.0/24"
     Public1:
       CIDR: "10.0.1.0/24"
-    Private0:
+    Private00:
       CIDR: "10.0.100.0/24"
-    Private1:
+    Private10:
+      CIDR: "10.0.200.0/24"
+    Private01:
       CIDR: "10.0.101.0/24"
+    Private11:
+      CIDR: "10.0.201.0/24"
 
   AZRegions:
     us-east-1:
@@ -442,7 +446,7 @@ Resources:
               - '-public-'
               - !Select [ 1, !FindInMap [ "AZRegions", !Ref "AWS::Region", "AZs" ] ]
 
-  PrivateSubnet0:
+  PrivateSubnet00:
     Type: "AWS::EC2::Subnet"
     Properties:
       VpcId:
@@ -454,7 +458,7 @@ Resources:
       CidrBlock:
         Fn::FindInMap:
           - "SubnetConfig"
-          - "Private0"
+          - "Private00"
           - "CIDR"
       Tags:
         - Key: "Network"
@@ -465,8 +469,34 @@ Resources:
             - - !Ref "TargetVPCName"
               - '-private-'
               - !Select [ 0, !FindInMap [ "AZRegions", !Ref "AWS::Region", "AZs" ] ]
+              - '-web'
 
-  PrivateSubnet1:
+  PrivateSubnet01:
+    Type: "AWS::EC2::Subnet"
+    Properties:
+      VpcId:
+        Ref: "TargetVPC"
+      AvailabilityZone:
+        Fn::Sub:
+          - "${AWS::Region}${AZ}"
+          - AZ: !Select [ 0, !FindInMap [ "AZRegions", !Ref "AWS::Region", "AZs" ] ]
+      CidrBlock:
+        Fn::FindInMap:
+          - "SubnetConfig"
+          - "Private01"
+          - "CIDR"
+      Tags:
+        - Key: "Network"
+          Value: "Private"
+        - Key: "Name"
+          Value: !Join
+            - ''
+            - - !Ref "TargetVPCName"
+              - '-private-'
+              - !Select [ 0, !FindInMap [ "AZRegions", !Ref "AWS::Region", "AZs" ] ]
+              - '-db'              
+
+  PrivateSubnet10:
     Type: "AWS::EC2::Subnet"
     Properties:
       VpcId:
@@ -478,7 +508,7 @@ Resources:
       CidrBlock:
         Fn::FindInMap:
           - "SubnetConfig"
-          - "Private1"
+          - "Private10"
           - "CIDR"
       Tags:
         - Key: "Network"
@@ -489,6 +519,32 @@ Resources:
             - - !Ref "TargetVPCName"
               - '-private-'
               - !Select [ 1, !FindInMap [ "AZRegions", !Ref "AWS::Region", "AZs" ] ]
+              - '-web'              
+
+  PrivateSubnet11:
+    Type: "AWS::EC2::Subnet"
+    Properties:
+      VpcId:
+        Ref: "TargetVPC"
+      AvailabilityZone:
+        Fn::Sub:
+          - "${AWS::Region}${AZ}"
+          - AZ: !Select [ 1, !FindInMap [ "AZRegions", !Ref "AWS::Region", "AZs" ] ]
+      CidrBlock:
+        Fn::FindInMap:
+          - "SubnetConfig"
+          - "Private11"
+          - "CIDR"
+      Tags:
+        - Key: "Network"
+          Value: "Private"
+        - Key: "Name"
+          Value: !Join
+            - ''
+            - - !Ref "TargetVPCName"
+              - '-private-'
+              - !Select [ 1, !FindInMap [ "AZRegions", !Ref "AWS::Region", "AZs" ] ]
+              - '-db'              
 
   InternetGateway:
     Type: "AWS::EC2::InternetGateway"
@@ -702,21 +758,39 @@ Resources:
       NatGatewayId:
         Ref: "NATGateway1"
 
-  PrivateSubnetRouteTableAssociation0:
+  PrivateSubnetRouteTableAssociation00:
     Type: "AWS::EC2::SubnetRouteTableAssociation"
     Properties:
       SubnetId:
-        Ref: "PrivateSubnet0"
+        Ref: "PrivateSubnet00"
       RouteTableId:
         Ref: "PrivateRouteTable0"
 
-  PrivateSubnetRouteTableAssociation1:
+  PrivateSubnetRouteTableAssociation01:
     Type: "AWS::EC2::SubnetRouteTableAssociation"
     Properties:
       SubnetId:
-        Ref: "PrivateSubnet1"
+        Ref: "PrivateSubnet01"
+      RouteTableId:
+        Ref: "PrivateRouteTable0"
+
+
+  PrivateSubnetRouteTableAssociation10:
+    Type: "AWS::EC2::SubnetRouteTableAssociation"
+    Properties:
+      SubnetId:
+        Ref: "PrivateSubnet10"
       RouteTableId:
         Ref: "PrivateRouteTable1"
+
+  PrivateSubnetRouteTableAssociation11:
+    Type: "AWS::EC2::SubnetRouteTableAssociation"
+    Properties:
+      SubnetId:
+        Ref: "PrivateSubnet11"
+      RouteTableId:
+        Ref: "PrivateRouteTable1"
+
 
   # CloudEndure Migration IAM User
   CloudEndureUser:
@@ -752,6 +826,40 @@ Resources:
       - CloudEndureUser
     Properties:
       UserName: CloudEndureUser
+
+  ecsTaskExecutionRole:
+    Type: 'AWS::IAM::Role'
+    Properties:
+      Path: /
+      RoleName: ecsTaskExecutionRole
+      AssumeRolePolicyDocument:
+        Version: 2012-10-17
+        Statement:
+          - Effect: Allow
+            Principal:
+              Service:
+                - ecs-tasks.amazonaws.com
+            Action:
+              - 'sts:AssumeRole'
+      ManagedPolicyArns:
+        - arn:aws:iam::aws:policy/service-role/AmazonECSTaskExecutionRolePolicy
+      Policies:
+        - PolicyName: taskPolicy
+          PolicyDocument:
+            Version: '2012-10-17'
+            Statement:
+              - Effect: Allow
+                Action: ssm:DescribeParameters
+                Resource: '*'
+              - Effect: Allow
+                Action: ssm:GetParameters
+                Resource: '*'
+              - Effect: Allow
+                Action: kms:Decrypt
+                Resource: '*'
+              - Effect: Allow
+                Action: elasticfilesystem:*
+                Resource: '*'
 
 Outputs:
   WebServerUsername:

@@ -35,6 +35,19 @@ When the Cutover is finished and **CloudEndure Migration** has created a running
     - DB_HOST - Endpoint of the created RDS instance
     - DB_USER - the username configured in the **Database Migration** step
     - DB_PASSWORD - the password configured in the **Database Migration** step
+    
+    Also add the following two lines, replacing **TARGET_WEBSERVER_PUBLIC_DNS** with your Target Webserver EC2 **Public DNS (IPv4)**, to make sure links in your wordpress site point to the new webserver.
+              
+    ```
+    define('WP_SITEURL', 'http://TARGET_WEBSERVER_PUBLIC_DNS');        
+    define('WP_HOME',    'http://TARGET_WEBSERVER_PUBLIC_DNS');
+    ```
+    
+    for example
+    ```
+    define('WP_SITEURL', 'http://ec2-34-208-233-184.us-west-2.compute.amazonaws.com');
+    define('WP_HOME',    'http://ec2-34-208-233-184.us-west-2.compute.amazonaws.com');
+   ```
 
     {{% notice tip %}}
 To edit this file, you can use for example <a href="https://www.howtoforge.com/linux-nano-command/" target="_blank">nano</a> or <a href="https://www.washington.edu/computing/unix/vi.html" target="_blank">vi</a>.

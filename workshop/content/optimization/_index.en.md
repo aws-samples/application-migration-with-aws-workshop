@@ -1,14 +1,19 @@
 +++
 title = "Optimization"
-weight = 30
+weight = 40
 pre = "<b>4. </b>"
 
 +++
 
 
-Congratulation's, since you're here, you've managed to migrate (re-host the Webserver and re-platform the Database) an e-commerce application into AWS and can now look for ways to optimize the architecture to make it even more secure, highly-performant, resilient and so that is uses AWS infrastructure efficiently!
+Congratulation's, since you're here, you've managed to migrate an e-commerce application into AWS and can now look for ways to optimize the architecture to make it even more secure, highly-performant, resilient and so that is uses AWS infrastructure efficiently!
 
 Below you will find ideas about what you can do taking into account <a href="https://aws.amazon.com/architecture/well-architected/" target="_blank">5 AWS Well-Architected Pillars</a> - Operational Excellence, Security, Reliability, Performance Efficiency  and Cost Optimization.
+
+You can also learn more about **AWS Well Architected** by watching the video below.
+<center>
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/MfxF-FYEFjY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</center>
 
 ### Operational Excellence
 

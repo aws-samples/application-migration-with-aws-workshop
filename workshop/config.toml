@@ -3,7 +3,7 @@ CanonifyURLs=true
 languageCode = "en-US"
 defaultContentLanguage = "en"
 
-title = "Application Migration Workshop"
+title = "AWS Application Migration Workshop"
 theme = "learn"
 metaDataFormat = "yaml"
 defaultContentLanguageInSubdir= true
@@ -18,8 +18,8 @@ unsafe= true
 
 [params]
   editURL = "https://github.com/aws-samples/application-migration-with-aws-workshop/edit/master/workshop/content/"
-  description = "Application Migration Workshop"
-  author = "Ahmed Omran & Lech Migdal"
+  description = "AWS Application Migration Workshop"
+  author = "Ahmed Omran, Lech Migdal"
   disableBreadcrumb = false
   disableNextPrev = false
   themeVariant = "aws"
@@ -60,7 +60,7 @@ hrefTargetBlank = false
 
 [Languages]
 [Languages.en]
-title = "Application Migration Workshop"
+title = "AWS Application Migration Workshop"
 weight = 1
 languageName = "English"
 
