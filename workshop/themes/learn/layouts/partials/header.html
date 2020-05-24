@@ -4,9 +4,11 @@
 <head>
   <meta charset="utf-8">
   <meta property="og:title" content="{{ .Site.Title }}" />
+  <meta property="og:description" content="Learn in 2 hours how to migrate a three-tier application to AWS with CloudEndure Migration and AWS Database Migration Service. Then modernize and optimize the architecture with AWS services. "/>
   <meta property="og:type" content="website" />
   <meta property="og:url" content="{{ .Params.baseURL }}" />
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta property="og:image" content="https://application-migration-with-aws-workshop.s3-us-west-2.amazonaws.com/static/aws_app_migration_workshop_linkedin_image.png"/>
   {{ .Hugo.Generator }}
   {{ partial "meta.html" . }}
   {{ partial "favicon.html" . }}
@@ -88,7 +90,7 @@
         {{ end }}
         <div id="body-inner">
           <h1>{{.Title}}</h1>
-          
+
           {{define "breadcrumb"}}
           {{$parent := .page.Parent }}
           {{ if $parent }}

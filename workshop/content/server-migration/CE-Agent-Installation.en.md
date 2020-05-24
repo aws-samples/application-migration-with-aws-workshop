@@ -44,25 +44,3 @@ Commands for installing agent can also be obtained from the **CloudEndure** cons
 
     ![CE-server-progress](/ce/CE-server-progress.png)
 
-
-#### Install Agent on the Windows Server (optional)
-
-This section describes how to replicate a Windows Server with CloudEndure Migration. Skip it if your event scenario doesn't include Windows Server replication.
-
-1. Get the source Windows Server information
-
-    For **self-paced lab** - it's described on the **Output** section of the **ApplicationMigrationWorkshop** <a href="https://us-west-2.console.aws.amazon.com/cloudformation/home?region=us-west-2#/" target="_blank">CloudFormation Template</a>.
-
-    For **AWS Event** - it's described at **Windows Server IP**, **Username** and **Password** on the <a href="https://dashboard.eventengine.run/dashboard" target="_blank">Team Dashboard</a>.
-
-3. Connect to the **Windows Server** using Remote Desktop Protocol (RDP) application.
-
-    For more information on how to use RDP, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/connecting_to_windows_instance.html" target="_blank">this article</a>.
-
-4. Run the commands copied from **How to Add Machines** (Windows section) to download and install the agent.
-
-    {{% notice tip %}}
-Commands for installing the agent can also be obtained from the **CloudEndure** console **Machines -> MACHINE ACTIONS -> Add Machines**
-{{% /notice %}}
-
-5. Once the agent is installed, a MGMT-Host machine will show up in the **CloudEndure console** -> **Machines** tab.
