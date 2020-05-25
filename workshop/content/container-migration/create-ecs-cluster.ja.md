@@ -12,7 +12,7 @@ weight = 40
 
 ![create-cluster](/ecs/create-cluster.ja.png)
 
-「ステップ 2: クラスターの設定」では、クラスター名（例：unicorn-cluster）を入力し、**「Container Insights を有効にする」** ボックスにチェックを入れることで、Amazon CloudWatch よりも詳細なメトリクスを提供する **CloudWatch Container Insights** を有効にします。
+「ステップ 2: クラスターの設定」では、**クラスター名**（例：unicorn-cluster）を入力し、**「Container Insights を有効にする」** ボックスにチェックを入れることで、Amazon CloudWatch よりも詳細なメトリクスを提供する **CloudWatch Container Insights** を有効にします。
 
 ![configure-cluster](/ecs/configure-cluster.ja.png)
 

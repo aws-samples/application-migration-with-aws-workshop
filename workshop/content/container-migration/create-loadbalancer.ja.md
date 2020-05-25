@@ -9,7 +9,7 @@ weight = 35
 
 ![create-loadbalancer](/ecs/create-lb.ja.png)
 
-**「手順 1: ロードバランサーの設定」** では、**名前**（例: unicorn-lb）を入力し、使用する **VPC**（例: TargetVPC）を選択したうえで、以下のように少なくとも2つのアベイラビリティゾーンで、パブリックサブネット (例: TargetVPC-public-a, TargetVPC-public-b) を選択します：
+**「手順 1: ロードバランサーの設定」** では、**名前**（例: unicorn-lb）を入力し、使用する **VPC**（例: TargetVPC）を選択したうえで、以下のように少なくとも2つのアベイラビリティゾーンで、**パブリックサブネット** (例: TargetVPC-public-a, TargetVPC-public-b) を選択します：
 
 ![configure-loadbalancer](/ecs/configure-lb.ja.png)
 

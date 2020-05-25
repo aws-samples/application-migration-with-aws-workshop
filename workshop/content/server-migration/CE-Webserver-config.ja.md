@@ -12,7 +12,7 @@ Web アプリケーションが、データベース移行のセクションで�
 1. **Web サーバーのセキュリティグループ**を更新します。
 
     a. AWS マネジメントコンソール上部の **「サービス」** から **<a href="https://console.aws.amazon.com/ec2/v2/home?region=us-west-2" target="_blank">EC2</a>** のページを開き、**Webserver** インスタンスを選択します。  
-    b. **パブリック DNS (IPv4)** と **プライベート IP** の値を、テキストエディタにコピーしておきます。
+    b. **パブリック DNS (IPv4)** と **プライベート IP** の値を、テキストエディタにコピーしておきます。  
     c. インスタンスに割り当てられている**セキュリティグループ**名をクリックします。
 
     ![Webserver details](/ce/webserver_details.ja.png)
@@ -61,7 +61,7 @@ RDS インスタンスに DB-SG とは別のセキュリティグループ名を
     Web サーバーのパブリック DNS（IPv4）名をブラウザで開き、Unicorn ストアが表示されることを確認してください。
 
 アプリケーションが正常に動作していれば、本セクションは完了です！  
-[最適化]({{< ref "../optimization/_index.ja.md" >}})のフェーズに進みましょう。
+[コンテナへの移行]({{< ref "../container-migration/_index.ja.md" >}})に進みましょう。
 
 ## トラブルシューティング
 

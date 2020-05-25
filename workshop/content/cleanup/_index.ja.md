@@ -14,11 +14,11 @@ pre = "<b>5. </b>"
 
 2. マネジメントコンソール上部の **「サービス」** から **<a href="https://console.aws.amazon.com/rds/home?region=us-west-2" target="_blank">Amazon RDS</a>** のページを開き、左のメニューから **「データベース」** を選択します：
 
-   - **データベースの移行**で作成した RDS インスタンス（例：database-1）を選択し、**「変更」** ボタンをクリックします。
+   - **データベースの移行**で作成した **RDS インスタンス**（例：database-1）を選択し、**「変更」** ボタンをクリックします。
    画面の一番下までスクロールし、**「削除保護の有効化」** のチェックを外し、**「次へ」** を選択します。
     ![RDS Remove Deletion Protection](/cleanup/db-remove-deletion-protection.ja.png)
    - **変更のスケジュール**で **「すぐに適用」** にチェックを入れ、**「DB インスタンスの変更」** ボタンをクリックします。
-   - データベースの一覧で、再度同じインスタンスを選択し、**「アクション」 → 「削除」** を選択します。
+   - データベースの一覧で、再度**同じインスタンス**を選択し、**「アクション」 → 「削除」** を選択します。
    **「最終スナップショットを作成しますか？」** と **「Retain Automated backups」** のチェックを外し、RDS インスタンスを削除します。
 
     ![RDS Confirm Deletion](/cleanup/db-delete-confirm.ja.png)
@@ -49,4 +49,6 @@ pre = "<b>5. </b>"
 7. マネジメントコンソール上部の **「サービス」** から **<a href="https://console.aws.amazon.com/cloudformation/home?region=us-west-2" target="_blank">CloudFormation</a>** のページを開き、以下を実行します：
    - **ApplicationMigrationWorkshop** スタックを削除します。
 
-**ApplicationMigrationWorkshop** スタックの削除が完了したら、AWS アカウントを再度確認し、**本ハンズオンで作成された残りのリソースをすべて削除します。**
+**ApplicationMigrationWorkshop** スタックの削除が完了したら、AWS アカウントを再度確認し、**本ハンズオンで作成されたリソースがすべて削除されていること**を確認します。
+
+最後に、本ハンズオンについての<a href="https://amazonmr.au1.qualtrics.com/jfe/form/SV_0dfrnubGKXavgR7">匿名のアンケート</a>にご協力いただければ幸いです。

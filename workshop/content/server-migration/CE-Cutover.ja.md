@@ -25,7 +25,7 @@ weight = 40
 
 2. カットオーバーを実行します。
    
-    **Machines** 画面でカットオーバーを実行するマシンを選択し、画面右上の **LAUNCH 1 TARGET MACHINE** ボタンをクリックします。確認用のポップアップで **Cutover Mode** を選択し、**CONTINUE** をクリックします。
+    **Machines** 画面でカットオーバーを実行する**マシン**を選択し、画面右上の **LAUNCH 1 TARGET MACHINE** ボタンをクリックします。確認用のポップアップで **Cutover Mode** を選択し、**CONTINUE** をクリックします。
 
     ![CE-Cutover](/ce/CE-Cutover.png)
 
@@ -51,7 +51,7 @@ weight = 40
 
     どちらのインスタンスも CloudEndure が管理しており、ユーザーがアクセスすることはできません。
 
-    カットオーバーが完了すると、リストに新しい EC2 インスタンスが表示されます - これはCloudEndure によって作成されたターゲットの Web サーバーです。後続のセクションで必要になるため、パブリック DNS (IPv4) とプライベートIP の値を、テキストエディタにコピーしておいてください。
+    カットオーバーが完了すると、リストに新しい EC2 インスタンスが表示されます - これはCloudEndure によって作成されたターゲットの Web サーバーです。後続のセクションで必要になるため、**パブリック DNS (IPv4)** と**プライベート IP** の値を、テキストエディタにコピーしておいてください。
 
     {{% notice tip %}}
 CloudEndure が管理するインスタンスや、その目的、ネットワーク要件の詳細は、<a href="https://docs.cloudendure.com/#Preparing_Your_Environments/Network_Requirements/Network_Requirements.htm" target="_blank">CloudEndure のドキュメント</a>を参照してください。

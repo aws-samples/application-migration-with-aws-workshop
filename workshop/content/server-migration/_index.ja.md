@@ -7,7 +7,7 @@ pre = "<b>2. </b>"
 
 #### CloudEndure Migration の概要
 
-<a href="https://aws.amazon.com/cloudendure-migration/" target="_blank">CloudEndure Migration</a> は、企業の最も複雑なワークロードにおいても、中断やデータの損失なしに Amazon Web Services (AWS) への移行を可能にします。継続的なブロックレベルのレプリケーション、自動化されたマシン変換、アプリケーションスタックのオーケストレーションにより、CloudEndure Migration は移行プロセスを簡素化し、ヒューマンエラーの可能性を低減します。
+<a href="https://aws.amazon.com/cloudendure-migration/" target="_blank">CloudEndure Migration</a> は、企業の最も複雑なワークロードにおいても、中断やデータの損失なしにアマゾン ウェブ サービス (AWS) への移行を可能にします。継続的なブロックレベルのレプリケーション、自動化されたマシン変換、アプリケーションスタックのオーケストレーションにより、CloudEndure Migration は移行プロセスを簡素化し、ヒューマンエラーの可能性を低減します。
 
 オンプレミスから AWS への移行であっても、AWS 内のリージョン間での移行であっても、**CloudEndure Migration** は、急速に変化する今日のデジタルエコシステムで成功するために必要な、柔軟性の提供とセキュリティ管理を実現します。
 
@@ -23,7 +23,7 @@ CloudEndure Live Migration の主なメリットは以下の通りです：
 
 {{% notice note %}}
 AWS への移行の場合、CloudEndure Migration は**無料**で利用することができます。  
-<a href="https://console.cloudendure.com/#/register/register">登録ページ</a>にアクセスしてアカウントを作成し、数分で AWS への移行を開始しましょう。
+<a href="https://console.cloudendure.com/#/register/register">登録ページ</a>にアクセスしてアカウントを作成し、いますぐ AWS への移行を開始しましょう。
 {{% /notice %}}  
 
 **CloudEndure Migration** の詳細については、以下の動画をご覧ください：

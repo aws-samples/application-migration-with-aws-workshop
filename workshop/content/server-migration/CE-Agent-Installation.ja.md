@@ -18,7 +18,7 @@ weight = 20
 
     ![Centos-pem](/ce/Centos-pem.png)
 
-2. Web サーバーの SSH キー（.pem）をダウンロードして、ローカルに保存します（例： webserver.pem）
+2. Web サーバーの SSH キー（.pem）をダウンロードして、ローカルに保存します（例： webserver.pem）。
 
     Microsoft Windows をお使いの場合は、PuttyGen を使って SSH キー（.pem）を .ppk に変換してから、 Putty を使って接続してください（詳細は<a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/putty.html" target="_blank">こちら</a>をご確認ください）。
     
@@ -28,7 +28,7 @@ weight = 20
     - Microsoft Windows をお使いの場合は<a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/putty.html" target="_blank">こちら</a>
     - Mac OS をお使いの場合は<a href="https://docs.aws.amazon.com/quickstarts/latest/vmlaunch/step-2-connect-to-instance.html#sshclient" target="_blank">こちら</a>
 
-4. CloudEndure コンソールの **How to Add Machines** からコピーしたコマンドを実行して、エージェントのダウンロードとインストールを実行します：
+4. CloudEndure コンソールの **How to Add Machines** からコピーしたコマンドを実行して、エージェントのダウンロードとインストールを実行します。
 
     ![CloudEndure Agent installation example output](/ce/CE-Agent-install-detailed.ja.png)
 
@@ -57,7 +57,7 @@ weight = 20
 
     RDP での接続の詳細については、<a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/connecting_to_windows_instance.html" target="_blank">こちらの記事</a>を参照ください。
 
-3. CloudEndure コンソールの **How to Add Machines**（Windows セクション）からコピーしたコマンドを実行して、エージェントのダウンロードとインストールを実行します：
+3. CloudEndure コンソールの **How to Add Machines**（Windows セクション）からコピーしたコマンドを実行して、エージェントのダウンロードとインストールを実行します。
 
     {{% notice tip %}}
 エージェントをインストールするコマンドは、CloudEndure コンソール の **Machines → MACHINE ACTIONS → Add Machines** からも取得できます。

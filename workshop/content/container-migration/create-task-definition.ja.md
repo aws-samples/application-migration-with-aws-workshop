@@ -24,7 +24,7 @@ weight = 50
 ![volumes](/ecs/volumes.ja.png)
 
 **ボリュームの追加**ウィンドウで、ボリュームタイプに **EFS** を選択し、ボリュームの**名前**を指定します（例：wp-content）。
-**ファイルシステム ID** に、前頁で作成した EFS ファイルシステムを選択し、**Encryption in transit** を有効化します。
+**ファイルシステム ID** に、前頁で作成した **EFS ファイルシステム**を選択し、**Encryption in transit** を有効化します。
 
 ![add-volume](/ecs/add-volume.ja.png)
 

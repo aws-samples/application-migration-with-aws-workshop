@@ -32,7 +32,7 @@ weight = 20
     ![replication-instance-conf](/db-mig/replication-instance-conf.ja.png)
 
 
-    **「セキュリティとネットワークの詳細設定」** で、前頁で作成したレプリケーションサブネットグループと、レプリケーションインスタンスのセキュリティグループを必ず指定してください。
+    **「セキュリティとネットワークの詳細設定」** で、前頁で作成した**レプリケーションサブネットグループ**と、レプリケーションインスタンスの**セキュリティグループ**を必ず指定してください。
 
     ![Replication-instance-conf](/db-mig/advanced-security.ja.png)
 

@@ -50,7 +50,7 @@ AWS 資格情報を保存すると、自動的に **Setup & Info → REPLICATION
 
 ![CE-Replication-setting](/ce/CE-Replication-setting.png)
 
-1. REPLICATION SETTINGS 画面の設定を、以下の表の内容に合わせて更新してください：
+1. REPLICATION SETTINGS 画面の設定を、以下の表の内容に合わせて更新してください。
 
     | パラメータ                                   | 入力値                                                        |
     | ------------------------------------------ | ------------------------------------------------------------ |
