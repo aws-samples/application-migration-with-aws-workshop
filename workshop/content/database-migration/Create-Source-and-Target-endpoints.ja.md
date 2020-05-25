@@ -20,7 +20,7 @@ weight = 30
     | サーバー名            | **自身の環境**でハンズオンを実施している場合は、<a href="https://us-west-2.console.aws.amazon.com/cloudformation/home?region=us-west-2#/" target="_blank">CloudFormation スタック</a>（**ApplicationMigrationWorkshop**）の**出力**セクションに表示されている **DBServerDNSName** の値を入力。<br> **AWS 主催のイベント**の場合は、Event Engine の Team Dashboard に表示されている **Database Server IP** を入力。   |
     | ポート                | 3306                                           |
     | SSL モード            | none                                           |
-    | ユーザ名              | wordpress-user                                 |
+    | ユーザー名            | wordpress-user                                 |
     | パスワード            | AWSRocksSince2006                                   |
 
     ![source-endpoint](/db-mig/source-endpoint.ja.png)
@@ -47,7 +47,7 @@ weight = 30
     | サーバー名                | RDS インスタンスの DNS エンドポイント（自動入力）                             |
     | ポート                   | 3306（自動入力）                                            |
     | SSL モード               | none                                                  |
-    | ユーザ名                 | 自動入力                                                |
+    | ユーザー名                | 自動入力                                                |
     | パスワード               | RDS インスタンスを作成した際に指定したパスワードを入力 |
 
 

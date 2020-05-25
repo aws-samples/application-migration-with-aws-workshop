@@ -25,7 +25,7 @@ MySQL データベース から **AWS DMS** で継続的なレプリケーショ
     - Microsoft Windows をお使いの場合は<a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/putty.html" target="_blank">こちら</a>
     - Mac OS をお使いの場合は<a href="https://docs.aws.amazon.com/quickstarts/latest/vmlaunch/step-2-connect-to-instance.html#sshclient" target="_blank">こちら</a>
 
-2. **wordpress-user** データベースユーザに追加の権限を付与します。
+2. **wordpress-user** データベースユーザーに追加の権限を付与します。
 
     データベースサーバーで、以下のコマンドを実行します：
 

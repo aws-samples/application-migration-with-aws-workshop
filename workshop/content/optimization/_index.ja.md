@@ -29,7 +29,7 @@ pre = "<b>4. </b>"
 
 ### 信頼性
 - <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-application-load-balancer.html" target="_blank">**Application Load Balancer**</a> を構成し、Web サーバーのトラフィックを複数のアベイラビリティゾーンに分散させます。
-- <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/GettingStartedTutorial.html" target="_blank">**Amazon EC2 の Auto Scaling グループ**</a>を設定し、Web サーバーのインスタンスがダウンした場合（自動ヒーリング）や、ユーザのトラフィックが変化した場合にも対応できるようにします。
+- <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/GettingStartedTutorial.html" target="_blank">**Amazon EC2 の Auto Scaling グループ**</a>を設定し、Web サーバーのインスタンスがダウンした場合（自動ヒーリング）や、ユーザーのトラフィックが変化した場合にも対応できるようにします。
 - 低遅延かつ高い転送速度で、世界中の顧客にデータを安全に配信できる、高速なコンテンツ配信ネットワーク <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-working-with.html" target="_blank">**Amazon CloudFront**</a> を利用し、
 <a href="https://aws.amazon.com/shield/" target="_blank">**AWS Shield**</a> と統合することで DDoS 攻撃を軽減します。
 
