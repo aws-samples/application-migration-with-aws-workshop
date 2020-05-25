@@ -14,14 +14,14 @@ AWS が主催するイベント（re:Invent、Gameday、ワークショップ、
 
 - <a href="https://dashboard.eventengine.run/" target="_blank">https://dashboard.eventengine.run/</a> にアクセスします
 
-- イベントの主催者から、チームまたは各個人に渡された12桁のハッシュ値を入力してください
+- イベント主催者から渡された12桁のハッシュ値を入力してください
 
 
   ![dashboard-hash](/intro/dashboard-hash.png)
 
 
 
-### 移行元（ソース）環境へのアクセス
+### 移行元環境（ソース）へのアクセス
 
 **Migration GameDay** モジュールの、**Outputs** セクション配下に、ソース環境に関する詳細が表示されます：
 
@@ -47,4 +47,4 @@ AWS が主催するイベント（re:Invent、Gameday、ワークショップ、
 <a href="https://aws.amazon.com/cli/" target="_blank">AWS Command Line Interface (CLI)</a> を使用する場合は、ポップアップウィンドウに表示される認証情報を利用してください。なお、この認証情報は CloudEndure で使用するものとは異なりますので、CloudEndure コンソールの AWS Credentials タブには入力しないで下さい。
 {{% /notice %}}
 
-以上で環境の確認は完了です。 [AWS Migration Hub の有効化]({{< ref "/migration-hub.ja.md" >}})に進んでください。
+以上で環境の確認は完了です。 [デプロイされた環境の確認]({{< ref "./review-deployment.ja.md" >}})に進んでください。

@@ -5,7 +5,7 @@ weight = 35
 
 ### Change Data Capture (CDC) を使用した DMS レプリケーションタスクの実行
 
-データベース移行のダウンタイムを最小限に抑えるために、ソースデータベースから ターゲットデータベースへの継続的なレプリケーション（Change Data Capture, CDC）を利用します。AWS Database Migration Service (DMS) における CDC とネイティブ CDC のサポートについては、<a href="https://aws.amazon.com/blogs/database/aws-dms-now-supports-native-cdc-support/" target="_blank">こちらの記事</a>を参照してください。
+データベース移行のダウンタイムを最小限に抑えるために、ソースデータベースから ターゲットデータベースへの継続的なレプリケーション（Change Data Capture, CDC）を利用します。AWS Database Migration Service (DMS) における CDC とネイティブ CDC のサポートについては、<a href="https://aws.amazon.com/jp/blogs/news/aws-dms-now-supports-native-cdc-support/" target="_blank">こちらの記事</a>を参照してください。
 
 #### ソースデータベースでのバイナリログ有効化
 

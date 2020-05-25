@@ -5,8 +5,8 @@ weight = 5
 
 <img style="position: sticky; top:0px; right: 0px" src="/intro/migrate-with-aws.png" alt="migrate with AWS" />
 
-Amazon Web Services (AWS) では、100万以上のアクティブなお客様との経験と、
-あらゆる年齢、業種、地域の組織のクラウド移行を支援してきた経験に基づいて、
+アマゾン ウェブ サービス (AWS) では、数百万以上のアクティブなお客様との経験と、
+あらゆる年代、業種、地域の組織のクラウド移行を支援してきた経験に基づいて、
 ワークロードをクラウドに移行するための標準的なプロセスを形成してきました。
 このプロセスは、一般的に **1) 評価**、**2) モビライズ**、**3) 移行とモダナイゼーション**の3つのフェーズに分けることができます：
 
@@ -16,5 +16,5 @@ Amazon Web Services (AWS) では、100万以上のアクティブなお客様と
 
   - <a href="https://aws.amazon.com/dms/" target="_blank" >**AWS Database Migration Service**</a> を使ったデータベースの **Re-Platform**
   - <a href="https://aws.amazon.com/cloudendure-migration/" target="_blank" >**CloudEndure Migration**</a> を使った Web サーバーの **Re-Host**
-  - <a href="https://aws.amazon.com/ecs/" target="_blank" >**Amazon Elastic Container Service**</a> で稼働するコンテナへの移行による、Web サーバーの**モダナイゼーション**
-  - オプション：<a href="https://aws.amazon.com/architecture/well-architected/" target="_blank" >**AWS Well Architected フレームワーク**</a>に沿った、アーキテクチャの**運用上の優秀性**、**セキュリティ**、**パフォーマンス効率** の向上と **コスト**の最適化
+  - <a href="https://aws.amazon.com/ecs/" target="_blank" >**Amazon Elastic Container Service**</a> で稼働するコンテナへの移行による、Web サーバーの**モダナイゼーション**
+  - オプション：<a href="https://aws.amazon.com/architecture/well-architected/" target="_blank" >**AWS Well Architected フレームワーク**</a>に沿った、アーキテクチャの**運用上の優秀性**、**セキュリティ**、**パフォーマンス効率**の向上と**コスト**の最適化

@@ -13,7 +13,7 @@ AWS DMS の設定を行う前に、移行先の AWS アカウントで、ター�
 
 1. マネジメントコンソール上部の **「サービス」** から **<a href="https://console.aws.amazon.com/rds/home?region=us-west-2" target="_blank">RDS</a>** のページを開き、**「データベースの作成」** をクリックします。
 
-2. **「エンジンのタイプ」** で MySQL、**「バージョン」** で MySQL 5.7.22 を選択します。
+2. **「エンジンのタイプ」** で MySQL、**「バージョン」** で **MySQL 5.7.22** を選択します。
 
     ![1](/db-mig/1.ja.png)
 
@@ -23,7 +23,7 @@ AWS DMS の設定を行う前に、移行先の AWS アカウントで、ター�
 **SELECT @@version;**
 {{% /notice %}}
 
-    **「設定」** のセクションでは、新しいデータベースインスタンスの DB インスタンス識別子（例：database-1）、マスターユーザー名（例：admin）、およびマスターパスワードを設定します。
+    **「設定」** のセクションでは、新しいデータベースインスタンスの **DB インスタンス識別子**（例：database-1）、**マスターユーザー名**（例：admin）、および**マスターパスワード**を設定します。
 
    ![3_db](/db-mig/3_db.ja.png)
 
@@ -45,8 +45,8 @@ AWS DMS の設定を行う前に、移行先の AWS アカウントで、ター�
 
 4. **「接続」** のセクションでは：
 
-    * **Virtual Private Cloud (VPC)** に、TargetVPC（事前準備で自動作成された <a href="https://aws.amazon.com/vpc/" target="_blank">Amazon Virtual Private Cloud</a>） を選択します。
-    * **「追加の接続設定」→ 「VPC セキュリティグループ」** で、**「新規作成」** を選択し、名前（例："DB-SG"）を付けます。
+    * **Virtual Private Cloud (VPC)** に、**TargetVPC**（事前準備で自動作成された <a href="https://aws.amazon.com/vpc/" target="_blank">Amazon Virtual Private Cloud</a>） を選択します。
+    * **「追加の接続設定」→ 「VPC セキュリティグループ」** で、**「新規作成」** を選択し、**名前**（例："DB-SG"）を付けます。
 
     ![6_db](/db-mig/6_db.ja.png)
 
