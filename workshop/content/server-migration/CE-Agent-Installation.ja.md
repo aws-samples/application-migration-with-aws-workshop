@@ -1,68 +1,66 @@
 +++
-title = "Install Agents on Source Machines"
+title = "ソースマシンへのエージェントインストール"
 weight = 20
 +++
 
-
-From <a href="https://console.cloudendure.com">CloudEndure console</a>, navigate to the **Machines** screen which will show you **How to Add Machines** and provide instructions to install the agent on the source machine. 
-
+<a href="https://console.cloudendure.com">CloudEndure コンソール</a>から、ソースマシンの追加方法と、マシンにエージェントをインストールするための手順が表示される **Machines** 画面に移動します。
 ![CE-Agent-install](/ce/CE-Agent-install.png)
 
+#### Web サーバーへのエージェントインストール
 
-#### Install Agent on the Webserver
+1. Web サーバーに関する情報を確認します。
 
-1. Get the source Webserver information
+    **自身の環境**でハンズオンを実施している場合は、<a href="https://us-west-2.console.aws.amazon.com/cloudformation/home?region=us-west-2#/" target="_blank">CloudFormation スタック</a>（**ApplicationMigrationWorkshop**）の**出力**セクションから確認してください。
 
-    For **self-paced lab** - it's described on the **Output** section of the **ApplicationMigrationWorkshop** <a href="https://us-west-2.console.aws.amazon.com/cloudformation/home?region=us-west-2#/" target="_blank">CloudFormation Template</a>.
+    ![Centos-pem](/ce/webserver-self-paced-info.ja.png)    
 
-    ![Centos-pem](/ce/webserver-self-paced-info.png)    
-
-    For **AWS Event** - it's described at **Webserver IP**, **Webserver Username** and **Webserver SSH Key** on the <a href="https://dashboard.eventengine.run/dashboard" target="_blank">Team Dashboard</a>.
+    **AWS 主催のイベント**の場合は、Event Engine の <A href="https://dashboard.eventengine.run/dashboard" target="_blank">Team Dashboard</a> に表示されている **Webserver IP**、 **Webserver Username**、**Webserver SSH Key** を確認してください。
 
     ![Centos-pem](/ce/Centos-pem.png)
 
-1. Download and save locally (for example as **webserver.pem** file) the **Webserver SSH key** (.pem) 
+2. Web サーバーの SSH キー（.pem）をダウンロードして、ローカルに保存します（例： webserver.pem）
 
-    If you're using Microsoft Windows OS, please convert the SSH key .pem file to .ppk using PuttyGen and then use Putty to connect (more details <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/putty.html" target="_blank">can be found here</a>.  
+    Microsoft Windows をお使いの場合は、PuttyGen を使って SSH キー（.pem）を .ppk に変換してから、 Putty を使って接続してください（詳細は<a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/putty.html" target="_blank">こちら</a>をご確認ください）。
+    
 
-2. Connect to the **Source Webserver** using SSH terminal
+3. Web サーバーに、SSH ターミナルを使って接続します。
 
-    For Microsoft Windows users review <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/putty.html" target="_blank">this article</a>.  
-    For Mac OS users review <a href="https://docs.aws.amazon.com/quickstarts/latest/vmlaunch/step-2-connect-to-instance.html#sshclient" target="_blank">this article</a>.
+    - Microsoft Windows をお使いの場合は<a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/putty.html" target="_blank">こちら</a>
+    - Mac OS をお使いの場合は<a href="https://docs.aws.amazon.com/quickstarts/latest/vmlaunch/step-2-connect-to-instance.html#sshclient" target="_blank">こちら</a>
 
-3. Run the commands copied from the **How to Add Machines** to download and install the agent:
+4. CloudEndure コンソールの **How to Add Machines** からコピーしたコマンドを実行して、エージェントのダウンロードとインストールを実行します：
 
-    ![CloudEndure Agent installation example output](/ce/CE-Agent-install-detailed.png)
+    ![CloudEndure Agent installation example output](/ce/CE-Agent-install-detailed.ja.png)
 
-    When done properly, you will receive a message stating that the **Installation finished successfully**.
+    正常に終了すると、インストールが完了したことを示すメッセージがターミナルに表示されます。
     
     {{% notice tip %}}
-Commands for installing agent can also be obtained from the **CloudEndure** console **Machines -> MACHINE ACTIONS -> Add Machines**
+エージェントをインストールするコマンドは、CloudEndure コンソール の **Machines → MACHINE ACTIONS → Add Machines** からも取得できます。
 {{% /notice %}}
 
-5. Once agent is installed, Machine will show up in the **CloudEndure console** -> **Machines** tab.
+5. エージェントのインストールが完了すると、CloudEndure コンソールの **Machines** 画面に、追加したマシンの情報が表示されます。
 
     ![CE-server-progress](/ce/CE-server-progress.png)
 
 
-#### Install Agent on the Windows Server (optional)
+#### Windows Server へのエージェントインストール（オプション）
 
-This section describes how to replicate a Windows Server with CloudEndure Migration. Skip it if your event scenario doesn't include Windows Server replication.
+ここでは、CloudEndure Migration を使用して、Windows Server を移行する方法を説明します。ハンズオンやイベントのシナリオに Windows Server のレプリケーションが含まれていない場合はスキップしてください。
 
-1. Get the source Windows Server information
+1. Windows Server の情報を取得します。
 
-    For **self-paced lab** - it's described on the **Output** section of the **ApplicationMigrationWorkshop** <a href="https://us-west-2.console.aws.amazon.com/cloudformation/home?region=us-west-2#/" target="_blank">CloudFormation Template</a>.
+    **自身の環境**でハンズオンを実施している場合は、<a href="https://us-west-2.console.aws.amazon.com/cloudformation/home?region=us-west-2#/" target="_blank">CloudFormation スタック</a>（**ApplicationMigrationWorkshop**）の**出力**セクションから確認してください。
 
-    For **AWS Event** - it's described at **Windows Server IP**, **Username** and **Password** on the <a href="https://dashboard.eventengine.run/dashboard" target="_blank">Team Dashboard</a>.
+    **AWS 主催のイベント**の場合は、Event Engine の <A href="https://dashboard.eventengine.run/dashboard" target="_blank">Team Dashboard</a> に表示されている **Windows Server IP**、 **Username**、 **Password** を確認してください。
 
-3. Connect to the **Windows Server** using Remote Desktop Protocol (RDP) application.
+2. RDP（Remote Desktop Protocol）アプリケーションを使用して Windows Server に接続します。
 
-    For more information on how to use RDP, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/connecting_to_windows_instance.html" target="_blank">this article</a>.
+    RDP での接続の詳細については、<a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/connecting_to_windows_instance.html" target="_blank">こちらの記事</a>を参照ください。
 
-4. Run the commands copied from **How to Add Machines** (Windows section) to download and install the agent.
+3. CloudEndure コンソールの **How to Add Machines**（Windows セクション）からコピーしたコマンドを実行して、エージェントのダウンロードとインストールを実行します：
 
     {{% notice tip %}}
-Commands for installing the agent can also be obtained from the **CloudEndure** console **Machines -> MACHINE ACTIONS -> Add Machines**
+エージェントをインストールするコマンドは、CloudEndure コンソール の **Machines → MACHINE ACTIONS → Add Machines** からも取得できます。
 {{% /notice %}}
 
-5. Once the agent is installed, a MGMT-Host machine will show up in the **CloudEndure console** -> **Machines** tab.
+4. エージェントのインストールが完了すると、CloudEndure コンソールの **Machines** 画面に、追加したマシンの情報が表示されます。

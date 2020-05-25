@@ -1,43 +1,43 @@
 +++
-title = "Create and Run a Replication Task"
+title = "レプリケーションタスクの作成と実行"
 weight = 40
 +++
 
-### Configure and Run a Replication Task
+### レプリケーションタスクの作成と実行
 
-Back in the **AWS DMS** console, go to **Database migration tasks** and click the **Create Task** button.
+マネジメントコンソール上部の **「サービス」** から **<a href="https://console.aws.amazon.com/dms/v2/home?region=us-west-2" target="_blank">Database Migration Service (DMS)</a>** のページを開き、左のメニューから **「データベース移行タスク」** をクリックします。**「タスクの作成」** ボタンをクリックして、レプリケーションタスクの作成を開始します。
 
-1. Enter the following parameter values in the **Create database migration task** screen:
+1. **「データ移行タスクの作成」** 画面で、以下のパラメータを入力します。
 
-    | Parameter              | Value                                               |
+    | パラメータ               | 入力値                                               |
     | ---------------------- | --------------------------------------------------- |
-    | Task identified        | replication-cdc                                     |
-    | Replication instance   | replication-instance                                |
-    | Source endpoint        | source-endpoint                                     |
-    | Target endpoint        | target-endpoint                                     |
-    | Migration type         | Migrate existing data and replicate ongoing changes |
-    | Start task on create   | Checked                                             |
+    | タスク識別子             | replication-cdc                                     |
+    | レプリケーションインスタンス   | replication-instance                             |
+    | ソースデータベースエンドポイント        | source-endpoint                          |
+    | ターゲットデータベースエンドポイント        | target-endpoint                       |
+    | 移行タイプ         | 既存のデータを移行して、継続的な変更をレプリケートする              |
+    | 作成時にタスクを開始      | チェックを入れる                                         |
     
-    ![Create-task-1](/db-mig/Create-task-1.png)
+    ![Create-task-1](/db-mig/Create-task-1.ja.png)
 
-2. In the **Task settings** panel enter the following values (leave everything else as default):
+2. **「タスク設定」** のセクションで、以下の値を入力します（他はすべてデフォルトのままにしておきます）。
 
-    | Parameter              | Value                                               |
+    | パラメータ              | 入力値                                               |
     | ---------------------- | --------------------------------------------------- |
-    | Target table preparation mode          |  Do nothing          |
-    | Enable CloudWatch logs | Checked                                             |
-    | Enable validation      | Checked                                             |                 
+    | ターゲットテーブル作成モード          |  何もしない          |
+    | 検証の有効化      | チェックを入れる                                             |                 
+    | CloudWatch ログを有効化 | チェックを入れる                                             |
     
-    ![create-task-2](/db-mig/create-task-2.png)
+    ![create-task-2](/db-mig/create-task-2.ja.png)
     
-3. In the **Table mappings** panel select **Guided UI** mode, press the **Add new selection rule** button and select **wordpress-db** in the **Schema** drop-down.
+3. **「テーブルマッピング」** のセクションで、**「ガイド付き UI」** を選択し、**「新しい選択ルールの追加」** ボタンをクリックします。**スキーマ**のドロップダウンリストから **wordpress-db** を選択します。
 
     {{% notice note %}}
-If you don't see wordpress-db on the **Schema** drop-down, select **Enter schema** and type **wordpress-db** into the **Schema name** field.
+**スキーマ**のドロップダウンリストに wordpress-db が表示されない場合は、**スキーマ**のドロップダウンリストから、**「スキーマの入力」** を選択し、**スキーマ名**のフィールドに **wordpress-db** を入力します。
 {{% /notice %}}    
 
-    ![Create-task-3](/db-mig/Create-task-3.png)
+    ![Create-task-3](/db-mig/Create-task-3.ja.png)
 
-1. Scroll to the bottom of the screen and click the **Create task** button to create the task and start the data replication.
+4. 画面の一番下までスクロールし、**「タスクの作成」** ボタンをクリックしてタスクを作成し、データのレプリケーションを開始します。
 
-    ![create-task-4](/db-mig/create-task-4.png)
+    ![create-task-4](/db-mig/create-task-4.ja.png)

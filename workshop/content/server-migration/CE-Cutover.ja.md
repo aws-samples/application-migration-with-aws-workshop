@@ -1,55 +1,58 @@
 +++
-title = "Do the Cutover"
+title = "カットオーバーの実行"
 weight = 40
 
 +++
-### CloudEndure Migration Test/Cutover
+### CloudEndure Migration テスト／カットオーバー
 
-Once you have completed the replication of volumes (so the status next to machine name says **Continuous Data Replication**), you are then able to perform a **Test/Cutover**.
+ボリュームのレプリケーションが完了し、CloudEndure コンソール上でマシンのステータスが **Continuous Data Replication** になっていることを確認したら、**テスト／カットオーバー**を実行することができます。
 
-Every time you start the **Test/Cutover**, CloudEndure Migration deletes any previously created instances and creates a **new Target instance** that is up to date with the latest copy of the data from the Source Environment.
+テスト／カットオーバーを開始するたびに、CloudEndure Migration は、以前に作成したインスタンスを**すべて削除**し、ソース環境の最新のデータコピーを持つ新しい ターゲットインスタンスを作成します。
 
 {{% notice note %}}
-According to best practice, and in real life, you should perform a **Test** migration at least **one week** before the target migration date. This is to identify potential challenges with your Blueprint configuration or with replicated volume conversion and address them.  
-In this lab, you will perform a **Cutover** (this instance conversion was performed almost 3,000 times, so we know it works!).
+本ハンズオンではテストをスキップして、**カットオーバーのみ**実行しますが、
+実運用においては、目標とする移行日の**少なくとも1週間前**に**テスト**を実施することをお勧めします。
+これは Blueprint の構成や、レプリケートされたボリュームの変換における、潜在的な課題を特定し、それらに対処するためです。
 {{% /notice %}}
 
 
-1. Confirm that the volumes are fully replicated
+1. ボリュームが完全にレプリケートされていることを確認します。
    
-    Confirm that the instance is in a state of **Continuous Data Replication** under the **DATA REPLICATION PROGRESS** column.
+    CloudEndure コンソールの **Machines** 画面を開き、移行対象マシンの **DATA REPLICATION PROGRESS** のステータスが、
+    **Continuous Data Replication** になっていることを確認します。
 
-    If it's still replicating, wait until it reaches the **Continuous Data Replication** state. While waiting you can review <a href="https://docs.cloudendure.com/" target="_blank">CloudEndure documentation</a>.
+    ボリュームのレプリケーションが完了していない場合は、マシンが **Continuous Data Replication** の状態になるまで待機してください。その間に、 <a href="https://docs.cloudendure.com/" target="_blank">CloudEndure のドキュメント</a>を確認してみましょう。
 
-2. Trigger the Cutover
+2. カットオーバーを実行します。
    
-    From the **Machines** list select the server that you want to Cutover, click **LAUNCH 1 TARGET MACHINE** button in the top right corner of the screen, then **Cutover Mode** and **CONTINUE** in the confirmation popup.
+    **Machines** 画面でカットオーバーを実行するマシンを選択し、画面右上の **LAUNCH 1 TARGET MACHINE** ボタンをクリックします。確認用のポップアップで **Cutover Mode** を選択し、**CONTINUE** をクリックします。
 
     ![CE-Cutover](/ce/CE-Cutover.png)
 
-    CloudEndure will now perform a final sync/snapshot on the volumes and begin the process of building new servers in the target infrastructure, all while maintaining data consistency. See the **Job Progress** screen for details.
-
+    CloudEndure は、ボリュームの最終的な同期／スナップショットを実行し、データの整合性を維持しながら、ターゲットのインフラストラクチャに新しいサーバーを構築するプロセスを開始します。左のメニューから **Job Progress** を選択し、詳細や進行状況を確認してください。
 
     ![CE-job-progress](/ce/CE-job-progress.png)
 
-    Monitor the **Job Progress** log until you see **Finished starting converters** message (it should take 3-5 minutes). In the meantime you can review <a href="https://docs.cloudendure.com/#Configuring_and_Running_Migration/Performing_a_Migration_Cutover/Performing_a_Migration_Cutover.htm" target="_blank">CloudEndure Documentation providing details on the cutover process</a>.
+    **Job Progress** からジョブの進行状況をモニタリングして、**"Finished machine conversions"** いうメッセージが表示されるまで待機します（3～5分）。その間、カットオーバーのプロセスの詳細について <a href="https://docs.cloudendure.com/#Configuring_and_Running_Migration/Performing_a_Migration_Cutover/Performing_a_Migration_Cutover.htm" target="_blank">CloudEndure のドキュメント</a>を確認してみましょう。
+    
 
     {{% notice tip %}}
-If you don't see your job in the **Job Progress** window, refresh the browser (F5) and make sure to scroll to the top of the drop-down list of CloudEndure jobs.
+**Job Progress** の画面に、起動したジョブが表示されない場合は、ブラウザをリフレッシュ（F5）し、ジョブのドロップダウンリストの一番上までスクロールするようにしてください。
 {{% /notice %}}
 
-1. Review resources created by CloudEndure in your AWS account
+3. CloudEndure が作成したリソースを AWS アカウント上で確認します。
    
-    Switch back to the **AWS Console** and navigate to your target AWS region if needed (US-west-2/Oregon).
-   
-    You will see two additional instances managed by CloudEndure:
-    - **CloudEndure Machine Converter** - used for conversion of the source boot volume, making AWS-specific bootloader changes, injecting hypervisor drivers and installing cloud tools. It's running for couple of minutes per each Test or cutover.
-    - **CloudEndure Replication Server** - used to receive encrypted data from agents installed in the source environment. It's running when the replication of data is taking place.
+    AWS マネジメントコンソールに戻り、上部の **「サービス」** から **<a href="https://console.aws.amazon.com/ec2/v2/home?region=us-west-2" target="_blank">EC2</a>** のページを開きます。
+    必要に応じて対象の AWS リージョン（us-west-2/オレゴン）に移動してください。
 
-    Both types of instances are fully managed by CloudEndure and are NOT accessible by users.
+    CloudEndure で管理されている2つの EC2 インスタンスが、追加で表示されます：
+    - **CloudEndure Machine Converter** - ブートボリュームの変換や、ブートローダへの変更の適用、ハイパーバイザードライバーやクラウドツールのインストールに使用されます。テストやカットオーバーが実行される度に、数分間稼働します。
+    - **CloudEndure Replication Server** - ソース環境にインストールされているエージェントから、暗号化されたデータを受信するために使用されます。データのレプリケーションが実行されている間稼働します。
 
-    As soon as the cutover is finished, you will see another EC2 instance on the list - this is your target Webserver created by CloudEndure. Make a note of its public and private IPs, as you will need them in the next step.
+    どちらのインスタンスも CloudEndure が管理しており、ユーザーがアクセスすることはできません。
+
+    カットオーバーが完了すると、リストに新しい EC2 インスタンスが表示されます - これはCloudEndure によって作成されたターゲットの Web サーバーです。後続のセクションで必要になるため、パブリック DNS (IPv4) とプライベートIP の値を、テキストエディタにコピーしておいてください。
 
     {{% notice tip %}}
-If you want to know more about those servers, their purpose and network requirements see <a href="https://docs.cloudendure.com/#Preparing_Your_Environments/Network_Requirements/Network_Requirements.htm" target="_blank">CloudEndure Documentation</a>.
+CloudEndure が管理するインスタンスや、その目的、ネットワーク要件の詳細は、<a href="https://docs.cloudendure.com/#Preparing_Your_Environments/Network_Requirements/Network_Requirements.htm" target="_blank">CloudEndure のドキュメント</a>を参照してください。
 {{% /notice %}}

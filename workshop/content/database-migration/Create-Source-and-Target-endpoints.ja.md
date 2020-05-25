@@ -1,68 +1,68 @@
 +++
-title = "Create Source and Target Endpoints"
+title = "エンドポイントの作成"
 weight = 30
 +++
 
 
-### Create source and target endpoints
+### ソースとターゲットのエンドポイントの作成
 
-Still inside **AWS DMS** screen, go to **Endpoints** and click **Create endpoint** button.
+**AWS Database Migration Service (DMS)** のページで、左のメニューから **「エンドポイント」** を選択し、**「エンドポイントの作成」** ボタンをクリックします。
 
-1. Create the source endpoint
+1. ソースエンドポイントを作成します。 
 
-    Use the following parameters to configure the endpoint:
+    以下のパラメータを使用して、エンドポイントを構成します：
 
-    | Parameter           | Value                                          |
+    | パラメータ           | 入力値                                          |
     | ------------------- | ---------------------------------------------- |
-    | Endpoint type       | Source endpoint                                |
-    | Endpoint identifier | source-endpoint                                |
-    | Source engine       | mysql                                          |
-    | Server name         | Source Environment - for **self-paced lab** use information from the **Output** section of the **ApplicationMigrationWorkshop** <a href="https://us-west-2.console.aws.amazon.com/cloudformation/home?region=us-west-2#/" target="_blank">CloudFormation Template</a>, <br>for **AWS Events** - use **Database Server IP** from the Event Engine - Team Dashboard   |
-    | Port                | 3306                                           |
-    | SSL mode            | none                                           |
-    | User name           | wordpress-user                                 |
-    | Password            | AWSRocksSince2006                                   |
+    | エンドポイントタイプ    | ソースエンドポイント                                |
+    | エンドポイント識別子    | source-endpoint                                |
+    | ソースエンジン         | mysql                                          |
+    | サーバー名            | **自身の環境**でハンズオンを実施している場合は、<a href="https://us-west-2.console.aws.amazon.com/cloudformation/home?region=us-west-2#/" target="_blank">CloudFormation スタック</a>（**ApplicationMigrationWorkshop**）の**出力**セクションに表示されている **DBServerDNSName** の値を入力。<br> **AWS 主催のイベント**の場合は、Event Engine の Team Dashboard に表示されている **Database Server IP** を入力。   |
+    | ポート                | 3306                                           |
+    | SSL モード            | none                                           |
+    | ユーザー名            | wordpress-user                                 |
+    | パスワード            | AWSRocksSince2006                                   |
 
-    ![source-endpoint](/db-mig/source-endpoint.png)
+    ![source-endpoint](/db-mig/source-endpoint.ja.png)
 
-    Open **Test endpoint connection (optional)** section, then in the **VPC** drop-down select **TargetVPC** and click the **Run test** button to verify that your endpoint configuration is valid.
+    **「エンドポイント接続のテスト（オプション）」** セクションを開き、**Virtual Private Cloud (VPC)** のドロップダウンリストから **TargetVPC** を選択し、**「テストの実行」** ボタンをクリックすることで、エンドポイントの設定が有効であることを確認します。
 
-    ![test-source-endpoint](/db-mig/test-source-endpoint.png)
+    ![test-source-endpoint](/db-mig/test-source-endpoint.ja.png)
 
-    Test will run for a minute and you should see **successful** message in the **Status** column. Click on the **Create endpoint** button to create the endpoint.
+    テストには1分ほどかかります。**ステータス**欄に **successful** のメッセージが表示されたことを確認したら、**「エンドポイントの作成」** ボタンをクリックして、ソースエンドポイントを作成します。
     
-    In case of any errors - make sure you've configured the endpoint parameters correctly and that the Replication Instance was created with **Publicly Accessible** parameter checked.
+    エラーが発生した場合は、エンドポイントのパラメータが正しく設定されていること、また DMS レプリケーションインスタンスが、**パブリックアクセス可能**に設定されていることを確認してください。
 
-2. Create the target endpoint
+2. ターゲットエンドポイントを作成します。
 
-    Repeat all steps to create the target endpoint with the following parameter values:
+    上記の手順を繰り返し、以下のパラメータを使用して、ターゲットエンドポイントを作成します。
 
-    | Parameter           | Value                                                 |
+    | パラメータ           | 入力値                                                 |
     | ------------------- | ----------------------------------------------------- |
-    | Endpoint type       | Target endpoint                                       |
-    | Select RDS DB instance | checked                                            |
-    | RDS Instance        | Select your RDS instance from the drop-down (if it's not visible enter values manually)          |
-    | Endpoint Identifier | target-endpoint                                       |
-    | Target Engine       | mysql (will be pre-populated)                                                |
-    | Server Name         | DNS name of your RDS database (leave the the pre-populated value)                             |
-    | Port                | 3306     (will be pre-populated)                                             |
-    | SSL mode            | none                                                  |
-    | User name           | (leave the pre-populated value)                                                 |
-    | Password            | Enter password you used when you creating the RDS database|
+    | エンドポイントタイプ       | ターゲットエンドポイント                                       |
+    | RDS DB インスタンスの選択  | チェックを入れる                                            |
+    | RDS インスタンス          | 前頁で作成した Amazon Relational Database Service (RDS) のインスタンスをドロップダウンリストから選択（表示されない場合は、手動で DB 識別子を入力）  |
+    | エンドポイント識別子       | target-endpoint                                       |
+    | ターゲットエンジン         | mysql （自動入力）                                                |
+    | サーバー名                | RDS インスタンスの DNS エンドポイント（自動入力）                             |
+    | ポート                   | 3306（自動入力）                                            |
+    | SSL モード               | none                                                  |
+    | ユーザー名                | 自動入力                                                |
+    | パスワード               | RDS インスタンスを作成した際に指定したパスワードを入力 |
 
 
-3. In the **Endpoint-specific settings -> Extra connection attributes** copy-paste the following connection parameters:
+3. **「エンドポイント固有の設定」 → 「追加の接続属性」** に、以下の値を入力します：
 
     ```
     parallelLoadThreads=1; initstmt=SET FOREIGN_KEY_CHECKS=0
     ```
 
-4. Under **Test endpoint connection (optional)** select **TargetVPC** in the **VPC** drop down and click the **Run test** button to verify that your endpoint is valid.
+4. **「エンドポイント接続のテスト（オプション）」** セクションを開き、**VPC** のドロップダウンリストから **TargetVPC** を選択し、**「テストの実行」** ボタンをクリックすることで、エンドポイントの設定が有効であることを確認します。
 
-    Test will run for a minute and in the end you should see **successful** message in the **Status** column. Click on the **Create endpoint** button to create the endpoint.
+    テストには1分ほどかかります。**ステータス**欄に **successful** のメッセージが表示されたことを確認したら、**「エンドポイントの作成」** ボタンをクリックして、ターゲットエンドポイントを作成します。
 
-In case of any errors, make sure that the **VPC security group** of your RDS database allows for inbound traffic on port 3306 from the **AWS DMS Replication Instance** security group (or for example from the whole **TargetVPC** - 10.0.0.0/16).
+エラーが発生した場合、RDS インスタンス用の **VPC セキュリティグループ**が、 **DMS レプリケーションインスタンス**用のセキュリティグループ（または **TargetVPC** 全体 - 10.0.0.0/16）からの、ポート3306に対するインバウンドトラフィックを許可していることを確認してください。
 
 {{% notice note %}}
-Additional endpoint connection tests can be performed from **Endpoints** list by clicking the **Actions** button and then **Test connection**.
+エンドポイントのリストから、**「アクション」 → 「接続のテスト」** をクリックして、追加の接続テストを実施することができます。
 {{% /notice %}}

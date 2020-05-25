@@ -22,11 +22,9 @@ Mappings:
       CIDR: "10.0.0.0/24"
     Public1:
       CIDR: "10.0.1.0/24"
-    Private00:
+    Private0:
       CIDR: "10.0.100.0/24"
-    Private10:
-      CIDR: "10.0.200.0/24"
-    Private01:
+    Private1:
       CIDR: "10.0.101.0/24"
     Private11:
       CIDR: "10.0.201.0/24"
@@ -446,7 +444,7 @@ Resources:
               - '-public-'
               - !Select [ 1, !FindInMap [ "AZRegions", !Ref "AWS::Region", "AZs" ] ]
 
-  PrivateSubnet00:
+  PrivateSubnet0:
     Type: "AWS::EC2::Subnet"
     Properties:
       VpcId:
@@ -458,7 +456,7 @@ Resources:
       CidrBlock:
         Fn::FindInMap:
           - "SubnetConfig"
-          - "Private00"
+          - "Private0"
           - "CIDR"
       Tags:
         - Key: "Network"
@@ -471,32 +469,7 @@ Resources:
               - !Select [ 0, !FindInMap [ "AZRegions", !Ref "AWS::Region", "AZs" ] ]
               - '-web'
 
-  PrivateSubnet01:
-    Type: "AWS::EC2::Subnet"
-    Properties:
-      VpcId:
-        Ref: "TargetVPC"
-      AvailabilityZone:
-        Fn::Sub:
-          - "${AWS::Region}${AZ}"
-          - AZ: !Select [ 0, !FindInMap [ "AZRegions", !Ref "AWS::Region", "AZs" ] ]
-      CidrBlock:
-        Fn::FindInMap:
-          - "SubnetConfig"
-          - "Private01"
-          - "CIDR"
-      Tags:
-        - Key: "Network"
-          Value: "Private"
-        - Key: "Name"
-          Value: !Join
-            - ''
-            - - !Ref "TargetVPCName"
-              - '-private-'
-              - !Select [ 0, !FindInMap [ "AZRegions", !Ref "AWS::Region", "AZs" ] ]
-              - '-db'              
-
-  PrivateSubnet10:
+  PrivateSubnet1:
     Type: "AWS::EC2::Subnet"
     Properties:
       VpcId:
@@ -508,7 +481,7 @@ Resources:
       CidrBlock:
         Fn::FindInMap:
           - "SubnetConfig"
-          - "Private10"
+          - "Private1"
           - "CIDR"
       Tags:
         - Key: "Network"
@@ -758,28 +731,19 @@ Resources:
       NatGatewayId:
         Ref: "NATGateway1"
 
-  PrivateSubnetRouteTableAssociation00:
+  PrivateSubnetRouteTableAssociation0:
     Type: "AWS::EC2::SubnetRouteTableAssociation"
     Properties:
       SubnetId:
-        Ref: "PrivateSubnet00"
+        Ref: "PrivateSubnet0"
       RouteTableId:
         Ref: "PrivateRouteTable0"
 
-  PrivateSubnetRouteTableAssociation01:
+  PrivateSubnetRouteTableAssociation1:
     Type: "AWS::EC2::SubnetRouteTableAssociation"
     Properties:
       SubnetId:
-        Ref: "PrivateSubnet01"
-      RouteTableId:
-        Ref: "PrivateRouteTable0"
-
-
-  PrivateSubnetRouteTableAssociation10:
-    Type: "AWS::EC2::SubnetRouteTableAssociation"
-    Properties:
-      SubnetId:
-        Ref: "PrivateSubnet10"
+        Ref: "PrivateSubnet1"
       RouteTableId:
         Ref: "PrivateRouteTable1"
 
@@ -860,6 +824,23 @@ Resources:
               - Effect: Allow
                 Action: elasticfilesystem:*
                 Resource: '*'
+
+  ecsAutoscaleRole:
+    Type: 'AWS::IAM::Role'
+    Properties:
+      Path: /
+      RoleName: ecsAutoscaleRole
+      AssumeRolePolicyDocument:
+        Version: 2012-10-17
+        Statement:
+          - Effect: Allow
+            Principal:
+              Service:
+                - application-autoscaling.amazonaws.com
+            Action:
+              - 'sts:AssumeRole'
+      ManagedPolicyArns:
+        - arn:aws:iam::aws:policy/service-role/AmazonEC2ContainerServiceAutoscaleRole
 
 Outputs:
   WebServerUsername:

@@ -5,39 +5,46 @@ pre = "<b>4. </b>"
 
 +++
 
+おめでとうございます！これで、eコマースアプリケーションの AWS への移行（Web サーバーの Re-Host とデータベースの Re-Platform）は完了です。
+続いて、より高いセキュリティ、パフォーマンスと弾力性を提供し、AWS のインフラストラクチャをより効率的に利用できるアーキテクチャを目指すべく、
+アーキテクチャの最適化について検討しましょう。
 
-Congratulation's, since you're here, you've managed to migrate (re-host the Webserver and re-platform the Database) an e-commerce application into AWS and can now look for ways to optimize the architecture to make it even more secure, highly-performant, resilient and so that is uses AWS infrastructure efficiently!
+以下では、<a href="https://aws.amazon.com/architecture/well-architected/" target="_blank">**AWS Well-Architected フレームワーク**</a>の5本の柱（運用上の優秀性、セキュリティ、信頼性、パフォーマンス効率、コスト最適化）をもとに、取り得るアクションの例を紹介しています。
 
-Below you will find ideas about what you can do taking into account <a href="https://aws.amazon.com/architecture/well-architected/" target="_blank">5 AWS Well-Architected Pillars</a> - Operational Excellence, Security, Reliability, Performance Efficiency  and Cost Optimization.
+**AWS Well Architected フレームワーク** の詳細については、以下の動画をご覧ください：
+<center>
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/MfxF-FYEFjY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</center>
 
-### Operational Excellence
+### 運用上の優秀性
 
-- Configure a <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Dashboards.html" target="_blank">CloudWatch dashboard</a> to monitor your resources in a single view, even across AWS regions.
-- Configure a <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-create-and-update-a-trail.html" target="_blank">persistent CloudTrail trail</a> to be able to monitor, audit and alert on what is happening in your AWS accounts
+- <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Dashboards.html" target="_blank">**CloudWatch Dashboard**</a> を設定し、複数の AWS リージョンにまたがるリソースでも、単一のビューでリソースを監視できるようにします。
+- <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-create-and-update-a-trail.html" target="_blank">**永続的な CloudTrail 証跡**</a>を設定し、AWS アカウントで起きたイベントについて、監視や監査、アラートの発行を実施できるようにします。
 
-### Security  
-- Switch to HTTPS with <a href="https://aws.amazon.com/certificate-manager/" target="_blank">AWS Certificate Manager</a> managed SSL/TLS certificates to encrypt customer data in transit (certificates are already provisioned in this workshop!)
-- <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html" target="_blank">Encrypt EBS volumes</a> to protect customer data at rest
-- Enable <a href="https://aws.amazon.com/waf/"  target="_blank">AWS Web Application Firewall (AWS WAF)</a> to protect your web application from known attacks (you can do it on <a href="https://aws.amazon.com/blogs/aws/aws-web-application-firewall-waf-for-application-load-balancers/" target="_blank">Application Load Balancer</a> or event better on the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/cloudfront-features.html" target="_blank">Amazon CloudFront distribution</a>)
-- Use <a href="https://aws.amazon.com/guardduty/" target="_blank">Amazon GuardDuty</a> to protect your AWS account and workloads with intelligent threat detection and continuous monitoring
+### セキュリティ
+- アプリケーションの通信を、<a href="https://aws.amazon.com/certificate-manager/" target="_blank">**AWS Certificate Manager**</a> が管理する SSL/TLS 証明書を使った HTTPS 通信に切り替え、伝送中の顧客データを暗号化します（証明書は本ハンズオンで既にプロビジョニング済みです）。
+- <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html" target="_blank">**EBS ボリュームを暗号化**</a>して、保管中の顧客データを保護します。
+- <a href="https://aws.amazon.com/waf/" target="_blank">**AWS Web Application Firewall (WAF)** </a> を有効にして、既知の攻撃から Web アプリケーションを保護します（<a href="https://aws.amazon.com/blogs/aws/aws-web-application-firewall-waf-for-application-load-balancers/" target="_blank">**Application Load Balancer**</a> または <a href="https://docs.aws.amazon.com/waf/latest/developerguide/cloudfront-features.html" target="_blank">**Amazon CloudFront ディストリビューション**</a>に対して適用します）。
+- <a href="https://aws.amazon.com/guardduty/" target="_blank">**Amazon GuardDuty**</a> を使用して、インテリジェントな脅威検知と継続的な監視で、AWS アカウントとワークロードを保護します。
 
-### Reliability
-- Configure an <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-application-load-balancer.html" target="_blank">Application Load Balancer</a> to distribute Webserver traffic across multiple Availability Zones
-- Configure <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/GettingStartedTutorial.html" target="_blank">Amazon EC2 Auto Scaling Group</a> to enable auto-healing in case Webserver instances go down and to handle changing customer load
-- Use <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-working-with.html" target="_blank">Amazon CloudFront</a> - a fast Content Distribution Network that securely delivers data to customers globally with low latency and high transfer speeds, integrating seamlessly with <a href="https://aws.amazon.com/shield/" target="_blank">AWS Shield</a> for DDoS mitigation.
+### 信頼性
+- <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-application-load-balancer.html" target="_blank">**Application Load Balancer**</a> を構成し、Web サーバーのトラフィックを複数のアベイラビリティゾーンに分散させます。
+- <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/GettingStartedTutorial.html" target="_blank">**Amazon EC2 の Auto Scaling グループ**</a>を設定し、Web サーバーのインスタンスがダウンした場合（自動ヒーリング）や、ユーザーのトラフィックが変化した場合にも対応できるようにします。
+- 低遅延かつ高い転送速度で、世界中の顧客にデータを安全に配信できる、高速なコンテンツ配信ネットワーク <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-working-with.html" target="_blank">**Amazon CloudFront**</a> を利用し、
+<a href="https://aws.amazon.com/shield/" target="_blank">**AWS Shield**</a> と統合することで DDoS 攻撃を軽減します。
 
-### Performance Efficiency
-- Deploy <a href="https://docs.aws.amazon.com/efs/latest/ug/getting-started.html" target="_blank">Amazon Elastic File System</a> to handle changes of files on Webservers
-- Use <a href="https://aws.amazon.com/blogs/networking-and-content-delivery/amazon-s3-amazon-cloudfront-a-match-made-in-the-cloud/" target="_blank">Amazon CloudFront with AWS S3</a> as custom origin to distribute static content for lower latency for your customers and lower cost
+### パフォーマンス効率
+- <a href="https://docs.aws.amazon.com/efs/latest/ug/getting-started.html" target="_blank"> **Amazon Elastic File System (EFS)** </a> を導入し、Web サーバー上で行われたファイルの変更を処理します。
+- <a href="https://aws.amazon.com/blogs/networking-and-content-delivery/amazon-s3-amazon-cloudfront-a-match-made-in-the-cloud/" target="_blank">**Amazon CloudFront で AWS S3 をカスタムオリジンとして指定**</a>し、静的コンテンツを配信することで、レイテンシーとコストを抑えます。
 
-### Cost optimization
-- Use <a href="https://aws.amazon.com/ec2/spot/" target="_blank">Amazon EC2 Spot instances</a> - select machine type using <a href="https://aws.amazon.com/ec2/spot/instance-advisor/" target="_blank">EC2 Spot Advisor</a>, some instances allow for **90% savings** with <5% interruption frequency
-- Use the most <a href="https://aws.amazon.com/ec2/spot/pricing/" target="_blank">cost-optimized machine types</a>
+### コスト最適化
+- <a href="https://aws.amazon.com/ec2/spot/" target="_blank">**Amazon EC2 スポットインスタンス**</a>を使用し、インスタンスタイプの選択には<a href="https://aws.amazon.com/ec2/spot/instance-advisor/" target="_blank">**スポットインスタンスアドバイザー**</a>を使用します（インスタンスによっては、**最大90%のコスト削減**と**5%未満の中断頻度**を実現することができます）。
+- 最も<a href="https://aws.amazon.com/ec2/spot/pricing/" target="_blank">**コストに最適化されたインスタンスタイプ**</a>を使用します。
 
-### Reference architecture
+### リファレンスアーキテクチャ
 
-Diagram below depicts a reference architecture of the solution, with all components listed above deployed.
+以下の図は、上に挙げたすべてのコンポーネントがデプロイされた、リファレンスアーキテクチャを示しています：
 
 ![Reference Architecture](/opt/aws-ref-arch.png)
 
-For more details see the <a href="https://github.com/aws-samples/aws-refarch-wordpress" target="_blank">Reference Architecture for Wordpress on AWS</a>!
+詳細については、<a href="https://github.com/aws-samples/aws-refarch-wordpress" target="_blank">**Wordpress on AWS のリファレンスアーキテクチャ**</a>を確認してください。
