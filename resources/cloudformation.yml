@@ -22,9 +22,11 @@ Mappings:
       CIDR: "10.0.0.0/24"
     Public1:
       CIDR: "10.0.1.0/24"
-    Private0:
+    Private00:
       CIDR: "10.0.100.0/24"
-    Private1:
+    Private10:
+      CIDR: "10.0.200.0/24"
+    Private01:
       CIDR: "10.0.101.0/24"
     Private11:
       CIDR: "10.0.201.0/24"
@@ -444,7 +446,7 @@ Resources:
               - '-public-'
               - !Select [ 1, !FindInMap [ "AZRegions", !Ref "AWS::Region", "AZs" ] ]
 
-  PrivateSubnet0:
+  PrivateSubnet00:
     Type: "AWS::EC2::Subnet"
     Properties:
       VpcId:
@@ -456,7 +458,7 @@ Resources:
       CidrBlock:
         Fn::FindInMap:
           - "SubnetConfig"
-          - "Private0"
+          - "Private00"
           - "CIDR"
       Tags:
         - Key: "Network"
@@ -469,7 +471,32 @@ Resources:
               - !Select [ 0, !FindInMap [ "AZRegions", !Ref "AWS::Region", "AZs" ] ]
               - '-web'
 
-  PrivateSubnet1:
+  PrivateSubnet01:
+    Type: "AWS::EC2::Subnet"
+    Properties:
+      VpcId:
+        Ref: "TargetVPC"
+      AvailabilityZone:
+        Fn::Sub:
+          - "${AWS::Region}${AZ}"
+          - AZ: !Select [ 0, !FindInMap [ "AZRegions", !Ref "AWS::Region", "AZs" ] ]
+      CidrBlock:
+        Fn::FindInMap:
+          - "SubnetConfig"
+          - "Private01"
+          - "CIDR"
+      Tags:
+        - Key: "Network"
+          Value: "Private"
+        - Key: "Name"
+          Value: !Join
+            - ''
+            - - !Ref "TargetVPCName"
+              - '-private-'
+              - !Select [ 0, !FindInMap [ "AZRegions", !Ref "AWS::Region", "AZs" ] ]
+              - '-db'              
+
+  PrivateSubnet10:
     Type: "AWS::EC2::Subnet"
     Properties:
       VpcId:
@@ -481,7 +508,7 @@ Resources:
       CidrBlock:
         Fn::FindInMap:
           - "SubnetConfig"
-          - "Private1"
+          - "Private10"
           - "CIDR"
       Tags:
         - Key: "Network"
@@ -731,19 +758,28 @@ Resources:
       NatGatewayId:
         Ref: "NATGateway1"
 
-  PrivateSubnetRouteTableAssociation0:
+  PrivateSubnetRouteTableAssociation00:
     Type: "AWS::EC2::SubnetRouteTableAssociation"
     Properties:
       SubnetId:
-        Ref: "PrivateSubnet0"
+        Ref: "PrivateSubnet00"
       RouteTableId:
         Ref: "PrivateRouteTable0"
 
-  PrivateSubnetRouteTableAssociation1:
+  PrivateSubnetRouteTableAssociation01:
     Type: "AWS::EC2::SubnetRouteTableAssociation"
     Properties:
       SubnetId:
-        Ref: "PrivateSubnet1"
+        Ref: "PrivateSubnet01"
+      RouteTableId:
+        Ref: "PrivateRouteTable0"
+
+
+  PrivateSubnetRouteTableAssociation10:
+    Type: "AWS::EC2::SubnetRouteTableAssociation"
+    Properties:
+      SubnetId:
+        Ref: "PrivateSubnet10"
       RouteTableId:
         Ref: "PrivateRouteTable1"
 
