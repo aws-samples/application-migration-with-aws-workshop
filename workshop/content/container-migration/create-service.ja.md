@@ -25,7 +25,8 @@ weight = 60
 
 **ネットワーク構成**では、**クラスター VPC** に、本ハンズオンの**事前準備で作成した VPC**（例：TargetVPC）、
 **サブネット**にアベイラビリティゾーンごとの**プライベートサブネット**（\*-private-\*-web）、
-**セキュリテイグループ**に前頁で作成した **ECS タスク 用のセキュリティグループ** (ECS-Tasks-SG) を指定します。
+**セキュリテイグループ**に前頁で作成した **ECS タスク 用のセキュリティグループ** (ECS-Tasks-SG) 、
+**パブリック IP の自動割り当て**に **DISABLED** を指定します。
 
 ![configure-network-svc](/ecs/configure-network-svc.ja.png)
 
@@ -51,9 +52,9 @@ Auto Scaling の設定では、**「Service Auto Scaling の設定を変更す�
 
 ![svc-autoscaling](/ecs/svc-autoscaling.ja.png)
 
-![svc-autoscaling-policy](/ecs/svc-autoscaling-policy.ja.png)
-
 **自動タスクスケーリングポリシー**では、**スケーリングポリシータイプ**を **「ターゲットの追跡」** に設定し、ポリシー名（例：Requests-policy）を入力します。加えて **ECS サービスメトリクス**を選択し（例：ALBRequestCountPerTarget）、**ターゲット値**を設定します。設定が完了したら、**「次のステップ」** をクリックします。
+
+![svc-autoscaling-policy](/ecs/svc-autoscaling-policy.ja.png)
 
 {{% notice note %}}
 上記の手順を繰り返すことで、別のサービスメトリクス（CPU やメモリの使用率など）に対する、スケーリングポリシーを追加することができます。

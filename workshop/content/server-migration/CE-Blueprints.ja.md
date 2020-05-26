@@ -16,7 +16,7 @@ Blueprint を設定するには、左のメニューから **Machines** に移�
 | ------------------------------------------ | ------------------------------------------------------------ |
 | Machine Type                           | t3.small                                    |
 | Launch Type                            | On demand 
-| Target subnet                          | TargetVPC-public-subnet-b                                       |
+| Target subnet                          | TargetVPC-public-b                                       |
 | Security group                         | Create new |
 | Private IP                             | Create new |
 | Tags                                    | タグを追加（Key : 'Name' Value : 'Websever'） |

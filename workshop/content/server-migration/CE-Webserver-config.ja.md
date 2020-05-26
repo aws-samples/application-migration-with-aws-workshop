@@ -30,7 +30,7 @@ Web アプリケーションが、データベース移行のセクションで�
     - Microsoft Windows をお使いの場合は<a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/putty.html" target="_blank">こちら</a>
     - Mac OS をお使いの場合は<a href="https://docs.aws.amazon.com/quickstarts/latest/vmlaunch/step-2-connect-to-instance.html#sshclient" target="_blank">こちら</a>
 
-3. Wordpress の設定を更新します。
+3. WordPress の設定を更新します。
 
     /var/www/html/wp-config.php ファイル内の、以下の設定を更新します：
 
@@ -38,9 +38,23 @@ Web アプリケーションが、データベース移行のセクションで�
     - DB_USER - RDS インスタンス作成時に設定したユーザー名
     - DB_PASSWORD - RDS インスタンス作成時に設定したパスワード
 
-    {{% notice tip %}}
-このファイルを編集するには、<a href="https://www.howtoforge.com/linux-nano-command/" target="_blank">nano</a> や <a href="https://www.washington.edu/computing/unix/vi.html" target="_blank">vi</a> などを使用することができます。
-{{% /notice %}}     
+    以下のコマンドを実行し、設定ファイルを vi エディタで開きます：
+    ```
+    sudo su -
+    vi /var/www/html/wp-config.php
+    ```
+
+    以下の設定を更新した後、ファイルを保存し vi エディタを終了します：
+    ```
+    /** MySQL database username */
+    define( 'DB_USER', 'ユーザー名' );
+
+    /** MySQL database password */
+    define( 'DB_PASSWORD', 'パスワード' );
+
+    /** MySQL hostname */
+    define( 'DB_HOST', 'RDS インスタンスのエンドポイント' );
+    ```
 
 4. Web サーバーからのインバウンドトラフィックを許可するために、RDS インスタンスに紐づけている **Virtual Private Cloud (VPC) セキュリティグループ**を更新します。
 

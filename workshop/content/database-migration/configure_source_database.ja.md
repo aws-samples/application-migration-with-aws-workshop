@@ -21,7 +21,13 @@ MySQL データベース から **AWS DMS** で継続的なレプリケーショ
     
     ![Database Server login information](/db-mig/db-server-ssh-event.png)
 
-    SSH を使ってサーバーにアクセスする方法がわからない場合は、以下を確認してください：
+2. データベースサーバーの SSH キー（.pem）をダウンロードして、ローカルに保存します（例： dbserver.pem）。
+
+    Microsoft Windows をお使いの場合は、PuttyGen を使って SSH キー（.pem）を .ppk に変換してから、 Putty を使って接続してください（詳細は<a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/putty.html" target="_blank">こちら</a>をご確認ください）。
+    
+
+3. データベースサーバーに、SSH ターミナルを使って接続します。
+
     - Microsoft Windows をお使いの場合は<a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/putty.html" target="_blank">こちら</a>
     - Mac OS をお使いの場合は<a href="https://docs.aws.amazon.com/quickstarts/latest/vmlaunch/step-2-connect-to-instance.html#sshclient" target="_blank">こちら</a>
 

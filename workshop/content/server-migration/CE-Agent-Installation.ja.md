@@ -30,6 +30,8 @@ weight = 20
 
 4. CloudEndure コンソールの **How to Add Machines** からコピーしたコマンドを実行して、エージェントのダウンロードとインストールを実行します。
 
+    ![CloudEndure Agent installation example command](/ce/CE-Agent-install-commands.ja.png)
+
     ![CloudEndure Agent installation example output](/ce/CE-Agent-install-detailed.ja.png)
 
     正常に終了すると、インストールが完了したことを示すメッセージがターミナルに表示されます。

@@ -12,6 +12,7 @@ weight = 40
 ソース環境は、3層で構成される eコマースの Web アプリケーションです。  
 Apache、PHP、Wordpress、WooCommerce が稼働する Ubuntu ベースの Web サーバーと、MySQL バージョン5.7 が稼働する Ubuntu ベースのデータベースサーバーで、構成されています。
 
+マネジメントコンソール上部の **「サービス」** から **<a href="https://console.aws.amazon.com/ec2/home?region=us-west-2" target="_blank">EC2</a>** のページを開き、左のメニューから **「インスタンス」 → 「インスタンス」** を選択します。EC2 インスタンスの一覧から、2つのインスタンス（**Source-Webserver**、**Source-DBServer**） が作成されていることを確認してください。
 
 ## 移行先環境：ターゲット
 
@@ -20,5 +21,10 @@ Apache、PHP、Wordpress、WooCommerce が稼働する Ubuntu ベースの Web �
 ![target-env](/intro/target-vpc.png)
 
 上の図は移行先のネットワークとなる VPC が、2つのアベイラビリティゾーンにまたがる6つのサブネットで構成されることを示しています。
+
+マネジメントコンソール上部の **「サービス」** から **<a href="https://console.aws.amazon.com/vpc/home?region=us-west-2" target="_blank">VPC</a>** のページを開き、左のメニューから **「VIRTUAL PRIVATE CLOUD」 → 「VPC」** を選択します。VPC の一覧から、**TargetVPC** が作成されていることを確認しください。
+
+さらに、左のメニューから  **「VIRTUAL PRIVATE CLOUD」 → 「サブネット」** を選択し、サブネットの一覧から、
+上の図にある**6つのサブネット**が **TargetVPC** に作成されていることを確認してください。
 
 以上で環境の確認は完了です。 [AWS Migration Hub の有効化]({{< ref "/migration-hub.ja.md" >}})に進んでください。

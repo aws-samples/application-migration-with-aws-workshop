@@ -11,7 +11,7 @@ weight = 50
 
 ![Migration Hub - choose home region](/intro/migration-hub-choose-home-region.ja.png)
 
-次に、**「移行」 → 「ツール」** をクリックして、AWS Migration Hub に移行状況の更新情報を送信するツールを選択します。
+次に、**「移行」 → 「ツール」** をクリックして、AWS Migration Hub に移行の進行状況を送信するツールを選択します。
 追加設定なしで使用できる CloudEndure Migration に加え、今回は **AWS Database Migration Service (DMS)** との接続を設定します。
 
 ページの一番下までスクロールし、**AWS Database Migration Service** カードの **「接続」** ボタンをクリックします。

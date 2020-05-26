@@ -63,7 +63,7 @@ AWS アカウント内に、既に同じ名前の IAM ロールが存在する�
    git clone https://github.com/aws-samples/application-migration-with-aws-workshop.git
    ```  
 
-4. 次のコマンドを実行して、*us-west-2*（オレゴン）リージョン に、新しい S3 バケットを作成します（**application-migration-workshop** の部分は、作成する S3 バケットの名前に置き換えて実施ください）。
+4. 次のコマンドを実行して、*us-west-2*（オレゴン）リージョン に、新しい S3 バケットを作成します（**application-migration-workshop** の部分は、半角英数字の任意の名前に置き換えて実施ください）。
    ```
    aws s3 mb s3://application-migration-workshop --region us-west-2
    ```  
