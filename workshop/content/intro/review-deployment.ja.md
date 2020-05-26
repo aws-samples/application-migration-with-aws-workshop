@@ -18,7 +18,7 @@ Apache、PHP、Wordpress、WooCommerce が稼働する Ubuntu ベースの Web �
 
 事前準備の段階で、ターゲット環境用に以下の **Amazon Virtual Private Cloud (VPC)** がデプロイされています。
 
-![target-env](/intro/target-vpc.png)
+![target-env](/intro/target-vpc.ja.png)
 
 上の図は移行先のネットワークとなる VPC が、2つのアベイラビリティゾーンにまたがる6つのサブネットで構成されることを示しています。
 
