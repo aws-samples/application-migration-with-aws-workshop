@@ -13,13 +13,19 @@ AWS の資格情報を使って CloudEndure を設定する必要があります
 
     ![CE-login](/ce/CE-login.png)
 
-    **自身の環境**でハンズオンを実施している場合は、すでにお持ちの CloudEndure Migration アカウントを使うか、新しく [CloudEndure Migration アカウント](https://console.cloudendure.com/#/register/register)と <a href="https://docs.cloudendure.com/#Getting_Started_with_CloudEndure/Working_with_Projects/Working_with_Projects.htm#Creating_a_New_Project%3FTocPath%3DNavigation%7CGetting%2520Started%2520with%2520CloudEndure%7CWorking%2520with%2520Projects%7C_____2" target="_blank">Project</a> を作成してください。
+    **自身の環境**でハンズオンを実施している場合は、すでにお持ちの CloudEndure Migration アカウントを使うか、新しく [CloudEndure Migration アカウント](https://console.cloudendure.com/#/register/register)を作成してください。
 
     **AWS 主催のイベント**の場合は、Event Engine の <A href="https://dashboard.eventengine.run/dashboard" target="_blank">Team Dashboard</a> に表示されている **CloudEndure Username** と **Password** を使用してください。
 
     ![CloudEndure Credentials](/ce/CE-console-credentials.png)
 
     <A href="https://dashboard.eventengine.run/dashboard" target="_blank">Team Dashboard</a> に、資格情報が表示されていない場合は、イベント主催者に資格情報を提供してもらうよう依頼してください。
+
+2. CloudEndure コンソールの左上にあるプラスボタンをクリックし、新しい <a href="https://docs.cloudendure.com/#Getting_Started_with_CloudEndure/Working_with_Projects/Working_with_Projects.htm#Creating_a_New_Project%3FTocPath%3DNavigation%7CGetting%2520Started%2520with%2520CloudEndure%7CWorking%2520with%2520Projects%7C_____2" target="_blank">Project</a> を作成します。
+    ![CloudEndure Create Project](/ce/CE-create-project-1.ja.png)
+
+    **Project Name** に任意の名前を指定し、**CREATE PROJECT** ボタンをクリックします。
+    ![CloudEndure Create Project](/ce/CE-create-project-2.ja.png)
 
 2. 左のメニューから **Setup & Info** を選択し、**AWS Credentials** タブを開きます。
 
