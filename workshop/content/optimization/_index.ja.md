@@ -11,7 +11,7 @@ pre = "<b>4. </b>"
 
 以下では、<a href="https://aws.amazon.com/architecture/well-architected/" target="_blank">**AWS Well-Architected フレームワーク**</a>の5本の柱（運用上の優秀性、セキュリティ、信頼性、パフォーマンス効率、コスト最適化）をもとに、取り得るアクションの例を紹介しています。
 
-**AWS Well Architected フレームワーク** の詳細については、以下の動画をご覧ください：
+**AWS Well-Architected フレームワーク** の詳細については、以下の動画をご覧ください：
 <center>
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/MfxF-FYEFjY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </center>

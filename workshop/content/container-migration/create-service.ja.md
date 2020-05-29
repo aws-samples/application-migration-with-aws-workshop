@@ -25,7 +25,7 @@ weight = 60
 
 **ネットワーク構成**では、**クラスター VPC** に、本ハンズオンの**事前準備で作成した VPC**（例：TargetVPC）、
 **サブネット**にアベイラビリティゾーンごとの**プライベートサブネット**（\*-private-\*-web）、
-**セキュリテイグループ**に前頁で作成した **ECS タスク 用のセキュリティグループ** (ECS-Tasks-SG) 、
+**セキュリティグループ**に前頁で作成した **ECS タスク 用のセキュリティグループ** (ECS-Tasks-SG) 、
 **パブリック IP の自動割り当て**に **DISABLED** を指定します。
 
 ![configure-network-svc](/ecs/configure-network-svc.ja.png)

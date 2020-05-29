@@ -32,7 +32,7 @@ pre = "<b>3. </b>"
 
 <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/scheduling_tasks.html" target="_blank">**タスク**</a>はクラスター内のタスク定義をインスタンス化したものです。Amazon ECS でアプリケーションのタスク定義を作成した後、クラスターで実行するタスクの数を指定できます。
 
-Amazon ECS <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs_services.html" target="_blank">**サービス**</a>を使用すると、タスク定義で指定した数のインスタンスを、Amazon ECS クラスター内で同時に実行し、維持することができます。タスクが何らかの理由で失敗または停止した場合、Amazon ECS サービススケジューラは、タスク定義の別のインスタンスを起動してそれに置き換え、サービスの作成時に指定したスケジュール戦略に基づいて、必要数のタスクを維持します。
+<a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs_services.html" target="_blank">**Amazon ECS サービス**</a>を使用すると、タスク定義で指定した数のインスタンスを、Amazon ECS クラスター内で同時に実行し、維持することができます。タスクが何らかの理由で失敗または停止した場合、Amazon ECS サービススケジューラは、タスク定義の別のインスタンスを起動してそれに置き換え、サービスの作成時に指定したスケジュール戦略に基づいて、必要数のタスクを維持します。
 
 **AWS Fargate** の詳細については、以下の動画をご覧ください：
 <center>

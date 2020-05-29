@@ -44,7 +44,7 @@ AWS が主催するイベント（re:Invent、Gameday、ワークショップ、
 
 
 {{% notice note %}}
-<a href="https://aws.amazon.com/cli/" target="_blank">AWS Command Line Interface (CLI)</a> を使用する場合は、ポップアップウィンドウに表示される認証情報を利用してください。なお、この認証情報は CloudEndure で使用するものとは異なりますので、CloudEndure コンソールの AWS Credentials タブには入力しないで下さい。
+<a href="https://aws.amazon.com/cli/" target="_blank">AWS Command Line Interface (CLI)</a> を使用する場合は、ポップアップウィンドウに表示される認証情報を利用してください。なお、この認証情報は CloudEndure で使用するものとは異なりますので、CloudEndure コンソールの AWS Credentials タブには入力しないでください。
 {{% /notice %}}
 
 以上で環境の確認は完了です。 [デプロイされた環境の確認]({{< ref "./review-deployment.ja.md" >}})に進んでください。

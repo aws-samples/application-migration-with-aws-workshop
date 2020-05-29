@@ -17,4 +17,4 @@ weight = 5
   - <a href="https://aws.amazon.com/dms/" target="_blank" >**AWS Database Migration Service**</a> を使ったデータベースの **Re-Platform**
   - <a href="https://aws.amazon.com/cloudendure-migration/" target="_blank" >**CloudEndure Migration**</a> を使った Web サーバーの **Re-Host**
   - <a href="https://aws.amazon.com/ecs/" target="_blank" >**Amazon Elastic Container Service**</a> で稼働するコンテナへの移行による、Web サーバーの**モダナイゼーション**
-  - オプション：<a href="https://aws.amazon.com/architecture/well-architected/" target="_blank" >**AWS Well Architected フレームワーク**</a>に沿った、アーキテクチャの**運用上の優秀性**、**セキュリティ**、**パフォーマンス効率**の向上と**コスト**の最適化
+  - オプション：<a href="https://aws.amazon.com/architecture/well-architected/" target="_blank" >**AWS Well-Architected フレームワーク**</a>に沿った、アーキテクチャの**運用上の優秀性**、**セキュリティ**、**パフォーマンス効率**の向上と**コスト**の最適化
