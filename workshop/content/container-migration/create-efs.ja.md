@@ -1,43 +1,50 @@
 +++
-title = "Create an Amazon EFS file system"
+title = "Amazon EFS ファイルシステムの作成"
 weight = 20
 +++
 
-From **AWS Console**, go to **Services** and select **EFS**, then click **Create file system**.
+マネジメントコンソール上部の **「サービス」** から **<a href="https://console.aws.amazon.com/efs/home?region=us-west-2" target="_blank">Amazon Elastic File System (EFS)</a>** のページを開き、**「ファイルシステムの作成」** ボタンをクリックします。
 
-![create-efs](/ecs/create-efs.png)
+![create-efs](/ecs/create-efs.ja.png)
 
-Select the VPC that you have created at the beginning of the workshop (e.g TargetVPC), private subnets per availability zone for the mount targets and EFS-SG security group for each mount target, then click **Next Step**.
+ **「ステップ 1: ネットワークアクセスを設定する」** では、VPC に本ハンズオンの事前準備で作成した **VPC**（例：TargetVPC）を選択、マウントターゲットの**サブネット**にアベイラビリティゾーンごとの**プライベートサブネット**（\*-private-\*-web）、**セキュリティグループ**に前頁で作成した **EFS 用のセキュリティグループ** (EFS-SG) を指定し、**「次のステップ」** をクリックします。
 
-In the **Step 2: Configure optional settings**, you can enable lifecycle policy, change the throughput mode and enable encryption. For this exercise, enable encryption and leave  default values for the other options.
+**「ステップ 2: ファイルシステムの設定を行う」** では、ライフサイクルポリシーの有効化や、スループットモードの変更、暗号化の有効化を行うことができます。本ハンズオンでは、**暗号化を有効化**し、他のオプションはデフォルト値のままにしておきます。
 
-![efs-enc](/ecs/efs-enc.png)
+![efs-enc](/ecs/efs-enc.ja.png)
 
-![efs-review](/ecs/efs-review.png)
-Finally, review your setting and click **Create File System**
+**「ステップ 3: クライアントアクセスを設定」** では、何も変更せずに **「次のステップ」** をクリックします。
 
-Copy the **DNS name** of the created file system as you will need it later, in the **Create a Task Definition** step.
-![efs-details](/ecs/efs-details.png)
+![efs-review](/ecs/efs-review.ja.png)
 
-Now, you can mount this file system temporarily into the webserver instance to copy the source wordpress content to it.
+**「ステップ 4: 確認と作成」** で、設定を確認し、**「ファイルシステムの作成」** をクリックします。
 
-### Mounting file system to webserver
+後続の [Amazon ECS タスク定義の作成]({{< ref "/create-task-definition.ja.md" >}})で必要になるため、
+作成したファイルシステムの **DNS 名**を、テキストエディタ等にコピーしておいてください。
 
-Click on the **Amazon EC2 mount instructions (from local VPC)** link in the Amazon EFS file system details and follow them.
+![efs-details](/ecs/efs-details.ja.png)
 
-Install the nfs client for the Ubuntu instance, use this command:
+**「Amazon EC2 のマウント手順（ローカル VPC から）」** をクリックすると、作成した EFS ファイルシステムを EC2 インスタンスにマウントする手順が表示されます。今回のハンズオンでは、ファイルシステムを Web サーバーのインスタンスに一時的にマウントし、Wordpress のソースコンテンツを EFS ファイルシステムにコピーします。
 
-```
-sudo apt-get install nfs-common
-```
+### Web サーバーへのファイルシステムのマウント
 
-Follow the below instructions for mounting the file system:
+**「ファイルシステムへのアクセス」** 配下にある、**「Amazon EC2 のマウント手順（ローカル VPC から）」** をクリックし、表示される手順に従って設定を行います。
 
-![efs-mount](/ecs/efs-mount.png)
+1. Web サーバーの EC2 インスタンス（Webserver）にログインします。
 
-Once you mounted the filesystem, copy the whole **/var/www/html/wp-content** folder from the web server to the mounted file system.
+   {{% notice tip %}}
+Web サーバーへのログイン手順については、**「2. サーバーの移行」** で実施した[**アプリケーションの設定**]({{< ref "/server-migration/CE-Webserver-config.ja.md" >}}) を参照してください。
+{{% /notice %}}
 
-Example:
+2. 以下のコマンドを実行して、Ubuntu インスタンス用の NFS クライアントをインストールします：
+   ```
+   sudo apt-get install nfs-common
+   ```
+
+3. マネジメントコンソールに表示されているコマンドを実行して、ファイルシステムをマウントします（以下例）。
+   ![efs-mount](/ecs/efs-mount.ja.png)
+
+ファイルシステムのマウントが完了したら、Web サーバーから **/var/www/html/wp-content** 配下にあるすべてのコンテンツを、マウントしたファイルシステムにコピーします（以下コマンド例）：
 ```
 sudo cp -r /var/www/html/wp-content/* efs/
 ```

@@ -1,72 +1,80 @@
 +++
-title = "CloudEndure Configuration"
+title = "CloudEndure の設定"
 weight = 10
 +++
 
 
-To begin, you will need to configure CloudEndure with **AWS credentials** to access your AWS account and **replication destination** location (subnet) within target AWS account for the CloudEndure Replication Server.
+はじめに、CloudEndure Replication Server が、移行先の AWS アカウントとその中に存在するレプリケーション先のサブネットにアクセスできるよう、
+AWS の資格情報を使って CloudEndure を設定する必要があります。
 
-### Configure AWS Credentials.
+### AWS の資格情報を設定
 
-1. Login to CloudEndure Console at [https://console.cloudendure.com](https://console.cloudendure.com/)
+1. [https://console.cloudendure.com](https://console.cloudendure.com/) から、CloudEndure コンソールにログインします。
 
     ![CE-login](/ce/CE-login.png)
 
-    For **self-paced lab** - use your existing CloudEndure Migration Account or create a new [CloudEndure Migration Account](https://console.cloudendure.com/#/register/register) and a new <a href="https://docs.cloudendure.com/#Getting_Started_with_CloudEndure/Working_with_Projects/Working_with_Projects.htm#Creating_a_New_Project%3FTocPath%3DNavigation%7CGetting%2520Started%2520with%2520CloudEndure%7CWorking%2520with%2520Projects%7C_____2" target="_blank">CloudEndure Project</a>
+    **自身の環境**でハンズオンを実施している場合は、すでにお持ちの CloudEndure Migration アカウントを使うか、新しく [CloudEndure Migration アカウント](https://console.cloudendure.com/#/register/register)を作成してください。
 
-    For **AWS Events** - use **CloudEndure Username** and **Password** listed in the <A href="https://dashboard.eventengine.run/dashboard" target="_blank">Event Engine - Team Dashboard</a>.
+    **AWS 主催のイベント**の場合は、Event Engine の <A href="https://dashboard.eventengine.run/dashboard" target="_blank">Team Dashboard</a> に表示されている **CloudEndure Username** と **Password** を使用してください。
 
     ![CloudEndure Credentials](/ce/CE-console-credentials.png)
 
-    If they are not shown on the <A href="https://dashboard.eventengine.run/dashboard" target="_blank">Event Engine - Team Dashboard</a>, please contact the presenter to provide you with the credentials.
+    <A href="https://dashboard.eventengine.run/dashboard" target="_blank">Team Dashboard</a> に、資格情報が表示されていない場合は、イベント主催者に資格情報を提供してもらうよう依頼してください。
 
-2. Navigate to **Setup & Info** > **AWS Credentials** tab.
+2. CloudEndure コンソールの左上にあるプラスボタンをクリックし、新しい <a href="https://docs.cloudendure.com/#Getting_Started_with_CloudEndure/Working_with_Projects/Working_with_Projects.htm#Creating_a_New_Project%3FTocPath%3DNavigation%7CGetting%2520Started%2520with%2520CloudEndure%7CWorking%2520with%2520Projects%7C_____2" target="_blank">Project</a> を作成します。
+    ![CloudEndure Create Project](/ce/CE-create-project-1.ja.png)
+
+    **Project Name** に任意の名前を指定し、**CREATE PROJECT** ボタンをクリックします。
+    ![CloudEndure Create Project](/ce/CE-create-project-2.ja.png)
+
+2. 左のメニューから **Setup & Info** を選択し、**AWS Credentials** タブを開きます。
 
     ![CE-configure-AWS-Cred.png](/ce/CE-configure-AWS-Cred.png.png)
 
-3. Click the **EDIT** button and enter **AWS Access Key ID** and **AWS Secret Access Key** 
-   
-    For **self-paced lab** - copy this information from the **Output** section of the **ApplicationMigrationWorkshop** <a href="https://us-west-2.console.aws.amazon.com/cloudformation/home?region=us-west-2#/" target="_blank">CloudFormation Template</a>, it will look like on the screenshot below.
+3. **AWS Access Key ID** と **AWS Secret Access Key** のフィールドに、必要な資格情報を入力します。
 
-    ![CloudEndure IAM Access and Secret Access Key](/ce/ce-self-service-accesskeys.png)
+    **自身の環境**でハンズオンを実施している場合は、<a href="https://us-west-2.console.aws.amazon.com/cloudformation/home?region=us-west-2#/" target="_blank">CloudFormation スタック</a>（**ApplicationMigrationWorkshop**）の**出力**セクションに表示されている **CloudEndureUserAccessKey** と **CloudEndureUserSecretAccessKey** の値を入力してください（以下例）。
 
-    For **AWS Event** - copy this information from your <A href="https://dashboard.eventengine.run/dashboard" target="_blank">Event Engine - Team Dashboard</a> - **CloudEndure AWS Credentials** section, it will look like on the screenshot below.  
+    ![CloudEndure IAM Access and Secret Access Key](/ce/ce-self-service-accesskeys.ja.png)
+
+    **AWS 主催のイベント**の場合は、Event Engine の<A href="https://dashboard.eventengine.run/dashboard" target="_blank">Team Dashboard</a> 、 **CloudEndure AWS Credentials** のセクションに表示されている資格情報を入力してください（以下例）。
 
     ![CloudEndure IAM Access and Secret Access Key](/ce/CE-credentials.png)
 
-    Overwrite any values that are already present in **AWS Access Key ID** and **AWS Secret Access Key** fields.
+    **AWS Access Key ID** と **AWS Secret Access Key** のフィールドに既に値が入力されている場合は、上書きしてください。
 
-4. Once you entered the **AWS Access Key ID** and **AWS Secret Access Key**, click the **SAVE** button.
+4. **SAVE** ボタンをクリックして、設定を保存します。
 
-### Configure Replication Settings.
+### Replication Settings
 
-Once you save your **AWS Credentials**, you will be automatically redirected to the **Setup & Info** > **REPLICATION SETTINGS** tab, this is where you configure details of the **CloudEndure Replication Server**.
+AWS 資格情報を保存すると、自動的に **Setup & Info → REPLICATION SETTINGS** タブにリダイレクトされます。
+ここでは CloudEndure Replication Server の詳細設定を行います。
 
 {{% notice note %}}
-Before proceeding **refresh the browser** to retrieve the latest information from your AWS account (you can do this by pressing the **F5** button or manually refreshing your browser by clicking on the refresh button).
+先へ進む前に、AWS アカウントから最新の情報を取得するため、ブラウザを**リフレッシュ**してください（F5 ボタンを押すか、ブラウザのリフレッシュボタンをクリックして、実行できます）。
 {{% /notice %}}
 
 ![CE-Replication-setting](/ce/CE-Replication-setting.png)
 
-1. Update the configuration of the **REPLICATION SETTINGS** screen to match the values below:
+1. REPLICATION SETTINGS 画面の設定を、以下の表の内容に合わせて更新してください。
 
-    | Parameter                                  | Value                                                        |
+    | パラメータ                                   | 入力値                                                        |
     | ------------------------------------------ | ------------------------------------------------------------ |
     | Migration Source                           | Other Infrastructure                                         |
     | Migration Target                           | AWS US West (Oregon)                                         |
     | Replication Server instance type           | Default                                                      |
     | Converter instance type                    | m5.large                                                     |
-    | Dedicated replication servers              | Unchecked                                                    |
+    | Dedicated replication servers              | チェックを外す                                                 |
     | Subnet for the replication servers         | TargetVPC-public-a |
-    | Security Group for the replication servers | Default CloudEndure Security Group                                                     |
-    | Use VPN or DirectConnect (using a private IP) | Unchecked                                                |
-    | Enable volume encryption                   | Checked                                                     |    
+    | Security Group for the replication servers | Default CloudEndure Security Group                          |
+    | Use VPN or DirectConnect (using a private IP) | チェックを外す                                             |
+    | Enable volume encryption                   | チェックを入れる                                              |    
     | Choose the Volume Encryption Key you wish to apply to the Replication Servers' volumes | Default volume encryption key  |
     
-    ![CE-BluePrints](/ce/ce-blueprint-details.png)
+    ![CE-BluePrints](/ce/ce-blueprint-details.ja.png)
 
-2. Scroll to the bottom of the screen and click **SAVE REPLICATION SETTINGS** button.
+2. 画面下までスクロールして、**SAVE REPLICATION SETTINGS** ボタンをクリックします。
 
     {{% notice tip %}}
-If on top of the screen you see a notice saying that AWS credentials must be refreshed, please refresh the browser (F5).
+画面上部に "AWS credentials must be refreshed" という通知が表示される場合は、ブラウザをリフレッシュしてください。
 {{% /notice %}}

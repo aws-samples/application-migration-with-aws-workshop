@@ -6,49 +6,53 @@ pre = "<b>3. </b>"
 +++
 
 {{% notice info %}}
-This section assumes that you have already completed sections **1. Database Migration** and **2. Server Migration**.
+本セクションは、[**1. データベースの移行**]({{< ref "/database-migration/_index.ja.md" >}})と、[**2. サーバーの移行**]({{< ref "/server-migration/_index.ja.md" >}})が完了していることを前提としています。
 {{% /notice %}}
 
 
-#### Amazon Elastic Container Service (ECS) Overview
+#### Amazon Elastic Container Service (ECS) の概要
 
-**Amazon Elastic Container Service (Amazon ECS)** is a fully managed container orchestration service. You can choose to run your ECS clusters using:    
-            
-- AWS Fargate launch type, which provides serverless compute capabilities for containers, or   
-- EC2 instances that you manage. 
+**Amazon Elastic Container Service (ECS)** は、フルマネージド型のコンテナオーケストレーションサービスです。
+以下の起動タイプを選択して、ECS クラスターを実行することができます：
+
+- コンテナ向けサーバーレスコンピューティング機能を提供する Fargate 起動タイプ
+- ユーザーが管理する Amazon EC2 インスタンスで、クラスターを実行する EC2 起動タイプ
   
-In this lab you will use the **AWS Fargate** launch type to run the application without the hassle and undifferentiating heavy lifting of provisioninig, scaling, managing and securing the backend infrastructure.
+本ハンズオンでは、**Fargate** 起動タイプを使用して、プロビジョニング、スケーリング、バックエンドインフラストラクチャの管理やセキュリティの確保など、煩雑かつ差別化が難しいタスクを行うことなく、アプリケーションを実行します。
 
-Please see below for diagram that shows the general architecture of Amazon ECS using the AWS Fargate launch type:
+以下の図は、Fargate 起動タイプを使用する Amazon ECS 環境のアーキテクチャを示しています。
 
 ![ecs-ec2type-arch](/ecs/overview-fargate.png)
 
-#### Amazon ECS core components:
+#### Amazon ECS のコア・コンポーネント
 
-<a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/clusters.html" target="_blank">Amazon ECS Cluster</a> is a logical grouping of resources. 
+<a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/clusters.html" target="_blank">**Amazon ECS クラスター**</a> は、タスクやサービスといったリソースの論理グループです。
 
-<a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definitions.html" target="_blank">Task Definition</a> is a JSON file, that describes one or more containers (up to a maximum of ten), that form your application. You can think of a task as the blueprint for your application.
+<a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definitions.html" target="_blank">**タスク定義**</a>は、アプリケーションを構成する1つ以上（最大10個）のコンテナを記述した JSON 形式のテキストファイルです。アプリケーションの設計図と考えることができます。
 
-<a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/scheduling_tasks.html" target="_blank">Task</a> is the instantiation of a task definition within a cluster. After you have created a task definition for your application within Amazon ECS, you can specify the number of tasks that will run on your cluster.
+<a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/scheduling_tasks.html" target="_blank">**タスク**</a>はクラスター内のタスク定義をインスタンス化したものです。Amazon ECS でアプリケーションのタスク定義を作成した後、クラスターで実行するタスクの数を指定できます。
 
-<a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs_services.html" target="_blank">Services</a> - Amazon ECS allows you to run and maintain a specified number of instances of a task definition simultaneously in a cluster. This is called a service. If any of your tasks should fail or stop for any reason, the Amazon ECS service scheduler launches another instance of your task definition to replace it and maintain the desired count of tasks in the service depending on the scheduling strategy used.
+<a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs_services.html" target="_blank">**Amazon ECS サービス**</a>を使用すると、タスク定義で指定した数のインスタンスを、Amazon ECS クラスター内で同時に実行し、維持することができます。タスクが何らかの理由で失敗または停止した場合、Amazon ECS サービススケジューラは、タスク定義の別のインスタンスを起動してそれに置き換え、サービスの作成時に指定したスケジュール戦略に基づいて、必要数のタスクを維持します。
 
+**AWS Fargate** の詳細については、以下の動画をご覧ください：
+<center>
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/IEvLkwdFgnU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</center>
 
-#### Migrating the Web application to container:
+#### Web アプリケーションのコンテナへの移行
 
+Web アプリケーションをコンテナに移行するには、以下の手順を実行します：
 
-To migrate the web application to containers, you will perform the following actions:
+1. [セキュリティグループの作成]({{< ref "/create-sg.ja.md" >}})
 
-1. [Create additional security groups for your VPC]({{< ref "/create-sg.ja.md" >}})
+2. [**Amazon Elastic File System（EFS）** ファイルシステムの作成]({{< ref "/create-efs.ja.md" >}})
 
-2. [Create an **Amazon EFS** (Elastic File System) file system]({{< ref "/create-efs.ja.md" >}})
+3. [**AWS Systems Manager** パラメータストアへのデータベース変数の追加]({{< ref "/configure-parameters-store.ja.md" >}})
 
-3. [Add the database variables into **AWS Systems Manager** Parameters Store]({{< ref "/configure-parameters-store.ja.md" >}})
+4. [**Elastic Load Balancing** の設定]({{< ref "/create-loadbalancer.ja.md" >}})
 
-4. [Create an **AWS Elastic Load Balancer**]({{< ref "/create-loadbalancer.ja.md" >}})
+5. [**Amazon Elastic Container Service (ECS)** クラスターの作成]({{< ref "/create-ecs-cluster.ja.md" >}})
 
-5. [Create an **Amazon ECS (Elastic Container Service)** Cluster]({{< ref "/create-ecs-cluster.ja.md" >}})
+6. [**Amazon ECS タスク定義**の作成]({{< ref "/create-task-definition.ja.md" >}})
 
-6. [Create an **Amazon ECS Task Definition**]({{< ref "/create-task-definition.ja.md" >}})
-
-7. [Create an **Amazon ECS Service**]({{< ref "/create-service.ja.md" >}})
+7. [**Amazon ECS サービス**の作成]({{< ref "/create-service.ja.md" >}})

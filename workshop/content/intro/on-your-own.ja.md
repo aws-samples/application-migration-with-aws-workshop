@@ -1,82 +1,89 @@
 +++
-title = "Running the workshop on your own"
+title = "自身の環境でハンズオンを開始"
 weight = 20
 +++
 
 {{% notice warning %}}
-Only complete this section if you are running the workshop on your own. If you are at an AWS hosted event (such as re:Invent, Gameday, Workshop, or any other event hosted by an AWS employee), go to [Start the workshop at an AWS event]({{< ref "/at-aws-event.ja.md" >}}).
+このセクションは、ご自身の環境でハンズオンを実施する場合にのみ、実行してください。AWS が主催するイベント（re:Invent、Gameday、ワークショップ、または AWS の従業員が主催するその他のイベント）に参加している場合は、[AWSイベントでハンズオンを開始]({{< ref "/at-aws-event.ja.md" >}})に進んでください。
 {{% /notice %}}
 
-### Self-paced learning environment
+### ハンズオン環境の準備
 
-This lab assumes you have access to an **AWS Account** with <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/getting-started_create-admin-group.html" target="_blank">Administrator privileges</a>. To create a new AWS Accounts please follow <a href="https://aws.amazon.com/premiumsupport/knowledge-center/create-and-activate-aws-account/" target="_blank">How do I create and activate a new Amazon Web Services account?</a> article.
+本ハンズオンでは、**AWS アカウント**に<a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/getting-started_create-admin-group.html" target="_blank">管理者権限</a>でアクセスできることを前提としています。新しく AWS アカウントを作成する場合は、<a href="https://aws.amazon.com/premiumsupport/knowledge-center/create-and-activate-aws-account/" target="_blank">こちらの記事</a>を参考にしてください。
 
-Instructions below will deploy the source environment in your AWS account, the deployed resources consists of two t3.micro EC2 machines (one for webserver, one for database), a NAT Gateway, an API Gateway and two AWS Lambda functions (for easy retrieval of EC2 Access Key). Total cost of resources deployed throughout the lab should be less than $5 (assuming 4 hour of work), some of them are covered by <a href="https://aws.amazon.com/free/" target="_blank">AWS Free tier</a>. 
+以下の手順では、移行元となる環境（ソース）を、AWS アカウント内にデプロイします。デプロイされるリソースは、2つの t3.micro インスタンス（Web サーバー用に1つ、データベース用に1つ）、NAT Gateway、API Gateway、2つの Lambda 関数（EC2 インスタンスへのアクセスに必要な SSH キーペアの取得を簡略化するために使用）で構成されます。ハンズオン全体を通してデプロイされるリソースの総コストは、約4時間の作業で5ドル未満を想定しており、その一部は <a href="https://aws.amazon.com/free/" target="_blank">AWS 無料利用枠</a>でカバーされます。
 
-Remember to [cleanup]({{< ref "/cleanup/_index.ja.md" >}}) your AWS account after running the lab, to avoid unnecessary charges!
+不要な請求を避けるために、ハンズオンの完了後は必ず [ハンズオン環境の削除]({{< ref "/cleanup/_index.ja.md" >}})を実施してください。
 
-#### Option 1: Simple Deployment
+#### オプション1： CloudFormation による自動デプロイ
 
-1. Click on the button below <a href="https://console.aws.amazon.com/cloudformation/home?region=us-west-2#/stacks/new?stackName=ApplicationMigrationWorkshop&templateURL=https://application-migration-with-aws-workshop.s3-us-west-2.amazonaws.com/template/migration_workshop_source_template.yml" target="_blank"><img src="https://application-migration-with-aws-workshop.s3-us-west-2.amazonaws.com/static/cloudformation-launch-stack.png"></a>
+1. 以下のボタンをクリックします。 <a href="https://console.aws.amazon.com/cloudformation/home?region=us-west-2#/stacks/new?stackName=ApplicationMigrationWorkshop&templateURL=https://application-migration-with-aws-workshop.s3-us-west-2.amazonaws.com/template/migration_workshop_source_template.yml" target="_blank"><img src="https://application-migration-with-aws-workshop.s3-us-west-2.amazonaws.com/static/cloudformation-launch-stack.png"></a>
 
+2. **「ステップ1 ： テンプレートの指定」** で、画面右上に表示されるリージョンが**オレゴン**になっていること、
+**Amazon S3 URL** のフィールドにテンプレートの URL https://application-migration-with-aws-workshop.s3-us-west-2.amazonaws.com/template/migration_workshop_source_template.yml が入力されていることを確認し、**「次へ」** をクリックします。
+![CloudFormation Step 1](/intro/cloudformation-step1.ja.png)
 
-2. On the **Step 1 - Specify template** confirm that the URL https://application-migration-with-aws-workshop.s3-us-west-2.amazonaws.com/template/migration_workshop_source_template.yml is entered in the **Amazon S3 URL** field and press **Next**
-  ![CloudFormation Step 1](/intro/cloudformation-step1.en.png)
+3. **「ステップ2 ： スタックの詳細を指定」** で、**スタックの名前**のフィールドに、ApplicationMigrationWorkshop が入力されていることを確認し、**「次へ」** をクリックします。
+![CloudFormation Step 2](/intro/cloudformation-step2.ja.png)
 
-4. On the **Step 2 - Specify stack details** screen make sure ApplicationMigrationWorkshop is entered in the **Stack name** field and press **Next**
-   ![CloudFormation Step 2](/intro/cloudformation-step2.en.png)
+4. **「ステップ3 ： スタックオプションの設定」** では、何も変更せずに **「次へ」** をクリックします。
 
-5. On the **Step 3 - Configure stack options** screen don't make any changes, just press **Next**  
+5. **「ステップ4 ： レビュー」** で、ページの一番下までスクロールし、以下のスクリーンショットのように、**すべてのチェックボックス** をオンにしてから、**「次へ」** をクリックして、スタックの作成を開始します。
+![CloudFormation Step 4](/intro/cloudformation-step4.ja.png)
 
-6. On the **Step 4 - Review** screen, scroll to the bottom of the page and check all checkboxes, as on the screenshot below, then press **Next** for the template to be deployed.  
-  ![CloudFormation Step 4](/intro/cloudformation-step4.en.png)
+スタックの状態が **CREATE_COMPLETE** になったことを確認し、
+以下のスクリーンショットのように、**「出力」** タブから作成されたソース環境に関する情報を確認します。  
+作成中に、スタックのページから離れてしまった場合は、マネジメントコンソール上部の **「サービス」** から **<a href="https://console.aws.amazon.com/cloudformation/home?region=us-west-2" target="_blank">CloudFormation</a>** のページを開き、上の手順で作成した**スタック**（ApplicationMigrationWorkshop）を選択することで、元のページに戻ることが可能です。
+![Source Environment Information in AWS Console](/intro/self-service-env-awsconsole-info.ja.png)
 
-When the template is in the **CREATE_COMPLETE** you can find information about created source environment by going to **AWS Console -> CloudFormation**, selecting  **ApplicationMigrationWorkshop** stack and going to the **Outputs** tab. You will see information like on the screenshot below.
+上で確認した情報は、ハンズオンで使用するため、テキストエディタ等にコピーを取っておいてください。
 
-![Source Environment Information in AWS Console](/intro/self-service-env-awsconsole-info.en.png)
+{{% notice tip %}}
+AWS アカウント内に、既に同じ名前の IAM ロールが存在することで、スタックの作成が失敗する場合は、既存のロールを削除して、スタックの作成を再実行してください。
+{{% /notice %}}
 
-Copy - paste this information, as you will use it during the lab.
+以上でデプロイは完了です。 [AWS Migration Hub の有効化]({{< ref "/migration-hub.ja.md" >}})に進んでください。
 
-Now you can enable [AWS Migration Hub]({{< ref "/migration-hub.ja.md" >}})  
+---
 
-
-
-
-#### Option 2: Building everything from the source code
+#### オプション2： ソースコードからビルドしてデプロイ
 
 {{% notice note %}}
-You don't need to continue with option 2 if you already deployed the environment using option 1
+オプション1で環境をすでにデプロイしている場合は、オプション2を実行する必要はありません。
 {{% /notice %}}
 
-Section below describes how to build the CloudFormation template and deploy it using AWS Command Line Interface (CLI).
+以下のセクションでは、CloudFormation のテンプレートを作成し、AWS Command Line Interface（CLI）を使用して、環境をデプロイする方法について説明します。
 
-1. Install  <a href="https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-sam-cli-install.html" target="_blank">AWS SAM</a>
+1. <a href="https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-sam-cli-install.html" target="_blank">AWS Serverless Application Model (SAM)</a> をインストールします。
 
-2. Install <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-install.html" target="_blank">AWS CLI</a> and <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html" target="_blank">configure it</a>
+2. <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-install.html" target="_blank">AWS CLI</a> をインストールし、<a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html" target="_blank">設定</a>します。
 
-3. Download or clone the project from <a href="https://github.com/aws-samples/application-migration-with-aws-workshop" target="_blank">https://github.com/aws-samples/application-migration-with-aws-workshop</a>
-
-
-4. Create a unique S3 bucket in the *us-west-2 (Oregon)* region, by running the following (replace **application-migration-workshop** with a custom S3 bucket name)
-
+3. <a href="https://github.com/aws-samples/application-migration-with-aws-workshop" target="_blank">https://github.com/aws-samples/application-migration-with-aws-workshop</a> からプロジェクトをダウンロードまたはクローンします。
    ```
-   aws s3 mb application-migration-workshop --region us-west-2
+   git clone https://github.com/aws-samples/application-migration-with-aws-workshop.git
    ```  
 
-5. Build the template and deploy it (replace **application-migration-workshop** with the custom S3 bucket name created in previous step)  
-
+4. 次のコマンドを実行して、*us-west-2*（オレゴン）リージョン に、新しい S3 バケットを作成します（**application-migration-workshop** の部分は、半角英数字の任意の名前に置き換えて実施ください）。
    ```
+   aws s3 mb s3://application-migration-workshop --region us-west-2
+   ```  
+
+5. テンプレートをビルドし、デプロイします（**application-migration-workshop** の部分は、前のステップで作成した S3 バケットの名前に置き換えて実施ください）。
+   ```
+   cd application-migration-with-aws-workshop/resources
    sam build -t cloudformation.yml  
-   sam package --s3-bucket application-migration-workshop --template-file .aws-sam\build\template.yaml --output-template-file ./migration_workshop_source_template.yml  
+   sam package --s3-bucket application-migration-workshop --template-file .aws-sam/build/template.yaml --output-template-file ./migration_workshop_source_template.yml  
    sam deploy --template-file ./migration_workshop_source_template.yml --stack-name ApplicationMigrationWorkshop --region us-west-2 --capabilities CAPABILITY_IAM CAPABILITY_NAMED_IAM CAPABILITY_AUTO_EXPAND  
    ```
 
-6. As soon as the deployment is finalized, you will see information about the source environment in the console, like on the screenshot below.
+6. デプロイが完了すると、以下のスクリーンショットのように、ソース環境に関する情報がコンソールに表示されます。
+![Source Environment in CLI Console](/intro/self-service-env-cli-info.ja.png)
 
-![Source Environment in CLI Console](/intro/self-service-env-cli-info.en.png)
+マネジメントコンソール上部の **「サービス」** から **<a href="https://console.aws.amazon.com/cloudformation/home?region=us-west-2" target="_blank">CloudFormation</a>** のページを開き、上の手順で作成した**スタック**（ApplicationMigrationWorkshop）を選択、**「出力」** タブを開くことで、同様の情報をいつでも確認することができます。
+![Source Environment Information in AWS Console](/intro/self-service-env-awsconsole-info.ja.png)
 
-You can always find it later by going to **AWS Console -> CloudFormation**, select created **ApplicationMigrationWorkshop** stack and go to the **Outputs** tab, like on the screenshot below.
+{{% notice tip %}}
+AWS アカウント内に、既に同じ名前の IAM ロールが存在することで、スタックの作成が失敗する場合は、既存のロールを削除して、スタックの作成を再実行してください。
+{{% /notice %}}
 
-![Source Environment Information in AWS Console](/intro/self-service-env-awsconsole-info.en.png)
-
-Now you can enable [AWS Migration Hub]({{< ref "/migration-hub.ja.md" >}})  
+以上で環境の確認は完了です。 [デプロイされた環境の確認]({{< ref "./review-deployment.ja.md" >}})に進んでください。

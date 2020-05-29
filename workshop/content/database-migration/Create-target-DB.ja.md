@@ -1,73 +1,74 @@
 +++
-title = "Create Target DB"
+title = "ターゲットデータベースの作成"
 weight = 10
 +++
 
-### Database Migration
+### データベース移行
 
-Database migrations can be performed in a number of ways, and for the purpose of this workshop we will perform a **continuous data replication** migration using <a href="https://aws.amazon.com/dms/" target="_blank">AWS Database Migrations Service (DMS)</a>.
+データベースの移行には様々な方法がありますが、本ハンズオンでは <a href="https://aws.amazon.com/dms/" target="_blank">AWS Database Migrations Service (DMS)</a> を利用した継続的なデータレプリケーションによる移行を行います。
 
-### Create the target database
+### ターゲットデータベースの作成
 
-Before you configure **AWS DMS**, you will need to create your target database in the AWS account provided. Use **AWS Relation Database Service (RDS)** to perform this activity making it easy to set up, operate, and scale a relational database in the cloud.
+AWS DMS の設定を行う前に、移行先の AWS アカウントで、ターゲットデータベースを作成する必要があります。**AWS Relational Database Service (RDS)** を使用することで、クラウド上でのリレーショナルデータベースのセットアップ、運用、スケーリングを簡単に行うことができます。
 
-1. Go to the **AWS Console**, from **Services** choose **RDS** and then click **Create database**
+1. マネジメントコンソール上部の **「サービス」** から **<a href="https://console.aws.amazon.com/rds/home?region=us-west-2" target="_blank">RDS</a>** のページを開き、**「データベースの作成」** をクリックします。
 
-2. From the **Engine options**, select MySQL and Version MySQL 5.7.22
+2. **「エンジンのタイプ」** で MySQL、**「バージョン」** で **MySQL 5.7.22** を選択します。
 
-    ![1](/db-mig/1.png)
+    ![1](/db-mig/1.ja.png)
 
 
     {{% notice note %}}
-You can confirm the source MySQL version from the source database using SQL query - **SELECT@@version;**
+ターゲットデータベースの MySQL バージョンは、ソースデータベースのバージョンに合わせて設定します。
+ソースデータベースのバージョンは、次の SQL 文で確認することができます：  
+**SELECT @@version;**
 {{% /notice %}}
 
-    In the **Settings** section, configure the DB instance identifier (e.g. database-1), Master username (e.g. admin) and Master password for your new database instance.
+    **「設定」** のセクションでは、新しいデータベースインスタンスの **DB インスタンス識別子**（例：database-1）、**マスターユーザー名**（例：admin）、および**マスターパスワード**を設定します。
 
+   ![3_db](/db-mig/3_db.ja.png)
 
-    ![3_db](/db-mig/3_db.png)
-
-    {{% notice note %}}
-Make sure to write down **Master username** and **Master password**, as you will use it later.
+   {{% notice note %}}
+**マスターユーザー名** と **マスターパスワード** は、後ほど使用しますので、テキストエディタ等にコピーしておいてください。
 {{% /notice %}}
 
-    Select **db.t3.medium** from the Burstable DB instance class and select **General Purpose (SSD)** for Storage Type.
-    ![4_db](/db-mig/4_db.png)
+   バースト可能クラスから **db.t3.medium** を選択し、ストレージタイプに **汎用 (SSD)** を選択します。
+   ストレージ割り当てに **100GiB** を指定し、**「ストレージの自動スケーリングを有効にする」** のチェックを外してください。
 
-3. For the **Availability & durability**, switch to **Do not create a standby instance** to save costs. 
+   ![4_db](/db-mig/4_db.ja.png)
+
+3. **「可用性と耐久性」** のセクションでは、コストを削減するため **「スタンバイインスタンスを作成しないでください」** を選択してください。
 
     {{% notice note %}}
-For production workloads, we recommend enabling the standby instance to enable <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.MultiAZ.html" target="_blank">Multi-AZ Deployment</a> for higher availability.
+本番環境のワークロードでは、より高い可用性を実現するために、スタンバイインスタンスを有効にし、<a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.MultiAZ.html" target="_blank">マルチ AZ デプロイメント</a>  を有効にすることをお勧めします。
 {{% /notice %}}  
 
-    ![5_db](/db-mig/5_db.png)
+    ![5_db](/db-mig/5_db.ja.png)
 
-4. In the **Connectivity** section:
+4. **「接続」** のセクションでは：
 
-    * In **Virtual Private Cloud (VPC)**, select **TargetVPC** (this is the <a href="https://aws.amazon.com/vpc/" target="_blank">Amazon Virtual Private Cloud</a> that was automatically created for this lab)
-    * In **Additional connectivity configuration -> VPC Security Group**, select **Create new** VPC security group and give it a name (e.g. "DB-SG").
+    * **Virtual Private Cloud (VPC)** に、**TargetVPC**（事前準備で自動作成された <a href="https://aws.amazon.com/vpc/" target="_blank">Amazon Virtual Private Cloud</a>） を選択します。
+    * **「追加の接続設定」→ 「VPC セキュリティグループ」** で、**「新規作成」** を選択し、**名前**（例："DB-SG"）を付けます。
 
-
-    ![6_db](/db-mig/6_db.png)
-
+    ![6_db](/db-mig/6_db.ja.png)
 
 
     {{% notice note %}}
-Note: You will edit this VPC security group later to make sure that the DMS Replication Instance is able to access the target database and to allow access from your Webserver.
+後ほど、この VPC セキュリティグループを編集して、DMS レプリケーションインスタンスと Web サーバーから ターゲットデータベースへのアクセスを許可するようにします。
 {{% /notice %}}
 
-5. For the **Database authentication**, choose **Password authentication**.
-6. (AWS hosted events only) In the **Additional configuration**, make sure to uncheck **Enable Enhanced monitoring** under the **Monitoring** section as indicated below:
+5. **「データベース認証」** には、**「パスワード認証」** を選択してください。
 
-    ![6_2_db](/db-mig/6_2_db.png)
+    ![6_2_db](/db-mig/6_2_db.ja.png)
 
+6. AWS 主催のイベントのみ： **「追加設定」** 内の **「モニタリング」** のセクションで、**「拡張モニタリングの有効化」** のチェックを外してください。
 
-    ![8_db](/db-mig/8_db.png)
+    ![8_db](/db-mig/8_db.ja.png)
 
     {{% notice note %}}
-Using <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Monitoring.OS.html" target="_blank">Enhanced monitoring</a> is a very good idea for production workloads, during AWS hosted events we uncheck it because of limitations of IAM Role that was provisioned for attendees.
+本番環境のワークロードでは、<a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Monitoring.OS.html" target="_blank">拡張モニタリング</a>を有効化することをお勧めしますが、AWS が主催するイベントでは、参加者用にプロビジョニングされている IAM ロールに制限があるため、チェックを外しています。
 {{% /notice %}}
 
-6. Finally, review the **Estimated monthly costs** and click the **Create database** button.
+7. 最後に、月間コストの見積もりを確認して、**「データベースの作成」** ボタンをクリックします。
 
-   ![8_2_db](/db-mig/8_2_db.png)
+   ![8_2_db](/db-mig/8_2_db.ja.png)

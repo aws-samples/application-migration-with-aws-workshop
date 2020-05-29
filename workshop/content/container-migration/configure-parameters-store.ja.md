@@ -1,24 +1,30 @@
 +++
-title = "Configure the Parameter Store"
+title = "パラメータストアの設定"
 weight = 30
 +++
 
-As we will use the official wordpress docker image with RDS database, we will need to provide database credentials, database name and server details for the wordpress configuration. 
+本ハンズオンでは、 Wordpress の公式 Docker イメージと RDS データベースを使用するため、
+Wordpress の設定を行う際にデータベースの認証情報、データベース名や、サーバーのホスト名を提供する必要があります。
 
-The best way to achieve that is to manage those parameters in **AWS Systems Manager** Parameter Store instead of storing them inside the docker image or ECS Task Definition.
+これを実現するための最良の方法は、上記のパラメータを Docker イメージや Amazon Elastic Container Service (ECS) タスク定義の中に保持するのではなく、
+**AWS Systems Manager** パラメータストアで管理することです。
 
-From **AWS Console**, select **Services**, then **Systems Manger** and go to **Parameter Store**.
+マネジメントコンソール上部の **「サービス」** から **<a href="https://console.aws.amazon.com/systems-manager/home?region=us-west-2" target="_blank">Systems Manager</a>** のページを開き、左のメニューから **「パラメータストア」** を選択します。
 
-Click on **Create parameter** button and enter **Parameter Details** (Name, Description, Type and Value) for parameters as per the table below.
+**「パラメータの作成」** をクリックして、以下の表をもとに**パラメータの詳細**（名前、説明、タイプ、値）を入力します。
 
-![parameter-details](/ecs/parameter-details.png)
+![parameter-details](/ecs/parameter-details.ja.png)
 
-You will need to repeat the above for all the following parameters:
+以下のすべてのパラメータについて、上記の手順を繰り返します：
 
+| 名前                    | タイプ           | 値                             |
+| ---------------------- | --------------- |--------------------------------|
+| DB_HOST                | 文字列           | データベース移行のセクションで作成した <br>RDS インスタンスのエンドポイント                   |
+| DB_NAME                | 文字列           | ターゲットデータベース名（例： wordpress-db） |
+| DB_USERNAME            | 文字列           | RDS インスタンス作成時に設定したユーザー名      |
+| DB_PASSWORD            | 安全な文字列      | RDS インスタンス作成時に設定したパスワード    |
 
-| Parameter              | Type             | Value                          |
-| ---------------------- | ---------------- |--------------------------------|
-| DB_HOST                | String           | RDS endpoint                   |
-| DB_NAME                | String           | name of the target database  (wordpress-db)  |
-| DB_USERNAME            | String           | RDS database username          |
-| DB_PASSWORD            | SecureString     | RDS database password          |
+{{% notice note %}}
+DB_PASSWORD の設定時に、**「KMS の主要なソース」** と **「KMS キー ID」** の指定を追加で求められますが、
+本ハンズオンではデフォルト値のままで問題ありません。
+{{% /notice %}}

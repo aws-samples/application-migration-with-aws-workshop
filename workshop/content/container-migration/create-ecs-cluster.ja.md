@@ -1,20 +1,19 @@
 +++
-title = "Create an Amazon ECS cluster"
+title = "Amazon ECS クラスターの作成"
 weight = 40
 +++
 
 
-### Create Amazon ECS cluster
+### Amazon Elastic Container Service (ECS) クラスターの作成
 
-From **AWS console**, go to **Services**, select **ECS** and then click **Create Cluster** button
+マネジメントコンソール上部の **「サービス」** から **<a href="https://console.aws.amazon.com/ecs/home?region=us-west-2" target="_blank">Elastic Container Service</a>** のページを開き、左のメニューから **「クラスター」** を選択します。クラスターの一覧が表示されたら、**「クラスターの作成」** ボタンをクリックします。
 
-Select **Networking only** for cluster template and click **Next step**.
+「ステップ 1: クラスターテンプレートの選択 」では、 **「ネットワーキングのみ」** を選択し、**「次のステップ」** をクリックします。
 
-![create-cluster](/ecs/create-cluster.png)
+![create-cluster](/ecs/create-cluster.ja.png)
 
-In cluster configuration section, provide a name of the cluster (e.g. unicorns-cluster), check the "Enable Container Insights" box to enable the **CloudWach container insights** for more in-depth metrics provided through **Amazon CloudWatch**.
+「ステップ 2: クラスターの設定」では、**クラスター名**（例：unicorn-cluster）を入力し、**「Container Insights を有効にする」** ボックスにチェックを入れることで、Amazon CloudWatch よりも詳細なメトリクスを提供する **CloudWatch Container Insights** を有効にします。
 
-![configure-cluster](/ecs/configure-cluster.png)
+![configure-cluster](/ecs/configure-cluster.ja.png)
 
-
-Finally press the **Create** button to create the Amazon ECS cluster.
+最後に **「作成」** ボタンを押して Amazon ECS クラスターを作成します。

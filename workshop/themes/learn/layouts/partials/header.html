@@ -43,7 +43,7 @@
   {{ partial "custom-header.html" . }}
 </head>
 
-<body class="" data-url="{{ .RelPermalink }}">
+<body {{ if eq .Site.Language.Lang "ja" }}class="ja"{{ else }}class=""{{ end }} data-url="{{ .RelPermalink }}">
   {{ partial "menu.html" . }}
   <section id="body">
     <div id="overlay"></div>
@@ -90,7 +90,7 @@
         {{ end }}
         <div id="body-inner">
           <h1>{{.Title}}</h1>
-
+          
           {{define "breadcrumb"}}
           {{$parent := .page.Parent }}
           {{ if $parent }}

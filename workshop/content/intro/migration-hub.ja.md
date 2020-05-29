@@ -1,24 +1,25 @@
 +++
-title = "Enable Migration Hub"
-weight = 40
+title = "Migration Hub の有効化"
+weight = 50
 +++
 
 #### AWS Migration Hub
 
-<a href="https://aws.amazon.com/migration-hub/" target="_blank">AWS Migration Hub</a> provides a single location to track the progress of application migrations across multiple AWS and partner solutions.
+<a href="https://aws.amazon.com/migration-hub/" target="_blank">AWS Migration Hub</a> では、AWS およびパートナーの複数のソリューションにおける、アプリケーション移行の進行状況を1つの場所から追跡できます。  
+有効化するには、マネジメントコンソール上部の **「サービス」** から **<a href="https://console.aws.amazon.com/migrationhub/home?region=us-west-2" target="_blank">AWS Migration Hub</a>** のページを開きます。
+左のメニューから **「移行」** を選択し、**米国西部（オレゴン）** をホームリージョンに設定してください。
 
-To enable it, inside **AWS Console** go to **Services -> AWS Migration Hub**, then from the left menu click on **Migrate** and select **US West Oregon** as your home region.
+![Migration Hub - choose home region](/intro/migration-hub-choose-home-region.ja.png)
 
-![Migration Hub - choose home region](/intro/migration-hub-choose-home-region.png)
+次に、**「移行」 → 「ツール」** をクリックして、AWS Migration Hub に移行の進行状況を送信するツールを選択します。
+追加設定なしで使用できる CloudEndure Migration に加え、今回は **AWS Database Migration Service (DMS)** との接続を設定します。
 
-Then click on **Migrate -> Tools** to select tools that will provide updates to **AWS Migration Hub**. CloudEndure Migration is already working out of the box, but you need to configure integration with **AWS Database Migration Service**.
+ページの一番下までスクロールし、**AWS Database Migration Service** カードの **「接続」** ボタンをクリックします。
 
-Scroll to the bottom of the page and click on the **Connect** button in the **AWS Database Migration Service card**.
+![Migration Hub - connect DMS](/intro/migration-hub-connect-dms.ja.png)
 
-![Migration Hub - connect DMS](/intro/migration-hub-connect-dms.png)
+数秒のうちに、接続のステータスが **「接続されていません」** から **「接続済み」** に変化します。
 
-In a matter of seconds, the status of integration should change from **Not connected**, to **Connected**.
+![Migration Hub - connected DMS](/intro/migration-hub-connect-dms-connected.ja.png)
 
-![Migration Hub - connected DMS](/intro/migration-hub-connect-dms-connected.png)
-
-That's it, all your future activities in **CloudEndure Migration** and **AWS Database Migration Service** will be reported through the **AWS Migration Hub** dashboard.
+以上で AWS Migration Hub の設定は完了です。今後、**CloudEndure Migration** および **AWS Database Migration Service** での、すべてのアクティビティを **AWS Migration Hub** のダッシュボードから確認することができます。

@@ -1,52 +1,50 @@
 +++
-title = "Running the workshop at an AWS Event"
+title = "AWS イベントでハンズオンを開始"
 date = 2019-10-24T10:02:15+02:00
 weight = 30
 +++
 
 {{% notice warning %}}
-Only complete this section if you are at an AWS hosted event (such as re:Invent, Gameday, Workshop, or any other event hosted by an AWS employee). If you are running the workshop on your own, go to: [Start the workshop on your own]({{< ref "/on-your-own.ja.md" >}})
+AWS が主催するイベント（re:Invent、Gameday、ワークショップ、または AWS の従業員が主催するその他のイベント）に参加している場合にのみ、このセクションを実行してください。ご自身の環境でハンズオンを実施する場合は、[自身の環境でハンズオンを開始]({{< ref "/on-your-own.ja.md" >}})に進んでください。
 {{% /notice %}}
 
-### Access the Dashboard
+### ダッシュボードへのアクセス
 
-Section below describes how to access information about your source environment, when the workshop is run on an AWS Event.
+以下のセクションでは、移行元となる環境（ソース）に関する情報へのアクセス方法について、説明します。
 
-- Go to <a href="https://dashboard.eventengine.run/" target="_blank">https://dashboard.eventengine.run/</a>
+- <a href="https://dashboard.eventengine.run/" target="_blank">https://dashboard.eventengine.run/</a> にアクセスします
 
-- Enter the 12 digit team hash that was given to you
+- イベント主催者から渡された12桁のハッシュ値を入力してください
 
 
   ![dashboard-hash](/intro/dashboard-hash.png)
 
 
 
-### Access the Source Environment
+### 移行元環境（ソース）へのアクセス
 
-In the **Migration GameDay** module, under the **Outputs** section, the dashboard will show details about the **Source environment** as below:
+**Migration GameDay** モジュールの、**Outputs** セクション配下に、ソース環境に関する詳細が表示されます：
 
   ![dashboard-output](/intro/src-env-output.png)
 
 
-### Access AWS Account
+### AWS アカウントへのアクセス
 
-To access your AWS account, click on the **AWS Console** button as indicated below:
-
+以下のスクリーンショットに示す、**AWS Console** ボタンをクリックして、AWS アカウントにアクセスします：
 
 ![dashboard-AWS-console](/intro/dashboard-aws-console.png)
 
 
-
-A pop up window will ask you to choose either **Open Console** (to open the AWS Console in the current browser) or **Copy Login Link** (to paste it into another browser).  
+ポップアップウィンドウで、**Open AWS Console**（現在のブラウザで AWS コンソールを開く）または **Copy Login Link**（ログイン用の URL をクリップボードにコピーする）を選択するように求められます。
 {{% notice note %}}
-Open AWS Console _before_ proceeding to the next step.
+次のステップに進む前に、AWS コンソールにアクセスしてください。
 {{% /notice %}}
 
 ![dashboard-console-login](/intro/dashboard-console-login.png)
 
 
 {{% notice note %}}
-The credentials in the pop-up window can be utilized if you want to use the AWS CLI (<a href="https://aws.amazon.com/cli/" target="_blank">Command Line Interface</a> instead of the AWS console. **Don't** enter those credentials into CloudEndure AWS Credentials tab (as they will NOT work there).
+<a href="https://aws.amazon.com/cli/" target="_blank">AWS Command Line Interface (CLI)</a> を使用する場合は、ポップアップウィンドウに表示される認証情報を利用してください。なお、この認証情報は CloudEndure で使用するものとは異なりますので、CloudEndure コンソールの AWS Credentials タブには入力しないでください。
 {{% /notice %}}
 
-Now you can enable [AWS Migration Hub]({{< ref "/migration-hub.ja.md" >}})
+以上で環境の確認は完了です。 [デプロイされた環境の確認]({{< ref "./review-deployment.ja.md" >}})に進んでください。

@@ -1,72 +1,77 @@
 +++
-title = "Create an Amazon ECS Service"
+title = "Amazon ECS サービスの作成"
 weight = 60
 +++
 
-Once you completed the **Amazon ECS Task Definition**, you are ready to create an **Amazon ECS Service**.
+**Amazon Elastic Container Service (ECS) タスク定義**の作成が完了したら、いよいよ **Amazon ECS サービス**の作成に移ります。
 
-Select the **ECS cluster** that you created earlier, click the **Services** tab and then **Create** button.
+マネジメントコンソール上部の **「サービス」** から **<a href="https://console.aws.amazon.com/ecs/home?region=us-west-2" target="_blank">Elastic Container Service</a>** のページを開き、左のメニューから **「クラスター」** を選択します。前頁で作成した **unicorn-cluster** を選択し、**「サービス」** タブの **「作成」** ボタンをクリックします。
 
-![create-service](/ecs/create-service.png)
+![create-service](/ecs/create-service.ja.png)
 
-### Step 1: Configure service
+### ステップ 1 : サービスの設定 
 
-In the **Create Service** wizard, follow the below configuration (make sure you select **FARGATE** in the **Launch type**).  
+**「サービスの作成」** ウィザードで、以下の通り設定を行います（**起動タイプ**に **FARGATE** が選択されていることを確認してください）：
 
-- Select the **Task Definition** that you created earlier  
-- Select the **Platform version 1.4.0**                                                                           
-- Select the **ECS Cluster** that you created earlier and enter the **Service name** (e.g. unicorns-svc)                                   
-- Set Number of tasks to 2  
-- Leave the default for the remaining and click **Next step**  
+- **タスク定義**に、前頁で作成した**タスク定義**（例：unicorn-task-def）を指定
+- **プラットフォームのバージョン**に、**1.4.0** を指定                                          
+- **クラスター**に、前頁で作成した**ECS クラスター**（例：unicorn-cluster）を指定し、**サービス名**を入力（例：unicorn-svc）
+- **タスクの数**を **2** に設定
+- その他の設定は、すべてデフォルト値のまま **「次のステップ」** をクリック
 
+![configure-service](/ecs/configure-service.ja.png)
 
-![configure-service](/ecs/configure-service.png)
+### ステップ 2 : ネットワーク構成 
 
-### Step 2: Configure network
+**ネットワーク構成**では、**クラスター VPC** に、本ハンズオンの**事前準備で作成した VPC**（例：TargetVPC）、
+**サブネット**にアベイラビリティゾーンごとの**プライベートサブネット**（\*-private-\*-web）、
+**セキュリティグループ**に前頁で作成した **ECS タスク 用のセキュリティグループ** (ECS-Tasks-SG) 、
+**パブリック IP の自動割り当て**に **DISABLED** を指定します。
 
-In the network configuration, select the VPC that you created earlier and specify your subnets and ECS-Tasks-SG in the security group.
+![configure-network-svc](/ecs/configure-network-svc.ja.png)
 
-![configure-network-svc](/ecs/configure-network-svc.png)
+![svc-lb](/ecs/svc-lb.ja.png)
 
+**ロードバランシングの種類**に、**Application Load Balancer** を選択し、前頁で作成したロードバランサー（例：unicorn-lb）を指定します。
 
-![svc-lb](/ecs/svc-lb.png)
+![container-lb](/ecs/container-lb.ja.png)
 
-Select **Application Load Balancer** in the load balancer type, and choose the load balancer that you created earlier.
+**「ロードバランサーに追加」** をクリックし、ターゲットとなるコンテナの追加を行います。
 
-![container-lb](/ecs/container-lb.png)
+**ターゲットグループ名**に、前頁で作成した**ターゲットグループ**（例：unicorn-tg）を指定します。
 
-Click **Add to load balance** to add the container name:port
+![container-lb-details](/ecs/container-lb-details.ja.png)
 
-![container-lb-details](/ecs/container-lb-details.png)
+![service-discovery](/ecs/service-discovery.ja.png)
 
+**サービスの検出（オプション）** で、**「サービスの検出の統合の有効化」** のチェックを外し、**「次のステップ」** をクリックします。
 
-![service-discovery](/ecs/service-discovery.png)
-In the Service discovery (optional) section, **uncheck** the "Enable service discovery integration" and press [Next step]
+### ステップ 3 : Auto Scaling（オプション） 
 
-### Step 3: Set Auto Scaling
+Auto Scaling の設定では、**「Service Auto Scaling の設定を変更することで、サービスの必要数を調整する」** を選択し、**タスクの最小数**、**必要数**、**最大数**を以下のように指定します。また **Service Auto Scaling 用の IAM ロール**に、**ecsAutoScaleRole** が設定されていることを確認してください。
 
-In Auto Scaling configuration, select **Configure Service Auto Scaling** and specify the **minimum, desired, maximum** number of tasks.
+![svc-autoscaling](/ecs/svc-autoscaling.ja.png)
 
-![svc-autoscaling](/ecs/svc-autoscaling.png)
-![svc-autoscaling-policy](/ecs/svc-autoscaling-policy.png)
+**自動タスクスケーリングポリシー**では、**スケーリングポリシータイプ**を **「ターゲットの追跡」** に設定し、ポリシー名（例：Requests-policy）を入力します。加えて **ECS サービスメトリクス**を選択し（例：ALBRequestCountPerTarget）、**ターゲット値**を設定します。設定が完了したら、**「次のステップ」** をクリックします。
 
-In the **Automatic task scaling policies**, set the scaling policy type to **Target Tracking**, provide name of the scaling policy (e.g. Requests-policy), select the service metric (e.g. ALBRequestCountPerTarget) and then set the Target value (e.g. 300).
+![svc-autoscaling-policy](/ecs/svc-autoscaling-policy.ja.png)
 
 {{% notice note %}}
-You can repeat that for different service metric (e.g. CPU and Memory utilization).
+上記の手順を繰り返すことで、別のサービスメトリクス（CPU やメモリの使用率など）に対する、スケーリングポリシーを追加することができます。
 {{% /notice %}}  
 
-### Step 4: Review
+### ステップ 4 : 確認 
 
-Finally, Review and click **Create Service** to create the Amazon ECS Service.
+設定内容を確認し、**「サービスの作成」** をクリックして、Amazon ECS サービスを作成します。
 
-Once the Service status is in **Active** state and all the tasks are in the **Running** state, browse to the target web site using the loadbalancer DNS.
+サービスのステータスが **Active** になり、すべてのタスクのステータスが **実行中** または **RUNNING** になったら、
+<a href="https://console.aws.amazon.com/ec2/v2/home?region=us-west-2#LoadBalancers:" target="_blank">ロードバランサー</a>の **DNS 名**にブラウザでアクセスして、Web アプリケーションが稼働していることを確認します。
 
 {{% notice note %}}
-You might also need to configure autoscaling for the ECS nodes, check the [this guide for more details](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/cloudwatch_alarm_autoscaling.html)
+ECS ノードの Auto Scaling を設定する必要がある場合は、[こちらのチュートリアル](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/cloudwatch_alarm_autoscaling.html) を確認してください。
 {{% /notice %}}  
 
 
 {{% notice tip %}}
-In case you encounter any issues, Please check [Amazon ECS Troubleshooting guide](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/troubleshooting.html)
+問題が発生した場合は、[Amazon ECS のトラブルシューティングガイド](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/troubleshooting.html) を確認してみましょう。
 {{% /notice %}}

@@ -861,6 +861,23 @@ Resources:
                 Action: elasticfilesystem:*
                 Resource: '*'
 
+  ecsAutoscaleRole:
+    Type: 'AWS::IAM::Role'
+    Properties:
+      Path: /
+      RoleName: ecsAutoscaleRole
+      AssumeRolePolicyDocument:
+        Version: 2012-10-17
+        Statement:
+          - Effect: Allow
+            Principal:
+              Service:
+                - application-autoscaling.amazonaws.com
+            Action:
+              - 'sts:AssumeRole'
+      ManagedPolicyArns:
+        - arn:aws:iam::aws:policy/service-role/AmazonEC2ContainerServiceAutoscaleRole
+
 Outputs:
   WebServerUsername:
     Description: Username for webserver

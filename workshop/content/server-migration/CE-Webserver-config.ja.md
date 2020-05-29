@@ -1,66 +1,84 @@
 +++
-title = "Configure Application"
+title = "アプリケーションの設定"
 weight = 50
 
 +++
 
-### Configure the Webserver to access the target database
+### ターゲットデータベースへの接続を設定
 
-When the Cutover is finished and **CloudEndure Migration** has created a running instance of the Webserver in your AWS account, it's time to update the web application configuration to use your replicated AWS RDS database (created in the **Database Migration** step).
+カットオーバーが完了し、CloudEndure によって AWS アカウントに Web サーバーのインスタンスが作成されたら、
+Web アプリケーションが、データベース移行のセクションで作成した **Amazon Relational Database Service (RDS) インスタンス**を使用するよう、設定を更新します。
 
+1. **Web サーバーのセキュリティグループ**を更新します。
 
-1. Update the **Webserver security group**
+    a. AWS マネジメントコンソール上部の **「サービス」** から **<a href="https://console.aws.amazon.com/ec2/v2/home?region=us-west-2" target="_blank">EC2</a>** のページを開き、**Webserver** インスタンスを選択します。  
+    b. **パブリック DNS (IPv4)** と **プライベート IP** の値を、テキストエディタにコピーしておきます。  
+    c. インスタンスに割り当てられている**セキュリティグループ**名をクリックします。
 
-    a. Go to **AWS Console -> EC2** and select the Webserver on the list  
-    b. Make a note of its **Public DNS (IPv4)** address and **Private IP**  
-    c. Click on the security group that it has assigned  
+    ![Webserver details](/ce/webserver_details.ja.png)
 
-    ![Webserver details](/ce/webserver_details.png)
+    d. **「アクション」 → 「インバウンドルールの編集」** を選択し、ポート80（HTTP）に対する任意の場所（0.0.0.0/0）からのトラフィックと、ポート22（SSH）に対するマイIP（自端末の IP アドレス）からのトラフィックを許可するよう、設定を変更します。
+    **「ルールの保存」** ボタンをクリックして、インバウンドルールの設定を保存します。
 
-    d. Modify inbound rules for that security group to allow traffic from Anywhere on port **80** and from your laptop on port **22**     
+    ![Inbound rules modification](/ce/edit_webserver_inbound_rules.ja.png)
 
-    ![Inbound rules modification](/ce/edit_webserver_inbound_rules.png)
+2. CloudEndure によって作成された Webserver インスタンスにログインします。
 
-2. Login to the **Webserver** created by the CloudEndure  
+    ソース環境と同じユーザー（ubuntu）と SSH キー（.pem）を使用します。
 
-    Use the same username (ubuntu) and SSH .ppk key as for the Source Environment.
+    SSH を使ってサーバーにアクセスする方法がわからない場合は、以下を確認してください：
+    - Microsoft Windows をお使いの場合は<a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/putty.html" target="_blank">こちら</a>
+    - Mac OS をお使いの場合は<a href="https://docs.aws.amazon.com/quickstarts/latest/vmlaunch/step-2-connect-to-instance.html#sshclient" target="_blank">こちら</a>
 
-    If you're not sure how to use SSH to access servers, check the following:
-    - For Microsoft Windows users view <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/putty.html" target="_blank">this article</a>.  
-    - For Mac OS users view <a href="https://docs.aws.amazon.com/quickstarts/latest/vmlaunch/step-2-connect-to-instance.html#sshclient" target="_blank">this article</a>.
+3. WordPress の設定を更新します。
 
-3. Modify the **wordpress configuration**
+    /var/www/html/wp-config.php ファイル内の、以下の設定を更新します：
 
-    Edit the **/var/www/html/wp-config.php** file, modifying
-    - DB_HOST - Endpoint of the created RDS instance
-    - DB_USER - the username configured in the **Database Migration** step
-    - DB_PASSWORD - the password configured in the **Database Migration** step
+    - DB_HOST - データベース移行のセクションで作成した RDS インスタンスのエンドポイント
+    - DB_USER - RDS インスタンス作成時に設定したユーザー名
+    - DB_PASSWORD - RDS インスタンス作成時に設定したパスワード
+
+    以下のコマンドを実行し、設定ファイルを vi エディタで開きます：
+    ```
+    sudo su -
+    vi /var/www/html/wp-config.php
+    ```
+
+    以下の設定を更新した後、ファイルを保存し vi エディタを終了します：
+    ```
+    /** MySQL database username */
+    define( 'DB_USER', 'ユーザー名' );
+
+    /** MySQL database password */
+    define( 'DB_PASSWORD', 'パスワード' );
+
+    /** MySQL hostname */
+    define( 'DB_HOST', 'RDS インスタンスのエンドポイント' );
+    ```
+
+4. Web サーバーからのインバウンドトラフィックを許可するために、RDS インスタンスに紐づけている **Virtual Private Cloud (VPC) セキュリティグループ**を更新します。
+
+    a. AWS マネジメントコンソール上部の **「サービス」** から **<a href="https://console.aws.amazon.com/ec2/v2/home?region=us-west-2" target="_blank">EC2</a>** のページを開き、左のメニューから **「セキュリティグループ」** を選択します。RDS インスタンスに紐づけている VPC セキュリティグループ（例：DB-SG）名をクリックします。  
+    b. **「インバウンドルール」** のタブを開き、 **「インバウンドのルールの編集」** ボタンをクリックします。  
+    c. Web サーバーからのトラフィックを許可するインバウンドルールを追加します。Web サーバーの**プライベート IP** または**所属するセキュリティグループ**からポート3306に対するトラフィックを許可します。編集が完了したら、**「ルールの保存」** ボタンをクリックします。
+    
+    ![Inbound rules modification](/ce/database_update_security_group.ja.png)
 
     {{% notice tip %}}
-To edit this file, you can use for example <a href="https://www.howtoforge.com/linux-nano-command/" target="_blank">nano</a> or <a href="https://www.washington.edu/computing/unix/vi.html" target="_blank">vi</a>.
-{{% /notice %}}     
-
-4. Update the RDS instance **VPC security group** to allow inbound traffic from Webserver
-
-    a. Go to  **AWS Console > Services > EC2 > Security Groups** and select your **RDS VPC security group** (DB-SG)  
-    b. Go to the **Inbound** tab and click the **Edit** button  
-    c. Add inbound rule that allows traffic from the **Webserver** (using its **Private IP** or the **security group** it belongs to) on port **3306** (MySQL port)
-    
-    ![Inbound rules modification](/ce/database_update_security_group.png)
-
-    {{% notice tip %}}
-If you used a different security group name for your RDS instance, you can find it in details of your RDS instance, **Connectivity & security**, **Security** section.
+RDS インスタンスに DB-SG とは別のセキュリティグループ名を使用した場合は、
+**「RDS インスタンスの詳細」→「接続とセキュリティ」→「セキュリティ」** のセクションで、セキュリティグループを特定できます。
 {{% /notice %}}     
     
 
-1. **Validate** the migration
+5. 移行の検証を行います。
 
-    Open the Webserver Public DNS (IPv4) name in your web browser, you should see a unicorn store.
+    Web サーバーのパブリック DNS（IPv4）名をブラウザで開き、Unicorn ストアが表示されることを確認してください。
 
-If everything works fine - proceed to the next phase, so [Optimization]({{< ref "../optimization/_index.ja.md" >}})!
+アプリケーションが正常に動作していれば、本セクションは完了です！  
+[コンテナへの移行]({{< ref "../container-migration/_index.ja.md" >}})に進みましょう。
 
-## Troubleshooting
+## トラブルシューティング
 
-1. Make sure that RDS database related information configured on the Webserver in **/var/www/html/wp-config.php** is correct
-2. Make sure that the RDS database is using the **DB-SG** security group
-3. Make sure that the Webserver CloudEndure Blueprint points at a **TargetVPC public-subnet-a**
+1. Web サーバーの **/var/www/html/wp-config.php** に RDS インスタンスの情報が正しく反映されていることを確認してください。
+2. RDS インスタンスのセキュリティグループで、必要な通信が許可されていることを確認してください。
+3. Web サーバーの **CloudEndure Blueprint** で、Subnet の設定が **TargetVPC** の **public-subnet-b** を指していることを確認してください。

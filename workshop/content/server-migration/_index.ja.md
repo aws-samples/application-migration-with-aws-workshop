@@ -5,31 +5,34 @@ weight = 15
 pre = "<b>2. </b>"
 +++
 
-#### CloudEndure Migration Overview
+#### CloudEndure Migration の概要
 
-<a href="https://aws.amazon.com/cloudendure-migration/" target="_blank">CloudEndure Migration</a> enables organizations to migrate even the most complex workloads to Amazon Web Services (AWS) without disruption, or data loss. Through continuous block-level replication, automated machine conversion, and application stack orchestration, **CloudEndure Migration** simplifies the migration process and reduces the potential for human error.
+<a href="https://aws.amazon.com/cloudendure-migration/" target="_blank">CloudEndure Migration</a> は、企業の最も複雑なワークロードにおいても、中断やデータの損失なしにアマゾン ウェブ サービス (AWS) への移行を可能にします。継続的なブロックレベルのレプリケーション、自動化されたマシン変換、アプリケーションスタックのオーケストレーションにより、CloudEndure Migration は移行プロセスを簡素化し、ヒューマンエラーの可能性を低減します。
 
-Whether you are migrating to AWS or across regions within AWS, **CloudEndure Migration** gives you the flexibility you need and delivers the security controls you require to succeed in today’s fast-paced digital ecosystem.
+オンプレミスから AWS への移行であっても、AWS 内のリージョン間での移行であっても、**CloudEndure Migration** は、急速に変化する今日のデジタルエコシステムで成功するために必要な、柔軟性の提供とセキュリティ管理を実現します。
 
 ![cloudendure-intro](/ce/ce-home.png)
 
-**Benefits of CloudEndure Live Migration include:**
+CloudEndure Live Migration の主なメリットは以下の通りです：
 
-- Cutover windows of minutes and no data loss
-- 100% data integrity for all applications (including databases and legacy applications)
-- Large-scale migrations with no performance impact
-- Wide platform and source Operating Systems support
-- Automated migration to minimize IT resources and project length
+- 数分レベルのカットオーバーウィンドウとデータ損失ゼロを実現
+- すべてのアプリケーション（データベースやレガシーアプリケーションを含む）で 100% のデータ整合性を実現
+- パフォーマンスに影響を与えることなく、大規模な移行を実行
+- 幅広いプラットフォームとオペレーティングシステムを移行元としてサポート
+- 自動化された移行により、IT リソースとプロジェクト期間を最小限に抑えることが可能
 
 {{% notice note %}}
-**CloudEndure Migration** is now available **at no charge**  for all migrations to AWS.  
-Go to <a href="https://console.cloudendure.com/#/register/register">CloudEndure Migration Registration page</a> to create an account and start migrating to AWS in minutes!
+AWS への移行の場合、CloudEndure Migration は**無料**で利用することができます。  
+<a href="https://console.cloudendure.com/#/register/register">登録ページ</a>にアクセスしてアカウントを作成し、いますぐ AWS への移行を開始しましょう。
 {{% /notice %}}  
 
-In this lab you will perform re-hosting (also known as Lift and shift migration) of the webserver using **CloudEndure Migration**, following the steps below:
+**CloudEndure Migration** の詳細については、以下の動画をご覧ください：
+<center><iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/kIJ29q-Jsyo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center>
 
-1. [CloudEndure Configuration]({{< ref "/CE-Configuration.ja.md" >}})  
-2. [Install Agent on Source Machine(s)]({{< ref "/CE-Agent-Installation.ja.md" >}})  
-3. [Prepare Blueprint]({{< ref "/CE-Blueprints.ja.md" >}})  
-4. [Do the Cutover]({{< ref "/CE-Cutover.ja.md" >}})  
-5. [Configure Application]({{< ref "/CE-Webserver-config.ja.md" >}})  
+本セクションでは、以下の手順に従って、CloudEndure Migration を使用した Web サーバーの Re-Host（リフトアンドシフト) を実行します：
+
+1. [CloudEndure の設定]({{< ref "/CE-Configuration.ja.md" >}})  
+2. [ソースマシンへのエージェントインストール]({{< ref "/CE-Agent-Installation.ja.md" >}})  
+3. [Blueprint の準備]({{< ref "/CE-Blueprints.ja.md" >}})  
+4. [カットオーバーの実行]({{< ref "/CE-Cutover.ja.md" >}})  
+5. [アプリケーションの設定]({{< ref "/CE-Webserver-config.ja.md" >}})  
