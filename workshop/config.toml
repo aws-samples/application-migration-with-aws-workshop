@@ -63,3 +63,28 @@ hrefTargetBlank = false
 title = "AWS Application Migration Workshop"
 weight = 1
 languageName = "English"
+
+[Languages.ja]
+title = "アプリケーション移行ワークショップ"
+weight = 1
+languageName = "Japanese（日本語）"
+
+  [[Languages.ja.menu.shortcuts]]
+  name = "<i class='fab fa-github'></i> GitHub リポジトリ"
+  url = "https://github.com/aws-samples/application-migration-with-aws-workshop"
+  weight = 30
+
+  [[Languages.ja.menu.shortcuts]]
+  name = "<i class='fas fa-envelope'></i> 内容に関するお問い合わせ"
+  url = "mailto:application-migration-workshop@amazon.com"
+  weight = 40
+
+  [[Languages.ja.menu.shortcuts]]
+  name = "<i class='fas fa-poll'></i> ワークショップの評価"
+  url = "https://amazonmr.au1.qualtrics.com/jfe/form/SV_0dfrnubGKXavgR7"
+  weight = 50
+
+  [[Languages.ja.menu.shortcuts]]
+  name = "<i class='fas fa-book-open'></i> 参考資料"
+  url = "https://aws.amazon.com/cloud-migration/resources/"
+  weight = 60
