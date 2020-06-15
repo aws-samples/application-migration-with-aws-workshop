@@ -6,13 +6,16 @@ weight = 5
 <img style="position: sticky; top:0px; right: 0px" src="/intro/migrate-with-aws.png" alt="migrate with AWS" />
 
 Wir verstehen, dass jede Migration anders ist. 
-Basierend auf uneren Erfahrungen mit mehr als einem Million aktiven Kunden aus verschiedenen Indurstireen,
-Kontinenten und unterschiedliechen Größen, könnten wir eine algemeine Migration auf drei Phasen aufteilen.
+Basierend auf unserer Erfahrung mit über einer Million aktiven Kunden 
+und der Unterstützung bei der Migration in die Cloud 
+von Unternehmen aller Größen, Branchen und Regionen hat sich ein standardisierter 
+Migrationsprozess herausgebildet. 
 
-Der Migrationsprozess besteht aus:
+Dieser Prozess kann im Allgemeinen in drei Phasen 
+von Aktivitäten unterteilt werden: 
 
-1) Assess (Bewertung).
-2) Mobilize (Mobilisierung).
+1) Assess (Bewerten).
+2) Mobilize (Mobilisieren).
 3) Migrate and Modernize (Migrieren und Modernisieren).
 
 <a href="https://aws.amazon.com/cloud-migration/how-to-migrate/" target="_blank"><img src="/intro/migration-process.png"></a>
