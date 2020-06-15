@@ -25,9 +25,9 @@ Before you configure **AWS DMS**, you will need to create your target database i
 
     ![RDS Subnet group creation](/db-mig/db-subnet-group.en.png)    
 
-### Create the target database
+### Create the target database    
     
-3. Now select **Databases** from the menu on the left and click **Create database** 
+1. Now select **Databases** from the menu on the left and click **Create database** 
 
 2. From the **Engine options**, select MySQL and Version MySQL 5.7.22
 

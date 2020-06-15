@@ -1,2 +1,6 @@
 {{ $_hugo_config := `{ "version": 1 }` }}
+{{ if eq .Site.Language.Lang "ja" }}
+<div class="notices ja {{ .Get 0 }}" {{ if len .Params | eq 2 }} id="{{ .Get 1 }}" {{ end }}>{{ .Inner }}</div>
+{{ else }}
 <div class="notices {{ .Get 0 }}" {{ if len .Params | eq 2 }} id="{{ .Get 1 }}" {{ end }}>{{ .Inner }}</div>
+{{ end }}
