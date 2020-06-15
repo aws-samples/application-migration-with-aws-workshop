@@ -23,7 +23,7 @@ von Aktivitäten unterteilt werden:
 In diesem Workshop konzentrieren wir uns auf die Phase Migrieren und Modernisieren. 
 Sie lernen, wie Sie eine fiktive Anwendung in die AWS Cloud migrieren, indem Sie:
 
-  - **Re-platforming** der Datenbank mit <a href="https://aws.amazon.com/dms/" target="_blank" >AWS Database Migration Service</a>
-  - **Re-hosting** des Webservers mit <a href="https://aws.amazon.com/cloudendure-migration/" target="_blank" >AWS CloudEndure Migration</a>
-  - **Modernization** des Webservers auf Container, die unter <a href="https://aws.amazon.com/ecs/" target="_blank" >Amazon Elastic Container Service</a> ausgeführt werden
-  - (optional) Verbesserung von IT Betrieb (**Operation Excellence**), Sicherheit (**Security**), Leistungeffizienz (**Performance Efficiency**) und Kostenoptimierung (**Cost Optimization**) der bereitgestellten Architektur durch implementieren von <a href="https://aws.amazon.com/architecture/well-architected/" target="_blank" >Well Architected Framework</a>
+  - **Re-platforming** der Datenbank mit <a href="https://aws.amazon.com/dms/" target="_blank" >AWS Database Migration Service</a> implementieren.
+  - **Re-hosting** des Webservers mit <a href="https://aws.amazon.com/cloudendure-migration/" target="_blank" >AWS CloudEndure Migration</a> vornehmen.
+  - **Modernization** des Webservers auf Container, die unter <a href="https://aws.amazon.com/ecs/" target="_blank" >Amazon Elastic Container Service</a> ausführen.
+  - (optional) Verbesserung von IT Betrieb (**Operation Excellence**), Sicherheit (**Security**), Leistungeffizienz (**Performance Efficiency**) und Kostenoptimierung (**Cost Optimization**) der bereitgestellten Architektur durch implementieren von <a href="https://aws.amazon.com/architecture/well-architected/" target="_blank" >Well Architected Framework</a> umsetzen.
