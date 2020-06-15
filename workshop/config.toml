@@ -64,6 +64,31 @@ title = "AWS Application Migration Workshop"
 weight = 1
 languageName = "English"
 
+[Languages.de]
+title = "AWS Migrationsworkshop"
+weight = 1
+languageName = "Deutsch"
+
+  [[Languages.de.menu.shortcuts]]
+  name = "<i class='fab fa-github'></i> GitHub Projekt"
+  url = "https://github.com/aws-samples/application-migration-with-aws-workshop"
+  weight = 30
+
+  [[Languages.de.menu.shortcuts]]
+  name = "<i class='fas fa-envelope'></i> Haben Sie fragen?"
+  url = "mailto:application-migration-workshop@amazon.com"
+  weight = 40
+
+  [[Languages.de.menu.shortcuts]]
+  name = "<i class='fas fa-poll'></i> Workshop auswerten"
+  url = "https://amazonmr.au1.qualtrics.com/jfe/form/SV_0dfrnubGKXavgR7"
+  weight = 50
+
+  [[Languages.de.menu.shortcuts]]
+  name = "<i class='fas fa-book-open'></i> Mehr Informationen"
+  url = "https://aws.amazon.com/cloud-migration/resources/"
+  weight = 60
+
 [Languages.ja]
 title = "アプリケーション移行ワークショップ"
 weight = 1

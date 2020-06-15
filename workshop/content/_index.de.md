@@ -20,7 +20,7 @@ von Aktivitäten unterteilt werden:
 
 <a href="https://aws.amazon.com/cloud-migration/how-to-migrate/" target="_blank"><img src="/intro/migration-process.png"></a>
 
-In diesem Workshop konzentrieren wir uns auf die Phase Migrieren und Modernisieren. 
+In diesem Workshop konzentrieren wir uns auf die Migrieren und Modernisieren Phase. 
 Sie lernen, wie Sie eine fiktive Anwendung in die AWS Cloud migrieren, indem Sie:
 
   - **Re-platforming** der Datenbank mit <a href="https://aws.amazon.com/dms/" target="_blank" >AWS Database Migration Service</a> implementieren.
