@@ -1,6 +1,6 @@
 +++
 title = "Configure Source Database"
-weight = 35
+weight = 25
 +++
 
 ### Run DMS Replication Task with Change Data Capture (CDC)
