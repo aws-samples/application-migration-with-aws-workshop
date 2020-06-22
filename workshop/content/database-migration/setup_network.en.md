@@ -7,24 +7,6 @@ Since we don't use a **VPN** or **AWS Direct Connect** in this workshop, **DMS R
 
 ![Replication Instance Architecture](/db-mig/ri-network-conf.png)
 
-### Create replication subnet group
-
-One of the pre-requisites for using of **AWS DMS** is having configured a **subnet group**, which is a collection of subnets that will be used by the **DMS Replication Instance**. 
-
-1. Go to **AWS Console > Services > Database Migration Service > Subnet groups** and click on **Create subnet group** button.
-2. In the **Create replication subnet group** enter the following parameter values:
-
-    | Parameter           | Value                    |
-    | ------------------- | ------------------------ |
-    | Name                | dms-subnet-group     |
-    | Description         | Default VPC Subnet Group for DMS |
-    | VPC                 | TargetVPC   |
-    | Add subnets         | select **TargetVPC-public-a**, **TargetVPC-public-b** |
-
-    ![Replication-instance-networ](/db-mig/subnet-group.png)
-
-3. Click on the **Create subnet group** button
-
 ### Configure the security group
 
 **VPC security group** in this workshop must allow inbound traffic from the **DMS Replication Instance** to the target RDS database.
