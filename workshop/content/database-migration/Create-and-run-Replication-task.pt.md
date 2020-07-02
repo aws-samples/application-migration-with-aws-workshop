@@ -1,13 +1,13 @@
 +++
-title = "Create and Run a Replication Task"
+title = "Crie e Rode uma Replication Task"
 weight = 40
 +++
 
-### Configure and Run a Replication Task
+### Configure e Rode uma Replication Task
 
-Still in the **AWS DMS** console, go to **Database migration tasks** and click the **Create Task** button.
+De volta à console **AWS DMS**, vá até **Database migration tasks** e clique no botão **Create Task**.
 
-1. Enter the following parameter values in the **Create database migration task** screen:
+1. Entre os seguintes parâmetros na tela **Create database migration task**:
 
     | Parameter              | Value                                               |
     | ---------------------- | --------------------------------------------------- |
@@ -20,7 +20,7 @@ Still in the **AWS DMS** console, go to **Database migration tasks** and click t
     
     ![Create-task-1](/db-mig/Create-task-1.png)
 
-2. In the **Task settings** panel enter the following values (leave everything else as default):
+2. No painel **Task settings** entre os seguintes valores (deixe tudo como default):
 
     | Parameter              | Value                                               |
     | ---------------------- | --------------------------------------------------- |
@@ -30,16 +30,14 @@ Still in the **AWS DMS** console, go to **Database migration tasks** and click t
     
     ![create-task-2](/db-mig/create-task-2.png)
     
-3. In the **Table mappings** panel select **Guided UI** mode, press the **Add new selection rule** button and select **wordpress-db** in the **Schema** drop-down.
+3. No painel **Table mappings** selecione o modo **Guided UI**, pressione o botão **Add new selection rule** e selecione **wordpress-db** no drop-down **Schema** .
 
     {{% notice note %}}
-If you don't see wordpress-db on the **Schema** drop-down, select **Enter schema** and type **wordpress-db** into the **Schema name** field.
+Se você não vê o wordpress-db no drop-down **Schema**, selecione **Enter schema** e digite **wordpress-db** no campo **Schema name**.
 {{% /notice %}}    
 
     ![Create-task-3](/db-mig/Create-task-3.png)
 
-1. Scroll to the bottom of the screen and click the **Create task** button to create the task and start the data replication.
+1. Role até o fim da tela e clique no botão **Create task** para criar a tarefa e iniciar a replicação dos dados.
 
     ![create-task-4](/db-mig/create-task-4.png)
-
-When the task is running, you can review it's details to see information about tables and number of rows that are replicated.

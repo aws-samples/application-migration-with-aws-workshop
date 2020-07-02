@@ -4,7 +4,7 @@ weight = 20
 +++
 
 {{% notice warning %}}
-Only complete this section if you are running the workshop on your own. If you are at an AWS hosted event (such as re:Invent, Gameday, Workshop, or any other event hosted by an AWS employee), go to [Start the workshop at an AWS event]({{< ref "/migration-hub.en.md" >}}).
+Complete this section ONLY if you are running the workshop on your own. If you are at an AWS hosted event (such as re:Invent, GameDay, Workshop, or any other event hosted by an AWS employee), go to [Start the workshop at an AWS event]({{< ref "/migration-hub.en.md" >}}).
 {{% /notice %}}
 
 
@@ -12,7 +12,7 @@ Only complete this section if you are running the workshop on your own. If you a
 
 This lab assumes you have access to an **AWS Account** with <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/getting-started_create-admin-group.html" target="_blank">Administrator privileges</a>. To create a new AWS Accounts please follow <a href="https://aws.amazon.com/premiumsupport/knowledge-center/create-and-activate-aws-account/" target="_blank">How do I create and activate a new Amazon Web Services account?</a> article.
 
-Instructions below will deploy the source environment in your AWS account, the deployed resources consists of two t3.micro EC2 machines (one for webserver, one for database), a NAT Gateway, an API Gateway and two AWS Lambda functions (for easy retrieval of EC2 Access Key). Total cost of resources deployed throughout the lab should be less than $5 (assuming 4 hour of work), some of them are covered by <a href="https://aws.amazon.com/free/" target="_blank">AWS Free tier</a>.
+Instructions below will deploy the source environment in your AWS account. The deployed resources consists of two t3.micro EC2 machines (one for webserver, one for database), a NAT Gateway, an API Gateway and two AWS Lambda functions (for easy retrieval of EC2 Access Key). Total cost of resources deployed throughout the lab should be less than $1 (assuming 4 hours of work), some of them are covered by <a href="https://aws.amazon.com/free/" target="_blank">AWS Free tier</a>.
 
 Remember to [cleanup]({{< ref "/cleanup/_index.en.md" >}}) your AWS account after running the lab, to avoid unnecessary charges!
 
