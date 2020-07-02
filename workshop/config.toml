@@ -89,6 +89,31 @@ languageName = "Japanese（日本語）"
   url = "https://aws.amazon.com/cloud-migration/resources/"
   weight = 60
 
+[Languages.pt]
+title = "Workshop de Migração de Aplicações da AWS"
+weight = 1
+languageName = "Portuguese (Português)"
+
+  [[Languages.pt.menu.shortcuts]]
+  name = "<i class='fab fa-github'></i> Projeto GitHub"
+  url = "https://github.com/aws-samples/application-migration-with-aws-workshop"
+  weight = 30
+
+  [[Languages.pt.menu.shortcuts]]
+  name = "<i class='fas fa-envelope'></i> Dúvidas?"
+  url = "mailto:application-migration-workshop@amazon.com"
+  weight = 40
+
+  [[Languages.pt.menu.shortcuts]]
+  name = "<i class='fas fa-poll'></i> Avalie este workshop"
+  url = "https://amazonmr.au1.qualtrics.com/jfe/form/SV_0dfrnubGKXavgR7"
+  weight = 50
+
+  [[Languages.pt.menu.shortcuts]]
+  name = "<i class='fas fa-book-open'></i> Mais recursos"
+  url = "https://aws.amazon.com/cloud-migration/resources/"
+  weight = 60
+
 [Languages.zh]
 title = "AWS 应用迁移研讨会"
 weight = 1
