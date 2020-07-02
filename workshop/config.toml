@@ -88,3 +88,28 @@ languageName = "Japanese（日本語）"
   name = "<i class='fas fa-book-open'></i> 参考資料"
   url = "https://aws.amazon.com/cloud-migration/resources/"
   weight = 60
+
+[Languages.zh]
+title = "AWS 应用迁移研讨会"
+weight = 1
+languageName = "Chinese（简体中文）"
+
+  [[Languages.zh.menu.shortcuts]]
+  name = "<i class='fab fa-github'></i> GitHub 项目"
+  url = "https://github.com/aws-samples/application-migration-with-aws-workshop"
+  weight = 30
+
+  [[Languages.zh.menu.shortcuts]]
+  name = "<i class='fas fa-envelope'></i> 问题反馈"
+  url = "mailto:application-migration-workshop@amazon.com"
+  weight = 40
+
+  [[Languages.zh.menu.shortcuts]]
+  name = "<i class='fas fa-poll'></i> 对研讨会进行评价"
+  url = "https://amazonmr.au1.qualtrics.com/jfe/form/SV_0dfrnubGKXavgR7"
+  weight = 50
+
+  [[Languages.zh.menu.shortcuts]]
+  name = "<i class='fas fa-book-open'></i> 更多资源"
+  url = "https://aws.amazon.com/cloud-migration/resources/"
+  weight = 60
