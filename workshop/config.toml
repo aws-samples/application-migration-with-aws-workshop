@@ -64,6 +64,11 @@ title = "AWS Application Migration Workshop"
 weight = 1
 languageName = "English"
 
+[Languages.it]
+title = "AWS Application Migration Workshop"
+weight = 1
+languageName = "Italian"
+
 [Languages.ja]
 title = "アプリケーション移行ワークショップ"
 weight = 1
