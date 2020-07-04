@@ -1,72 +1,72 @@
 +++
-title = "Create an Amazon ECS Service"
+title = "Crear un servicio en Amazon ECS"
 weight = 60
 +++
 
-Once you completed the **Amazon ECS Task Definition**, you are ready to create an **Amazon ECS Service**.
+Una vez hayas completado la **Definicion de una tarea en Amazon ECS (Amazon ECS Task Definition)**, estas preparado para crear un **Servicio de Amazon ECS**.
 
-Select the **ECS cluster** that you created earlier, click the **Services** tab and then **Create** button.
+Selecciona el **cluster de ECS** que has creado antes, haz click en **Servicios (Services)** y luego en el boton **Crear (Create)**.
 
 ![create-service](/ecs/create-service.png)
 
-### Step 1: Configure service
+### Paso 1: Configurar el servicio
 
-In the **Create Service** wizard, follow the below configuration (make sure you select **FARGATE** in the **Launch type**).  
+En el asistente de **Crear un Servicio (Create Service)**, sigue la configuración de abajo (asegurate de seleccionar **FARGATE** en  **tipos de Lanzamiento (Launch type)**).  
 
-- Select the **Task Definition** that you created earlier  
-- Select the **Platform version 1.4.0**                                                                           
-- Select the **ECS Cluster** that you created earlier and enter the **Service name** (e.g. unicorns-svc)                                   
-- Set Number of tasks to 2  
-- Leave the default for the remaining and click **Next step**  
+- Selecciona la **Definicion de Tarea (Task Definition)** que has creado antes
+- Selecciona la **version de la Plataforma 1.4.0**                                                                           
+- Selecciona el **Cluster ECS (ECS Cluster)** que has creado anteriormente e introduce el **Nombre del Servicio (Service name)** (ejemplo unicorns-svc)                                   
+- Selecciona el numero de tareas a 2  
+- Deja el resto de opciones por defecto y haz click en **Siguiente Paso (Next step)**  
 
 
 ![configure-service](/ecs/configure-service.png)
 
-### Step 2: Configure network
+### Paso 2: Configura la red
 
-In the network configuration, select the VPC that you created earlier and specify your subnets and ECS-Tasks-SG in the security group.
+En la configuración de red, selecciona la VPC que has creado anteriormente y especifica tus subredes, y ECS-Tasks-SG en el grupo de seguridad.
 
 ![configure-network-svc](/ecs/configure-network-svc.png)
 
 
 ![svc-lb](/ecs/svc-lb.png)
 
-Select **Application Load Balancer** in the load balancer type, and choose the load balancer that you created earlier.
+Selecciona **Balanceador de Carga de Aplicaciones (Application Load Balancer)** en el tip de balanceador de carga, y selecciona el balanceador de carga que has creado antes.
 
 ![container-lb](/ecs/container-lb.png)
 
-Click **Add to load balance** to add the container name:port
+Haz click en **Añadir al balanceador de carga (Add to load balancer)** para añadir el nombre:puerto del contenedor
 
 ![container-lb-details](/ecs/container-lb-details.png)
 
 
 ![service-discovery](/ecs/service-discovery.png)
-In the Service discovery (optional) section, **uncheck** the "Enable service discovery integration" and press [Next step]
+En la seccion descubrir el Servicio (Service discovery), **No marques (uncheck)** la opcion "Habilitar integración de descubrimiento de servicio"("Enable service discovery integration") y pulsa [Next step]
 
-### Step 3: Set Auto Scaling
+### Paso 3: Configurar Auto Scaling
 
-In Auto Scaling configuration, select **Configure Service Auto Scaling** and specify the **minimum, desired, maximum** number of tasks.
+En la configuracion de Auto Escalado, selecciona **Configura el Servicio de Auto Escalado (Configure Service Auto Scaling)** y especifica el **minimo, deseado, maximo (minimum, desired, maximum)** numero de tareas.
 
 ![svc-autoscaling](/ecs/svc-autoscaling.png)
 ![svc-autoscaling-policy](/ecs/svc-autoscaling-policy.png)
 
-In the **Automatic task scaling policies**, set the scaling policy type to **Target Tracking**, provide name of the scaling policy (e.g. Requests-policy), select the service metric (e.g. ALBRequestCountPerTarget) and then set the Target value (e.g. 300).
+En las **Politicas Automaticas de escalado (Automatic task scaling policies)**, establece el tipo de politica de escalado a **Tracear Objetivo (Target Tracking)**, proporciona el nombre de la politica de escalado (ejemplo Requests-policy), selecciona la metrica del servicio (ejemplo ALBRequestCountPerTarget) y luego establece el valor objetivo(por ejemplo 300).
 
 {{% notice note %}}
-You can repeat that for different service metric (e.g. CPU and Memory utilization).
+Puedes repetir esto ultimo para diferentes metricas de servicio (por ejemplo CPU y utilización de Memoria).
 {{% /notice %}}  
 
-### Step 4: Review
+### Paso 4: Revisar
 
-Finally, Review and click **Create Service** to create the Amazon ECS Service.
+Finalmente, Revisa y haz click en **Crear Servicio (Create Service)** para crear el Servicio de Amazon ECS.
 
-Once the Service status is in **Active** state and all the tasks are in the **Running** state, browse to the target web site using the loadbalancer DNS.
+Una vez el estado del servicio esta en **Activo (Active)** y todas las tareas estan en el estado **Corriendo (Running)**, navega hacia el sitio web objetivo usando el DNS del balanceador de carga.
 
 {{% notice note %}}
-You might also need to configure autoscaling for the ECS nodes, check the [this guide for more details](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/cloudwatch_alarm_autoscaling.html)
+Puede que tambien necesites configurar el auto escalado para los nodos ECS, compruebalo aqui [esta guia para mas  detalles](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/cloudwatch_alarm_autoscaling.html)
 {{% /notice %}}  
 
 
 {{% notice tip %}}
-In case you encounter any issues, Please check [Amazon ECS Troubleshooting guide](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/troubleshooting.html)
+En caso de que encuentres algun problema, por favor comprueba aqui [Guia de resolucion de problemas deAmazon ECS](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/troubleshooting.html)
 {{% /notice %}}
