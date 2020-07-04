@@ -1,58 +1,58 @@
 +++
-title = "Move to Containers"
+title = "Migración a Contenedores"
 date = 2019-10-22T20:48:41+02:00
 weight = 30
 pre = "<b>3. </b>"
 +++
 
 {{% notice info %}}
-This section assumes that you have already completed sections **1. Database Migration** and **2. Server Migration**.
+Esta seccion asume que ya has completado las secciones **1. Migración de Bases de Datos** y **2. Migración de Servidores**.
 {{% /notice %}}
 
 
-#### Amazon Elastic Container Service (ECS) Overview
+#### Introduccion a Amazon Elastic Container Service (ECS) 
 
-**Amazon Elastic Container Service (Amazon ECS)** is a fully managed container orchestration service. You can choose to run your ECS clusters using:    
+**Amazon Elastic Container Service (Amazon ECS)** es un servicio completamente gestionado de orquestación de contenedores. Puedes escoger que tus clusters de ECS funcionen usando:    
 
-- AWS Fargate launch type, which provides serverless compute capabilities for containers, or   
-- EC2 instances that you manage.
+- Lanzando AWS Fargate, que proporciona capacidades serverless de computación para contenedores, o
+- Instancias EC2 que tu gestionas.
 
-In this lab you will use the **AWS Fargate** launch type to run the application without the hassle and undifferentiating heavy lifting of provisioninig, scaling, managing and securing the backend infrastructure.
+En este laboratorio vamos a usar **AWS Fargate** para ejecutar la aplicación sin preocuparse de provisionar, escalar, gestionar y asegurar la infraestructura de soporte.
 
-Please see below for diagram that shows the general architecture of Amazon ECS using the AWS Fargate launch type:
+Por favor mira debajo el diagrama que muestra la arquitectura general de Amazon ECS usando AWS Fargate:
 
 ![ecs-ec2type-arch](/ecs/overview-fargate.png)
 
-#### Amazon ECS core components:
+#### Componentes de Amazon ECS:
 
-<a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/clusters.html" target="_blank">Amazon ECS Cluster</a> is a logical grouping of resources.
+<a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/clusters.html" target="_blank">Amazon ECS Cluster</a> es una agrupación logica de recursos.
 
-<a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definitions.html" target="_blank">Task Definition</a> is a JSON file, that describes one or more containers (up to a maximum of ten), that form your application. You can think of a task as the blueprint for your application.
+<a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definitions.html" target="_blank">Definición de Tareas (Task Definition)</a> es un fichero en formato JSON, que describe uno o mas contenedores (hasta un máximo de diez), que forman tu aplicación. Puedes pensar en las tareas como el esquema de tu aplicación.
 
-<a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/scheduling_tasks.html" target="_blank">Task</a> is the instantiation of a task definition within a cluster. After you have created a task definition for your application within Amazon ECS, you can specify the number of tasks that will run on your cluster.
+<a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/scheduling_tasks.html" target="_blank">Tareas</a> es la instancia de una definición de una tarea dentro de un cluster. Despues de haber creado una definición de tareas para tu aplicación dentro de Amazon ECS, puedes especificar el numero de tareas que se ejecutaran en tu cluster.
 
-<a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs_services.html" target="_blank">Services</a> - Amazon ECS allows you to run and maintain a specified number of instances of a task definition simultaneously in a cluster. This is called a service. If any of your tasks should fail or stop for any reason, the Amazon ECS service scheduler launches another instance of your task definition to replace it and maintain the desired count of tasks in the service depending on the scheduling strategy used.
+<a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs_services.html" target="_blank">Servicios</a> - Amazon ECS permite correr y mantener un numero especifico de instancias de una definicion de tareas de forma simultanea en un cluster. A esto se le llama Servicio. Si cualquiera de las tareas se cae o se para por cualquier razon, el servicio de planificador de Amazon ECS lanza otra instancia de su definición de tareas para reemplazar la y mantener el numero deseado de tareas en el servicio dependiendo de la estrategia de planificación usada.
 
-You can learn more about **AWS Fargate** by watching the video below.
+Puedes aprender mas sobre **AWS Fargate** viendo el video de abajo.
 <center>
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/IEvLkwdFgnU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </center>
 
-#### Migrating the Web application to container:
+#### Migrar la aplicacion Web a contenedores:
 
 
-To migrate the web application to containers, you will perform the following actions:
+Para migrar la aplicación web a contenedores, ejecuta las acciones siguientes:
 
-1. [Create additional security groups for your VPC]({{< ref "/create-sg.es.md" >}})
+1. [Crea grupos de seguridad adicionales para tu VPC]({{< ref "/create-sg.es.md" >}})
 
-2. [Create an **Amazon EFS** (Elastic File System) file system]({{< ref "/create-efs.es.md" >}})
+2. [Crea un sistema de ficheros elastico (Elastic File System) **Amazon EFS**]({{< ref "/create-efs.es.md" >}})
 
-3. [Add the database variables into **AWS Systems Manager** Parameters Store]({{< ref "/configure-parameters-store.es.md" >}})
+3. [Añade las variables de la base de datos en el almacenamiento de Parametros (Parameters Store) de **AWS Systems Manager** ]({{< ref "/configure-parameters-store.es.md" >}})
 
-4. [Create an **AWS Elastic Load Balancer**]({{< ref "/create-loadbalancer.es.md" >}})
+4. [Crea un Balanceador de Carga Elastico **AWS Elastic Load Balancer**]({{< ref "/create-loadbalancer.es.md" >}})
 
-5. [Create an **Amazon ECS (Elastic Container Service)** Cluster]({{< ref "/create-ecs-cluster.es.md" >}})
+5. [Crea un Cluster de Servicios de Contenedores Elastico **Amazon ECS (Elastic Container Service)**]({{< ref "/create-ecs-cluster.es.md" >}})
 
-6. [Create an **Amazon ECS Task Definition**]({{< ref "/create-task-definition.es.md" >}})
+6. [Crea una definicion de Tarea **Amazon ECS Task Definition**]({{< ref "/create-task-definition.es.md" >}})
 
-7. [Create an **Amazon ECS Service**]({{< ref "/create-service.es.md" >}})
+7. [Crea un Servicio de **Amazon ECS Service**]({{< ref "/create-service.es.md" >}})

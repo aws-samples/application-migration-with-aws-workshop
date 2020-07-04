@@ -1,22 +1,22 @@
 +++
-title = "Configure the Parameter Store"
+title = "Configura el Almacenamiento de Parametros"
 weight = 30
 +++
 
-As we will use the official wordpress docker image with RDS database, we will need to provide database credentials, database name and server details for the wordpress configuration. 
+Como vamos a utilizar la imagen oficial de docker para wordpress con una base de datos RDS, vamos a tener que proporcionar las credenciales de la base de datos, el nombre de la base de datos y los detalles del servidor para la configuración de wordpress.
 
-The best way to achieve that is to manage those parameters in **AWS Systems Manager** Parameter Store instead of storing them inside the docker image or ECS Task Definition.
+La mejor forma de hacerlo es gestionar estos parametros en el almacenamiento de Parametros del **AWS Systems Manager** en lugar de almacenarlos dentro de la imagen docker o la definición de tarea de ECS.
 
-From **AWS Console**, select **Services**, then **Systems Manger** and go to **Parameter Store**.
+Desde la **Consola AWS**, selecciona **Servicios (Services)**, luego **Gestor del Sistema (Systems Manger)** y vete al  **Almacenamiento de Parametros (Parameter Store)**.
 
-Click on **Create parameter** button and enter **Parameter Details** (Name, Description, Type and Value) for parameters as per the table below.
+Click en el boton **Crear parametro (Create parameter)** e introduce los **Detalles del Parametros (Parameter Details)** (Nombre, Descripcion, Tipo y Valor) para los parametros como esta descrito en la tabla de abajo.
 
 ![parameter-details](/ecs/parameter-details.png)
 
-You will need to repeat the above for all the following parameters:
+Tienes que repetir los pasos descritos arriba para todos los parametros siguientes:
 
 
-| Parameter              | Type             | Value                          |
+| Parametro              | Tipo             | Valor                          |
 | ---------------------- | ---------------- |--------------------------------|
 | DB_HOST                | String           | RDS endpoint                   |
 | DB_NAME                | String           | name of the target database  (wordpress-db)  |
