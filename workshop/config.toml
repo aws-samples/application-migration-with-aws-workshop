@@ -65,7 +65,7 @@ weight = 1
 languageName = "English"
 
 [Languages.it]
-title = "AWS Application Migration Workshop"
+title = "AWS Workshop per migrare le Applicazioni"
 weight = 1
 languageName = "Italian"
 
