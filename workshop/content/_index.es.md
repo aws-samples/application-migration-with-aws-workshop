@@ -13,6 +13,6 @@ Entendemos que cada migración es diferente; sin embargo, según nuestra experie
 En este taller nos enfocaremos en la fase de **Migrar y Modernizar** phase, yaprenderá cómo migrar una aplicación ficticia a la nube de AWS por:
 
   - **Replataforma** de la base de datos con <a href="https://aws.amazon.com/dms/" target="_blank" >AWS Database Migration Service</a>
-  - **Re-alojamiento ** de servidor web con <a href="https://aws.amazon.com/cloudendure-migration/" target="_blank" >AWS CloudEndure Migration</a>
+  - **Re-alojamiento** de servidor web con <a href="https://aws.amazon.com/cloudendure-migration/" target="_blank" >AWS CloudEndure Migration</a>
   - **Modernización** del servidor web a contenedores que se ejecutan en <a href="https://aws.amazon.com/ecs/" target="_blank" >Amazon Elastic Container Service</a>
   - (Opcional) Mejora de la **excelencia de la operación, la seguridad, la eficiencia del rendimiento** y **la optimización de costos** de la arquitectura implementada siguiendo el <a href="https://aws.amazon.com/architecture/well-architected/" target="_blank" >Well Architected Framework</a>
