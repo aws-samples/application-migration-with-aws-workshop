@@ -12,7 +12,7 @@ Só complete essa seção se você estiver o workshop sozinho. Se você estiver 
 
 Este lab assume que você tem acesso a uma **AWS Account** com <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/getting-started_create-admin-group.html" target="_blank">privilégios administrativos</a>. Para criar uma nova conta AWS siga <a href="https://aws.amazon.com/premiumsupport/knowledge-center/create-and-activate-aws-account/" target="_blank">Como criar e ativar uma nova conta AWS? </a>.
 
-As instruções abaixo irão instalar um ambiente fonte na sua conta, os recursos instalados consistem de duas máquinas t3.micro EC2 (uma para webserver, uma para banco de dados), um NAT Gateway, um API Gateway e duas funções AWS Lambda (para recuperar facilmente a EC2 Access Key). O custo total dos recursos implementados por este lab deve ser de aproximadamente US$5 (assumindo 4 horas de trabalho), alguns custos são cobertos pelo <a href="https://aws.amazon.com/free/" target="_blank">AWS Free tier</a>.
+As instruções abaixo irão instalar um ambiente fonte na sua conta, os recursos instalados consistem de duas máquinas t3.micro EC2 (uma para webserver, uma para banco de dados), um NAT Gateway, um API Gateway e duas funções AWS Lambda (para recuperar facilmente a EC2 Access Key). O custo total dos recursos implementados por este lab deve ser de aproximadamente US$1 (assumindo 4 horas de trabalho), alguns custos são cobertos pelo <a href="https://aws.amazon.com/free/" target="_blank">AWS Free tier</a>.
 
 Lembre-se de [limpar]({{< ref "/cleanup/_index.pt.md" >}}) sua conta AWS depois de rodar o lab, para evitar custos desnecessários!
 
