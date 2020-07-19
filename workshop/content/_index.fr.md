@@ -13,7 +13,7 @@ Dans ce lab, vous allez apprendre à migrer une application trois-tiers vers AWS
    
   - Le **Re-hosting** d'un serveur web avec [AWS CloudEndure Migration](https://aws.amazon.com/cloudendure-migration/)  
   - Le **Re-platforming** d'une base de données avec [AWS Database Migration Service](https://aws.amazon.com/dms/)  
-  - La **Modernization** d'un web server vers un container s'exécutant sur [Amazon Elastic Container Service](https://aws.amazon.com/ecs/)
-  - (en option) L'Amélioration de l'infrastructure déployée selon les 5 piliers du Well Architected Framework : **Excellence Opérationnelle**, **Sécurité**, **Efficience des Performances** et **Optimisation des Coûts**    
+  - La **Modernization** d'un serveur web vers des containers s'exécutant sur [Amazon Elastic Container Service](https://aws.amazon.com/ecs/)
+  - (en option) L'Amélioration de l'infrastructure déployée selon les 5 piliers du Well Architected Framework : **Excellence Opérationnelle**, **Sécurité**, **Résilience**, **Efficience des Performances** et **Optimisation des Coûts**    
 
 
