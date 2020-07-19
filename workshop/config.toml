@@ -187,3 +187,28 @@ languageName = "Español"
   name = "<i class='fas fa-book-open'></i> Más Recursos"
   url = "https://aws.amazon.com/cloud-migration/resources/"
   weight = 60
+
+[Languages.fr]
+title = "Wrokshop de migration d'applications de AWS"
+weight = 1
+languageName = "Français"
+
+  [[Languages.fr.menu.shortcuts]]
+  name = "<i class='fab fa-github'></i> Project GitHub"
+  url = "https://github.com/aws-samples/application-migration-with-aws-workshop"
+  weight = 30
+
+  [[Languages.fr.menu.shortcuts]]
+  name = "<i class='fas fa-envelope'></i> Avez-vous des questions ?"
+  url = "mailto:application-migration-workshop@amazon.com"
+  weight = 40
+
+  [[Languages.fr.menu.shortcuts]]
+  name = "<i class='fas fa-poll'></i> Evaluez le workshop"
+  url = "https://amazonmr.au1.qualtrics.com/jfe/form/SV_0dfrnubGKXavgR7"
+  weight = 50
+
+  [[Languages.fr.menu.shortcuts]]
+  name = "<i class='fas fa-book-open'></i> Plus de ressources"
+  url = "https://aws.amazon.com/cloud-migration/resources/"
+  weight = 60
