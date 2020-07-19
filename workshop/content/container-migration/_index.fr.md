@@ -10,7 +10,7 @@ Pour l'exécution de cette section nous considérons que vous avez terminé les 
 {{% /notice %}}
 
 
-#### Amazon Elastic Container Service (ECS) Présentation
+#### Présentation de Amazon Elastic Container Service (ECS) :
 
 **Amazon Elastic Container Service (Amazon ECS)** est un système d'orchestration de containers totalement "géré". Vous pouvez choisir d'exécuter votre Cluster ECS en utilisant :   
             
@@ -23,7 +23,7 @@ Merci de regarder ci-dessous le diagramme qui présente l'architecture général
 
 ![ecs-ec2type-arch](/ecs/overview-fargate.png)
 
-#### Amazon ECS composants de base :
+#### composants de base de Amazon ECS :
 
 <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/clusters.html" target="_blank">Amazon ECS Cluster</a> est un regroupement logique de ressources. 
 
@@ -38,21 +38,21 @@ Vous pouver en apprendre plus sur **AWS Fargate** en regardant la video ci-desso
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/IEvLkwdFgnU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </center> 
 
-#### Migrer l'application web vers des containers:
+#### Migrer l'application web vers des containers :
 
 
 Pour migrer l'application web dans des containers, vous allez réaliser les actions suivantes :
 
-1. [Créer les "security groups" supplémentaires pour votre VPC]({{< ref "/create-sg.fr.md" >}})
+1. [Création des "security groups" supplémentaires pour votre VPC]({{< ref "/create-sg.fr.md" >}})
 
-2. [Créer un File System **Amazon EFS** (Elastic File System)]({{< ref "/create-efs.fr.md" >}})
+2. [Création d'un File System **Amazon EFS** (Elastic File System)]({{< ref "/create-efs.fr.md" >}})
 
-3. [Ajouter les variables base de données dans **AWS Systems Manager** Parameters Store]({{< ref "/configure-parameters-store.fr.md" >}})
+3. [Ajout des variables base de données dans **AWS Systems Manager** Parameters Store]({{< ref "/configure-parameters-store.fr.md" >}})
 
-4. [Créer un **Elastic Load Balancer AWS**]({{< ref "/create-loadbalancer.fr.md" >}})
+4. [Création d'un **Elastic Load Balancer AWS**]({{< ref "/create-loadbalancer.fr.md" >}})
 
-5. [Créer un cluster **Amazon ECS (Elastic Container Service)**]({{< ref "/create-ecs-cluster.fr.md" >}})
+5. [Création d'un cluster **Amazon ECS (Elastic Container Service)**]({{< ref "/create-ecs-cluster.fr.md" >}})
 
-6. [Créer une **"Task Definition" Amazon ECS**]({{< ref "/create-task-definition.fr.md" >}})
+6. [Création d'une **"Task Definition" Amazon ECS**]({{< ref "/create-task-definition.fr.md" >}})
 
-7. [Créer un **Service Amazon ECS**]({{< ref "/create-service.fr.md" >}})
+7. [Création d'un **Service Amazon ECS**]({{< ref "/create-service.fr.md" >}})

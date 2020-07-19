@@ -1,5 +1,5 @@
 +++
-title = "Configurer le Parameter Store"
+title = "Configuration de Parameter Store"
 weight = 30
 +++
 

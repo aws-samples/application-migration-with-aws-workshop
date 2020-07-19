@@ -1,5 +1,5 @@
 +++
-title = "Créer un cluster Amazon ECS"
+title = "Création d'un cluster Amazon ECS"
 weight = 40
 +++
 

@@ -1,5 +1,5 @@
 +++
-title = "Créer un file system Amazon EFS"
+title = "Création d'un file system Amazon EFS"
 weight = 20
 +++
 
