@@ -45,4 +45,4 @@ Le Diagramme ci-dessous décrit une architecture de référence de la solution a
 
 ![Architecture de référence](/opt/aws-ref-arch.png)
 
-Pour plus d'information consultez <a href="https://github.com/aws-samples/aws-refarch-wordpress" target="_blank">l'architecture de référence pour Wordpress sur AWS</a>!
+Pour plus d'information consultez <a href="https://github.com/aws-samples/aws-refarch-wordpress" target="_blank">l'architecture de référence pour Wordpress sur AWS</a> !
