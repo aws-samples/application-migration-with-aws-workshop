@@ -189,7 +189,7 @@ languageName = "Español"
   weight = 60
 
 [Languages.fr]
-title = "Wrokshop de migration d'applications de AWS"
+title = "Workshop de migration d'applications de AWS"
 weight = 1
 languageName = "Français"
 
