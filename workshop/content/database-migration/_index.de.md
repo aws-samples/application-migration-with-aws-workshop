@@ -1,29 +1,33 @@
 +++
-title = "Database Migration"
+title = "DATENBANKMIGRATION"
 weight = 10
 pre = "<b>1. </b>"
 +++
 
-In this section, you will perform a database migration using the source MySQL database to a target Amazon RDS for MySQL database with **AWS Database Migration Service**. Since this is a homogeneous database migrations (the source and target database engines are the same) - the schema structure, data types, and database code are compatible between the source and target databases, which means that this kind of migration doesn't require any schema conversion.
+In diesem Abschnitt führen Sie eine Datenbankmigration unter Verwendung der MySQL-Quelldatenbank 
+auf eine Amazon RDS for MySQL-Zieldatenbank mit **AWS Database Migration Service** durch. 
+Da es sich um eine homogene Datenbankmigration handelt (die Quell- und Zieldatenbankmodule 
+sind identisch), sind die Schemastruktur, die Datentypen und der Datenbankcode zwischen 
+der Quell- und der Zieldatenbank kompatibel, sodass für diese Art der Migration keine 
+Schema-Anpassungen erforderlich sind.
 
 ![1](/db-mig/DMS-overview.png)
 
-You can learn more details about this service by watching the video below.
-
+Weitere Informationen zu diesem Service finden Sie im folgenden Video.
 <center><iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/zb4GcjEdl8U" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center>
 
-In this lab, you will perform the following steps:
+Während dieser Übung werden Sie folgenden Schritte ausführen:
 
-1. [Create Target DB]({{< ref "/Create-target-DB.de.md" >}})
+1. [Erstelle Zieldatenbank]({{< ref "/Create-target-DB.de.md" >}})
 
-2. [Set Up Networking]({{< ref "/setup_network.de.md" >}})
+2. [Netzwerk einrichten]({{< ref "/setup_network.de.md" >}})
 
-2. [Create Replication Instance]({{< ref "Create-Replication-instance.de.md" >}})
+2. [Replikationsinstanz erstellen]({{< ref "Create-Replication-instance.de.md" >}})
 
-3. [Create Source and Target Endpoints]({{< ref "Create-Source-and-Target-endpoints.de.md" >}})
+3. [Erstellen Sie Quell- und Zielendpunkte]({{< ref "Create-Source-and-Target-endpoints.de.md" >}})
 
-4. [Configure Source Database]({{< ref "configure_source_database.de.md" >}})
+4. [Konfigurieren Sie die Quelldatenbank]({{< ref "configure_source_database.de.md" >}})
 
-4. [Create and Run Replication Task]({{< ref "Create-and-run-Replication-task.de.md" >}})
+4. [Replikation-Task erstellen und ausführen]({{< ref "Create-and-run-Replication-task.de.md" >}})
 
-5. [Summary]({{< ref "Summary.de.md" >}})
+5. [Zusammenfassung]({{< ref "Summary.de.md" >}})

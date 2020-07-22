@@ -1,88 +1,96 @@
 +++
-title = "Create Target DB"
+title = "Erstelle Zieldatenbank"
 weight = 10
 +++
 
-### Database Migration
+### Datenbankmigration
 
-Database migrations can be performed in a number of ways, and for the purpose of this workshop we will perform a **continuous data replication** migration using <a href="https://aws.amazon.com/dms/" target="_blank">AWS Database Migrations Service (DMS)</a>.
+Datenbankmigrationen können auf verschiedene Arten durchgeführt werden. 
+Für Zweck dieses Workshops führen wir eine **kontinuierliche Datenreplikation** mit 
+dem <a href = "https://aws.amazon.com/dms/" durch = "_ blank">AWS Database Migrations Service (DMS)</a> aus.
 
-Before you configure **AWS DMS**, you will need to create your target database in the AWS account provided. Use **AWS Relation Database Service (RDS)** to perform this activity making it easy to set up, operate, and scale a relational database in the cloud.
+Bevor Sie **AWS DMS** konfigurieren, müssen Sie Ihre Zieldatenbank in dem bereitgestellten 
+AWS-Konto erstellen. Verwenden Sie **AWS Relation Database Service (RDS)**, um diese Aktivität 
+zu auszuführen und das Einrichten, Betreiben und Skalieren einer relationalen Datenbank in der Cloud zu vereinfachen.
 
-### Create the subnet group for target database
+### Erstellen von eine Subnetzgruppe (subnet group) für die Zieldatenbank
 
-1. Go to the **AWS Console**, from **Services** choose **RDS**, select **Subnet groups** from the menu on the left and click **Create DB Subnet Group**
+1. Gehen Sie zur **AWS Console**, wählen Sie unter **Services** **RDS** aus, 
+wählen Sie im Menü links **Subnet Groups** aus und klicken Sie auf **Create DB Subnet Group**
 
-2. On the **Create DB subnet group** enter the following information
+2. Bei **Create DB subnet group** fügen Sie folgenden Informationen hinzu:
 
     | Parameter           | Value                    |
     | ------------------- | ------------------------ |
     | Name                | database-subnet-group     |
     | Description         | Subnets where RDS will be deployed |
     | VPC      | TargetVPC            |
-    
-    In the **Add subnets** panel add one subnet from each Availability Zone (us-west-2a and us-west-2b) with CIDRs 10.0.101.0/24 and 10.0.201.0/24, then press **Create** button.
+
+    Fügen Sie im Bereich **Add Subnets** ein Subnetz aus jeder Verfügbarkeitszone (us-west-2a und us-west-2b) mit den CIDRs 10.0.101.0/24 und 10.0.201.0/24 hinzu und drücken Sie dann **Create** Taste.
 
     ![RDS Subnet group creation](/db-mig/db-subnet-group.en.png)    
 
-### Create the target database    
-    
-1. Now select **Databases** from the menu on the left and click **Create database** 
+### Erstellen Sie die Zieldatenbank    
 
-2. From the **Engine options**, select MySQL and Version MySQL 5.7.22
+1. Wählen Sie nun im Menü links **Databases** aus und klicken Sie auf **Create database**.
+2. Wählen Sie unter **Engine options** MySQL und die MySQL 5.7.22 Version aus
 
     ![1](/db-mig/1.png)
 
 
     {{% notice note %}}
-You can confirm the source MySQL version from the source database using SQL query - **SELECT@@version;**
+Sie können die MySQL-Quellversion aus der Quellendatenbank mithilfe der SQL-Abfrage bestätigen - **SELECT @@ version;**
 {{% /notice %}}
 
-    In the **Settings** section, configure the DB instance identifier (e.g. database-1), Master username (e.g. admin) and Master password for your new database instance.
-
-
+Konfigurieren Sie im Abschnitt **Settings** die DB-Instanzkennung (z. B. Datenbank-1), 
+den Administrator-Benutzernamen (z. B. admin) und das Admin-Passwort für Ihre neue Datenbankinstanz.
     ![3_db](/db-mig/3_db.png)
 
-    {{% notice note %}}
-Make sure to write down **Master username** and **Master password**, as you will use it later.
+{{% notice note %}}
+Notieren Sie sich **Administrator-Benutzername** und **Administrator-Passwort**, da Sie es später verwenden werden.
 {{% /notice %}}
 
-    Select **db.t3.medium** from the Burstable DB instance class and select **General Purpose (SSD)** for Storage Type.
+Wählen Sie die **db.t3.medium** aus "Burstable DB instance" Klasse aus und markieren sie den **General Purpose (SSD)** Festplattentyp.
     ![4_db](/db-mig/4_db.png)
 
-3. For the **Availability & durability**, switch to **Do not create a standby instance** to save costs. 
+3. Bei **Availability & durability**, ändern Sie die Konfiguration zu **Do not create a standby instance**, um Kosten zu sparen.
 
-    {{% notice note %}}
-For production workloads, we recommend enabling the standby instance to enable <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.MultiAZ.html" target="_blank">Multi-AZ Deployment</a> for higher availability.
+{{% notice note %}}
+Für Produktions-Workloads, um eine höhere Verfügbarkeit zu erreichen, empfehlen wir, die Standby-Instanz in einem 
+<a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.MultiAZ.html" target="_blank">Multi-AZ Deployment</a> zu aktivieren.
 {{% /notice %}}  
-
     ![5_db](/db-mig/5_db.png)
 
-4. In the **Connectivity** section:
-
-    * In **Virtual Private Cloud (VPC)**, select **TargetVPC** (this is the <a href="https://aws.amazon.com/vpc/" target="_blank">Amazon Virtual Private Cloud</a> that was automatically created for this lab)
-    * In **Additional connectivity configuration -> VPC Security Group**, select **Create new** VPC security group and give it a name (e.g. "DB-SG").
-    * Note that the DB Subnet group you have created earlier will be automatically selected
+4. Im Abschnitt **Connectivity**:
+    * Wählen Sie **Virtual Private Cloud (VPC)**, dann **TargetVPC** (dies ist die <a href="https://aws.amazon.com/vpc/" target="_blank"> Amazon Virtual Private Cloud</a>, 
+    die automatisch für dieser Workshop erstellt wurde).
+    * Bei **Additional connectivity configuration -> VPC Security Group** wählen Sie die Option **Create new** um eine neue VPC-Sicherheitsgruppe zu erstellen 
+    und geben Sie ihr einen Namen (z. B. "DB-SG").
+    * Beachten Sie, dass die zuvor erstellte DB-Subnetzgruppe automatisch ausgewählt wird.
 
     ![6_db](/db-mig/6_db.png)
 
 
-    {{% notice note %}}
-Note: You will edit the DB-SG VPC security group later to make sure that the DMS Replication Instance is able to access the target database and to allow access from your Webserver.
+{{% notice note %}}
+Hinweis: Sie werden die DB-SG VPC-Sicherheitsgruppe später bearbeiten, um sicherzustellen, dass die DMS-Replikationsinstanz auf 
+die Zieldatenbank zugreifen und den Zugriff von Ihrem Webserver aus ermöglichen kann.
 {{% /notice %}}
 
-5. For the **Database authentication**, choose **Password authentication**.
-6. (AWS hosted events only) In the **Additional configuration**, make sure to uncheck **Enable Enhanced monitoring** under the **Monitoring** section as indicated below:
+5. Bei **Database authentication** wählen Sie die **Password authentication**.
+
+6. (Betrifft nur die von AWS gehostete Workshops) Deaktivieren Sie in der **Additional configuration** 
+das Kontrollkästchen **Enable Enhanced monitoring** im Abschnitt **Monitoring**, wie unten angegeben:
 
     ![6_2_db](/db-mig/6_2_db.png)
 
-
     ![8_db](/db-mig/8_db.png)
 
-    {{% notice note %}}
-Using <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Monitoring.OS.html" target="_blank">Enhanced monitoring</a> is a very good idea for production workloads, during AWS hosted events we uncheck it because of limitations of IAM Role that was provisioned for attendees.
+{{% notice note %}}
+Die Verwendung von <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Monitoring.OS.html" target="_blank">Enhanced monitoring</a> 
+ist eine sehr gute Idee für die Produktions-Workloads. Bei einem von AWS gehosteten Veranstaltungen deaktivieren wir diese Option 
+aufgrund von Einschränkungen der IAM-Rolle, die wir für die Teilnehmer bereitstellen.
 {{% /notice %}}
 
-6. Finally, review the **Estimated monthly costs** and click the **Create database** button.
+6. Überprüfen Sie abschließend die **Estimated monthly costs** und klicken Sie auf die **Create database** Schaltfläche drauf.
 
    ![8_2_db](/db-mig/8_2_db.png)

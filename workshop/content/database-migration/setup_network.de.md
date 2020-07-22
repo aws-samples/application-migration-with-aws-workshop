@@ -1,18 +1,22 @@
 +++
-title = "Set Up Networking"
+title = "Netzwerk einrichten"
 weight = 15
 +++
 
-Since we don't use a **VPN** or **AWS Direct Connect** in this workshop, **DMS Replication Instance** will need to connect to the source database over public internet, while to the target database over private network.
+Da wir in diesem Workshop kein **VPN** oder **AWS Direct Connect** verwenden, 
+muss die **DMS-Replikationsinstanz** über das öffentliche Internet die Quellendatenbank 
+erreichen können. Zur Zieldatenbank wird die Verbindung über ein privates Netzwerk aufgebaut.
 
-![Replication Instance Architecture](/db-mig/ri-network-conf.png)
+![Replication Instance Architektur](/db-mig/ri-network-conf.png)
 
-### Create replication subnet group
+### Erstellen Sie "replication subnet group"
 
-One of the pre-requisites for using of **AWS DMS** is having configured a **subnet group**, which is a collection of subnets that will be used by the **DMS Replication Instance**. 
+Eine der Voraussetzungen für die Verwendung von **AWS DMS** ist die Konfiguration 
+einer **Subnet group**, bei der es sich um eine Gruppe von Subnetzen handelt, 
+die von der **DMS-Replikationsinstanz** verwendet werden.
 
-1. Go to **AWS Console > Services > Database Migration Service > Subnet groups** and click on **Create subnet group** button.
-2. In the **Create replication subnet group** enter the following parameter values:
+1. Wählen Sie die **AWS Console> Services> Database Migration Service > Subnet groups** und klicken Sie auf die **Create subnet group** Schaltfläche darauf.
+2. Bei der **Create replication subnet group** geben Sie folgende Parameterwerte ein:
 
     | Parameter           | Value                    |
     | ------------------- | ------------------------ |
@@ -21,31 +25,34 @@ One of the pre-requisites for using of **AWS DMS** is having configured a **subn
     | VPC                 | TargetVPC   |
     | Add subnets         | select **TargetVPC-public-a**, **TargetVPC-public-b** |
 
-    ![Replication-instance-networ](/db-mig/subnet-group.png)
+    ![Replication-instance-network](/db-mig/subnet-group.png)
 
-3. Click on the **Create subnet group** button
+3. Klicken Sie auf die **Create subnet group** Schaltfläche darauf.
 
-### Configure the security group
+### Konfigurieren von "security group". 
 
-**VPC security group** in this workshop must allow inbound traffic from the **DMS Replication Instance** to the target RDS database.
+Die **VPC security group** in diesem Workshop muss eingehenden Datenverkehr von 
+der **DMS-Replikationsinstanz** zu der RDS-Zieldatenbank zulassen.
 
-1. Create a security group for the **DMS Replication Instance**
+1. Erstellen Sie eine Sicherheitsgruppe für die **DMS-Replikationsinstanz**
 
-    a. Go to **AWS Console > Services > EC2 > Security Groups** and click the **Create Security Group** button.
+    a. Besuchen Sie die **AWS Console > Services > EC2 > Security Groups** und klicken Sie auf die **Create Security Group** Schaltfläche darauf.
 
-    b. Enter **Security group name** (for example RI-SG), give it a **Description**, select the **TargetVPC** for the VPC field and press **Create security group** button.
+    b. Fügen Sie die **Security group name** zu (z.B.: RI-SG), geben Sie den Namen (**"Description"**) ein, wählen Sie **TargetVPC** bei dem VPC-Feld aus 
+     und klicken Sie bitte auf die **Create security group** Schaltfläche darauf.
 
     ![Replication-instance-networ](/db-mig/ri-sg.png)
 
-    {{% notice note %}}
-  There is no need to add any inbound rules to the **DMS Replication Instance** security group **RI-SG**
-  {{% /notice %}}
+{{% notice note %}}
+Es ist nicht erforderlich, eingehende Regeln zu der **RI-SG** Sicherheitsgruppe mit **DMS Replication Instance** hinzuzufügen.
+{{% /notice %}}
 
-2. Add Inbound rule to **DB-SG** security group
-
-    a. Go again to **AWS Console > Services > EC2 > Security Groups** screen click on the **Security Group ID** of Database Security Group **DB-SG** created earlier 
+2. Fügen Sie der Sicherheitsgruppe **DB-SG** eine eingehende Regel hinzu
+    a. Besuchen Sie die **AWS Console > Services > EC2 > Security Groups** und dann wählen Sie 
+    die **Security Group ID** von Datenbank-Sicherheitsgruppe **DB-SG** die vorher erstellt wurde. 
     
-    b. On the details of the **DB-SG** security group screen, press the **Edit inbound rules** button
+    b. Editieren Sie die **DB-SG** Sicherheitsgruppe.
       
-    c. On the **Edit inbound rules** screen press the **Add rule** button and configure the rule to allow **inbound** traffic from the **DMS Replication Instance** security group on port 3306 and press **Save rules** button
+    c. Bei den eingehenden Regeln fügen Sie bitte eine neue Regel zu, 
+    die die Verbindung von **DMS Replication Instance** Sicherheitsgruppe am Port 3306 erlauben wird. Speichern Sie die Änderung.
     ![Adding inbound rule for reserved instance](/db-mig/security-group-inbound-rule.en.png)

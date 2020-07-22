@@ -1,5 +1,5 @@
 +++
-title = "Summary"
+title = "Zusammenfassung"
 weight = 60
 +++
 
