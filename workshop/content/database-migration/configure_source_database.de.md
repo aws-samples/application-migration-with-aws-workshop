@@ -1,33 +1,42 @@
 +++
-title = "Configure Source Database"
+title = "Konfigurieren Sie die Quelldatenbank"
 weight = 35
 +++
 
-### Run DMS Replication Task with Change Data Capture (CDC)
+### Führen Sie die DMS-Replikationstask mit CDC (Change Data Capture) aus.
 
-To ensure minimal downtime for the database migration, we're going to use continuous replication of changes (also known as **Change Data Capture (CDC)**) from the source database to the target database. For more information about CDC and native CDC support of **AWS DMS** see <a href="https://aws.amazon.com/blogs/database/aws-dms-now-supports-native-cdc-support/" target="_blank">this article</a>.
+Um minimale Ausfallzeiten für die Datenbankmigration sicherzustellen, 
+verwenden wir die kontinuierliche Replikation von Änderungen (auch als **Change Data Capture (CDC)** bezeichnet) 
+von der Quellendatenbank in die Zieldatenbank. 
+Weitere Informationen zur CDC- und nativen CDC-Unterstützung von **AWS DMS** 
+finden Sie unter <a href = "https://aws.amazon.com/blogs/database/aws-dms-now-supports-native-cdc-support/ "target =" _ blank ">dieser Artikel</a>.
 
-#### Enable binary log on the source database
+#### Aktivieren Sie das Binärprotokoll (binary log) in der Quellendatenbank
 
-For **AWS DMS** continuous replication from MySQL database, you'll need to enable the binary log and make configuration changes on the source database.
+Für eine kontinuierliche Replikation über **AWS DMS** aus der MySQL-Datenbank 
+müssen Sie das Binärprotokoll aktivieren und Konfigurationsänderungen 
+an der Quellendatenbank vornehmen.
 
-1. Login to the **Source Environment Database** server
+1. Login zu **Source Environment Database** Server
 
-    For **self-paced lab** - information need to access the Database environment is described on the **Output** section of the **ApplicationMigrationWorkshop** <a href="https://us-west-2.console.aws.amazon.com/cloudformation/home?region=us-west-2#/" target="_blank">CloudFormation Template</a>.
-
+Für **self paced lab** - die Informationen, die für den Zugriff auf die Datenbankumgebung 
+erforderlich sind, werden im Abschnitt **Output** des **ApplicationMigrationWorkshop** CF Stack 
+<a href="https://us-west-2.console.aws.amazon.com/cloudformation/home?region=us-west-2#/" target="_blank">CloudFormation Template</a> zu finden sein.
     ![Database Server login information](/db-mig/db-server-ssh-self-paced.png)    
 
-    For **AWS Event** - information need to access the Database environment is described at **Database IP**, **Database Username** and **Database SSH Key** on the <a href="https://dashboard.eventengine.run/dashboard" target="_blank">Team Dashboard</a>.
+Für **AWS Event** - die Informationen, die für den Zugriff auf die Datenbankumgebung erforderlich sind, 
+finden Sie unter **Datenbank-IP**, **Datenbank-Benutzername** und **Datenbank-SSH-Schlüssel** 
+auf der <a href="https://dashboard.eventengine.run/dashboard" target="_blank">Team Dashboard</a>.
 
-    ![Database Server login information](/db-mig/db-server-ssh-event.png)
+   ![Database Server login information](/db-mig/db-server-ssh-event.png)
 
-    If you're not sure how to use SSH to access servers, check the following:
-    - For Microsoft Windows users view <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/putty.html" target="_blank">this article</a>.  
-    - For Mac OS users view <a href="https://docs.aws.amazon.com/quickstarts/latest/vmlaunch/step-2-connect-to-instance.html#sshclient" target="_blank">this article</a>.
+    Wenn Sie nicht sicher sind, wie Sie mit SSH auf Server zugreifen sollen, probieren Sie Folgendes aus:
+    - Microsoft Windows Benutzer <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/putty.html" target="_blank">this article</a>.  
+    - Mac OS und Linux Benutzer <a href="https://docs.aws.amazon.com/quickstarts/latest/vmlaunch/step-2-connect-to-instance.html#sshclient" target="_blank">this article</a>.
 
-2. Grant additional privileges to the **wordpress-user** database user
+2. Geben Sie zusätzliche Rechte (Grant) den **wordpress-user** Datenbank-Benutzer
 
-    Run the following commands on the database server:
+    Führen Sie folgende Kommandos auf dem Datenbankserver aus:
 
     ```
     sudo mysql -u root -pAWSRocksSince2006
@@ -38,9 +47,9 @@ For **AWS DMS** continuous replication from MySQL database, you'll need to enabl
     exit
     ```
 
-3. Create a folder for the **bin logs** 
+3. Erstellen Sie ein Verzeichnis für die Binärelogs **bin logs** 
 
-    Run the following commands on the database server:
+    Führen Sie folgende Kommandos auf dem Datenbankserver aus:
 
     ```
     sudo su - 
@@ -49,11 +58,9 @@ For **AWS DMS** continuous replication from MySQL database, you'll need to enabl
     exit
     ```
 
-    More information on the binary log can be found in the <a href="https://dev.mysql.com/doc/refman/8.0/en/binary-log.html" target="_blank">MySQL documentation</a>.
+    Mehr Informationen zum **binary log** finden sie bei <a href="https://dev.mysql.com/doc/refman/8.0/en/binary-log.html" target="_blank">MySQL-Dokumentation</a>.
 
-4. Create and modify **/etc/mysql/my.cnf** file
-
-    Run the following to edit the file:
+4. Erstellen Sie bitte oder ändern Sie **/etc/mysql/my.cnf** Datei
 
     ```
     sudo su -
@@ -62,9 +69,8 @@ For **AWS DMS** continuous replication from MySQL database, you'll need to enabl
     nano /etc/mysql/my.cnf
     ```
 
-    Then add the following information under the **[mysqld]** section, save the file and exit nano:
-
-
+    Fügen Sie dann die folgenden Informationen bei **[mysqld]** hinzu, 
+    speichern Sie die Datei und beenden Sie nano editor.
 
     ```
     server_id=1
@@ -77,22 +83,21 @@ For **AWS DMS** continuous replication from MySQL database, you'll need to enabl
     performance_schema=ON
     ```
 
-
-5. **Restart** MySQL service to apply changes
-
-    Back in the console, run the following command to apply the changes:
+5. Starten Sie MySQL Dienst neu
 
     ```
     sudo service mysql restart
     ```
 
     {{% notice warning %}}
-Applying those changes requires mysql service restart. This will interrupt the source database for a few seconds.
+Um die Änderungen zu aktivieren müssen sie den MySQL-Diensts neustarten.
+Dadurch wird die Quellendatenbank für einige Sekunden nicht verfügbar.
 {{% /notice %}}    
 
-1. **Test** the changes
+1. Die Änderungen testen.
 
-    Make sure the update in **/etc/mysql/my.cnf** took effect, by running the following commands:
+    Um sicherzustellen, dass die Änderungen in **/etc/mysql/my.cnf** funktionieren, 
+    führen Sie bitte folgende Kommandos aus:
 
     ```
     sudo mysql -u root -pAWSRocksSince2006
@@ -106,7 +111,8 @@ Applying those changes requires mysql service restart. This will interrupt the s
     exit
     ```
 
-    The output must show the **BINARY LOGGIN STATUS** set to **ON**, as on the screenshot below:
+    Das Ergebnis muss **BINARY LOGGIN STATUS** gleich **ON** sein, wie an dem Bild unten:
     ![expected-results](/db-mig/bin-log-verificaion.png)
 
-    If that's the case - you can **exit** from the SSH, in case of problems - check the **/var/log/mysqld.log** file for errors.
+    Wenn es übereinstimmt, dann können Sie jetzt die SSH Verbindung schließen. 
+    Wenn es nicht geklappt hat, dann überprüfen Sie die Log-Dateien **/var/log/mysqld.log** auf Fehlermeldungen.
