@@ -1,20 +1,23 @@
 +++
-title = "Create Replication Instance"
+title = "Erstelle eine Replikationsinstanz"
 weight = 20
 +++
 
-### Create AWS DMS Replication Instance
+### Erstelle die AWS DMS Replication Instance
 
-In this step you will create an <a href="https://aws.amazon.com/dms/" target="_blank">AWS Database Migration Service</a> Replication Instance that initiates the connection between the source and target databases, transfers the data, and caches any changes that occur on the source database during the initial data load.
+Bei dem Schritt erstellen Sie mit <a href="https://aws.amazon.com/dms/" target="_blank"
+AWS Database Migration Service</a> eine Replication Instance. 
+Die Instanz wird eine Verbindung zwischen den Quel- und Ziel-Datenbank herstellen
+um die Daten auf der Zieldatenbank zu synchronisieren. 
 
+1. Wählen Sie **> AWS Console >Services > Database Migration Service** aus.  
 
-1. Inside **AWS Console**, go to **Services** and **Database Migration Service**.  
-
-2. Click on **Replication instances** and then on the **Create replication instance** button.
+2. Wählen Sie **> Replication instances > Create replication instance** aus.
 
     ![Replication-instance-create](/db-mig/Replication-instance-create.png)
 
-3. On the **Create replication instance** screen configure a new replication instance with the following parameter values:
+3. Bei **> Create replication instance** konfigurieren Sie eine neue Replikationsinstanz (replica instance)
+mit folgenden Parameterwerten:
 
     | Parameter           | Value                    |
     | ------------------- | ------------------------ |
@@ -27,20 +30,22 @@ In this step you will create an <a href="https://aws.amazon.com/dms/" target="_b
     | Multi-AZ            | Unchecked                |
     | Publicly accessible | Checked                  |
 
-    Like on the screenshot below.
-
+    Wie auf dem Bild.
 
     ![replication-instance-conf](/db-mig/replication-instance-conf.png)
 
-
-    In the **Advanced security and network configuration**, make sure to select the replication subnet group & the replication instance security group that you created earlier.
+    Bei **> Advanced security and network configuration**, wählen Sie "replication subnet group" 
+    und die "replication instance security group" die Sie vorher erstellt haben.
 
     ![Replication-instance-conf](/db-mig/advanced-security.png)
 
 
 
-4. Click **Create** button.
+4. Wählen Sie **Create** um die Instanz zu erstellen.
 
-    {{% notice note %}}
-Creation of replication instance takes few minutes, please wait until the **Status** changes to **Available** before going to the next steps. In the meantime you can check different use cases for AWS DMS described at the <a href="https://aws.amazon.com/dms/" target="_blank">AWS DMS Webpage</a>
+{{% notice note %}}
+Das Erstellen einer Replikationsinstanz dauert einige Minuten. Warten Sie, bis sich der **Status** auf **Available** 
+sich ändert, bevor Sie mit den nächsten Schritten fortfahren. 
+In der Zwischenzeit können Sie verschiedene Anwendungsfälle für AWS DMS überprüfen, 
+die auf der <a href="https://aws.amazon.com/dms/" target="_blank">AWS DMS-Webseite</a> zu finden sind.
 {{% /notice %}}

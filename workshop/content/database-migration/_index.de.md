@@ -1,5 +1,5 @@
 +++
-title = "DATENBANKMIGRATION"
+title = "Datenbankmigration"
 weight = 10
 pre = "<b>1. </b>"
 +++
