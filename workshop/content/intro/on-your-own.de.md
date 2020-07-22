@@ -4,7 +4,7 @@ weight = 20
 +++
 
 {{% notice warning %}}
-Füllen Sie diesen Abschnitt nur aus, wenn Sie den Workshop selbst durchführen. 
+Führen Sie diesen Abschnitt nur aus, wenn Sie den Workshop selbst durchführen. 
 Wenn Sie an einer von AWS gehosteten Veranstaltung teilnehmen (z. B. re: Invent, 
 Spieltag, Workshop oder eine andere von einem AWS-Mitarbeiter veranstaltete 
 Veranstaltung), gehen Sie zu Start des Workshops bei einer AWS-Veranstaltung. [Start the workshop at an AWS event]({{< ref "/migration-hub.de.md" >}}).
