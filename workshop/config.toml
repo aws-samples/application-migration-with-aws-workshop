@@ -80,7 +80,7 @@ languageName = "Deutsch"
   weight = 40
 
   [[Languages.de.menu.shortcuts]]
-  name = "<i class='fas fa-poll'></i> Workshop auswerten"
+  name = "<i class='fas fa-poll'></i> Workshop bewerten"
   url = "https://amazonmr.au1.qualtrics.com/jfe/form/SV_0dfrnubGKXavgR7"
   weight = 50
 
