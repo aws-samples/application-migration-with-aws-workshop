@@ -1,13 +1,13 @@
 +++
-title = "Create and Run a Replication Task"
+title = "Erstelle eine Replikationstask"
 weight = 40
 +++
 
-### Configure and Run a Replication Task
+### Erstelle eine Replikationstask
 
-Back in the **AWS DMS** console, go to **Database migration tasks** and click the **Create Task** button.
+Bei **> AWS DMS > Database migration tasks** wählen Sie **Create Task**.
 
-1. Enter the following parameter values in the **Create database migration task** screen:
+1. Fügen Sie folgende Parameterwerte bei **Create database migration task** hinzu:
 
     | Parameter              | Value                                               |
     | ---------------------- | --------------------------------------------------- |
@@ -20,7 +20,8 @@ Back in the **AWS DMS** console, go to **Database migration tasks** and click th
     
     ![Create-task-1](/db-mig/Create-task-1.png)
 
-2. In the **Task settings** panel enter the following values (leave everything else as default):
+2. Bei **> Task settings** ändern Sie nur folgende Parameterwerte und lassen Sie bitte
+die Restliche-Konfiguration ohne änderungen.
 
     | Parameter              | Value                                               |
     | ---------------------- | --------------------------------------------------- |
@@ -30,14 +31,16 @@ Back in the **AWS DMS** console, go to **Database migration tasks** and click th
     
     ![create-task-2](/db-mig/create-task-2.png)
     
-3. In the **Table mappings** panel select **Guided UI** mode, press the **Add new selection rule** button and select **wordpress-db** in the **Schema** drop-down.
+3. Bei **> Table mappings** wählen Sie **Guided UI** Modus und erstellen sie eine neue Regel mit 
+**Add new selection rule** und wählen sie aus der Liste **wordpress-db** aus.
 
     {{% notice note %}}
-If you don't see wordpress-db on the **Schema** drop-down, select **Enter schema** and type **wordpress-db** into the **Schema name** field.
+Wenn WordPress-DB in der Dropdown-Liste **Schema** nicht angezeigt wird, 
+wählen Sie **Enter schema** und geben Sie **WordPress-DB** in das Feld **Enter schema** ein.
 {{% /notice %}}    
 
     ![Create-task-3](/db-mig/Create-task-3.png)
-
-1. Scroll to the bottom of the screen and click the **Create task** button to create the task and start the data replication.
+1. Scrollen Sie nach unten und klicken Sie auf die **Create task** darauf, 
+um den Replikationstask zu erstellen und die Datenreplikation zu starten.
 
     ![create-task-4](/db-mig/create-task-4.png)

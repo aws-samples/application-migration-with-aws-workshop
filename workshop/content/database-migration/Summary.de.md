@@ -3,12 +3,13 @@ title = "Zusammenfassung"
 weight = 60
 +++
 
-Congratulations, you have successfully:
+Herzlichen Glückwunsch, Sie haben folgende Punkte erfolgreich abgeschlossen:
 
-1. Created a new managed database, using **Amazon Relational Database Service**
-2. Created an **AWS Database Migration Service replication instance** - that allows you to replicate data between databases
-3. Created the **source and target database endpoints**
-4. Modified the configuration of the source database to allow for **continuous replication of data**
-5. Started the replication of data through a **replication task**
+1. Erstellt eine neue Datenbank mit **Amazon Relational Database Service**
+2. Erstellt eine **AWS Database Migration Service replication instance**, mit der Sie Daten 
+zwischen den Datenbanken replizieren können.
+3. Erstellt die **source and target database endpoints** Endpunkte
+4. Die Konfiguration der Quelldatenbank geändert um eine Kontinuierliche Replikation von Daten zu ermöglichen.
+5. Die Replikation von Daten mit **replication task** ausgeführt.
 
-So now it's time to migrate and configure the webserver!
+Jetzt können wir den Webserver migrieren und konfigurieren!
