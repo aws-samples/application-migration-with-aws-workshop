@@ -1,46 +1,60 @@
 +++
-title = "CloudEndure Configuration"
+title = "Konfiguration von CloudEndure"
 weight = 10
 +++
 
+Zu Beginn muss man CloudEndure mit **AWS Zugangsdaten** konfigurieren, 
+um auf Ihr AWS-Konto und den **Replikationszielort (replication destination)** 
+(Subnetz) innerhalb des AWS-Zielkontos für den CloudEndure-Replikationsserver zuzugreifen.
 
-To begin, you will need to configure CloudEndure with **AWS credentials** to access your AWS account and **replication destination** location (subnet) within target AWS account for the CloudEndure Replication Server.
+### Konfigurieren Sie AWS Zugangsdaten.
 
-### Configure AWS Credentials.
-
-1. Login to CloudEndure Console at [https://console.cloudendure.com](https://console.cloudendure.com/)
+1. Melden Sie sich bei CloudEndure Console unter [https://console.cloudendure.com](https://console.cloudendure.com/) an.
 
     ![CE-login](/ce/CE-login.png)
 
-    For **self-paced lab** - use your existing CloudEndure Migration Account or create a new [CloudEndure Migration Account](https://console.cloudendure.com/#/register/register) and a new <a href="https://docs.cloudendure.com/#Getting_Started_with_CloudEndure/Working_with_Projects/Working_with_Projects.htm#Creating_a_New_Project%3FTocPath%3DNavigation%7CGetting%2520Started%2520with%2520CloudEndure%7CWorking%2520with%2520Projects%7C_____2" target="_blank">CloudEndure Project</a>
+    Für den Workshop **in einem eigenem AWS-Konto** - benutzen Sie Ihre dedizierte CloudEndure Migrationskonto 
+    oder erstellen Sie bitte ein neues Konto bei [CloudEndure Migration Account](https://console.cloudendure.com/#/register/register) 
+    und erstellen Sie einen neuen <a href="https://docs.cloudendure.com/#Getting_Started_with_CloudEndure/Working_with_Projects/Working_with_Projects.htm#Creating_a_New_Project%3FTocPath%3DNavigation%7CGetting%2520Started%2520with%2520CloudEndure%7CWorking%2520with%2520Projects%7C_____2" target="_blank">CloudEndure-Projekt</a>   
 
-    For **AWS Events** - use **CloudEndure Username** and **Password** listed in the <A href="https://dashboard.eventengine.run/dashboard" target="_blank">Event Engine - Team Dashboard</a>.
+    Bei Teilnahme an eine von **AWS gehostete Veranstaltung** - benutzen Sie **CloudEndure Username** und **Passwort** 
+    vorhanden in der <A href="https://dashboard.eventengine.run/dashboard" target="_blank">Event Engine - Team Dashboard</a>.
 
     ![CloudEndure Credentials](/ce/CE-console-credentials.png)
 
-    If they are not shown on the <A href="https://dashboard.eventengine.run/dashboard" target="_blank">Event Engine - Team Dashboard</a>, please contact the presenter to provide you with the credentials.
+    Wenn die Zugangsdaten nicht in der <A href="https://dashboard.eventengine.run/dashboard" target="_blank">
+    Event Engine - Team Dashboard</a> angezeigt werden, wenden Sie sich bitte an den Moderator, 
+    um die Anmeldeinformationen zu bekommen.
 
-2. Navigate to **Setup & Info** > **AWS Credentials** tab.
+2. Besuchen Sie **Setup & Info** > **AWS Credentials** Tab.
 
     ![CE-configure-AWS-Cred.png](/ce/CE-configure-AWS-Cred.png.png)
 
-3. Click the **EDIT** button and enter **AWS Access Key ID** and **AWS Secret Access Key** 
+3. Klicken Sie bitte auf **EDIT** und geben Sie die **AWS Access Key ID** und **AWS Secret Access Key** ein. 
    
-    For **self-paced lab** - copy this information from the **Output** section of the **ApplicationMigrationWorkshop** <a href="https://us-west-2.console.aws.amazon.com/cloudformation/home?region=us-west-2#/" target="_blank">CloudFormation Template</a>, it will look like on the screenshot below.
+    Für den Workshop **in einem eigenem AWS-Konto** - Kopieren Sie diese Informationen aus dem **Output** 
+    des **ApplicationMigrationWorkshop** CloudFormation Stack 
+    <a href="https://us-west-2.console.aws.amazon.com/cloudformation/home?region=us-west -2" target="_blank">
+    CloudFormation-Template</a>, wie im folgenden Screenshot dargestellt. 
 
     ![CloudEndure IAM Access and Secret Access Key](/ce/ce-self-service-accesskeys.png)
 
-    For **AWS Event** - copy this information from your <A href="https://dashboard.eventengine.run/dashboard" target="_blank">Event Engine - Team Dashboard</a> - **CloudEndure AWS Credentials** section, it will look like on the screenshot below.  
+    Bei Teilnahme an eine von **AWS gehostete Veranstaltung** - benutzen Sie die Daten aus 
+    <A href="https://dashboard.eventengine.run/dashboard" target="_blank">Event Engine - Team Dashboard</a> 
+    - **CloudEndure AWS Credentials**, wie im folgenden Screenshot dargestellt.  
 
     ![CloudEndure IAM Access and Secret Access Key](/ce/CE-credentials.png)
 
-    Overwrite any values that are already present in **AWS Access Key ID** and **AWS Secret Access Key** fields.
+    Überschreiben Sie alle Werte, die bereits in den Feldern **AWS Access Key ID** 
+    und **AWS Secret Access Key** vorhanden sind.
 
-4. Once you entered the **AWS Access Key ID** and **AWS Secret Access Key**, click the **SAVE** button.
+4. Nachdem Sie die **AWS Access Key ID** und **AWS Secret Access Key** eingegeben haben, 
+    klicken Sie auf die Schaltfläche **SAVE** darauf. 
 
-### Configure Replication Settings.
+### Konfigurieren Sie die Replikationseinstellungen.
 
-Once you save your **AWS Credentials**, you will be automatically redirected to the **Setup & Info** > **REPLICATION SETTINGS** tab, this is where you configure details of the **CloudEndure Replication Server**.
+Sobald Sie Ihre **AWS Zugangsdaten** gespeichert haben, werden Sie automatisch zum Tab **Setup & Info** > **REPLICATION SETTINGS**  
+weitergeleitet. Hier konfigurieren Sie bitte die Details zum **CloudEndure Replication Server**.
 
 {{% notice note %}}
 Before proceeding **refresh the browser** to retrieve the latest information from your AWS account (you can do this by pressing the **F5** button or manually refreshing your browser by clicking on the refresh button).
