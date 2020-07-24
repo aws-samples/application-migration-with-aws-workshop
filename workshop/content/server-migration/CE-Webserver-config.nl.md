@@ -57,7 +57,7 @@ Als je een andere *security group* naam gebruikt voor de RDS database, dan kun j
 
     Open in je web browser het publieke DNS adres (IPv4) van de webserver.Je zou nu de unicorn store web pagina moeten zien.
 
-Indien alles in orde lijkt, ga dan naar de volgende stap [Optimalisatie]({{< ref "../optimization/_index.nl.md" >}})!
+Indien alles in orde lijkt, ga dan naar de volgende stap [Optimalisatie]("/optimization/_index.nl.md" >)!
 
 ## Troubleshooting
 

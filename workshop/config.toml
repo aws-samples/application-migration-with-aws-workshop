@@ -3,7 +3,7 @@ CanonifyURLs=true
 languageCode = "en-US"
 defaultContentLanguage = "en"
 
-title = "Application Migration Workshop"
+title = "AWS Application Migration Workshop"
 theme = "learn"
 metaDataFormat = "yaml"
 defaultContentLanguageInSubdir= true
@@ -17,9 +17,9 @@ pygmentsStyle = "monokai"
 unsafe= true
 
 [params]
-  editURL = "https://github.com/aws-samples/application-migration-with-aws-workshop/edit/master/content/"
-  description = "Application Migration Workshop"
-  author = "Ahmed Omran & Lech Migdal"
+  editURL = "https://github.com/aws-samples/application-migration-with-aws-workshop/edit/master/workshop/content/"
+  description = "AWS Application Migration Workshop"
+  author = "Ahmed Omran, Lech Migdal"
   disableBreadcrumb = false
   disableNextPrev = false
   themeVariant = "aws"
@@ -60,6 +60,136 @@ hrefTargetBlank = false
 
 [Languages]
 [Languages.en]
-title = "Application Migration Workshop"
+title = "AWS Application Migration Workshop"
 weight = 1
 languageName = "English"
+
+[Languages.it]
+title = "AWS Workshop per migrare le Applicazioni"
+weight = 1
+languageName = "Italian"
+  [[Languages.it.menu.shortcuts]]
+  name = "<i class='fab fa-github'></i> Progetto GitHub"
+  url = "https://github.com/aws-samples/application-migration-with-aws-workshop"
+  weight = 30
+
+  [[Languages.it.menu.shortcuts]]
+  name = "<i class='fas fa-envelope'></i> Avete domande?"
+  url = "mailto:application-migration-workshop@amazon.com"
+  weight = 40
+
+  [[Languages.it.menu.shortcuts]]
+  name = "<i class='fas fa-poll'></i> Fornisci commenti"
+  url = "https://amazonmr.au1.qualtrics.com/jfe/form/SV_0dfrnubGKXavgR7"
+  weight = 50
+
+  [[Languages.it.menu.shortcuts]]
+  name = "<i class='fas fa-book-open'></i> Più risorse"
+  url = "https://aws.amazon.com/cloud-migration/resources/"
+  weight = 60
+
+[Languages.ja]
+title = "アプリケーション移行ワークショップ"
+weight = 1
+languageName = "Japanese（日本語）"
+
+  [[Languages.ja.menu.shortcuts]]
+  name = "<i class='fab fa-github'></i> GitHub リポジトリ"
+  url = "https://github.com/aws-samples/application-migration-with-aws-workshop"
+  weight = 30
+
+  [[Languages.ja.menu.shortcuts]]
+  name = "<i class='fas fa-envelope'></i> 内容に関するお問い合わせ"
+  url = "mailto:application-migration-workshop@amazon.com"
+  weight = 40
+
+  [[Languages.ja.menu.shortcuts]]
+  name = "<i class='fas fa-poll'></i> ワークショップの評価"
+  url = "https://amazonmr.au1.qualtrics.com/jfe/form/SV_0dfrnubGKXavgR7"
+  weight = 50
+
+  [[Languages.ja.menu.shortcuts]]
+  name = "<i class='fas fa-book-open'></i> 参考資料"
+  url = "https://aws.amazon.com/cloud-migration/resources/"
+  weight = 60
+
+[Languages.pt]
+title = "Workshop de Migração de Aplicações da AWS"
+weight = 1
+languageName = "Portuguese (Português)"
+
+  [[Languages.pt.menu.shortcuts]]
+  name = "<i class='fab fa-github'></i> Projeto GitHub"
+  url = "https://github.com/aws-samples/application-migration-with-aws-workshop"
+  weight = 30
+
+  [[Languages.pt.menu.shortcuts]]
+  name = "<i class='fas fa-envelope'></i> Dúvidas?"
+  url = "mailto:application-migration-workshop@amazon.com"
+  weight = 40
+
+  [[Languages.pt.menu.shortcuts]]
+  name = "<i class='fas fa-poll'></i> Avalie este workshop"
+  url = "https://amazonmr.au1.qualtrics.com/jfe/form/SV_0dfrnubGKXavgR7"
+  weight = 50
+
+  [[Languages.pt.menu.shortcuts]]
+  name = "<i class='fas fa-book-open'></i> Mais recursos"
+  url = "https://aws.amazon.com/cloud-migration/resources/"
+  weight = 60
+
+[Languages.zh]
+title = "AWS 应用迁移研讨会"
+weight = 1
+languageName = "Chinese（简体中文）"
+
+  [[Languages.zh.menu.shortcuts]]
+  name = "<i class='fab fa-github'></i> GitHub 项目"
+  url = "https://github.com/aws-samples/application-migration-with-aws-workshop"
+  weight = 30
+
+  [[Languages.zh.menu.shortcuts]]
+  name = "<i class='fas fa-envelope'></i> 问题反馈"
+  url = "mailto:application-migration-workshop@amazon.com"
+  weight = 40
+
+  [[Languages.zh.menu.shortcuts]]
+  name = "<i class='fas fa-poll'></i> 对研讨会进行评价"
+  url = "https://amazonmr.au1.qualtrics.com/jfe/form/SV_0dfrnubGKXavgR7"
+  weight = 50
+
+  [[Languages.zh.menu.shortcuts]]
+  name = "<i class='fas fa-book-open'></i> 更多资源"
+  url = "https://aws.amazon.com/cloud-migration/resources/"
+  weight = 60
+
+[Languages.es]
+title = "Taller de migración de aplicaciones de AWS"
+weight = 1
+languageName = "Español"
+
+  [[Languages.es.menu.shortcuts]]
+  name = "<i class='fab fa-github'></i> Proyecto GitHub"
+  url = "https://github.com/aws-samples/application-migration-with-aws-workshop"
+  weight = 30
+
+  [[Languages.es.menu.shortcuts]]
+  name = "<i class='fas fa-envelope'></i> ¿Tiene Preguntas?"
+  url = "mailto:application-migration-workshop@amazon.com"
+  weight = 40
+
+  [[Languages.es.menu.shortcuts]]
+  name = "<i class='fas fa-poll'></i> Califique el Taller"
+  url = "https://amazonmr.au1.qualtrics.com/jfe/form/SV_0dfrnubGKXavgR7"
+  weight = 50
+
+  [[Languages.es.menu.shortcuts]]
+  name = "<i class='fas fa-book-open'></i> Más Recursos"
+  url = "https://aws.amazon.com/cloud-migration/resources/"
+  weight = 60
+
+
+[Languages.nl]
+title = "AWS Application Migration Workshop"
+weight = 1
+languageName = "Dutch"

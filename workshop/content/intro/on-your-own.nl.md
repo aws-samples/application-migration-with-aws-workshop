@@ -4,7 +4,7 @@ weight = 20
 +++
 
 {{% notice warning %}}
-Voltooi deze sectie alleen als je de workshop zelf doorloopt. Als je bij een AWS georganiseerd evenement bent (zoals Re:Invent, Gameday, Workshop of een ander evenement dat wordt georganiseerd door een AWS-medewerker), ga je naar [Uitvoeren van de workshop tijdens een AWS Event]({{< ref "/at-aws-event.en.md" >}}).
+Voltooi deze sectie alleen als je de workshop zelf doorloopt. Als je bij een AWS georganiseerd evenement bent (zoals Re:Invent, Gameday, Workshop of een ander evenement dat wordt georganiseerd door een AWS-medewerker), ga je naar [Uitvoeren van de workshop tijdens een AWS Event]("/at-aws-event.nl.md").
 {{% /notice %}}
 
 ### Leeromgeving in eigen tempo
