@@ -7,46 +7,30 @@ From **AWS console**, go to **Services**, select **ECS**, then click **Task Defi
 
 ![create-task-def](/ecs/create-task-def.png)
 
-Choose **EC2** launch type compatibility and click **Next step**
+Choose **FARGATE** launch type compatibility and click **Next step**
 
 In the **Step 2: Configure task and container definition**, enter the **Task Definition Name** (e.g. unicron-task-def) and select **ecsTaskExcutionRole** for both **Task Role** and **Task execution role**. For Network Mode, select **awsvpc**.
 
 
 ![configure-task-def](/ecs/configure-task-def.png)
 
+In the **Task size** Specify the **Task memory (GB)** and the **Task CPU (vCPU)**
+
+![task-size](/ecs/task-size.png)
+
 As we are looking to mount the **Amazon EFS** volume to the container, we have to add the volume first to the task definition before adding the container.
 
-Scroll down to **Volumes** section in the task definition configuration, and click **Configure via JSON** button.
+Scroll down to **Volumes** section in the task definition configuration, and click **Add volume** button.
 
 ![volumes](/ecs/volumes.png)
 
-Find the volumes section in the json file and add the following:
+In the **Add volume** window, select **volume type** as **EFS** and provide a name for the volume (eg. wp-content). In the **File system ID** select the EFS volume that you created earlier, and then enable the **Encrption in transit**.
 
-{{% notice note %}}
-You need to change the Amazon EFS DNS name in the below code and replace it with the one you copied when creating Amazon EFS filesystem.
-{{% /notice %}}   
+![add-volume](/ecs/add-volume.png)
 
-```
-        "volumes": [
-            {
-              "name": "wp-content",
-              "host": null,
-              "dockerVolumeConfiguration": {
-                "autoprovision": null,
-                "labels": null,
-                "scope": "task",
-                "driver": "local",
-                "driverOpts": {
-                  "type": "nfs",
-                  "device": "fs-xxxx.efs.<region>.amazonaws.com:/",
-                  "o": "addr=fs- xxxx.efs.<region> .amazonaws.com,nfsvers=4.0,rsize=1048576,wsize=1048576,hard,timeo=600,retrans=2"
-                }
-              }
-            }
-          ],
-```
+Finally press the **Add** button, now scroll up to **Container definition** in the task definition page.
 
-After adding the volume, now scroll up to **Container definition** in the task definition page.
+
 
 ![add-container](/ecs/add-container.png)
 

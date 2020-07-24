@@ -1,14 +1,19 @@
 +++
 title = "Optimization"
-weight = 30
+weight = 40
 pre = "<b>4. </b>"
 
 +++
 
 
-Congratulation's, since you're here, you've managed to migrate (re-host the Webserver and re-platform the Database) an e-commerce application into AWS and can now look for ways to optimize the architecture to make it secure, highly-performant, and resilient so that is uses AWS infrastructure efficiently!
+Congratulation's, since you're here, you've managed to migrate an e-commerce application into AWS and can now look for ways to optimize the architecture to make it even more secure, highly-performant, resilient and so that is uses AWS infrastructure efficiently!
 
 Below you will find ideas about what you can do taking into account <a href="https://aws.amazon.com/architecture/well-architected/" target="_blank">5 AWS Well-Architected Pillars</a> - Operational Excellence, Security, Reliability, Performance Efficiency  and Cost Optimization.
+
+You can also learn more about **AWS Well Architected** by watching the video below.
+<center>
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/MfxF-FYEFjY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</center>
 
 ### Operational Excellence
 
@@ -18,7 +23,7 @@ Below you will find ideas about what you can do taking into account <a href="htt
 ### Security  
 - Switch to HTTPS with <a href="https://aws.amazon.com/certificate-manager/" target="_blank">AWS Certificate Manager</a> managed SSL/TLS certificates to encrypt customer data in transit (certificates are already provisioned in this workshop!)
 - <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html" target="_blank">Encrypt EBS volumes</a> to protect customer data at rest
-- Enable <a href="https://aws.amazon.com/waf/"  target="_blank">AWS Web Application Firewall (AWS WAF)</a> to protect your web application from known attacks (you can do it on <a href="https://aws.amazon.com/blogs/aws/aws-web-application-firewall-waf-for-application-load-balancers/" target="_blank">Application Load Balancer</a> or event better on the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/cloudfront-features.html" target="_blank">Amazon CloudFront distribution</a>
+- Enable <a href="https://aws.amazon.com/waf/"  target="_blank">AWS Web Application Firewall (AWS WAF)</a> to protect your web application from known attacks (you can do it on <a href="https://aws.amazon.com/blogs/aws/aws-web-application-firewall-waf-for-application-load-balancers/" target="_blank">Application Load Balancer</a> or event better on the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/cloudfront-features.html" target="_blank">Amazon CloudFront distribution</a>)
 - Use <a href="https://aws.amazon.com/guardduty/" target="_blank">Amazon GuardDuty</a> to protect your AWS account and workloads with intelligent threat detection and continuous monitoring
 
 ### Reliability
@@ -36,8 +41,8 @@ Below you will find ideas about what you can do taking into account <a href="htt
 
 ### Reference architecture
 
-Diagram below depicts the reference architecture of the solution, with all components listed above deployed.
+Diagram below depicts a reference architecture of the solution, with all components listed above deployed.
 
-![Ref-Architecture](/opt/aws-ref-arch.png)
+![Reference Architecture](/opt/aws-ref-arch.png)
 
 For more details see the <a href="https://github.com/aws-samples/aws-refarch-wordpress" target="_blank">Reference Architecture for Wordpress on AWS</a>!

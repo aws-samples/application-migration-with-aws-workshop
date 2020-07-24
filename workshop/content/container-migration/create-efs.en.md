@@ -25,7 +25,13 @@ Now, you can mount this file system temporarily into the webserver instance to c
 
 Click on the **Amazon EC2 mount instructions (from local VPC)** link in the Amazon EFS file system details and follow them.
 
-You can skip the nfs client installation step, since the nfs client is installed already on your EC2 instance.
+Install the nfs client for the Ubuntu instance, use this command:
+
+```
+sudo apt-get install nfs-common
+```
+
+Follow the below instructions for mounting the file system:
 
 ![efs-mount](/ecs/efs-mount.png)
 

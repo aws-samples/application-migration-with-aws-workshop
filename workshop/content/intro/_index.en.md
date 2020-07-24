@@ -1,21 +1,22 @@
 +++
-title = "Overview"
-date = 2019-10-21T09:54:54+02:00
+title = "Getting Started"
 weight = 5
 pre = "<b>0. </b>"
 +++
+<style>
+    table tr th:empty {
+      display: none;
+    }
 
-We are thrilled that you're taking on this challenge to migrate our eCommerce system to the cloud. Below you will find some notes from the former BuyMyUnicorns IT team. We hope you'll find them useful!
+    table { border: none; }
+    td {border:none;}
+</style>
 
-## Source Environment
+To start the workshop, select the one of the following paths:
 
-![source-env](/intro/source-env.png)
+| | |
+| --- | --- |
+| [![Running workshop in your own AWS Account](/intro/option-self-paced.png)]({{< ref "/on-your-own.en.md" >}}) | [![Attending an AWS hosted event (using AWS provided AWS Accounts)](/intro/option-aws-led.png)]({{< ref "/migration-hub.en.md" >}}) |
+| <center>[Running the workshop in your own AWS Account]({{< ref "/on-your-own.en.md" >}})</center> | <center>[Attending an AWS hosted event]({{< ref "/migration-hub.en.md" >}})</center> |
 
-The Source Environment consist of a two tier e-commerce application; a webserver running Ubuntu with Apache, PHP, Wordpress, WooCommerce and a Database server running Ubuntu with MySQL version 5.7.
-
-
-## Target Environment
-
-![target-env](/intro/target-vpc.png)
-
-The above diagram shows the target VPC on AWS which consist of 6 subnets across two availability zone.
+ If you are interested in an AWS-hosted event dedicated for your team, please <a href="mailto:application-migration-workshop@amazon.com">contact us</a>.
