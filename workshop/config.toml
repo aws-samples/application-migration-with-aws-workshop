@@ -212,3 +212,8 @@ languageName = "Français"
   name = "<i class='fas fa-book-open'></i> Plus de ressources"
   url = "https://aws.amazon.com/cloud-migration/resources/"
   weight = 60
+
+[Languages.nl]
+title = "AWS Application Migration Workshop"
+weight = 1
+languageName = "Dutch"
