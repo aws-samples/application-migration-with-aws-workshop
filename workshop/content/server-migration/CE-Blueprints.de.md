@@ -1,15 +1,20 @@
 +++
-title = "Prepare Blueprint(s)"
+title = "Vorbereitung von Blueprint(s)"
 weight = 30
 +++
 
-While the instances are being replicated, let's configure a **CloudEndure Target Machine Blueprint**, which is the specification of your Target machine (replicated instance) that will be launched in AWS. It includes parameters such as machine type (for example t3.medium), **subnet** where the machine should be running, **private IP** address and disk types.
+Während die Instanzen repliziert werden, konfigurieren wir einen **CloudEndure Target Machine Blueprint**, 
+der die Spezifikation Ihres Zielservers (replizierte Instanz) darstellt, der in AWS gestartet wird. 
+Es enthält Parameter wie Maschinentyp (z. B. t3.medium), **Subnet**, 
+in dem der Server ausgeführt werden soll, eine **private IP-Adresse** und Festplattentypen.
 
-To configure the Blueprint, go to the **Machines** tab and click on the name of the machine that you want to configure. Then navigate to the **BLUEPRINT** section.
+Um den Blueprint zu konfigurieren, gehen Sie zum **Maschines** Tab und klicken Sie 
+auf den Namen der Maschine bitte, die Sie konfigurieren möchten. 
+Navigieren Sie dann zu **BLUEPRINT**.
 
 ![CE-BluePrints](/ce/CE-BluePrints.png)
 
-Provide the following information:
+Tragen Sie folgende Informationen ein:
 
 | Parameter                                  | Value                                                        |
 | ------------------------------------------ | ------------------------------------------------------------ |
@@ -20,17 +25,19 @@ Provide the following information:
 | Private IP                             | Create new |
 | Tags                                    | Add a 'Name' Tag with value 'Webserver' |
 
-
-Everything else will be left as default, but review it to understand the available configuration options available for your target instance.
+Alles andere wird als Standard beibehalten. Überprüfen Sie es jedoch 
+die verfügbaren Konfigurationsoptionen für Ihre Zielinstanz.
 
 {{% notice warning %}}
-If you're going through this workshop on an AWS Event, you must select **Machine type** not larger than *.large, otherwise your IAM privileges will prevent you from operating on created instances later in the workshop.
+Bei Teilnahme an einen von **AWS gehosteten Workshop**, 
+wählen Sie bitte einen **Maschine type** aus, der nicht größer als *.large ist. 
+Andernfalls wird Ihre IAM-Berechtigungen verhindern, dass Sie später im Workshop 
+an erstellten Instanzen arbeiten können.
 {{% /notice %}}
-
-
 
 {{% notice tip %}}
-If you don't see input fields on the BLUEPRINT page or it's hard to scroll through them, scale down your screen (Control -).
+Wenn Sie auf bei der Blueprint-Seite keine Eingabefelder sehen können, 
+oder es ist schwierig, durch diese zu scrollen, verkleinern Sie bitte die angezeigte Größe Ihres Webbrowsers (Strg -).
 {{% /notice %}}
 
-When done, click the **SAVE BLUEPRINT** button at the bottom of the page.
+Wenn Sie fertig sind, klicken Sie bitte auf **BLUEPRINT SPEICHERN** darauf.

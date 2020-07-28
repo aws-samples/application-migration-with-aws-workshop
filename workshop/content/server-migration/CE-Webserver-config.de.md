@@ -1,79 +1,93 @@
 +++
-title = "Configure Application"
+title = "Anwendung konfigurieren"
 weight = 50
 
 +++
 
-### Configure the Webserver to access the target database
+### Konfigurieren Sie den Webserver für den Zugriff auf die Zieldatenbank
 
-When the Cutover is finished and **CloudEndure Migration** has created a running instance of the Webserver in your AWS account, it's time to update the web application configuration to use your replicated AWS RDS database (created in the **Database Migration** step).
+Wenn die Umstellung abgeschlossen ist und **CloudEndure Migration** eine laufende Instanz 
+des Webservers in Ihrem AWS-Konto erstellt hat, ist es Zeit, die Webanwendungskonfiguration 
+zu aktualisieren, um Ihre replizierte AWS RDS-Datenbank (erstellt in der **Datenbankmigration**) 
+verwenden zu können.
 
+1. Aktualisieren Sie die **Webserver security group**
 
-1. Update the **Webserver security group**
-
-    a. Go to **AWS Console -> EC2** and select the Webserver on the list  
-    b. Make a note of its **Public DNS (IPv4)** address and **Private IP**  
-    c. Click on the security group that it has assigned  
+    a. Besuchen Sie **AWS Console -> EC2** und wählen Sie den Webserver aus der Liste  
+    b. Notieren Sie die **Public DNS (IPv4)** IP-Adresse und die **Private IP**-Adresse.  
+    c. Klicken Sie auf die zugewiesene Sicherheitsgruppe  
 
     ![Webserver details](/ce/webserver_details.png)
 
-    d. Modify inbound rules for that security group to allow traffic from Anywhere on port **80** and from your laptop on port **22**     
+    d. Ändern Sie die eingehenden Regeln für diese Sicherheitsgruppe, um Datenverkehr von überall 
+    auf Port **80** und von Ihrem Rechner auf Port **22** zuzulassen. 
 
     ![Inbound rules modification](/ce/edit_webserver_inbound_rules.png)
 
-2. Login to the **Webserver** created by the CloudEndure  
+2. Melden Sie sich bei dem von CloudEndure erstellten **Webserver** an 
 
-    Use the same username (ubuntu) and SSH .ppk key as for the Source Environment.
+    Verwenden Sie denselben Benutzernamen (ubuntu) 
+    und denselben SSH-PPK-Schlüssel wie für die Quellumgebung.
 
-    If you're not sure how to use SSH to access servers, check the following:
-    - For Microsoft Windows users view <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/putty.html" target="_blank">this article</a>.  
-    - For Mac OS users view <a href="https://docs.aws.amazon.com/quickstarts/latest/vmlaunch/step-2-connect-to-instance.html#sshclient" target="_blank">this article</a>.
+    Wenn Sie nicht sicher sind, wie Sie mit SSH auf Server zugreifen können, überprüfen Sie Folgendes:
+    - Eine Anleitung für die Microsoft Windows Benutzer <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/putty.html" target="_blank">finden Sie hier</a>.  
+    - Eine Anleitung für die Mac OS/Linux Benutzer <a href="https://docs.aws.amazon.com/quickstarts/latest/vmlaunch/step-2-connect-to-instance.html#sshclient" target="_blank">finden Sie hier</a>.    
 
-3. Modify the **wordpress configuration**
+3. Ändern Sie die **Wordpress Konfiguration**
 
-    Edit the **/var/www/html/wp-config.php** file, modifying
-    - DB_HOST - Endpoint of the created RDS instance
-    - DB_USER - the username configured in the **Database Migration** step
-    - DB_PASSWORD - the password configured in the **Database Migration** step
+    Bearbeiten Sie die **/var/www/html/wp-config.php** Datei und ändern Sie folgende Parameter:
+    - DB_HOST - die erstellte RDS Instanz
+    - DB_USER - Der im Schritt **Datenbankmigration** konfigurierte Benutzername
+    - DB_PASSWORD - Das im Schritt **Datenbankmigration** konfigurierte Kennwort
     
-    Also add the following two lines, replacing **TARGET_WEBSERVER_PUBLIC_DNS** with your Target Webserver EC2 **Public DNS (IPv4)**, to make sure links in your wordpress site point to the new webserver.
+    Fügen Sie außerdem die folgenden zwei Zeilen hinzu und ersetzen Sie 
+    **TARGET_WEBSERVER_PUBLIC_DNS** durch Ihren Ziel-Webserver EC2 **Public DNS (IPv4)**, 
+    um sicherzustellen, dass Links auf Ihrer WordPress-Site auf den neuen Webserver verweisen.
               
     ```
     define('WP_SITEURL', 'http://TARGET_WEBSERVER_PUBLIC_DNS');        
     define('WP_HOME',    'http://TARGET_WEBSERVER_PUBLIC_DNS');
     ```
     
-    for example
+    zum Beispiel
     ```
     define('WP_SITEURL', 'http://ec2-34-208-233-184.us-west-2.compute.amazonaws.com');
     define('WP_HOME',    'http://ec2-34-208-233-184.us-west-2.compute.amazonaws.com');
    ```
 
-    {{% notice tip %}}
-To edit this file, you can use for example <a href="https://www.howtoforge.com/linux-nano-command/" target="_blank">nano</a> or <a href="https://www.washington.edu/computing/unix/vi.html" target="_blank">vi</a>.
+{{% notice tip %}}
+Zum Bearbeiten dieser Datei können Sie beispielsweise 
+<a href="https://www.howtoforge.com/linux-nano-command/" target="_blank">nano</a> 
+oder <a href="https://www.washington.edu/computing/unix/vi.html" target ="_blank">vi</a> verwenden.
 {{% /notice %}}     
 
-4. Update the RDS instance **VPC security group** to allow inbound traffic from Webserver
+4. Aktualisieren Sie die RDS-Instanz **VPC security group**, um eingehenden Datenverkehr 
+vom Webserver zuzulassen. 
 
-    a. Go to  **AWS Console > Services > EC2 > Security Groups** and select your **RDS VPC security group** (DB-SG)  
-    b. Go to the **Inbound** tab and click the **Edit** button  
-    c. Add inbound rule that allows traffic from the **Webserver** (using its **Private IP** or the **security group** it belongs to) on port **3306** (MySQL port)
+    a. Besuchen Sie  **AWS Console > Services > EC2 > Security Groups** und wählen Sie die 
+    **RDS VPC security group** (DB-SG) aus.  
+    b. Wählen Sie **Inbound**-Tab und klicken Sie auf die **Edit** Schaltfläche darauf.  
+    c. Fügen Sie eine eingehende Regel hinzu, die Datenverkehr vom **Webserver** 
+    (unter Verwendung seiner **privaten IP** oder der **Sicherheitsgruppe**, zu der er gehört) 
+    auf Port **3306** (MySQL-Port) zulässt.
     
     ![Inbound rules modification](/ce/database_update_security_group.png)
 
-    {{% notice tip %}}
-If you used a different security group name for your RDS instance, you can find it in details of your RDS instance, **Connectivity & security**, **Security** section.
+{{% notice tip %}}
+Wenn Sie für Ihre RDS-Instanz einen anderen Sicherheitsgruppennamen verwendet haben, 
+finden Sie diesen in den Details Ihrer RDS-Instanz, bei **Konnektivität und Sicherheit**, 
+**Sicherheit**.
 {{% /notice %}}     
     
+5. **Überprüfen** Sie die Migration.
 
-1. **Validate** the migration
+    Öffnen Sie den Webserver Public DNS, oder die externe IP-Adresse in Ihrem Webbrowser. 
+    Es sollte ein Einhorn-Webshop angezeigt werden.
 
-    Open the Webserver Public DNS (IPv4) name in your web browser, you should see a unicorn store.
+Wenn alles gut funktioniert hat - fahren Sie mit der nächsten Phase fort, also [Optimierung] ({{<ref "../optimization/_index.de.md">}})!
 
-If everything works fine - proceed to the next phase, so [Optimization]({{< ref "../optimization/_index.de.md" >}})!
+## Troubleshooting - wenn es noch nicht alles funktioniert
 
-## Troubleshooting
-
-1. Make sure that RDS database related information configured on the Webserver in **/var/www/html/wp-config.php** is correct
-2. Make sure that the RDS database is using the **DB-SG** security group
-3. Make sure that the Webserver CloudEndure Blueprint points at a **TargetVPC public-subnet-a**
+1. Stellen Sie sicher, dass die auf dem Webserver in **/var/www/html/wp-config.php** konfigurierten Informationen zur RDS-Datenbank korrekt sind 
+2. Stellen Sie sicher, dass die RDS-Datenbank die Sicherheitsgruppe **DB-SG** verwendet wird. 
+3. Stellen Sie sicher, dass der Webserver **CloudEndure Blueprint** auf ein **TargetVPC public-subnet-a** zeigt.

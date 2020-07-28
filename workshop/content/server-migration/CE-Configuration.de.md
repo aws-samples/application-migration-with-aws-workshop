@@ -62,7 +62,7 @@ Before proceeding **refresh the browser** to retrieve the latest information fro
 
 ![CE-Replication-setting](/ce/CE-Replication-setting.png)
 
-1. Update the configuration of the **REPLICATION SETTINGS** screen to match the values below:
+1. Aktualisieren Sie die Konfiguration von **REPLICATION SETTINGS**, den folgenden Werten zu entsprechen: 
 
     | Parameter                                  | Value                                                        |
     | ------------------------------------------ | ------------------------------------------------------------ |
@@ -79,8 +79,9 @@ Before proceeding **refresh the browser** to retrieve the latest information fro
     
     ![CE-BluePrints](/ce/ce-blueprint-details.png)
 
-2. Scroll to the bottom of the screen and click **SAVE REPLICATION SETTINGS** button.
+2. Speichern Sie die Konfiguration mit **SAVE REPLICATION SETTINGS**.
 
-    {{% notice tip %}}
-If on top of the screen you see a notice saying that AWS credentials must be refreshed, please refresh the browser (F5).
+{{% notice tip %}}
+Wenn es ein Hinweis angezeigt wird, dass die AWS-Anmeldeinformationen aktualisiert werden müssen, 
+aktualisieren Sie bitte den Browser (F5).
 {{% /notice %}}
