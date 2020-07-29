@@ -1,44 +1,55 @@
 +++
-title = "Create an Amazon ECS Task Definition"
+title = "Erstellen Sie eine Amazon ECS Task Definition"
 weight = 50
 +++
 
-From **AWS console**, go to **Services**, select **ECS**, then click **Task Definitions** and **Create new Task Definition**.
+Bei **AWS console**, **Services**, wählen Sie **ECS**, 
+und dann klicken Sie auf **Task Definitions** und **Create new Task Definition** darauf.
 
 ![create-task-def](/ecs/create-task-def.png)
 
-Choose **FARGATE** launch type compatibility and click **Next step**
+Wählen Sie **FARGATE launch type compatibility** und klicken Sie auf die Schaltfläche **Next step** darauf.
 
-In the **Step 2: Configure task and container definition**, enter the **Task Definition Name** (e.g. unicron-task-def) and select **ecsTaskExcutionRole** for both **Task Role** and **Task execution role**. For Network Mode, select **awsvpc**.
-
+Geben Sie in **Step 2: Configure task and container definition** den **Task Definition Name** ein 
+(z.B. Unicron-Task-Def) und wählen Sie **ecsTaskExcutionRole** für **Task Role** und **Task execution role** aus. 
+Als Netzwerkmodus wählen Sie bitte **awsvpc** aus.
 
 ![configure-task-def](/ecs/configure-task-def.png)
 
-In the **Task size** Specify the **Task memory (GB)** and the **Task CPU (vCPU)**
+Bei **Task size** wählen Sie **Task memory (GB)** und **Task CPU (vCPU)** aus.
 
 ![task-size](/ecs/task-size.png)
 
-As we are looking to mount the **Amazon EFS** volume to the container, we have to add the volume first to the task definition before adding the container.
+Da wir das **Amazon EFS**-Volume in den Container einbinden möchten, 
+müssen wir das Volume zuerst zur Task-Definition konfigurieren, bevor wir den Container hinzufügen.
 
-Scroll down to **Volumes** section in the task definition configuration, and click **Add volume** button.
+Scrollen Sie in der Konfiguration der Task-Definition zu **Volumes** runter und klicken Sie auf 
+die Schaltfläche **Add volume** darauf.
 
 ![volumes](/ecs/volumes.png)
 
-In the **Add volume** window, select **volume type** as **EFS** and provide a name for the volume (eg. wp-content). In the **File system ID** select the EFS volume that you created earlier, and then enable the **Encrption in transit**.
+Wählen Sie **Add volume**, als **volume type** wählen Sie **EFS** aus 
+und geben Sie einen Namen für das Volume ein (z.B. wp-content). 
+Wählen Sie in der **File system ID** das zuvor erstellte EFS-Volume aus 
+und aktivieren Sie dann die **Encryption in transit** (Verschlüsselung während Übertragung).
 
 ![add-volume](/ecs/add-volume.png)
 
-Finally press the **Add** button, now scroll up to **Container definition** in the task definition page.
-
-
+Klicken Sie abschließend auf die Schaltfläche **Add** darauf 
+und scrollen Sie auf der Seite bis zu **Container definition** runter.
 
 ![add-container](/ecs/add-container.png)
 
-Click **Add container** in the Container definitions section, enter **Container name** (e.g. unicorn-web-container) and **Image** (must be **wordpress:latest** - we're using the <a href="https://hub.docker.com/_/wordpress" target="_blank">WordPress docker official image</a>). **Memory Limits** and **Port mappings** should be configured as on the screenshot below.
+Klicken Sie im Abschnitt Containerdefinitionen auf **Add Container** darauf, 
+geben Sie **Container name** (z.B. unicorn-web-container) und **Image** 
+(muss **WordPress:latest** sein) ein - wir verwenden die <a href = "https://hub.docker.com/_/wordpress" target="_blank">offizielles 
+WordPress Docker-Bild</a>). 
+Die **Memory limits** und **Port mapping** sollten wie im folgenden Screenshot konfiguriert werden:
 
 ![add-container-details](/ecs/add-container-details.png)
 
-In the **Environment variables** section, configure parameters from the **Parameter Store**, that you've defined earlier, as on the screenshot below.
+Konfigurieren Sie bei den **Environment variable**, die Parameter aus dem zuvor 
+definierten **Parameter store** um (siehe Abbildung unten).
 
 ![environment-variables](/ecs/environment-variables.png)
 
@@ -53,6 +64,10 @@ In the **Environment variables** section, configure parameters from the **Parame
 
 ![storage-logging](/ecs/storage-logging.png)
 
-In the **STORAGE AND LOGGING**, select the **Mount point** and specify the container path **/var/www/html/wp-content** (this is where wordpress files that you have copied into Amazon EFS filesystem should be available for wordpress to pick them up).
+Wählen Sie unter **STORAGE AND LOGGING** den **Mount point** aus und geben Sie 
+den Containerpfad **/var/www/html/wp-content** an 
+(hier werden die WordPress-Dateien gespeichert, die Sie auf Amazon EFS kopiert 
+haben. Das Dateisystem sollte für WordPress verfügbar sein, um die Daten koppieren zu können.
 
-In the end click the **Add** button for the container and **Create** on the task definition page.
+Klicken Sie am Ende auf die Schaltfläche **Add** darauf 
+für den Container und **Create** auf der Seite mit der Task-Definition.

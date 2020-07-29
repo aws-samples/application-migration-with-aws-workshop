@@ -1,20 +1,25 @@
 +++
-title = "Create an Amazon ECS cluster"
+title = "Erstellen Sie einen Amazon ECS Cluster"
 weight = 40
 +++
 
 
-### Create Amazon ECS cluster
+### Erstellen Sie einen **Amazon ECS (Elastic Container Service)** Cluster
 
-From **AWS console**, go to **Services**, select **ECS** and then click **Create Cluster** button
+Bei **AWS console**, besuchen Sie **Services**, und wählen Sie **ECS** aus
+und dann klicken Sie auf die Schaltfläche **Create Cluster** darauf.
 
-Select **Networking only** for cluster template and click **Next step**.
+Wählen Sie **Networking only** als die Cluster-Vorlage (cluster template) 
+und klicken Sie auf die Schaltfläche **Next step** darauf.
 
 ![create-cluster](/ecs/create-cluster.png)
 
-In cluster configuration section, provide a name of the cluster (e.g. unicorns-cluster), check the "Enable Container Insights" box to enable the **CloudWach container insights** for more in-depth metrics provided through **Amazon CloudWatch**.
+Geben Sie bei Cluster-Konfiguration einen Namen des Clusters ein (z. B. Einhörner-Cluster) 
+und aktivieren Sie das Kontrollkästchen **Container Insights aktivieren**, 
+um die **CloudWach-Container-Insights** für detailliertere Metriken zu aktivieren, 
+die über **Amazon CloudWatch** bereitgestellt werden.
 
 ![configure-cluster](/ecs/configure-cluster.png)
 
-
-Finally press the **Create** button to create the Amazon ECS cluster.
+Klicken Sie abschließend auf die Schaltfläche **Create** darauf, 
+um den Amazon ECS-Cluster zu erstellen.
