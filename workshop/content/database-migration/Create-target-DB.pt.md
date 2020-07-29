@@ -1,5 +1,5 @@
 +++
-title = "Criar banco de dados alvo"
+title = "Criar banco de dados destino"
 weight = 10
 +++
 
@@ -7,7 +7,7 @@ weight = 10
 
 Migração de bancos de dados podem ser executadas de diversas maneiras, para o propósito deste workshop iremos realizar uma migração com  **replicação contínua de dados** usando o <a href="https://aws.amazon.com/dms/" target="_blank">AWS Database Migrations Service (DMS)</a>.
 
-Antes de configurar o **AWS DMS**, você precisará criar um banco de dados de destino na conta AWS. Use o **AWS Relation Database Service (RDS)** para executar esta atividade, já que ele torna fácil configurar, operar e escalar um banco de dados relacional na nuvem.
+Antes de configurar o **AWS DMS**, você precisará criar um banco de dados de destino na conta AWS. Use o **AWS Relational Database Service (RDS)** para executar esta atividade, já que ele torna fácil configurar, operar e escalar um banco de dados relacional na nuvem.
 
 ### Crie o Subnet Group para o banco de dados de destino
 
@@ -35,7 +35,7 @@ Antes de configurar o **AWS DMS**, você precisará criar um banco de dados de d
 
 
     {{% notice note %}}
-You can confirm the source MySQL version from the source database using SQL query - **SELECT@@version;**
+Você pode confirmar a versão do MySQL origem usando SQL a query - **SELECT@@version;**
 {{% /notice %}}
 
     In the **Settings** section, configure the DB instance identifier (e.g. database-1), Master username (e.g. admin) and Master password for your new database instance.

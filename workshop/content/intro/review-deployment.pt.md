@@ -3,18 +3,18 @@
 title = "Revisando o ambiente implementado"
 weight = 40
 +++
-## Ambiente Fonte
+## Ambiente Origem
 
-O seguinte ambiente fonte é implementado durante a prepação.
+O seguinte ambiente origem é implementado durante a prepação.
 
 ![source-env](/intro/source-env.png)
 
-O Ambiente Fonte consiste de uma applicação de comércio eletrónico de três camadas; um webserver rodando Ubuntu com Apache, PHP, Wordpress, WooCommerce e um servidor banco de dados rodando Ubuntu com MySQL 5.7.
+O Ambiente Origem consiste de uma applicação de comércio eletrónico de três camadas; um webserver rodando Ubuntu com Apache, PHP, Wordpress, WooCommerce e um servidor banco de dados rodando Ubuntu com MySQL 5.7.
 
 
-## Ambiente Alvo
+## Ambiente Destino
 
-A seguinte **Amazon Virtual Private Cloud (VPC)** alvo é implementada durante a preparação do ambiente.
+A seguinte **Amazon Virtual Private Cloud (VPC)** destino é implementada durante a preparação do ambiente.
 
 ![target-env](/intro/target-vpc.png)
 

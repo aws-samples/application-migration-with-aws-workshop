@@ -1,17 +1,17 @@
 +++
-title = "Configure o Source Database (fonte)"
+title = "Configure o Source Database (origem)"
 weight = 35
 +++
 
 ### Rode a tarefa DMS Replication Task com Change Data Capture (CDC)
 
-Para garantir mínimo impacto na migração do banco de dados, nós usaremos replicação contínua das mudanças (também conhecida como **Change Data Capture (CDC)**) a partir do banco de dados fonte. Para mais informações sobre CDC e o suporte do CDC pelo **AWS DMS** veja <a href="https://aws.amazon.com/blogs/database/aws-dms-now-supports-native-cdc-support/" target="_blank"> este artigo</a>.
+Para garantir mínimo impacto na migração do banco de dados, nós usaremos replicação contínua das mudanças (também conhecida como **Change Data Capture (CDC)**) a partir do banco de dados origem. Para mais informações sobre CDC e o suporte do CDC pelo **AWS DMS** veja <a href="https://aws.amazon.com/blogs/database/aws-dms-now-supports-native-cdc-support/" target="_blank"> este artigo</a>.
 
-#### Habilite binary log (log binário) no banco de dados fonte
+#### Habilite binary log (log binário) no banco de dados origem
 
-Para a replicação contínua do **AWS DMS** a partir do MySQL database, você precisará habilitar o binary log e mudar algumas configurações no banco de dados fonte.
+Para a replicação contínua do **AWS DMS** a partir do MySQL database, você precisará habilitar o binary log e mudar algumas configurações no banco de dados origem.
 
-1. Login no servidor **Source Environment Database** (fonte)
+1. Login no servidor **Source Environment Database** (origem)
 
     Para quem estiver fazendo **o lab por conta própria** - a informação necessária para acessar o banco de dados está descrita na seção **Output**  do <a href="https://us-west-2.console.aws.amazon.com/cloudformation/home?region=us-west-2#/" target="_blank">template CloudFormation **ApplicationMigrationWorkshop** </a>.
 

@@ -1,10 +1,10 @@
 +++
-title = "Instale Agentes nas máquinas fonte"
+title = "Instale Agentes nas máquinas origem"
 weight = 20
 +++
 
 
-A partir da <a href="https://console.cloudendure.com">CloudEndure console</a>, navegue para a tela **Machines** que lhe mostra **How to Add Machines** e provê as instruções para instalar o agente na máquina fonte. 
+A partir da <a href="https://console.cloudendure.com">CloudEndure console</a>, navegue para a tela **Machines** que lhe mostra **How to Add Machines** e provê as instruções para instalar o agente na máquina orgiem. 
 
 ![CE-Agent-install](/ce/CE-Agent-install.png)
 
@@ -25,7 +25,7 @@ A partir da <a href="https://console.cloudendure.com">CloudEndure console</a>, n
 
     Se você está usando Microsoft Windows, converta a chave SSH .pem para .ppk usando PuttyGen e então use o Putty para conectar (mais detalhes <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/putty.html" target="_blank">podem ser encontrados aqui</a>.  
 
-2. Conecte ao **Webserver fonte** usando o terminal SSH
+2. Conecte ao **Webserver origem** usando o terminal SSH
 
     Para usuários Microsoft Windows veja <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/putty.html" target="_blank">este artigo</a>.  
     Para usuários Mac OS veja <a href="https://docs.aws.amazon.com/quickstarts/latest/vmlaunch/step-2-connect-to-instance.html#sshclient" target="_blank">este artigo</a>.

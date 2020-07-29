@@ -4,7 +4,7 @@ weight = 10
 +++
 
 
-Para começar, você precisará configurar o CloudEndure com **credenciais AWS** para acessar sua conta AWS e **o destino da replicação** (subnet) dentro da conta AWS alvo para o CloudEndure Replication Server.
+Para começar, você precisará configurar o CloudEndure com **credenciais AWS** para acessar sua conta AWS e **o destino da replicação** (subnet) dentro da conta AWS destino para o CloudEndure Replication Server.
 
 ### Configure as credenciais AWS.
 
