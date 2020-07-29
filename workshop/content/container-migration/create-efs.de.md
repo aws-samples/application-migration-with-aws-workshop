@@ -3,41 +3,52 @@ title = "Erstellen Sie ein Elastic File System"
 weight = 20
 +++
 
-From **AWS Console**, go to **Services** and select **EFS**, then click **Create file system**.
+Besuchen Sie die **AWS Console**, dann **Services** und wählen Sie **EFS** bitte, dann erstellen Sie 
+den File-System mit **Create file system**.
 
 ![create-efs](/ecs/create-efs.png)
 
-Select the VPC that you have created at the beginning of the workshop (e.g TargetVPC), private subnets per availability zone for the mount targets and EFS-SG security group for each mount target, then click **Next Step**.
+Als erstes Schritt, wählen Sie bitte die VPC aus, die Sie zu Beginn des Workshops erstellt haben (z. B. TargetVPC), 
+private Subnetze je AD für die "Mount Targets" und die **EFS-SG** Sicherheitsgruppe für jeden "Mount Target" 
+und dann klicken Sie auf **Nächster Schritt** darauf.
 
-In the **Step 2: Configure optional settings**, you can enable lifecycle policy, change the throughput mode and enable encryption. For this exercise, enable encryption and leave  default values for the other options.
+In zweiten Schritt **Configure optional settings** können Sie die Lebenszyklusrichtlinie (lifecycle policy) aktivieren, 
+den Durchsatzmodus (throuput mode) ändern und die Verschlüsselung aktivieren. 
+Aktivieren Sie für diese Übung die Verschlüsselung und wählen Sie die Standardwerte für die anderen Optionen aus.
 
 ![efs-enc](/ecs/efs-enc.png)
 
 ![efs-review](/ecs/efs-review.png)
-Finally, review your setting and click **Create File System**
+Überprüfen Sie abschließend Ihre Einstellungen und klicken Sie auf **Create File System** darauf.
 
-Copy the **DNS name** of the created file system as you will need it later, in the **Create a Task Definition** step.
+Kopieren Sie den **DNS-Namen** des erstellten Dateisystems, 
+weil Sie ihn später benötigen werden (im Schritt **Erstellen einer Task-Definition**).
+
 ![efs-details](/ecs/efs-details.png)
 
-Now, you can mount this file system temporarily into the webserver instance to copy the source wordpress content to it.
+Jetzt können Sie dieses Dateisystem vorübergehend in die Webserver-Instanz einbinden, 
+um den Quell-WordPress-Inhalt darauf zu kopieren.
 
-### Mounting file system to webserver
+### Dateisystem auf Webserver mounten 
 
-Click on the **Amazon EC2 mount instructions (from local VPC)** link in the Amazon EFS file system details and follow them.
+Klicken Sie in den Details des Amazon EFS-Dateisystems auf den Link **Amazon EC2 mount instructions**
+(von der lokalen VPC) und befolgen Sie diese.
 
-Install the nfs client for the Ubuntu instance, use this command:
+Installieren Sie den NFS-Client für die Ubuntu-Instanz. 
+Verwenden Sie diesen Befehl:
 
 ```
 sudo apt-get install nfs-common
 ```
 
-Follow the below instructions for mounting the file system:
+Befolgen Sie die folgenden Anweisungen zum Mounten des Dateisystems:
 
 ![efs-mount](/ecs/efs-mount.png)
 
-Once you mounted the filesystem, copy the whole **/var/www/html/wp-content** folder from the web server to the mounted file system.
+Kopieren Sie nach dem Mounten des Dateisystems den gesamten Ordner **/var/www/html/wp-content** 
+vom Webserver in das gemountete Dateisystem um.
 
-Example:
+Beispiel:
 ```
 sudo cp -r /var/www/html/wp-content/* efs/
 ```
