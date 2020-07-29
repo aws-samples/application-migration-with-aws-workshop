@@ -1,23 +1,29 @@
 +++
-title = "Create an AWS Elastic Load Balancer"
+title = "Erstellen Sie einen **AWS Elastic Load Balancer**"
 weight = 35
 +++
 
 
-From **AWS Console**, select **Services**, **EC2** and then **Load Balancers**
+Besuchen Sie **AWS Console**, **Services**, **EC2** und dann klicken Sie auf **Load Balancers** darauf.
 
-Click **Create Load Balancer** button and **Application Load Balancer** as indicated below:
+Wählen Sie die Schaltfläche **Create Load Balancer** auf und den **Application Load Balancer** wie auf dem Bild unten:
 
 ![create-loadbalancer](/ecs/create-lb.png)
 
-In the **1. Configure Load Balancer** step, enter the load balancer **Name** (e.g. unicorn-lb), choose the VPC that you use (e.g TargetVPC) and select your public subnets for at least two subnets (public-a, public-b) as below:
+In dem ersten Schritt ** 1. Configure Load Balancer**, geben Sie den Load Balancer **Name** ein (z. B. unicorn-lb), 
+wählen Sie die von Ihnen verwendete VPC aus (z.B. **TargetVPC**) und wählen Sie Ihre öffentlichen Subnetze 
+für mindestens zwei Subnetze wie folgt aus (public-a, public- b):
 
 ![configure-loadbalancer](/ecs/configure-lb.png)
 
-In the **3. Configure Security Group** settings step, choose the LB-SG security group.
+In dem dritten Schritt **3. Configure Security Group** wählen Sie die **LB-SG** Sicherheitsgruppe aus.
 
-In the **4. Configure Routing** step, select **New target group** in the **Target group** and provide a name for the target group (e.g. unicorn-tg). For the **Target type**, select **IP**, leave the default for the other fiels and click **Next: Register Targets**
+In dem vierten Schritt **4. Configure Routing** wählen Sie **New target group** in **Target group** Menü
+und fügen Sie den Namen für die Zielgruppe hinzu (z.B. unicorn-tg). 
+Beim **Target type**, wählen Sie die **IP** aus, übernehmen Sie die Standardeinstellung 
+für die anderen Dateien und klicken Sie auf die Schaltfläche **Next: Register Targets** darauf.
 
 ![configure-routing](/ecs/configure-routing.png)
 
-Leave the default of register targets, click **Next: Review** and then click **Create** to create the load balancer.
+Übernehmen Sie die Standardeinstellungen für die Registerziele (register targets), 
+klicken Sie auf **Next: Review** darauf und dann auf **Create** um den Load Balancer zu erstellen.

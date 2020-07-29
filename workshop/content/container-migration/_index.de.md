@@ -58,7 +58,7 @@ Um die Webanwendung in Container zu migrieren, führen Sie die folgenden Schritt
 
 2. [Erstellen Sie ein Elastic File System]({{< ref "/create-efs.de.md" >}})
 
-3. [Fügen Sie die Datenbankvariablen zu **AWS Systems Manager/Parameters Store** hinzu]({{< ref "/configure-parameters-store.de.md" >}})
+3. [Konfigurieren Sie den **Parameters Store**]({{< ref "/configure-parameters-store.de.md" >}})
 
 4. [Erstellen Sie einen **AWS Elastic Load Balancer**]({{< ref "/create-loadbalancer.de.md" >}})
 

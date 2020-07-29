@@ -1,20 +1,23 @@
 +++
-title = "Configure the Parameter Store"
+title = "Konfigurieren Sie den **Parameters Store**"
 weight = 30
 +++
 
-As we will use the official wordpress docker image with RDS database, we will need to provide database credentials, database name and server details for the wordpress configuration. 
+Da wir das offizielle WordPress-Docker-Image mit der RDS-Datenbank verwenden werden, 
+müssen wir die Datenbankanmeldeinformationen, Datenbanknamen und Serverdetails 
+für die WordPress-Konfiguration angeben.
 
-The best way to achieve that is to manage those parameters in **AWS Systems Manager** Parameter Store instead of storing them inside the docker image or ECS Task Definition.
+Der beste Weg, dies zu tun, besteht darin, diese Parameter in **AWS Systems Manager/Parameter Store** 
+zu verwalten, anstatt sie im Docker-Image oder in der ECS-Task-Definition zu speichern.
 
-From **AWS Console**, select **Services**, then **Systems Manger** and go to **Parameter Store**.
+Besuchen Sie die **AWS Console**, **Services**, wählen Sie **Systems Manger** und dann **Parameter Store**.
 
-Click on **Create parameter** button and enter **Parameter Details** (Name, Description, Type and Value) for parameters as per the table below.
+Klicken Sie auf die Schaltfläche **Create parameter** darauf, und geben Sie ** Parameter Details** 
+(Name, Beschreibung, Typ und Wert) für die Parameter gemäß der folgenden Tabelle ein.
 
 ![parameter-details](/ecs/parameter-details.png)
 
-You will need to repeat the above for all the following parameters:
-
+Sie müssen das die Schritte für alle folgenden Parameter wiederholen:
 
 | Parameter              | Type             | Value                          |
 | ---------------------- | ---------------- |--------------------------------|
