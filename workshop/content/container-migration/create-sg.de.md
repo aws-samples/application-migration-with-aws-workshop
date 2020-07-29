@@ -1,15 +1,16 @@
 +++
-title = "Create additional security groups"
+title = "Erstellen Sie zusätzliche Sicherheitsgruppen für Ihre VPC"
 weight = 10
 +++
 
 
-### Create security groups for your VPC
+### Erstellen Sie zusätzliche Sicherheitsgruppen für Ihre VPC
 
-From **AWS Console**, go to **Services** and select **VPC**. In the left panel, click on the **Security Groups** under Security section and then **Create security group**.
+In **AWS Console**, besuchen Sie **Services** und wählen Sie **VPC** aus. 
+Klicken Sie auf der Linke Seite **Security Groups** (SG) und dann **Create security group** erstellen Sie 
+eine neue Security-Group (SG).
 
-Enter the following parameters for the **Security group** (repeat steps to create all 4 security groups, as per the below table).
-
+Fügen Sie folgende Parameter bei der **Security group** (SG) ein (wiederholen Sie, bitte diesen Schritt um alle 4 SG zu erstellen).
 
 | Security group name    | Description      								   | VPC            |
 | ---------------------- | ---------------- |----------------------------------|
@@ -19,17 +20,16 @@ Enter the following parameters for the **Security group** (repeat steps to creat
 
 ![create-lb-sg](/ecs/create-lb-sg.png)
 
+### Bearbeiten und konfigurieren Sie die Security-Groups
 
-
-
-
-### Edit and configure the security groups
-
-Once you created security groups, select one by one and click **Inbound Rules** and then **Edit rules**. You will add rules for each of the security groups as following:
+Nachdem Sie die SG's erstellt haben, wählen Sie eine nach der anderen aus 
+und klicken Sie auf **Inbound Rules** und dann auf **Edit rules**. 
+Fügen Sie die Regeln für jede der Sicherheitsgruppen wie folgt hinzu:
 
 #### 1. LB-SG Inbound rules
 
-Add HTTP, and HTTPS access from anywhere to allow users to access the website.
+Erlauben Sie HTTP- und HTTPS-Zugriff aus dem Internet hinzu, 
+damit Benutzer auf die Website zugreifen können.
 
 | Type    | Protocol      								   | Source            |
 | ---------------------- | ---------------- |----------------|
@@ -41,7 +41,8 @@ Add HTTP, and HTTPS access from anywhere to allow users to access the website.
 
 #### 2. ECS-Tasks-SG Inbound rules
 
-Allow communication between the Load Balancer and ECS Tasks.
+Ermöglichen Sie die Kommunikation zwischen dem Load Balancer 
+und den ECS-Task.
 
 | Type    | Protocol      								   | Source            |
 | ---------------------- | ---------------- |----------------|
@@ -52,7 +53,10 @@ Allow communication between the Load Balancer and ECS Tasks.
 
 #### 3. EFS-SG Inbound rules
 
-Allow communication between ECS Tasks and Amazon EFS. Webserver access to the EFS is enabled temporarily only, to be able to mount the EFS volume and copy web application static files (you will remove it later).
+Ermöglichen Sie die Kommunikation zwischen ECS-Task und Amazon EFS. 
+Der Webserverzugriff auf das EFS wird nur vorübergehend aktiviert, 
+um das EFS-Volume bereitstellen und statische Dateien der Webanwendung 
+kopieren zu können (Sie werden es später entfernen).
 
 | Type    | Protocol      								   | Source            |
 | ---------------------- | ---------------- |----------------|
@@ -61,9 +65,11 @@ Allow communication between ECS Tasks and Amazon EFS. Webserver access to the EF
 
 ![edit-efs-sg](/ecs/edit-efs-sg.png)
 
-### Modify the database security groups
+### Ändern Sie die Datenbanksicherheitsgruppen (SG)
 
-Modify the database security group (DB-SG) to allow inbound TCP port 3306 (MySQL port) from ECS-Tasks-SG and ECS-SG – to allow communication between ECS Tasks and the target database.
+Ändern Sie die Datenbanksicherheitsgruppe (DB-SG) so, dass eingehender TCP-Port 3306 (MySQL-Port) 
+von ECS-Tasks-SG und ECS-SG zugelassen wird, um die Kommunikation zwischen ECS-Tasks 
+und der Zieldatenbank zu ermöglichen.
 
 | Type    | Protocol      								   | Source            |
 | ---------------------- | ---------------- |----------------|
