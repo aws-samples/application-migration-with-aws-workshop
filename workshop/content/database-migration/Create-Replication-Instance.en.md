@@ -3,6 +3,24 @@ title = "Create Replication Instance"
 weight = 20
 +++
 
+### Create replication subnet group
+
+One of the pre-requisites for using of **AWS DMS** is having configured a **subnet group**, which is a collection of subnets that will be used by the **DMS Replication Instance**. 
+
+1. Go to **AWS Console > Services > Database Migration Service > Subnet groups** and click on **Create subnet group** button.
+2. In the **Create replication subnet group** enter the following parameter values:
+
+    | Parameter           | Value                    |
+    | ------------------- | ------------------------ |
+    | Name                | dms-subnet-group     |
+    | Description         | Default VPC Subnet Group for DMS |
+    | VPC                 | TargetVPC   |
+    | Add subnets         | select **TargetVPC-public-a**, **TargetVPC-public-b** |
+
+    ![Replication-instance-networ](/db-mig/subnet-group.png)
+
+3. Click on the **Create subnet group** button
+
 ### Create AWS DMS Replication Instance
 
 In this step you will create an <a href="https://aws.amazon.com/dms/" target="_blank">AWS Database Migration Service</a> Replication Instance that initiates the connection between the source and target databases, transfers the data, and caches any changes that occur on the source database during the initial data load.
@@ -21,7 +39,7 @@ In this step you will create an <a href="https://aws.amazon.com/dms/" target="_b
     | Name                | replication-instance     |
     | Description         | DMS replication instance |
     | Instance Class      | dms.t2.medium            |
-    | Engine version      | 3.3.1                    |
+    | Engine version      | 3.3.3                    |
     |Allocated storage (GB)| 50                      |
     | VPC                 | TargetVPC            |
     | Multi-AZ            | Unchecked                |
@@ -33,7 +51,7 @@ In this step you will create an <a href="https://aws.amazon.com/dms/" target="_b
     ![replication-instance-conf](/db-mig/replication-instance-conf.png)
 
 
-    In the **Advanced security and network configuration**, make sure to select the replication subnet group & the replication instance security group that you created earlier.
+    In the **Advanced security and network configuration**, make sure to select the replication subnet group, Availability zone (us-west-2a) and the replication instance security group that you created earlier.
 
     ![Replication-instance-conf](/db-mig/advanced-security.png)
 
@@ -41,6 +59,3 @@ In this step you will create an <a href="https://aws.amazon.com/dms/" target="_b
 
 4. Click **Create** button.
 
-    {{% notice note %}}
-Creation of replication instance takes few minutes, please wait until the **Status** changes to **Available** before going to the next steps. In the meantime you can check different use cases for AWS DMS described at the <a href="https://aws.amazon.com/dms/" target="_blank">AWS DMS Webpage</a>
-{{% /notice %}}

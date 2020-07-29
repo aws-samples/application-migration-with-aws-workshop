@@ -6,9 +6,9 @@ weight = 30
 
 ### Create source and target endpoints
 
-Still inside **AWS DMS** screen, go to **Endpoints** and click **Create endpoint** button.
+Go back to AWS Console, to **AWS Database Migration Sercice** screen, click on **Endpoints** and  **Create endpoint** button.
 
-1. Create the source endpoint
+1. Create the **source endpoint**
 
     Use the following parameters to configure the endpoint:
 
@@ -33,7 +33,7 @@ Still inside **AWS DMS** screen, go to **Endpoints** and click **Create endpoint
     
     In case of any errors - make sure you've configured the endpoint parameters correctly and that the Replication Instance was created with **Publicly Accessible** parameter checked.
 
-2. Create the target endpoint
+2. Create the **target endpoint**
 
     Repeat all steps to create the target endpoint with the following parameter values:
 

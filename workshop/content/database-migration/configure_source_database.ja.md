@@ -1,6 +1,6 @@
 +++
 title = "ソースデータベースの設定"
-weight = 35
+weight = 25
 +++
 
 ### Change Data Capture (CDC) を使用した DMS レプリケーションタスクの実行
