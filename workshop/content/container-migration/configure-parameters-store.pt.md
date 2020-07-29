@@ -19,6 +19,6 @@ Repita os passos acima para todos os parâmetros:
 | Parameter              | Type             | Value                          |
 | ---------------------- | ---------------- |--------------------------------|
 | DB_HOST                | String           | RDS endpoint                   |
-| DB_NAME                | String           | nome do banco de dados alvo (wordpress-db)  |
+| DB_NAME                | String           | nome do banco de dados destino (wordpress-db)  |
 | DB_USERNAME            | String           | username do RDS database           |
 | DB_PASSWORD            | SecureString     | senha do RDS database           |

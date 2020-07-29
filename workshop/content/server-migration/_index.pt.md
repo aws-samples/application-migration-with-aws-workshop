@@ -22,7 +22,7 @@ Seja uma migração para AWS ou entre regiões dentro da AWS, o **CloudEndure Mi
 - Migração automatizada para minimizar recursos de TI e duração do projeto
 
 {{% notice note %}}
-**CloudEndure Migration** está disponível **gratuitamente**  para todas as migraçõess para a AWS.  
+**CloudEndure Migration** está disponível **gratuitamente**  para todas as migrações para a AWS.  
 Visite a <a href="https://console.cloudendure.com/#/register/register">página de registro do CloudEndure Migration</a> para criar uma conta e começar a migrar para a AWS em minutos!
 {{% /notice %}}  
 
@@ -32,7 +32,7 @@ Aprenda mais sobre o **CloudEndure Migration** vendo o video abaixo.
 Neste lab você executará um re-hosting (também conhecido como "lift and shift migration") de um webserver seguindo os passos abaixo:
 
 1. [Configuração do CloudEndure]({{< ref "CE-Configuration.pt.md" >}})  
-2. [Instalação do Agente na máquina fonte]({{< ref "CE-Agent-Installation.pt.md" >}})  
+2. [Instalação do Agente na máquina origem]({{< ref "CE-Agent-Installation.pt.md" >}})  
 3. [Prepare o Blueprint]({{< ref "CE-Blueprints.pt.md" >}})  
 4. [Faça um Cutover]({{< ref "CE-Cutover.pt.md" >}})  
 5. [Configure uma aplicação]({{< ref "CE-Webserver-config.pt.md" >}})  

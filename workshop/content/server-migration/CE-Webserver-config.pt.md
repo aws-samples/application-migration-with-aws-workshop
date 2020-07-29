@@ -23,7 +23,7 @@ Quando o Cutover (virada) for finalizado e o **CloudEndure Migration** tenha cri
 
 2. Login no **Webserver** criado pelo CloudEndure  
 
-    Use o mesmo username (ubuntu) e a chave SSH .ppk do ambiente Fonte.
+    Use o mesmo username (ubuntu) e a chave SSH .ppk do ambiente origem.
 
     Caso não saiba como usar o SSH para acessar os servidores, cheque o seguinte:
     - Para usuários Microsoft Windows veja <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/putty.html" target="_blank">este artigo</a>.  

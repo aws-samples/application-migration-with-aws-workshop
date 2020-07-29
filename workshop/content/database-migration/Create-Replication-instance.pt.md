@@ -5,7 +5,7 @@ weight = 20
 
 ### Crie uma AWS DMS Replication Instance
 
-Neste passo você criará uma <a href="https://aws.amazon.com/dms/" target="_blank">AWS Database Migration Service</a> Replication Instance para iniciar a conexão entre os bancos de dados fonte e destino, transferir dados e fazer cache de qualquer mudanças que ocorram na base de dados fontes durante a carga inicial dos dados.
+Neste passo você criará uma <a href="https://aws.amazon.com/dms/" target="_blank">AWS Database Migration Service</a> Replication Instance para iniciar a conexão entre os bancos de dados origem e destino, transferir dados e fazer cache de qualquer mudanças que ocorram na base de dados origem durante a carga inicial dos dados.
 
 
 1. Na **AWS Console**, vá até **Services** e depois **Database Migration Service**.  

@@ -1,14 +1,14 @@
 +++
-title = "Crie Endpoints para Fonte e Destino"
+title = "Crie Endpoints para Origem e Destino"
 weight = 30
 +++
 
 
-### Crie endpoints para fonte e destino
+### Crie endpoints para origem e destino
 
 Ainda na tela do **AWS DMS**, vá para **Endpoints** e clique em **Create endpoint**.
 
-1. Crie o source endpoint (fonte)
+1. Crie o source endpoint (origem)
 
     Use os seguintes parâmetros:
 

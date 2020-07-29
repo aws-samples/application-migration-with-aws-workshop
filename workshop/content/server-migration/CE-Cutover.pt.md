@@ -7,7 +7,7 @@ weight = 40
 
 Uma vez que você completou a replicação dos volumes (o status das máquinas deve estar em **Continuous Data Replication**), você pode executar o **Test/Cutover**.
 
-Cada vez que um **Test/Cutover** é iniciado, o CloudEndure Migration deleta quaisquer instâncias criadas previamente e cria uma **new Target instance** atualizada com a última cópia dos dados do ambiente fonte.
+Cada vez que um **Test/Cutover** é iniciado, o CloudEndure Migration deleta quaisquer instâncias criadas previamente e cria uma **new Target instance** atualizada com a última cópia dos dados do ambiente origem.
 
 {{% notice note %}}
 De acordo com as melhores práticas, você deve executar um **Test** pelo menos **uma semana** antes da data da migração. Isto ajudará a identificar potenciais desafios com a configuração do seu Blueprint ou com a conversão do volume replicado, tendo a chance de endereça-los.  
@@ -44,7 +44,7 @@ Caso não veja sua virada no **Job Progress**, atualize o browser (F5) e certifi
    
     Você verá 2 instâncias adicionais gerenciadas pelo CloudEndure:
     - **CloudEndure Machine Converter** - usada para a conversão do boot volume, realizando mudanças no bootloader, injetando drivers de hipervisor e instalando ferramentas da nuvem. Ela rodará por alguns minutos a cada Test ou Cutover.
-    - **CloudEndure Replication Server** - usado para receber dados criptografados dos agentes instalados no ambiente fonte. Permanece rodando enquanto a replicação de dados acontece.
+    - **CloudEndure Replication Server** - usado para receber dados criptografados dos agentes instalados no ambiente origem. Permanece rodando enquanto a replicação de dados acontece.
 
     Os dois tipos de instâncias são totalmente gerenciadas pelo CloudEndure e não estão acessíveis para os usuários.
 
