@@ -1,3 +1,4 @@
 workshop/public/
 .aws-sam
 .idea/**
+.DS_Store
