@@ -10,6 +10,10 @@ Het gaat in dit geval om een homogene database migratie (de database-engines in 
 
 ![1](/db-mig/DMS-overview.png)
 
+U kunt meer over deze service leren door de onderstaande video te bekijken.
+
+<center><iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/zb4GcjEdl8U" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center>
+
 In deze workshop, voer je de onderstaande stappen uit:
 
 1. [Opzetten DB in doelomgeving]({{< ref "/Create-target-DB.nl.md" >}})
