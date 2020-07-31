@@ -10,6 +10,11 @@ Gefeliciteerd! Nu dat je hier bent aangekomen heb je succesvol de migratie van d
 
 Onderstaand vind je enkele ideeën in het kader van de <a href="https://aws.amazon.com/architecture/well-architected/" target="_blank">5 AWS Well-Architected Pillars</a> - **Operational Excellence**, **Security**, **Reliability**, **Performance Efficiency** en **Cost Optimization**.
 
+Je kunt ook meer leren over AWS Well Architected door de onderstaande video te bekijken.
+<center>
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/MfxF-FYEFjY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</center>
+
 ### Operational Excellence
 
 - Configureer een <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Dashboards.html" target="_blank">CloudWatch dashboard</a> om je AWS resources te kunnen bewaken in één overzicht (ook over meerdere **AWS regions**).

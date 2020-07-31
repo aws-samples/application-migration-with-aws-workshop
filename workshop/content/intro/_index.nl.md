@@ -1,23 +1,22 @@
 +++
-title = "Overzicht"
-date = 2019-10-21T09:54:54+02:00
-weight = 5
+title = "Beginnen met de workshop"
+weight = 10
 pre = "<b>0. </b>"
 +++
 
-Wij vinden het fantastisch dat je de uitdaging aanneemt om onze eCommerce systemen naar de AWS cloud te migreren.
-Hier vind je enige notities van het voorgaande BuyMyUnicorns IT team. Wij hopen dat dit enige hulp biedt!
+<style>
+    table tr th:empty {
+      display: none;
+    }
 
-## Bronomgeving
+    table { border: none; }
+    td {border:none;}
+</style>
 
-![source-env](/intro/source-env.png)
+Om te beginnen met de workshop, volg een van de onderstaande instructies afhankelijk van of je de workshop:
 
-De bronomgeving bestaat uit een twee-laagse e-commerce applicatie; een webserver draaiende op Ubuntu met Apache, PHP, Wordpress, WooCommerce en een Database server draaiende op Ubuntu met MySQL versie 5.7.
-
-
-## Doelomgeving
-
-![target-env](/intro/target-vpc.png)
-
-Het bovenstaande diagram illustreert de VPC in de AWS cloud bestaande uit 6 subnetten verspreid over 2 availability zones.
+| | |
+| --- | --- |
+| [![Zelfstanding wilt uitvoeren (in je eigen AWS Account)](/intro/option-self-paced.png)]({{< ref "./on-your-own.nl.md" >}}) | [![Wilt uitvoeren tijdens een AWS Event (in een door AWS verstrekte AWS Accounts)](/intro/option-aws-led.png)]({{< ref "./migration-hub.nl.md" >}}) |
+| <center>[Zelfstanding wilt uitvoeren (in je eigen AWS Account)]({{< ref "./on-your-own.nl.md" >}})</center> | <center>[Wilt uitvoeren tijdens een AWS Event (in een door AWS verstrekte AWS Accounts)]({{< ref "./migration-hub.nl.md" >}})</center> |
 

@@ -1,5 +1,5 @@
 +++
-title = "erste Schritte"
+title = "Erste Schritte"
 weight = 5
 pre = "<b>0. </b>"
 +++
