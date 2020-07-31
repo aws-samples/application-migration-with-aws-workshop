@@ -63,7 +63,7 @@ Permite comunicação entre ECS Tasks e o Amazon EFS. O acesso ao Webserver para
 
 ### Modifique o security group do banco de dados
 
-Modifique o security group (DB-SG) do banco de dados para permitir a porta TCP port 3306 (MySQL port) de entrada a partir do ECS-Tasks-SG e do ECS-SG – permitindo assim a comunicação entre as ECS Tasks e o banco de dados alvo.
+Modifique o security group (DB-SG) do banco de dados para permitir a porta TCP port 3306 (MySQL port) de entrada a partir do ECS-Tasks-SG e do ECS-SG – permitindo assim a comunicação entre as ECS Tasks e o banco de dados destino.
 
 | Type    | Protocol      								   | Source            |
 | ---------------------- | ---------------- |----------------|

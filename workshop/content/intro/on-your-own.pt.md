@@ -12,7 +12,7 @@ Só complete essa seção se você estiver o workshop sozinho. Se você estiver 
 
 Este lab assume que você tem acesso a uma **AWS Account** com <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/getting-started_create-admin-group.html" target="_blank">privilégios administrativos</a>. Para criar uma nova conta AWS siga <a href="https://aws.amazon.com/premiumsupport/knowledge-center/create-and-activate-aws-account/" target="_blank">Como criar e ativar uma nova conta AWS? </a>.
 
-As instruções abaixo irão instalar um ambiente fonte na sua conta, os recursos instalados consistem de duas máquinas t3.micro EC2 (uma para webserver, uma para banco de dados), um NAT Gateway, um API Gateway e duas funções AWS Lambda (para recuperar facilmente a EC2 Access Key). O custo total dos recursos implementados por este lab deve ser de aproximadamente US$1 (assumindo 4 horas de trabalho), alguns custos são cobertos pelo <a href="https://aws.amazon.com/free/" target="_blank">AWS Free tier</a>.
+As instruções abaixo irão instalar um ambiente origem na sua conta, os recursos instalados consistem de duas máquinas t3.micro EC2 (uma para webserver, uma para banco de dados), um NAT Gateway, um API Gateway e duas funções AWS Lambda (para recuperar facilmente a EC2 Access Key). O custo total dos recursos implementados por este lab deve ser de aproximadamente US$5 (assumindo 4 horas de trabalho), alguns custos são cobertos pelo <a href="https://aws.amazon.com/free/" target="_blank">AWS Free tier</a>.
 
 Lembre-se de [limpar]({{< ref "/cleanup/_index.pt.md" >}}) sua conta AWS depois de rodar o lab, para evitar custos desnecessários!
 
@@ -32,7 +32,7 @@ Lembre-se de [limpar]({{< ref "/cleanup/_index.pt.md" >}}) sua conta AWS depois 
 6. Na tela **Step 4 - Review**, role até o final da tela e marque todas as caixas de checagem, como indicado na imagem abaixo, então aperte **Next** para instalar o template.  
   ![CloudFormation Step 4](/intro/cloudformation-step4.en.png)
 
-Quando o template estiver como **CREATE_COMPLETE** você poderá econtrar as informações sobre o ambiente fonte criado indo em **AWS Console -> CloudFormation**, selecionando a stack  **ApplicationMigrationWorkshop** e abrindo a aba **Outputs**. A informação será parecida com a tela abaixo.
+Quando o template estiver como **CREATE_COMPLETE** você poderá econtrar as informações sobre o ambiente origem criado indo em **AWS Console -> CloudFormation**, selecionando a stack  **ApplicationMigrationWorkshop** e abrindo a aba **Outputs**. A informação será parecida com a tela abaixo.
 
 ![Source Environment Information in AWS Console](/intro/self-service-env-awsconsole-info.en.png)
 
@@ -72,7 +72,7 @@ A seção abaixo demonstra como construir o CloudFormation template e implement�
    sam deploy --template-file ./migration_workshop_source_template.yml --stack-name ApplicationMigrationWorkshop --region us-west-2 --capabilities CAPABILITY_IAM CAPABILITY_NAMED_IAM CAPABILITY_AUTO_EXPAND  
    ```
 
-6. Assim que a implementação finalizar, você verá informações sobre o ambiente fonte na console, como a imagem abaixo.
+6. Assim que a implementação finalizar, você verá informações sobre o ambiente origem na console, como a imagem abaixo.
 
 ![Source Environment in CLI Console](/intro/self-service-env-cli-info.en.png)
 

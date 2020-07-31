@@ -19,7 +19,7 @@ Finalmente, revise suas configurações e clique **Create File System**
 Copie o **DNS name** do file system criado para usar daqui a pouco, no passo **Create a Task Definition**.
 ![efs-details](/ecs/efs-details.png)
 
-Agora você pode montar este file system temporariamente na instância do webserver para copiar o conteúdo do wordpress fonte para ele.
+Agora você pode montar este file system temporariamente na instância do webserver para copiar o conteúdo do wordpress origem para ele.
 
 ### Montando o file system no webserver
 

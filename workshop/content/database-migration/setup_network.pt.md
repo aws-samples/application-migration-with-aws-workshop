@@ -3,7 +3,7 @@ title = "Configurando a Rede"
 weight = 15
 +++
 
-Como não usamos uma **VPN** ou **AWS Direct Connect** neste workshop, **DMS Replication Instance** conectará ao banco de dados fonte pela internet pública e ao banco de destino via rede privada.
+Como não usamos uma **VPN** ou **AWS Direct Connect** neste workshop, **DMS Replication Instance** conectará ao banco de dados origem pela internet pública e ao banco de destino via rede privada.
 
 ![Architectura da Replication Instance](/db-mig/ri-network-conf.png)
 
