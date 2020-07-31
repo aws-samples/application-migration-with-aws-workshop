@@ -20,7 +20,7 @@ weight = 20
     | 名前                 | replication-instance     |
     | 説明                 | DMS replication instance |
     | インスタンスクラス     | dms.t2.medium            |
-    | エンジンバージョン     | 3.3.1                    |
+    | エンジンバージョン     | 3.3.3                    |
     | 割り当てられたストレージ（GiB）| 50                 |
     | VPC                 | TargetVPC                |
     | マルチ AZ            | チェックを外す             |
@@ -38,7 +38,3 @@ weight = 20
 
 4. **「作成」** ボタンをクリックします。
 
-    {{% notice note %}}
-レプリケーションインスタンスの作成には数分かかります。**ステータス**が**利用可能**に変化したことを確認してから、次のステップに進んでください。
-それまでの間に、<a href="https://aws.amazon.com/dms/" target="_blank">AWS DMS のページ</a>で紹介されている様々なユースケースを確認してみてください。
-{{% /notice %}}

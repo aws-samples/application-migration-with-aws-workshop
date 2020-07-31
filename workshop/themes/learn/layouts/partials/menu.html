@@ -53,7 +53,7 @@
           {{ $pageLang := .Page.Lang}}
           {{ range .Page.AllTranslations }}
               {{ $translation := .}}
-              {{ range $siteLanguages }}
+              {{ range sort $siteLanguages "Weight" "asc"}}
                   {{ if eq $translation.Lang .Lang }}
                     {{ $selected := false }}
                     {{ if eq $pageLang .Lang}}

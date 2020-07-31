@@ -38,6 +38,16 @@ Before you configure **AWS DMS**, you will need to create your target database i
 You can confirm the source MySQL version from the source database using SQL query - **SELECT@@version;**
 {{% /notice %}}
 
+
+    In the **Template** section select "Free Tier".
+
+    ![Free tier template selection](/db-mig/create-db-select-template.en.png)
+
+    {{% notice note %}}
+Chosing of "Free Tier" template limits your options in the next steps of the wizard, so that you stay within the limits of AWS Free Tier.
+{{% /notice %}}
+
+
     In the **Settings** section, configure the DB instance identifier (e.g. database-1), Master username (e.g. admin) and Master password for your new database instance.
 
 
@@ -47,16 +57,18 @@ You can confirm the source MySQL version from the source database using SQL quer
 Make sure to write down **Master username** and **Master password**, as you will use it later.
 {{% /notice %}}
 
-    Select **db.t3.medium** from the Burstable DB instance class and select **General Purpose (SSD)** for Storage Type.
+    Select **db.t2.micro** from the Burstable DB instance class,  **General Purpose (SSD)** for Storage Type and uncheck "Enable storage autoscaling" (we dont need more than 20 GB of storage for this database).
     ![4_db](/db-mig/4_db.png)
 
-3. For the **Availability & durability**, switch to **Do not create a standby instance** to save costs. 
+    
+
+1. For the **Availability & durability**, keep the **Do not create a standby instance** option selected. 
+
+    ![5_db](/db-mig/5_db.png)
 
     {{% notice note %}}
 For production workloads, we recommend enabling the standby instance to enable <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.MultiAZ.html" target="_blank">Multi-AZ Deployment</a> for higher availability.
 {{% /notice %}}  
-
-    ![5_db](/db-mig/5_db.png)
 
 4. In the **Connectivity** section:
 
@@ -83,6 +95,6 @@ Note: You will edit the DB-SG VPC security group later to make sure that the DMS
 Using <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Monitoring.OS.html" target="_blank">Enhanced monitoring</a> is a very good idea for production workloads, during AWS hosted events we uncheck it because of limitations of IAM Role that was provisioned for attendees.
 {{% /notice %}}
 
-6. Finally, review the **Estimated monthly costs** and click the **Create database** button.
+6. Finally, review the **Estimated monthly costs** and click the **Create database** button. 
 
    ![8_2_db](/db-mig/8_2_db.png)
