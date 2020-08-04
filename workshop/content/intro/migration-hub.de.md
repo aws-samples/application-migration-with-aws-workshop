@@ -1,5 +1,5 @@
 +++
-title = "Aktiviere Migration Hub"
+title = "Migration Hub aktivieren"
 weight = 50
 +++
 
