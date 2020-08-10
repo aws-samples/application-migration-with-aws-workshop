@@ -29,7 +29,7 @@ Sélectionnez **Target VPC** dans la liste déroulante Virtual Private Cloud (VP
 
 Cliquez sur le bouton **Save**.
 
-Notez le **File system ID**, vous en aurez besoin ensuite pour monter le système de fichiers et pour définir le son nom DNS. Le nom DNS a le format **file-system-id**.efs.**aws-region**.amazonaws.com. Dans mon cas c'est **fs-f30ba7f6**.efs.**us-west-2**.amazonaws.com (notez que ce sera différent pour vous !).
+Notez le **File system ID**, vous en aurez besoin ensuite pour monter le système de fichiers et pour définir son nom DNS. Le nom DNS a le format **file-system-id**.efs.**aws-region**.amazonaws.com. Dans mon cas c'est **fs-f30ba7f6**.efs.**us-west-2**.amazonaws.com (notez que ce sera différent pour vous !).
 
 ![Id du système de fichiers EFS](/ecs/create-efs-file-system-id.en.png)
 
