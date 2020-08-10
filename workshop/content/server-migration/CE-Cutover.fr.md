@@ -12,7 +12,7 @@ A chaque fois que vous démarrez le **Test/Cutover**, CloudEndure Migration supp
 {{% notice note %}}
 Selon les bonnes pratiques et dans un cadre réel, vous devez effectuer un **Test** de migration au minimum **une semaine** avant la date de migration cible. Ceci permet d'identifier les problèmes potentiels de configuration du "Blueprint" ou de volumes répliqués et de les corriger.  
 Dans ce lab, vous allez réaliser un **Cutover** (Cette conversion d'instance a été réalisée au moins 3 000 fois, donc nous savons que cela fonctionne !).
-
+{{% /notice %}}
 
 1. Confirmez que les volumes sont complètement répliqués
    

@@ -39,7 +39,7 @@ Vous pouvez aussi en savoir plus à propos de **AWS Well Architected** en regard
 - Utiliser <a href="https://aws.amazon.com/ec2/spot/" target="_blank">les instances spot Amazon EC2</a> - sélectionnez le type d'instance <a href="https://aws.amazon.com/ec2/spot/instance-advisor/" target="_blank">EC2 Spot Advisor</a>, certaines instances permettent **90% de réduction** avec <5% de fréquence d'interruption
 - Utilisez le plus possible <a href="https://aws.amazon.com/ec2/spot/pricing/" target="_blank">de types d'instances aux coûts optimisés</a>
 
-### architecture de référence
+### Architecture de référence
 
 Le Diagramme ci-dessous décrit une architecture de référence de la solution avec tous les composants listés ci-dessus déployés.
 

@@ -29,7 +29,7 @@ Aller sur la page <a href="https://console.cloudendure.com/#/register/register">
 Vous pouver en apprendre plus sur **CloudEndure Migration** en regardant la video ci-dessous.
 <center><iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/kIJ29q-Jsyo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center>
 
-Dans ce lab vous allez effectuer un "re-hosting" du serveur web en déroulant les étapes suivantes :
+Dans ce lab vous allez effectuer un "re-hosting" du serveur web en déroulant les étapes suivantes:  
 1. [Configuration de CloudEndure]({{< ref "/CE-Configuration.fr.md" >}})  
 2. [Installation de(s) l'Agent(s) sur le(s) machine(s) source]({{< ref "/CE-Agent-Installation.fr.md" >}})  
 3. [Préparation du Blueprint]({{< ref "/CE-Blueprints.fr.md" >}})  
