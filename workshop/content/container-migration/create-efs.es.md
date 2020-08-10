@@ -5,39 +5,58 @@ weight = 20
 
 Desde la **Consola de AWS**, vete a **Servicios (Services)** y selecciona **EFS**, despues haz click en **Crear sistema de ficheros (Create file system)**.
 
-![create-efs](/ecs/create-efs.png)
+Nombra el sistema de ficheros (por ejemplo 'webserver-filesystem') y selecciona el VPC objetivo, donde el EFS sera desplegado.
 
-Selecciona la VPC que has creado al principio de nuestro laboratorio (ejemplo TargetVPC), las subredes privadas por zonas de disponibilidad para los puntos de montaje y el grupo de seguridad EFS-SG para cada punto objetivo de montaje, luego haz click en **Siguiente Paso (Next Step)**.
+![Create file system](/ecs/create-efs-name.en.png)
 
-En el  **Paso 2: Configurar opciones adicionales (Configure optional settings)**, puedes habilitar una politica de ciclo de vida, cambiar el modo de rendimiento y habilitar la encriptación. Para este ejercicio, habilita la encriptacion y deja el resto de valores por defecto.
+Haz Click en el boton **Crear (Create)**, y despues click en el nombre del **sistema de ficheros del servidor web (webserver-filesystem)** de la lista de nombres de EFS, para abrir los detalles.
 
-![efs-enc](/ecs/efs-enc.png)
+![Select EFS from the list](/ecs/create-efs-select.en.png)
 
-![efs-review](/ecs/efs-review.png)
-Finalmente, revisa las opciones y haz click en **Crear Sistema de Ficheros (Create File System)**
+En los detalles del sistema de ficheros **webserver-filesystem**, vete a la seccion de  **Red (Network)** y haz click en el boton **Crear montaje objetivo (Create mount target)**.
 
-Copia el **nombre del DNS (DNS name)** del sistema de ficheros que has creado, por que lo vas a necesitar despues, en el paso de **Crear Definicion de Tarea (Create a Task Definition)**.
-![efs-details](/ecs/efs-details.png)
+![Go to Network mount targets](/ecs/create-efs-mount-target.en.png)
 
-Ahora, ya puedes montar este sistema de ficheros temporalmente en la instancia de servidor web para copiar la fuente de contenido de wordpress en el.
+Selecciona la **VPC Objetivo (Target VPC)**  en el menu desplegable de Virtual Private Cloud (VPC) y añade los dos objetivos de montaje.
 
-### Montar el sistema de ficheros en el servidor web
+| Availability zone    | Subnet ID      								   | Security groups            |
+| ---------------------- | ---------------- |----------------|
+| us-west-2a                | TargetVPC-private-a-web            | EFS-SG  |
+| us-west-2b                | TargetVPC-private-b-web    | EFS-SG  |
 
-Haz click en el link **instrucciones de montaje EC2 (desde una VPC local) - Amazon EC2 mount instructions (from local VPC)** en los detalles del sistema de ficheros EFS y siguelas.
 
-Para instalar el cliente de nfs para la instancia Ubuntu, usa este comando:
+![Configure Network mount targets](/ecs/create-efs-configure-mount-targets.en.png)
 
+Haz Click en el boton **Salvar (Save)**.
+
+Toma nota del **Identificador del sistema de Ficheros (File system ID)**, lo necesitaras mas tarde para montar el sistema de ficheros y para definir el nombre DNS del sistema de ficheros creado. El nombre DNS sigue el siguiente formato **file-system-id**.efs.**aws-region**.amazonaws.com, asi que en nuestro caso es **fs-f30ba7f6**.efs.**us-west-2**.amazonaws.com (date cuenta que sera diferente en tu caso).
+
+![EFS file system id](/ecs/create-efs-file-system-id.en.png)
+
+Ahora, puedes montar el sistema de ficheros temporalmente en la instancia del servidor Web para copia el contenido de wordpress desde la fuente.
+
+### Montar el sistema de ficheros en el servidor Web
+
+SSH a tu **Servidor Web** y ejecuta los comandos siguientes: 
 ```
+sudo apt-get update
 sudo apt-get install nfs-common
+sudo mkdir efs
 ```
 
-Sigue las instrucciones de abajo para montar el sistema de ficheros:
+Ejecuta el comando siguiente, reemplazando el **FILE_SYSTEM_ID** con el **ID del sistema de Ficheros (File system ID)** del sistema de ficheros Elastico que has creado.
 
-![efs-mount](/ecs/efs-mount.png)
+```
+sudo mount -t nfs -o nfsvers=4.1,rsize=1048576,wsize=1048576,hard,timeo=600,retrans=2,noresvport FILE_SYSTEM_ID.efs.us-west-2.amazonaws.com:/ efs
+```
 
-Una vez montado el sistema de ficheros, copia todo el contenido de la carpeta **/var/www/html/wp-content** desde el servidor web al sistema de ficheros montando.
 
-Ejemplo:
+Una vez hayas montado el sistema de ficheros, copia toda la carpeta **/var/www/html/wp-content** desde el servidor web al sistema de ficheros montado con el comando siguiente. 
+
 ```
 sudo cp -r /var/www/html/wp-content/* efs/
 ```
+
+### Resolución de Problemas
+
+Si tienes algun problema al montar el EFS, por favor consulta aqui https://docs.aws.amazon.com/efs/latest/ug/mounting-fs-mount-cmd-dns-name.html para obtener mas detalles
