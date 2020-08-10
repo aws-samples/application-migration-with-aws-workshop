@@ -17,7 +17,7 @@ weight = 30
     | 终端节点类型          | 源终端节点                                       |
     | 终端节点标识符        | source-endpoint                                |
     | 源引擎               | mysql                                          |
-    | 服务器名称            | 源环境 - 对于 **自行实验** ，请使用 **ApplicationMigrationWorkshop** <a href="https://us-west-2.console.aws.amazon.com/cloudformation/home?region=us-west-2#/" target="_blank">CloudFormation 模板</a>中 **输出** 部分的 **DBServerDNSName**; <br>对于 **AWS 活动** ，请使用 Event Engine 仪表板中的 **Database Server IP** |
+    | 服务器名称            | 源环境 - 对于 **自行操作的实验** ，请使用 **ApplicationMigrationWorkshop** <a href="https://us-west-2.console.aws.amazon.com/cloudformation/home?region=us-west-2#/" target="_blank">CloudFormation 模板</a>中 **输出** 部分的 **DBServerDNSName**; <br>对于 **AWS 活动** ，请使用 Event Engine 仪表板中的 **Database Server IP** |
     | 端口                 | 3306                                           |
     | 安全套接字层(SSL)模式   | none                                           |
     | 用户名                | wordpress-user                                 |
@@ -30,7 +30,7 @@ weight = 30
     ![test-source-endpoint](/db-mig/test-source-endpoint.zh.png)
 
     测试运行一会后，您应当会在 **状态** 列看到 **successful** 的消息。点击 **创建终端节点** 按钮创建终端节点。
-    
+
     如果出现任何错误 - 请确保您配置了正确的终端节点参数，并且复制实例创建时选中了 **公开访问** 参数。
 
 2. 创建目标终端节点
