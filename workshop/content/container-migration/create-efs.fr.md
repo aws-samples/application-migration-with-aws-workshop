@@ -1,19 +1,19 @@
 +++
-title = "Création d'un file system Amazon EFS"
+title = "Création d'un système de fichiers Amazon EFS"
 weight = 20
 +++
 
 A partir de **AWS Console**, allez dans **Services** et sélectionnez **EFS**, cliquez alors sur **Create file system**.
 
-Nommez le "file system" (ex 'webserver-filesystem') et sélectionnez le "TargetVPC", où le système de fichier EFS sera déployé. 
+Nommez le "file system" (ex 'webserver-filesystem') et sélectionnez le "TargetVPC", où le système de fichiers EFS sera déployé. 
 
 ![Créer le système de fichiers](/ecs/create-efs-name.en.png)
 
-Cliquez sur le bouton **Create**, puis cliquez sur le nom **webserver-filesystem** du système de fichoer EFS dans la liste pour ouvrir le détail.
+Cliquez sur le bouton **Create**, puis cliquez sur le nom **webserver-filesystem** du système de fichiers EFS dans la liste pour ouvrir le détail.
 
 ![Sélectionnez EFS à partir de la liste](/ecs/create-efs-select.en.png)
 
-Dans le détail du système de fichier **webserver-filesystem**, aller dans l'onglet **Network** et cliquez sur le bouton **Create mount target**.
+Dans le détail du système de fichiers **webserver-filesystem**, aller dans l'onglet **Network** et cliquez sur le bouton **Create mount target**.
 
 ![Aleer à Network mount targets](/ecs/create-efs-mount-target.en.png)
 
@@ -29,7 +29,7 @@ Sélectionnez **Target VPC** dans la liste déroulante Virtual Private Cloud (VP
 
 Cliquez sur le bouton **Save**.
 
-Notez le **File system ID**, vous en aurez besoin ensuite pour monter le système de fichiers et pour définir le nom DNS du système de fichiers créé. Le nom DNS respecte le format **file-system-id**.efs.**aws-region**.amazonaws.com, donc dans mon cas c'est **fs-f30ba7f6**.efs.**us-west-2**.amazonaws.com (notez que ce sera différent pour vous !).
+Notez le **File system ID**, vous en aurez besoin ensuite pour monter le système de fichiers et pour définir le son nom DNS. Le nom DNS a le format **file-system-id**.efs.**aws-region**.amazonaws.com. Dans mon cas c'est **fs-f30ba7f6**.efs.**us-west-2**.amazonaws.com (notez que ce sera différent pour vous !).
 
 ![Id du système de fichiers EFS](/ecs/create-efs-file-system-id.en.png)
 
@@ -51,7 +51,7 @@ sudo mount -t nfs -o nfsvers=4.1,rsize=1048576,wsize=1048576,hard,timeo=600,retr
 ```
 
 
-Dès que le système de fichier est monté, copier tout le répoertoire **/var/www/html/wp-content** du serveur web vers le système de fihciers monté en exécutant la commande suivante :
+Dès que le système de fichiers est monté, copier tout le répertoire **/var/www/html/wp-content** du serveur web vers celui-ci en exécutant la commande suivante :
 
 ```
 sudo cp -r /var/www/html/wp-content/* efs/

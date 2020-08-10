@@ -56,7 +56,7 @@ Allez à la page **Security Groups**, cliquez sur  **Create security group** et 
 | ---------------------- | ---------------- |----------------------------------|
 | EFS-SG                 | Allow communication between ECS Tasks and EFS       | TargetVPC  |
 
-SPaginez vers le bas jusqu'à **Inbound rules** et autorisez la communication entre les tâches ECS et Amazon EFS. L'accès pour le serveur web Webserver à EFS est autorisé temporairement afin de permettre de monter le volume EFS et de copier les fichiers statiques de l'application web (vous le révoquerez plus tard).
+Paginez vers le bas jusqu'à **Inbound rules** et autorisez la communication entre les tâches ECS et Amazon EFS. L'accès pour le serveur web Webserver à EFS est autorisé temporairement afin de permettre de monter le volume EFS et de copier les fichiers statiques de l'application web (vous le révoquerez plus tard).
 
 | Type    | Protocol      								   | Source            |
 | ---------------------- | ---------------- |----------------|
