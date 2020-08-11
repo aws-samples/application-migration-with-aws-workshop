@@ -8,64 +8,70 @@ weight = 10
 
 A partir da **AWS Console**, vá até **Services** e selecione **VPC**. No painel à esquerda, clique em **Security Groups** na seção Security e então **Create security group**.
 
-Entre os seguintes parâmetros para o **Security group** (repita os passos para criar todos os security groups, como na tabela abaixo).
+### 1. Crie um security group Load balancer 
+
+Entre os seguintes parâmetros para o **Security group** 
 
 
-| Nome do Security group     | Descrição      								   | VPC            |
+| Nome do Security Group     | Descrição      								   | VPC            |
 | ---------------------- | ---------------- |----------------------------------|
-| LB-SG                  | Load balancer security group            | Sua VPC criada anteriormente (ex. TargetVPC)  |
-| ECS-Tasks-SG           | Allow communication between the LB and the ECS Tasks| Sua VPC criada anteriormente (ex. TargetVPC))  |
-| EFS-SG                 | Allow communication between ECS tasks and EFS       | Sua VPC criada anteriormente (ex. TargetVPC)  |
+| LB-SG                  | Load balancer security group            | TargetVPC  |
 
 ![create-lb-sg](/ecs/create-lb-sg.png)
 
+Role a tela para baixo e na seção **Inbound rules** adicione acesso HTTP e HTTPS a partir de qualquer lugar (**Anywhere**) para permitir que os usuários acessem o website.
 
-
-
-
-### Edite e configure os security groups
-
-Uma vez que os security groups foram craidos, selecione um a um deles e clique em **Inbound Rules** e então **Edit rules**. Você adicionará  rules para cada security group como abaixo:
-
-#### 1. Inbound rules do LB-SG 
-
-Adicione acesso HTTP e HTTPS a partir de qualquer lugar para permitir que os usuários acessem o website.
-
-| Type    | Protocol      								   | Source            |
+| Tipo    | Protocolo      								   | Origem            |
 | ---------------------- | ---------------- |----------------|
 | HTTP                | TCP            | Anywhere   |
 | HTTPS               | TCP            | Anywhere   |
 
 ![edit-lb-sg](/ecs/edit-lb-sg.png)
 
+Clique no botão **Create security group** para criar o security group.
 
-#### 2. Inbound rules do ECS-Tasks-SG 
+#### 2. Crie o security group do Elastic Container Service Task  
 
-Permitir comunicação entre o Load Balancer e as ECS Tasks.
+Vá para a tela **Security Groups**, clique no **Create security group** e entre o seguinte:
 
-| Type    | Protocol      								   | Source            |
+| Nome do Security Group     | Descrição      								   | VPC            |
+| ---------------------- | ---------------- |----------------------------------|
+| ECS-Tasks-SG           | Permite comunicação entre o LB e o ECS Tasks| TargetVPC  |
+
+Role a tela até **Inbound rules** e permita a comunicação entre o Load Balancer e os ECS Tasks (selecione o LB-SG security group da lista de **Source**).
+
+| Tipo    | Protocolo      								   | Origem            |
 | ---------------------- | ---------------- |----------------|
 | All TCP                | TCP            | Custom > LB-SG   |
 
-
 ![edit-task-sg](/ecs/edit-task-sg.png)
 
-#### 3. Inbound rules do EFS-SG 
+Clique no botão **Create security group** para criar o security group.
 
-Permite comunicação entre ECS Tasks e o Amazon EFS. O acesso ao Webserver para o EFS é habilitado temporariamente, de forma a montar o volume EFS e copiar os arquivos estáticos da aplicação web (você o removerá mais tarde).
+#### 3. Crie o security group do Elastic File System 
 
-| Type    | Protocol      								   | Source            |
+Vá para a tela **Security Groups**, clique em **Create security group** e entre o seguintes valores.
+
+| Nome do Security Group    | Descrição      								   | VPC            |
+| ---------------------- | ---------------- |----------------------------------|
+| EFS-SG                 | Permite comunicação entre ECS Tasks e EFS       | TargetVPC  |
+
+Role a tela até a seção **Inbound rules** e permita comunicação entre ECS Tasks e o Amazon EFS. Acesso do Webserver ao EFS é habilitado temporariamente, para montar o volume EFS e copiar os arquivos estáticos da aplicação web (daqui a pouco você irá revogar esse acesso).
+
+| Tipo    | Protocolo      								   | Source            |
 | ---------------------- | ---------------- |----------------|
 | NFS                | TCP            | Custom > ECS-Tasks-SG  |
 | NFS                | TCP    | Custom > WebServer SG  |
 
 ![edit-efs-sg](/ecs/edit-efs-sg.png)
 
-### Modifique o security group do banco de dados
+Clique no botão **Create security group** para criar o security group.
 
-Modifique o security group (DB-SG) do banco de dados para permitir a porta TCP port 3306 (MySQL port) de entrada a partir do ECS-Tasks-SG e do ECS-SG – permitindo assim a comunicação entre as ECS Tasks e o banco de dados destino.
+### 4. Modifique o security group existente do banco de dados 
 
-| Type    | Protocol      								   | Source            |
+Vá para a tela **Security Groups** e modifique o database security group (DB-SG) para permitir tráfego TCP de entrada na porta 3306 (MySQL) a partir do ECS-Tasks-SG para o database de destino (você já deve ter regras de entrada para o Webserver e Replication instance aqui),
+
+| Tipo    | Protocolo      								   | Origem            |
 | ---------------------- | ---------------- |----------------|
 | MySQL                | TCP            | Custom > ECS-Tasks-SG   |
 

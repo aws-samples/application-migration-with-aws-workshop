@@ -5,39 +5,58 @@ weight = 20
 
 From **AWS Console**, go to **Services** and select **EFS**, then click **Create file system**.
 
-![create-efs](/ecs/create-efs.png)
+Name the file system (e.g. 'webserver-filesystem') and select the TargetVPC, where the EFS will be deployed.
 
-Select the VPC that you have created at the beginning of the workshop (e.g TargetVPC), private subnets per availability zone for the mount targets and EFS-SG security group for each mount target, then click **Next Step**.
+![Create file system](/ecs/create-efs-name.en.png)
 
-In the **Step 2: Configure optional settings**, you can enable lifecycle policy, change the throughput mode and enable encryption. For this exercise, enable encryption and leave  default values for the other options.
+Click on the **Create** button, then click on the **webserver-filesystem** name of the EFS on the list, to open the details.
 
-![efs-enc](/ecs/efs-enc.png)
+![Select EFS from the list](/ecs/create-efs-select.en.png)
 
-![efs-review](/ecs/efs-review.png)
-Finally, review your setting and click **Create File System**
+In the details of the **webserver-filesystem** file system, go to **Network** tab and click on the **Create mount target** button.
 
-Copy the **DNS name** of the created file system as you will need it later, in the **Create a Task Definition** step.
-![efs-details](/ecs/efs-details.png)
+![Go to Network mount targets](/ecs/create-efs-mount-target.en.png)
 
-Now, you can mount this file system temporarily into the webserver instance to copy the source wordpress content to it.
+Select the **Target VPC** in the Virtual Private Cloud (VPC) drop down and add two mount targets.
+
+| Availability zone    | Subnet ID      								   | Security groups            |
+| ---------------------- | ---------------- |----------------|
+| us-west-2a                | TargetVPC-private-a-web            | EFS-SG  |
+| us-west-2b                | TargetVPC-private-b-web    | EFS-SG  |
+
+
+![Configure Network mount targets](/ecs/create-efs-configure-mount-targets.en.png)
+
+Click **Save** button.
+
+Make a note of the **File system ID**, you will need it later to mount the file system and to define the DNS name of the created file system. The DNS name follows format of **file-system-id**.efs.**aws-region**.amazonaws.com, so in my case it's **fs-f30ba7f6**.efs.**us-west-2**.amazonaws.com (note that it will be different for you!).
+
+![EFS file system id](/ecs/create-efs-file-system-id.en.png)
+
+Now, you can mount the file system temporarily into the Webserver instance to copy the source wordpress content.
 
 ### Mounting file system to webserver
 
-Click on the **Amazon EC2 mount instructions (from local VPC)** link in the Amazon EFS file system details and follow them.
-
-Install the nfs client for the Ubuntu instance, use this command:
-
+SSH into your **Webserver** and run the following commands:
 ```
+sudo apt-get update
 sudo apt-get install nfs-common
+sudo mkdir efs
 ```
 
-Follow the below instructions for mounting the file system:
+Run the following command, replacing the **FILE_SYSTEM_ID** with **File system ID** of Elastic File System you have just created.
 
-![efs-mount](/ecs/efs-mount.png)
+```
+sudo mount -t nfs -o nfsvers=4.1,rsize=1048576,wsize=1048576,hard,timeo=600,retrans=2,noresvport FILE_SYSTEM_ID.efs.us-west-2.amazonaws.com:/ efs
+```
 
-Once you mounted the filesystem, copy the whole **/var/www/html/wp-content** folder from the web server to the mounted file system.
 
-Example:
+Once you mounted the filesystem, copy the whole **/var/www/html/wp-content** folder from the web server to the mounted file system with the following command.
+
 ```
 sudo cp -r /var/www/html/wp-content/* efs/
 ```
+
+### Troubleshooting
+
+If you have any challenges in mounting the EFS, please check https://docs.aws.amazon.com/efs/latest/ug/mounting-fs-mount-cmd-dns-name.html for more details
