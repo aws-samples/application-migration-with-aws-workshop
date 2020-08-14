@@ -7,6 +7,9 @@ weight = 50
 
 <a href="https://aws.amazon.com/migration-hub/" target="_blank">AWS Migration Hub</a> では、AWS およびパートナーの複数のソリューションにおける、アプリケーション移行の進行状況を1つの場所から追跡できます。  
 有効化するには、マネジメントコンソール上部の **「サービス」** から **<a href="https://console.aws.amazon.com/migrationhub/home?region=us-west-2" target="_blank">AWS Migration Hub</a>** のページを開きます。
+
+![Migration Hub - Dashboard](/intro/migration-hub-dashboard.ja.png)
+
 左のメニューから **「移行」** を選択し、**米国西部（オレゴン）** をホームリージョンに設定してください。
 
 ![Migration Hub - choose home region](/intro/migration-hub-choose-home-region.ja.png)

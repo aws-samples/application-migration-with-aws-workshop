@@ -16,7 +16,6 @@ weight = 40
     | ソースデータベースエンドポイント        | source-endpoint                          |
     | ターゲットデータベースエンドポイント        | target-endpoint                       |
     | 移行タイプ         | 既存のデータを移行して、継続的な変更をレプリケートする              |
-    | 作成時にタスクを開始      | チェックを入れる                                         |
     
     ![Create-task-1](/db-mig/Create-task-1.ja.png)
 

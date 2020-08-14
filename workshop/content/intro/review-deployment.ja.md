@@ -12,7 +12,12 @@ weight = 40
 ソース環境は、3層で構成される eコマースの Web アプリケーションです。  
 Apache、PHP、Wordpress、WooCommerce が稼働する Ubuntu ベースの Web サーバーと、MySQL バージョン5.7 が稼働する Ubuntu ベースのデータベースサーバーで、構成されています。
 
-マネジメントコンソール上部の **「サービス」** から **<a href="https://console.aws.amazon.com/ec2/home?region=us-west-2" target="_blank">EC2</a>** のページを開き、左のメニューから **「インスタンス」 → 「インスタンス」** を選択します。EC2 インスタンスの一覧から、2つのインスタンス（**Source-Webserver**、**Source-DBServer**） が作成されていることを確認してください。
+**自身の環境**でハンズオンを実施している場合は、マネジメントコンソール上部の **「サービス」** から **<a href="https://console.aws.amazon.com/ec2/home?region=us-west-2" target="_blank">EC2</a>** のページを開き、左のメニューから **「インスタンス」 → 「インスタンス」** を選択します。EC2 インスタンスの一覧から、2つのインスタンス（**Source-Webserver**、**Source-DBServer**） が作成されていることを確認してください。
+
+{{% notice note %}}
+**AWS 主催のイベント**でハンズオンを実施している場合、上記の確認は必要ありません。
+{{% /notice %}}
+ 
 
 ## 移行先環境：ターゲット
 
