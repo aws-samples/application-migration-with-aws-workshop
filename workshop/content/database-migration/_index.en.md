@@ -14,9 +14,10 @@ You can learn more details about this service by watching the video below.
 
 In this lab, you will perform the following steps:
 
-1. [Create Target DB]({{< ref "/Create-target-DB.en.md" >}})
 
-2. [Set Up Networking]({{< ref "/setup_network.en.md" >}})
+1. [Set Up Networking]({{< ref "/setup_network.en.md" >}})
+
+2. [Create Target DB]({{< ref "/Create-target-DB.en.md" >}})
 
 2. [Create Replication Instance]({{< ref "Create-Replication-instance.en.md" >}})
 
