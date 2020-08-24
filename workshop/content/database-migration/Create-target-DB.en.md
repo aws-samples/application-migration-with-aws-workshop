@@ -1,6 +1,6 @@
 +++
 title = "Create Target DB"
-weight = 10
+weight = 15
 +++
 
 ### Database Migration
@@ -20,14 +20,14 @@ Before you configure **AWS DMS**, you will need to create your target database i
     | Name                | database-subnet-group     |
     | Description         | Subnets where RDS will be deployed |
     | VPC      | TargetVPC            |
-    
+
     In the **Add subnets** panel add one subnet from each Availability Zone (us-west-2a and us-west-2b) with CIDRs 10.0.101.0/24 and 10.0.201.0/24, then press **Create** button.
 
     ![RDS Subnet group creation](/db-mig/db-subnet-group.en.png)    
 
 ### Create the target database    
-    
-1. Now select **Databases** from the menu on the left and click **Create database** 
+
+1. Now select **Databases** from the menu on the left and click **Create database**
 
 2. From the **Engine options**, select MySQL and Version MySQL 5.7.22
 
@@ -60,9 +60,9 @@ Make sure to write down **Master username** and **Master password**, as you will
     Select **db.t2.micro** from the Burstable DB instance class,  **General Purpose (SSD)** for Storage Type and uncheck "Enable storage autoscaling" (we dont need more than 20 GB of storage for this database).
     ![4_db](/db-mig/4_db.png)
 
-    
 
-1. For the **Availability & durability**, keep the **Do not create a standby instance** option selected. 
+
+1. For the **Availability & durability**, keep the **Do not create a standby instance** option selected.
 
     ![5_db](/db-mig/5_db.png)
 
@@ -95,6 +95,6 @@ Note: You will edit the DB-SG VPC security group later to make sure that the DMS
 Using <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Monitoring.OS.html" target="_blank">Enhanced monitoring</a> is a very good idea for production workloads, during AWS hosted events we uncheck it because of limitations of IAM Role that was provisioned for attendees.
 {{% /notice %}}
 
-6. Finally, review the **Estimated monthly costs** and click the **Create database** button. 
+6. Finally, review the **Estimated monthly costs** and click the **Create database** button.
 
    ![8_2_db](/db-mig/8_2_db.png)
