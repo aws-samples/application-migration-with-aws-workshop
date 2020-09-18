@@ -6,7 +6,7 @@ weight = 30
 
 ### Create source and target endpoints
 
-Go back to AWS Console, to **AWS Database Migration Sercice** screen, click on **Endpoints** and  **Create endpoint** button.
+Go back to AWS Console, **AWS Database Migration Service** screen, click on **Endpoints** and  **Create endpoint** button.
 
 1. Create the **source endpoint**
 

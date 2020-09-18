@@ -13,11 +13,11 @@ For **AWS DMS** continuous replication from MySQL database, you'll need to enabl
 
 1. Login to the **Source Environment Database** server
 
-    For **self-paced lab** - information need to access the Database environment is described on the **Output** section of the **ApplicationMigrationWorkshop** <a href="https://us-west-2.console.aws.amazon.com/cloudformation/home?region=us-west-2#/" target="_blank">CloudFormation Template</a>.
+    For **self-paced lab** - information needed to access the Database environment is described in the **Output** section of the **ApplicationMigrationWorkshop** <a href="https://us-west-2.console.aws.amazon.com/cloudformation/home?region=us-west-2#/" target="_blank">CloudFormation Template</a>.
 
     ![Database Server login information](/db-mig/db-server-ssh-self-paced.png)    
 
-    For **AWS Event** - information need to access the Database environment is described at **Database IP**, **Database Username** and **Database SSH Key** on the <a href="https://dashboard.eventengine.run/dashboard" target="_blank">Team Dashboard</a>.
+    For **AWS Event** - information needed to access the Database environment is described at **Database IP**, **Database Username** and **Database SSH Key** on the <a href="https://dashboard.eventengine.run/dashboard" target="_blank">Team Dashboard</a>.
 
     ![Database Server login information](/db-mig/db-server-ssh-event.png)
 

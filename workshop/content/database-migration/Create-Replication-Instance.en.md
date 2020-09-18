@@ -59,3 +59,6 @@ In this step you will create an <a href="https://aws.amazon.com/dms/" target="_b
 
 4. Click **Create** button.
 
+{{% notice note %}}
+If you get an error saying "SYSTEM ERROR MESSAGE:Cannot create a dms.t2.medium replication instance", create the DMS replication instance again but select **us-west-2b** **Availability Zone** and if this doesn't help - select larger **instance class**.
+{{% /notice %}}  
