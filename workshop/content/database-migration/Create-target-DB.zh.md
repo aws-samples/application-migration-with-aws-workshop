@@ -1,6 +1,6 @@
 +++
 title = "创建目标数据库"
-weight = 10
+weight = 15
 +++
 
 ### 数据库迁移
@@ -20,14 +20,14 @@ weight = 10
     | 名称                 | database-subnet-group              |
     | 描述                 | Subnets where RDS will be deployed |
     | VPC                 | TargetVPC                          |
-    
+
     在 **添加子网** 面板中，从每个可用区（us-west-2a 和 us-west-2b）添加一个子网，使用 CIDRS 10.0.101.0/24 和 10.0.201.0/24，然后按 **创建** 按钮。
 
     ![RDS Subnet group creation](/db-mig/db-subnet-group.zh.png)    
 
 ### 创建目标数据库    
-    
-1. 现在从左侧菜单中选择 **数据库** 并点击 **创建数据库** 
+
+1. 现在从左侧菜单中选择 **数据库** 并点击 **创建数据库**
 
 2. 在 **引擎选项** 中，选择 MySQL，版本选择 MySQL 5.7.22
 
@@ -38,6 +38,14 @@ weight = 10
 您可以使用 SQL 查询从源数据库中检索有关源 MySQL 版本的信息 - **SELECT@@version;**
 {{% /notice %}}
 
+    在 **模板** 部分，选择 “免费套餐”
+
+    ![2](/db-mig/create-db-select-template.zh.png)
+
+    {{% notice note %}}
+选择“免费套餐”模板将限制您在向导的下一步中进行选择，从而使您受到AWS免费套餐的限制。
+{{% /notice %}}
+
     在 **设置** 部分，为您的新数据库实例配置数据库实例标识符（比如 database-1）、主用户名（比如 admin）和主密码。
 
     ![3_db](/db-mig/3_db.zh.png)
@@ -46,10 +54,10 @@ weight = 10
 请务必记下 **主用户名** 和 **主密码**，因为您稍后会使用它。
 {{% /notice %}}
 
-    从可突增数据库实例类中选择 **db.t3.medium**，存储类型选择 **通用型 (SSD)**。
+    从可突增数据库实例类中选择 **db.t2.micro**，存储类型选择 **通用型 (SSD)**，取消选中“启用存储自动扩展”（此数据库不需要超过20 GB的存储空间）。
     ![4_db](/db-mig/4_db.zh.png)
 
-3. 在 **可用性与持久性** 部分，切换到 **请勿创建备用实例** 以节省成本。 
+3. 在 **可用性与持久性** 部分，保持 **请勿创建备用实例** 以节省成本。
 
     {{% notice note %}}
 对于生产工作负载，我们建议创建备用实例利用 <a href="https://docs.aws.amazon.com/zh_cn/AmazonRDS/latest/UserGuide/Concepts.MultiAZ.html" target="_blank">多可用区部署</a> 实现更高的可用性
@@ -60,7 +68,7 @@ weight = 10
 4. 在 **连接** 部分：
 
     * 在 **Virtual Private Cloud (VPC)** 中， 选择 **TargetVPC** （这个是为本实验自动创建的 <a href="https://aws.amazon.com/cn/vpc/" target="_blank">Amazon Virtual Private Cloud</a> ）
-    * 在 **其它连接配置 -> VPC 安全组**中，选择 **新建** VPC 安全组，输入名称（比如 "DB-SG"）。
+    * 在 **其它连接配置 -> 现有 VPC 安全组**中，中选择之前创建的 VPC 安全组（比如 "DB-SG"）。
     * 请注意，您之前创建的数据库子网组将被自动选择
 
     ![6_db](/db-mig/6_db.zh.png)
