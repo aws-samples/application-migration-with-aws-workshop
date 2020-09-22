@@ -1,6 +1,6 @@
 +++
 title = "配置源数据库"
-weight = 35
+weight = 30
 +++
 
 ### 用 Change Data Capture (CDC)模式运行 DMS 复制任务
@@ -22,7 +22,7 @@ weight = 35
     ![Database Server login information](/db-mig/db-server-ssh-event.png)
 
     如果您不知道如何使用 SSH 访问服务器，请检查以下内容：
-    - 对于微软 Windows 用户，请查看 <a href="https://docs.aws.amazon.com/zh_cn/AWSEC2/latest/UserGuide/putty.html" target="_blank">这篇文章</a>。 
+    - 对于微软 Windows 用户，请查看 <a href="https://docs.aws.amazon.com/zh_cn/AWSEC2/latest/UserGuide/putty.html" target="_blank">这篇文章</a>。
     - 对于 Mac OS 用户，请查看 <a href="https://docs.aws.amazon.com/quickstarts/latest/vmlaunch/step-2-connect-to-instance.html#sshclient" target="_blank">这篇文章</a>。
 
 2. 为 **wordpress-user** 数据库用户授予额外的权限
@@ -38,12 +38,12 @@ weight = 35
     exit
     ```
 
-3. 为 **bin logs** 创建一个目录 
+3. 为 **bin logs** 创建一个目录
 
     在数据库服务器上运行下面的命令：
 
     ```
-    sudo su - 
+    sudo su -
     mkdir /var/lib/mysql/binlogs
     chown -R mysql:mysql /var/lib/mysql/binlogs
     exit

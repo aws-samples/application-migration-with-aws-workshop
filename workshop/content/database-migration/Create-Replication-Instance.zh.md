@@ -3,6 +3,24 @@ title = "创建复制实例"
 weight = 20
 +++
 
+### 创建复制子网组
+
+使用 **AWS DMS** 的一个需求是已经配置了 **子网组**，它是 **DMS 复制实例** 使用的一组子网。
+
+1. 进入 **AWS 控制台 > 服务 > Database Migration Service > 子网组**，点击 **创建子网组** 按钮。
+2. 在 **创建复制子网组** 中，输入下面的参数值：
+
+    | 参数                 | 值                       |
+    | ------------------- | ------------------------ |
+    | 名称                 | dms-subnet-group                 |
+    | 描述                 | Default VPC Subnet Group for DMS |
+    | VPC                 | TargetVPC                        |
+    | 添加子网             | 选择 **TargetVPC-public-a**, **TargetVPC-public-b** |
+
+    ![Replication-instance-networ](/db-mig/subnet-group.zh.png)
+
+3. 点击 **创建子网组** 按钮
+
 ### 创建 AWS DMS 复制实例
 
 在此步骤中，您将创建一个 <a href="https://aws.amazon.com/cn/dms/" target="_blank">AWS Database Migration Service</a> 复制实例，该实例启动源数据库到目标数据库之间的连接，传输数据，并缓存在初始数据加载期间发生在源数据库上的任何更改。
