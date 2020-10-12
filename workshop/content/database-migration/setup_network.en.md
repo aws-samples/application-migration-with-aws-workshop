@@ -29,5 +29,5 @@ Since we don't use a **VPN** or **AWS Direct Connect** in this workshop, **DMS R
 
     b. Enter **Security group name** (for example DB-SG), give it a **Description**, select the **TargetVPC** for the VPC field and press **Create security group** button.
 
-    c. On the **inbound rules** section press the **Add rule** button and configure the rule to allow **inbound** traffic from the **DMS Replication Instance** security group on port 3306 and press **Save rules** button
+    c. On the **inbound rules** section press the **Add rule** button and configure the rule to allow **inbound** traffic from the **DMS Replication Instance** security group (ex. RI-SG) on port 3306 and press **Save rules** button
     ![Adding inbound rule for reserved instance](/db-mig/security-group-inbound-rule.en.png)

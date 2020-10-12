@@ -30,7 +30,7 @@ Still in the **AWS DMS** console, go to **Database migration tasks** and click t
     
     ![create-task-2](/db-mig/create-task-2.png)
     
-3. In the **Table mappings** panel select **Guided UI** mode, press the **Add new selection rule** button and select **wordpress-db** in the **Schema** drop-down.
+3. In the **Table mappings** panel select **Wizard** mode, press the **Add new selection rule** button and select **wordpress-db** in the **Schema** drop-down.
 
     {{% notice note %}}
 If you don't see wordpress-db on the **Schema** drop-down, select **Enter schema** and type **wordpress-db** into the **Schema name** field.
