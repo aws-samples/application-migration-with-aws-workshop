@@ -70,7 +70,7 @@ If you used a different security group name for your RDS instance, you can find 
 
     Open the Webserver Public DNS (IPv4) name in your web browser, you should see a unicorn store.
 
-If everything works fine - proceed to the next phase, so [Optimization]({{< ref "../optimization/_index.en.md" >}})!
+If everything works fine - proceed to the next phase, so [Move to Containers]({{< ref "../container-migration/_index.en.md" >}})!
 
 ## Troubleshooting
 
