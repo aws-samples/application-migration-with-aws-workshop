@@ -3,7 +3,6 @@ title = "Installeer de SW-Agent in de bronomgeving"
 weight = 20
 +++
 
-
 Vanuit de <a href="https://console.cloudendure.com">CloudEndure console</a>, ga naar **Machines**. Hier zie je hoe je servers kunt toevoegen en geeft je instructies hoe je de SW-Agent kunt installeren op de servers in de bronomgeving. 
 
 ![CE-Agent-install](/ce/CE-Agent-install.png)
