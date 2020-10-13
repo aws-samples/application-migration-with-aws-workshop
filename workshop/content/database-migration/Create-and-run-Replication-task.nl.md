@@ -41,3 +41,5 @@ Indien je de **wordpress-db** niet ziet in de **Schema** drop-down lijst, kies d
 1. Scroll naar het einde van het scherm en druk op de **Create task** knop om de taak aan te maken en de replicatie te starten.
 
     ![create-task-4](/db-mig/create-task-4.png)
+
+Wanneer de taak draait, kun je de details bekijken om informatie te krijgen over de tabellen en aantal regels die zijn overgezet.

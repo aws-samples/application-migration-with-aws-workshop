@@ -31,7 +31,7 @@ In het **AWS DMS** scherm, ga naar **Endpoints** en klik op **Create endpoint**.
 
     De test duurt ongeveer een minuut en daarna zie je **successful** in de **Status** kolom. Druk op de **Create endpoint** knop om het **endpoint** te creëren.
     
-    Indien je een foutmelding krijgt - Controleer dat je de parameters voor het **endpoint** juist hebt ingevoerd en dat de replicatie machine is geconfigureerd met de **Publicly Accessible** parameter aan.
+    Indien je een foutmelding krijgt - Controleer dat je de parameters voor het **endpoint** juist hebt ingevoerd en dat de replicatie machine is geconfigureerd met de **Publicly Accessible** parameter aangezet.
 
 2. Creëer het **endpoint** in de doelomgeving
 
@@ -41,14 +41,14 @@ In het **AWS DMS** scherm, ga naar **Endpoints** en klik op **Create endpoint**.
     | ------------------- | ----------------------------------------------------- |
     | Endpoint type       | Target endpoint                                       |
     | Select RDS DB instance | checked                                            |
-    | RDS Instance        | Select your RDS instance from the drop-down (if it's not visible enter values manually)          |
+    | RDS Instance        | Selecteer jouw RDS instance uit de lijst (indien niet zochtbaar, voer handmatig in)          |
     | Endpoint Identifier | target-endpoint                                       |
-    | Target Engine       | mysql (will be pre-populated)                                                |
-    | Server Name         | DNS name of your RDS database (leave the the pre-populated value)                             |
-    | Port                | 3306     (will be pre-populated)                                             |
+    | Target Engine       | mysql (reeds ingevuld)                                                |
+    | Server Name         | DNS naam van jouw RDS database (reeds ingevuld)                             |
+    | Port                | 3306     (reeds ingevuld)                                             |
     | SSL mode            | none                                                  |
-    | User name           | (leave the pre-populated value)                                                 |
-    | Password            | Enter password you used when you creating the RDS database|
+    | User name           | (laat onveranderd)                                                 |
+    | Password            | Het wachtwoord dat je hebt ingesteld voor de RDS database|
 
 
 3. Onder **Endpoint-specific settings** -> **Extra connection attributes** voeg de onderstaande parameter toe:
