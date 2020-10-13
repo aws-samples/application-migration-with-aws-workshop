@@ -11,14 +11,13 @@ Selecteer de **ECS cluster** die je eerder hebt aangemaakt, klik dan op **Servic
 
 ### Stap 1: Configureer de ECS service
 
-In de **Create Service** wizard, volg de onderstaande configuratie (verzeker jezelf ervan dat je **EC2** als **Launch type** hebt geselecteerd).  
-- Selecteer de Taak Definitie die je al eerder hebt aangemaakt  
+In de **Create Service** wizard, volg de onderstaande configuratie (verzeker jezelf ervan dat je **FARGATE** als **Launch type** hebt geselecteerd).  
+- Selecteer de Taak Definitie die je al eerder hebt aangemaakt
+- Selecteer **Platform version 1.4.0** 
 - Selecteer de ECS Cluster die je hebt aangemaakt
 - Geef een name voor de **Service** (b.v. unicorns-svc)  
-- Selecteer **REPLICA** als Service type  
 - Zet het aantal taken op 2  
 - Laat de rest van de standaardwaarden staan en klik op **Next step**  
-
 
 ![configure-service](/ecs/configure-service.png)
 

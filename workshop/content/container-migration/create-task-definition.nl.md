@@ -7,12 +7,15 @@ In het **AWS console**, ga naar **Services**, selecteer **ECS**, en klik op **Ta
 
 ![create-task-def](/ecs/create-task-def.png)
 
-Kies **EC2** als **ECS launch type** en klik op **Next step**
+Kies **FARGATE** als **ECS launch type** en klik op **Next step**
 
 In **Stap 2: Configure task and container definition**, geef de taak definitie een naam (b.v. unicron-task-def) en selecteer **ecsTaskExcutionRole** voor zowel **Task Role** als **Task execution role**. Voor **Network Mode**, selecteer **awsvpc**.
 
-
 ![configure-task-def](/ecs/configure-task-def.png)
+
+Onder **Task size** specificeer de **Task memory (GB)** en **Task CPU (vCPU)**
+
+![task-size](/ecs/task-size.png)
 
 Omdat we het **Amazon EFS** file systeem aan de container willen koppelen, dienen we eerst het file systeem toe te voegen aan de taak definitie voordat we het aan de container kunnen koppelen.
 
@@ -20,33 +23,11 @@ Scroll omlaag naar **Volumes** in de taak definitie en klik op de **Configure vi
 
 ![volumes](/ecs/volumes.png)
 
-Zoek in de JSON naar de sectie **volumes** en voeg hetvolgende toe:
+Onder **Add volume**, selecteer **EFS** voor **volume type** en voer een naam in voor het volume (b.v. wp-content). In **File system ID** selecteer het EFS file systeem dat je eerder hebt aangemaakt, en activeer **Encrption in transit**.
 
-{{% notice note %}}
-In de onderstaande code dien je de DNS naam van je EFS file systeem aan te passen met de DNS naam van het EFS file systeem dat je eerder in deze workshop hebt aangemaakt.
-{{% /notice %}}   
+![add-volume](/ecs/add-volume.png)
 
-```
-        "volumes": [
-            {
-              "name": "wp-content",
-              "host": null,
-              "dockerVolumeConfiguration": {
-                "autoprovision": null,
-                "labels": null,
-                "scope": "task",
-                "driver": "local",
-                "driverOpts": {
-                  "type": "nfs",
-                  "device": "fs-xxxx.efs.<region>.amazonaws.com:/",
-                  "o": "addr=fs- xxxx.efs.<region> .amazonaws.com,nfsvers=4.0,rsize=1048576,wsize=1048576,hard,timeo=600,retrans=2"
-                }
-              }
-            }
-          ],
-```
-
-Nadat je dit hebt toegevoegd, scroll omhoog naar de **Container definition** in de taak definitie pagina.
+Druk op de **Add** knop, en scroll omhoog naar **Container definition** in de taak definitie pagina.
 
 ![add-container](/ecs/add-container.png)
 
