@@ -1,29 +1,11 @@
 +++
 title = "Netwerk configuratie"
-weight = 15
+weight = 10
 +++
 
 Omdat we in deze workshop geen **VPN** of **AWS Direct Connect** gebruiken, moet de **DMS Replication Instance** via internet verbinding maken met de database in de bronomgeving. De verbinding met de database in de doelomgeving verloopt via het interne netwerk.
 
 ![Replication Instance Architecture](/db-mig/ri-network-conf.png)
-
-### Creëer de subnet groep voor de replicatie
-
-Één van de benodigdheden voor het gebruik van **AWS DMS** is een **subnet groep**, een groep van subnets die zal worden gebruikt door de **DMS Replication Instance**. 
-
-1. Ga naar het **AWS Console** en dan naar **Services** en selecteer **Database Migration Service**. Klik dan op **Subnet groups** en op **Create subnet group**.
-2. Onder **Create replication subnet group** vul de onderstaande gegevens in:
-
-    | Parameter           | Waarde                    |
-    | ------------------- | ------------------------ |
-    | Name                | dms-subnet-group     |
-    | Description         | Default VPC Subnet Group for DMS |
-    | VPC                 | TargetVPC   |
-    | Add subnets         | select **TargetVPC-public-a**, **TargetVPC-public-b** |
-
-    ![Replication-instance-networ](/db-mig/subnet-group.png)
-
-3. Klik op de **Create subnet group** knop
 
 ### Configureer de security groep
 

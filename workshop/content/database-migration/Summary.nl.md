@@ -3,7 +3,7 @@ title = "Samenvatting"
 weight = 60
 +++
 
-Gefeliciteerd! Je hebt zojuist succesvol hetvolgende gedaan:
+Gefeliciteerd! Je hebt zojuist hetvolgende succesvol voltooid:
 
 1. Een nieuwe **managed database** opgezet met **Amazon Relational Database Service**
 2. Een nieuwe **AWS Database Migration Service replication instance** opgezet - die het mogelijk maakt data te migreren tussen de databases in de bron- en doelomgeving.

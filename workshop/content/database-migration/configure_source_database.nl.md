@@ -1,6 +1,6 @@
 +++
 title = "Configureer Database in de bronomgeving"
-weight = 35
+weight = 25
 +++
 
 ### Gebruik een DMS Replicatie Taak met Change Data Capture (CDC)
@@ -38,7 +38,7 @@ Voor **AWS DMS** continue replicatie van de MySQL database, dien je de binary lo
     exit
     ```
 
-3. Maak eebn nieuwe folder aan voor de **bin logs** 
+3. Maak een nieuwe folder aan voor de **bin logs** 
 
     Run de volgende commandos op de database machine:
 
