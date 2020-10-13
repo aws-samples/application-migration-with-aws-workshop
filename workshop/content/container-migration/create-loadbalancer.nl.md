@@ -3,6 +3,7 @@ title = "Creëer een AWS Elastic Load Balancer"
 weight = 35
 +++
 
+
 In het **AWS Console**, selecteer **Services**, **EC2** en dan **Load Balancers**
 
 Klik op de **Create Load Balancer** knop en **Application Load Balancer** zoals hieronder weergegeven:
