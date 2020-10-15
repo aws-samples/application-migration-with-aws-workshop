@@ -13,7 +13,7 @@ Dit lab gaat ervan uit dat je toegang hebt tot een **AWS Account** met <a href="
 
 De onderstaande instructies zullen de bronomgeving implementeren in je AWS-account, de geïmplementeerde bronomgeving bestaat uit twee **t3.micro** EC2 machines (één voor webserver, één voor database), een **NAT Gateway**, een **API Gateway** en twee **AWS Lambda functies** (voor het eenvoudig ophalen van **EC2 Access Keys**). 
 
-De totale kosten van middelen die in het hele lab worden ingezet, zijn minder dan $5 (gebasseerd op 4 uur werk), sommige kosten worden gedekt door <a href="https://aws.amazon.com/free/" target="_blank">AWS Free tier</a>. Vergeet niet om uw AWS-account [op te ruimen]({{< ref "./cleanup/_index.nl.md" >}}) na het uitvoeren van de workshop, om onnoodzakelijke kosten te voorkomen!
+De totale kosten van middelen die in het hele lab worden ingezet, zijn minder dan $5 (gebasseerd op 4 uur werk), sommige kosten worden gedekt door <a href="https://aws.amazon.com/free/" target="_blank">AWS Free tier</a>. Vergeet niet om uw AWS-account [op te ruimen]({{< ref "/cleanup/_index.nl.md" >}}) na het uitvoeren van de workshop, om onnoodzakelijke kosten te voorkomen!
 
 #### Optie 1: Eenvoudige implementatie
 

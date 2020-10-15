@@ -1,8 +1,8 @@
+
 +++
 title = "Overzicht"
-weight = 40
+weight = 30
 +++
-
 ## Bronomgeving
 
 De onderstaande bronomgeving is opgezet tijdens het voorbereiden van de workshopomgeving:
@@ -20,4 +20,4 @@ De onderstaande **Amazon Virtual Private Cloud (VPC)** doelomgeving is opgezet t
 
 Het bovenstaande diagram illustreert de VPC in de AWS cloud bestaande uit 6 subnetten (2 public, 2 private voor de webservers en 2 private voor de database) verspreid over 2 availability zones.
 
-Nu kun je verder gaan met het opzetten van [AWS Migration Hub]({{< ref "/migration-hub.en.md" >}})  
+Nu kun je verder gaan met het opzetten van [AWS Migration Hub]({{< ref "/migration-hub.nl.md" >}})
