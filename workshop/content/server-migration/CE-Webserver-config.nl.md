@@ -36,6 +36,19 @@ Zodra de omschakeling (Cutover) is afgerond en **CloudEndure Migration** de EC2 
     - DB_USER - de gebruikersnaam die was geconfigureerd in de **Database Migratie** stap
     - DB_PASSWORD - het wachtwoord dat was geconfigureerd in de **Database Migration** stap
 
+    Voeg ook de onderstaande 2 regels toe aan de configuratie. Vervang **TARGET_WEBSERVER_PUBLIC_DNS** met jouw Webserver EC2 **Public DNS (IPv4)** in de doelomgeving, zodat jouw Wordpress pagina naar de nieuwe webserver wijst.
+              
+    ```
+    define('WP_SITEURL', 'http://TARGET_WEBSERVER_PUBLIC_DNS');        
+    define('WP_HOME',    'http://TARGET_WEBSERVER_PUBLIC_DNS');
+    ```
+    
+    for example
+    ```
+    define('WP_SITEURL', 'http://ec2-34-208-233-184.us-west-2.compute.amazonaws.com');
+    define('WP_HOME',    'http://ec2-34-208-233-184.us-west-2.compute.amazonaws.com');
+   ```
+   
     {{% notice tip %}}
 Voor het bewerken van dit bestand, kun je bijvoorbeeld gebruik maken van <a href="https://www.howtoforge.com/linux-nano-command/" target="_blank">nano</a> of <a href="https://www.washington.edu/computing/unix/vi.html" target="_blank">vi</a>.
 {{% /notice %}}     
@@ -57,7 +70,7 @@ Als je een andere *security group* naam gebruikt voor de RDS database, dan kun j
 
     Open in je web browser het publieke DNS adres (IPv4) van de webserver.Je zou nu de unicorn store web pagina moeten zien.
 
-Indien alles in orde lijkt, ga dan naar de volgende stap [Optimalisatie]("/optimization/_index.nl.md" >)!
+Indien alles in orde lijkt, ga dan naar de volgende stap [Optimalisatie]({{< ref "../optimization/_index.nl.md" >}})!
 
 ## Troubleshooting
 

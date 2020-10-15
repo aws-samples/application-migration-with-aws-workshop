@@ -1,6 +1,6 @@
 +++
 title = "Optimalisatie"
-weight = 30
+weight = 40
 pre = "<b>4. </b>"
 
 +++
@@ -43,6 +43,6 @@ Je kunt ook meer leren over AWS Well Architected door de onderstaande video te b
 
 De onderstaande illustratie is een referentie-architectuur van de totaaloplossing inclusief alle bovenstaande toevoegingen.
 
-![Ref-Architecture](/opt/aws-ref-arch.png)
+![Reference Architecture](/opt/aws-ref-arch.png)
 
 Voor meer informatie, kijk naar de <a href="https://github.com/aws-samples/aws-refarch-wordpress" target="_blank">Reference Architecture for Wordpress on AWS</a>

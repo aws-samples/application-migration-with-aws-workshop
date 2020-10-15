@@ -1,6 +1,6 @@
 +++
 title = "Beginnen met de workshop"
-weight = 10
+weight = 5
 pre = "<b>0. </b>"
 +++
 
@@ -20,3 +20,4 @@ Om te beginnen met de workshop, volg een van de onderstaande instructies afhanke
 | [![Zelfstanding wilt uitvoeren (in je eigen AWS Account)](/intro/option-self-paced.png)]({{< ref "./on-your-own.nl.md" >}}) | [![Wilt uitvoeren tijdens een AWS Event (in een door AWS verstrekte AWS Accounts)](/intro/option-aws-led.png)]({{< ref "./migration-hub.nl.md" >}}) |
 | <center>[Zelfstanding wilt uitvoeren (in je eigen AWS Account)]({{< ref "./on-your-own.nl.md" >}})</center> | <center>[Wilt uitvoeren tijdens een AWS Event (in een door AWS verstrekte AWS Accounts)]({{< ref "./migration-hub.nl.md" >}})</center> |
 
+ Indien je geïnteresseerd bent in een AWS event speciall voor jouw team/organisatie, neem dan contact op via: <a href="mailto:application-migration-workshop@amazon.com">contact us</a>.

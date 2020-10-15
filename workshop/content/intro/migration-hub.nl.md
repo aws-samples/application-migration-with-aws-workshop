@@ -19,7 +19,7 @@ Scroll naar beneden op de pagina en druk op de **Connect** knop voor **AWS Datab
 
 ![Migration Hub - connect DMS](/intro/migration-hub-connect-dms.png)
 
-In enkele seconden veranderd de integratiestatus van **Not connected**, naar **Connected**.
+Binnen enkele seconden veranderd de integratiestatus van **Not connected**, naar **Connected**.
 
 ![Migration Hub - connected DMS](/intro/migration-hub-connect-dms-connected.png)
 

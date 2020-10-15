@@ -19,6 +19,6 @@ Herhaal de bovenstaande stappen voor elke parameter in the tabel.
 | Parameter              | Type             | Waarde                          |
 | ---------------------- | ---------------- |--------------------------------|
 | DB_HOST                | String           | RDS endpoint                   |
-| DB_NAME                | String           | name of the target database  (wordpress-db)  |
+| DB_NAME                | String           | naam van de database in de doelomgeving (wordpress-db)  |
 | DB_USERNAME            | String           | RDS database username          |
 | DB_PASSWORD            | SecureString     | RDS database password          |

@@ -50,7 +50,7 @@ Voordat je verder gaat, **ververs je browser** om de laatste gegevens van je AWS
 
 1. Vul de configuratiegegevens voor de **REPLICATION SETTINGS** in volgens onderstaand schema:
 
-    | Parameter                                  | Value                                                        |
+    | Parameter                                  | Waarde                                                        |
     | ------------------------------------------ | ------------------------------------------------------------ |
     | Migration Source                           | Other Infrastructure                                         |
     | Migration Target                           | AWS US West (Oregon)                                         |

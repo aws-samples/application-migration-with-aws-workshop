@@ -1,13 +1,11 @@
 +++
 title = "Overzicht"
-date = 2019-10-21T09:54:54+02:00
 weight = 40
 +++
 
-Wij vinden het fantastisch dat je de uitdaging aanneemt om onze eCommerce systemen naar de AWS cloud te migreren.
-Hier vind je enige notities van het voorgaande BuyMyUnicorns IT team. Wij hopen dat dit enige hulp biedt!
-
 ## Bronomgeving
+
+De onderstaande bronomgeving is opgezet tijdens het voorbereiden van de workshopomgeving:
 
 ![source-env](/intro/source-env.png)
 
@@ -16,7 +14,10 @@ De bronomgeving bestaat uit een twee-laagse e-commerce applicatie; een webserver
 
 ## Doelomgeving
 
+De onderstaande **Amazon Virtual Private Cloud (VPC)** doelomgeving is opgezet tijdens het voorbereiden van de workshopomgeving:
+
 ![target-env](/intro/target-vpc.png)
 
-Het bovenstaande diagram illustreert de VPC in de AWS cloud bestaande uit 6 subnetten verspreid over 2 availability zones.
+Het bovenstaande diagram illustreert de VPC in de AWS cloud bestaande uit 6 subnetten (2 public, 2 private voor de webservers en 2 private voor de database) verspreid over 2 availability zones.
 
+Nu kun je verder gaan met het opzetten van [AWS Migration Hub]({{< ref "/migration-hub.en.md" >}})  

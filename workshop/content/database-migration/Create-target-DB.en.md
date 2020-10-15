@@ -84,6 +84,7 @@ Note: You will edit the DB-SG VPC security group later to make sure that the DMS
 {{% /notice %}}
 
 5. For the **Database authentication**, choose **Password authentication**.
+
 6. (AWS hosted events only) In the **Additional configuration**, make sure to uncheck **Enable Enhanced monitoring** under the **Monitoring** section as indicated below:
 
     ![6_2_db](/db-mig/6_2_db.png)
