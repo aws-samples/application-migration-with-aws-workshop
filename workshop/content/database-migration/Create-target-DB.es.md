@@ -1,6 +1,6 @@
 +++
 title = "Crear base de datos de destino"
-weight = 10
+weight = 15
 +++
 
 ### Migración de base de datos
@@ -62,7 +62,7 @@ Asegúrese de escribir el nombre de **usuario y la contraseña maestra**, ya que
 
     
 
-3. Para **Availability & durability**, mantenga seleccionada la opción **Do not create a standby instance**. 
+3. Para la **Disponibilidad y Durabilidad (Availability & durability)**, mantenga seleccionada la opción **Do not create a standby instance**. 
 
     ![5_db](/db-mig/5_db.png)
 
