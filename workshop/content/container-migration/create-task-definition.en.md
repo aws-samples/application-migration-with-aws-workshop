@@ -9,7 +9,7 @@ From **AWS console**, go to **Services**, select **ECS**, then click **Task Defi
 
 Choose **FARGATE** launch type compatibility and click **Next step**
 
-In the **Step 2: Configure task and container definition**, enter the **Task Definition Name** (e.g. unicron-task-def) and select **ecsTaskExcutionRole** for both **Task Role** and **Task execution role**. For Network Mode, select **awsvpc**.
+In the **Step 2: Configure task and container definition**, enter the **Task Definition Name** (e.g. unicorn-task-def) and select **ecsTaskExecutionRole** for both **Task Role** and **Task execution role**. For Network Mode, select **awsvpc**.
 
 
 ![configure-task-def](/ecs/configure-task-def.png)
@@ -24,7 +24,7 @@ Scroll down to **Volumes** section in the task definition configuration, and cli
 
 ![volumes](/ecs/volumes.png)
 
-In the **Add volume** window, select **volume type** as **EFS** and provide a name for the volume (eg. wp-content). In the **File system ID** select the EFS volume that you created earlier, and then enable the **Encrption in transit**.
+In the **Add volume** window, select **volume type** as **EFS** and provide a name for the volume (eg. wp-content). In the **File system ID** select the EFS volume that you created earlier, and then enable the **Encryption in transit**.
 
 ![add-volume](/ecs/add-volume.png)
 
