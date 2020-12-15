@@ -1,7 +1,7 @@
 +++
 title = "Optimization"
 weight = 40
-pre = "<b>4. </b>"
+pre = "<b>3. </b>"
 
 +++
 

@@ -1,7 +1,7 @@
 +++
 title = "Cleanup"
 weight = 50
-pre = "<b>5. </b>"
+pre = "<b>4. </b>"
 +++
 
 For the self-paced lab, at the end make sure to delete _all_ resources that you've created, including:
@@ -43,6 +43,9 @@ For the self-paced lab, at the end make sure to delete _all_ resources that you'
 7. In <a href="https://us-west-2.console.aws.amazon.com/cloudformation/home?region=us-west-2#/stacks" target="_blank">AWS CloudFormation</a>            
    - Delete the **ApplicationMigrationWorkshop** stack
 
+8. In <a href="https://us-west-2.console.aws.amazon.com/elasticbeanstalk/home?region=us-west-2#/" target="_blank">AWS ElasticBeanstalk</a>            
+   - Delete the created **Application** 
+   
 When the **ApplicationMigrationWorkshop** stack is deleted, review your AWS Account and **delete all remaining resources that were created during this lab**.
 
 Additionally we would appreciate if you would provide <a href="https://amazonmr.au1.qualtrics.com/jfe/form/SV_0dfrnubGKXavgR7">anonymous feedback for this workshop</a>.
