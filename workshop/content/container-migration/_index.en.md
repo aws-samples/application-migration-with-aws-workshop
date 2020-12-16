@@ -1,12 +1,12 @@
 +++
-title = "Move to Containers"
+title = "Re-platform - Containers"
 date = 2019-10-22T20:48:41+02:00
 weight = 30
-pre = "<b>3. </b>"
+pre = "<b>- </b>"
 +++
 
 {{% notice info %}}
-This section assumes that you have already completed sections **1. Database Migration** and **2. Server Migration**.
+This section assumes that you have already completed  **1. Database Migration** and **2.Server Migration -Re-host with CloudEndure** sections.
 {{% /notice %}}
 
 
