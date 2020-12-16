@@ -7,7 +7,7 @@ pre = "<b>2. </b>"
 
 #### Server Migration Patterns
 
-In this section, you will migrate your web server in different migration patterns. Each migration pattern requires different set of activities, approach and tools. Most common server migration patterns are listed as below.
+In this section, you will migrate your web server using different migration strategies. Each migration strategy requires different set of activities and tools. Most common server migration strategies are listed as below.
 
 1. **REHOST**: Move applications without changes. (aka lift-and-shift). Benefit from AWS migration tools like <a href="https://aws.amazon.com/cloudendure-migration/" target="_blank">CloudEndure</a>, <a href="https://aws.amazon.com/server-migration-service/" target="_blank">SMS</a>
 2. **REPLATFORM**: Make a few cloud optimizations to achieve a tangible benefit. You will not change the core architecture of the application.
