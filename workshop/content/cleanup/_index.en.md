@@ -43,7 +43,7 @@ For the self-paced lab, at the end make sure to delete _all_ resources that you'
 7. In <a href="https://us-west-2.console.aws.amazon.com/cloudformation/home?region=us-west-2#/stacks" target="_blank">AWS CloudFormation</a>            
    - Delete the **ApplicationMigrationWorkshop** stack
 
-8. In <a href="https://us-west-2.console.aws.amazon.com/elasticbeanstalk/home?region=us-west-2#/" target="_blank">AWS ElasticBeanstalk</a>            
+8. In <a href="https://us-west-2.console.aws.amazon.com/elasticbeanstalk/home?region=us-west-2#/" target="_blank">AWS Elastic Beanstalk</a>            
    - Delete the created **Application** 
    
 When the **ApplicationMigrationWorkshop** stack is deleted, review your AWS Account and **delete all remaining resources that were created during this lab**.

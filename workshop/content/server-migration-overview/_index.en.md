@@ -27,4 +27,4 @@ At this point, decide your preferred migration pattern and continue with the rel
 
 2. [Replatform - Containers]({{< ref "/container-migration/_index.en.md" >}})
 
-3. [Replatform - ElasticBeanstalk]({{< ref "/ElasticBeanstalk Migration/_index.en.md" >}})
+3. [Replatform - Elastic Beanstalk]({{< ref "/elasticbeanstalk-migration/_index.en.md" >}})
