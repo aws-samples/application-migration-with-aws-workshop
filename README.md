@@ -4,7 +4,7 @@ master branch: ![Build Status](https://codebuild.us-west-2.amazonaws.com/badges?
 
 Self-paced activity that allows you to learn how to migrate applications to AWS cloud:  
   - Re-hosting of webserver with [AWS CloudEndure Migration](https://aws.amazon.com/cloudendure-migration/)  
-  - Re-platforming of webserver with ElasticBeanstalk
+  - Re-platforming of webserver with [ElasticBeanstalk] (https://aws.amazon.com/elasticbeanstalk/) 
   - Re-platforming of database with [AWS Database Migration Service](https://aws.amazon.com/dms/)  
   - Modernization of webserver to containers running on [Amazon Elastic Container Service](https://aws.amazon.com/ecs/)   
 
