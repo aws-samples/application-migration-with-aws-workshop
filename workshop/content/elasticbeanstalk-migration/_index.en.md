@@ -22,6 +22,17 @@ There is no additional charge for Elastic Beanstalk - you pay only for the AWS r
 To use Elastic Beanstalk, you create an application, upload an application version in the form of an application source bundle (for example, a Java .war file) to Elastic Beanstalk, and then provide information about the application. Elastic Beanstalk automatically launches an environment and creates and configures the AWS resources needed to run your code. After your environment is launched, you can  manage your environment and deploy new application versions. The following diagram illustrates the workflow of Elastic Beanstalk.
 
 ![beanstalk-overview](/beanstalk/eb-process.png)
+
+#### Permissions
+When you create an environment, **AWS Elastic Beanstalk** prompts you to provide two AWS Identity and Access Management (IAM) roles: 
+
+- **Service role**: The service role is assumed by Elastic Beanstalk to use other AWS services on your behalf.
+- **Instance profile**: The instance profile is applied to the instances in your environment and allows them to retrieve application versions from Amazon Simple Storage  Service (Amazon S3), upload logs to Amazon S3, and perform other tasks that vary depending on the environment type and platform.
+
+{{% notice warning %}}
+When running this workshop on your own (not attending an AWS hosted event) we assume you have the necessary IAM privileges in the AWS account to work with ElasticBeanstalk. If you experience any errors (or freeze) on launching ElasticBeanstalk service in your AWS account, check <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/concepts-roles.html" target="_blank">this article</a> for the required IAM configuration. 
+{{% /notice %}}
+
 #### Migrating the Web application to Elastic Beanstalk:
 
 In this module, you will perform the following actions:
