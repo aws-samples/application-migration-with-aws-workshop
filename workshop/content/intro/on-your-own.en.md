@@ -40,8 +40,9 @@ Copy - paste this information, as you will use it during the lab.
 
 Now you can enable [AWS Migration Hub]({{< ref "/migration-hub.en.md" >}})  
 
-
-
+{{% notice note %}}
+If the deployment fails, go to deployment stack **Events** tab and confirm the root cause. A common root cause is **ecsExecutionRole** or **ecsAutoscaleRole** IAM roles already exist in the AWS account. Delete them and re-run deployment of the source environment CloudFormation template. If you have a need for those roles, we recommend checking option 2 and building everything from the source code.
+{{% /notice %}}
 
 #### Option 2: Building everything from the source code
 
