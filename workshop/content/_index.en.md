@@ -13,6 +13,6 @@ We understand that every migration is different; however, based on our experienc
 In this workshop we will focus on **Migrate & Modernize** phase, you will learn how to migrate a fictional application to AWS cloud by:
 
   - **Re-platforming** of database with <a href="https://aws.amazon.com/dms/" target="_blank" >AWS Database Migration Service</a>
-  - **Re-hosting** of webserver with <a href="https://aws.amazon.com/cloudendure-migration/" target="_blank" >AWS CloudEndure Migration</a>
+  - **Re-hosting** of webserver with <a href="https://aws.amazon.com/application-migration-service/">AWS Application Migration Service</a> or <a href="https://aws.amazon.com/cloudendure-migration/" target="_blank" >AWS CloudEndure Migration</a>
   - **Modernization** of webserver to containers running on <a href="https://aws.amazon.com/ecs/" target="_blank" >Amazon Elastic Container Service</a>
   - (optional) Improvement of **Operation Excellence**, **Security**, **Performance Efficiency** and **Cost Optimization** of the deployed architecture by following the <a href="https://aws.amazon.com/architecture/well-architected/" target="_blank" >Well Architected Framework</a>
