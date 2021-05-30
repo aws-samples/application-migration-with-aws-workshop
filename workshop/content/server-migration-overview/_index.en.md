@@ -9,7 +9,7 @@ pre = "<b>2. </b>"
 
 In this section, you will migrate your web server using different migration strategies. Each migration strategy requires different set of activities and tools. Most common server migration strategies are listed as below.
 
-1. **REHOST**: Move applications without changes. (aka lift-and-shift). Benefit from AWS migration tools like <a href="https://aws.amazon.com/cloudendure-migration/" target="_blank">CloudEndure</a>, <a href="https://aws.amazon.com/server-migration-service/" target="_blank">SMS</a>
+1. **REHOST**: Move applications without changes, (also known as lift-and-shift). Benefit from AWS migration tools like agent-based <a href="https://aws.amazon.com/application-migration-service/">Application Migration Service</a>, <a href="https://aws.amazon.com/cloudendure-migration/" target="_blank">CloudEndure Migration</a> or agent-less <a href="https://aws.amazon.com/server-migration-service/" target="_blank">Server Migration Service</a>.
 2. **REPLATFORM**: Make a few cloud optimizations to achieve a tangible benefit. You will not change the core architecture of the application.
 3. **REPURCHASE**: Move from perpetual licenses to a software-as-a-service model. <a href="https://aws.amazon.com/mp/migration/" target="_blank">AWS Marketplace</a> offers a curated digital catalog of software solutions that support each phase of migration.
 4. **REFACTOR**: Re-imagine how the application is architected and developed using cloud-native features.
@@ -20,8 +20,10 @@ In this section, you will migrate your web server using different migration stra
 
 #### Choose your Migration Pattern 
 
-At this point, decide your preferred migration pattern and continue with the related section; 
+At this point, decide your preferred migration pattern and continue with the related section: 
 
+
+1. [Rehost with Application Migration  Service]({{< ref "/app-mig-service/_index.en.md" >}}) - primary migration service recommended for lift-and-shift migrations to AWS
 
 1. [Rehost with CloudEndure]({{< ref "/server-migration/_index.en.md" >}})
 
