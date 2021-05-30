@@ -3,7 +3,7 @@ master branch: ![Build Status](https://codebuild.us-west-2.amazonaws.com/badges?
 **Application Migration Workshop** - https://application-migration-with-aws.workshop.aws/
 
 Self-paced activity that allows you to learn how to migrate applications to AWS cloud:  
-  - Re-hosting of webserver with [AWS CloudEndure Migration](https://aws.amazon.com/cloudendure-migration/)  
+  - Re-hosting of webserver with [AWS Application Migration Service](https://aws.amazon.com/application-migration-service/) or [AWS CloudEndure Migration](https://aws.amazon.com/cloudendure-migration/)  
   - Re-platforming of webserver with [AWS Elastic Beanstalk](https://aws.amazon.com/elasticbeanstalk/) 
   - Re-platforming of database with [AWS Database Migration Service](https://aws.amazon.com/dms/)  
   - Modernization of webserver to containers running on [Amazon Elastic Container Service](https://aws.amazon.com/ecs/)   
@@ -17,6 +17,7 @@ This repository includes:
    - An Amazon EC2 machine with MySQL database (ubuntu)   
    - Two AWS Lambda Functions (one generating EC2 Key Pair, one retrieving the EC2 Key Pair)   
    - Amazon API Gateway as the entry point for lambdas   
+   - Users and roles required to run the workshop
 
 **Contributions**
 
