@@ -1,0 +1,992 @@
+AWSTemplateFormatVersion: 2010-09-09
+Transform: AWS::Serverless-2016-10-31
+Description: Migration Workshop Source Environment
+Parameters:
+  KeyName:
+    Description: Name of the EC2 KeyPair to enable SSH access to the instances
+    Type: String
+    Default: linux_servers_ssh_key
+  SourceVPCName:
+    Description: The name of the Source VPC being created.
+    Type: String
+    Default: SourceVPC
+  TargetVPCName:
+    Description: The name of the Target VPC being created.
+    Type: String
+    Default: TargetVPC
+Mappings:
+  SubnetConfig:
+    TargetVPC:
+      CIDR: 10.0.0.0/16
+    Public0:
+      CIDR: 10.0.0.0/24
+    Public1:
+      CIDR: 10.0.1.0/24
+    Private00:
+      CIDR: 10.0.100.0/24
+    Private10:
+      CIDR: 10.0.200.0/24
+    Private01:
+      CIDR: 10.0.101.0/24
+    Private11:
+      CIDR: 10.0.201.0/24
+  AZRegions:
+    us-east-1:
+      AZs:
+      - a
+      - b
+    us-west-2:
+      AZs:
+      - a
+      - b
+Resources:
+  SourceEnvVPC:
+    Type: AWS::EC2::VPC
+    Properties:
+      CidrBlock: 10.0.0.0/16
+      EnableDnsSupport: 'true'
+      EnableDnsHostnames: 'true'
+      Tags:
+      - Key: Name
+        Value:
+          Ref: SourceVPCName
+  SourceEnvSubnet:
+    Type: AWS::EC2::Subnet
+    Properties:
+      VpcId:
+        Ref: SourceEnvVPC
+      AvailabilityZone:
+        Fn::Sub:
+        - ${AWS::Region}${AZ}
+        - AZ:
+            Fn::Select:
+            - 0
+            - Fn::FindInMap:
+              - AZRegions
+              - Ref: AWS::Region
+              - AZs
+      CidrBlock: 10.0.0.0/24
+      MapPublicIpOnLaunch: 'true'
+      Tags:
+      - Key: Network
+        Value: Public
+      - Key: Name
+        Value:
+          Fn::Join:
+          - ''
+          - - Ref: SourceVPCName
+            - -public-
+            - Fn::Select:
+              - 0
+              - Fn::FindInMap:
+                - AZRegions
+                - Ref: AWS::Region
+                - AZs
+  WebServerSG:
+    Type: AWS::EC2::SecurityGroup
+    DependsOn:
+    - SourceEnvSubnet
+    Properties:
+      GroupName: WebServerSG
+      GroupDescription: Web Server SG
+      VpcId:
+        Ref: SourceEnvVPC
+      SecurityGroupIngress:
+      - IpProtocol: tcp
+        FromPort: '22'
+        ToPort: '22'
+        CidrIp: '0.0.0.0/0'
+      Tags:
+      - Key: Name
+        Value: WebServerSG
+  DBServerSG:
+    Type: AWS::EC2::SecurityGroup
+    DependsOn:
+    - SourceEnvSubnet
+    Properties:
+      GroupName: DBServerSG
+      GroupDescription: DB Server SG
+      VpcId:
+        Ref: SourceEnvVPC
+      SecurityGroupIngress:
+      - IpProtocol: tcp
+        FromPort: '22'
+        ToPort: '22'
+        CidrIp: '0.0.0.0/0'
+      Tags:
+      - Key: Name
+        Value: DBServerSG
+  WebIngress3:
+    Type: AWS::EC2::SecurityGroupIngress
+    DependsOn:
+    - WebServerSG
+    Properties:
+      IpProtocol: tcp
+      ToPort: 80
+      FromPort: 80
+      CidrIp: '0.0.0.0/0'
+      GroupId:
+        Ref: WebServerSG
+  WebIngress4:
+    Type: AWS::EC2::SecurityGroupIngress
+    DependsOn:
+    - WebServerSG
+    Properties:
+      IpProtocol: tcp
+      ToPort: 443
+      FromPort: 443
+      CidrIp: '0.0.0.0/0'
+      GroupId:
+        Ref: WebServerSG
+  DBIngress:
+    Type: AWS::EC2::SecurityGroupIngress
+    DependsOn:
+    - DBServerSG
+    Properties:
+      GroupId:
+        Ref: DBServerSG
+      IpProtocol: tcp
+      ToPort: 3306
+      FromPort: 3306
+      SourceSecurityGroupId:
+        Ref: WebServerSG
+  DBIngress2:
+    Type: AWS::EC2::SecurityGroupIngress
+    DependsOn:
+    - DBServerSG
+    Properties:
+      GroupId:
+        Ref: DBServerSG
+      IpProtocol: tcp
+      ToPort: 3306
+      FromPort: 3306
+      CidrIp: '0.0.0.0/0'
+  SourceGateway:
+    Type: AWS::EC2::InternetGateway
+    Properties:
+      Tags:
+      - Key: Name
+        Value:
+          Fn::Join:
+          - ''
+          - - Ref: SourceVPCName
+            - -IGW
+  AttachGateway:
+    Type: AWS::EC2::VPCGatewayAttachment
+    DependsOn:
+    - SourceEnvVPC
+    Properties:
+      VpcId:
+        Ref: SourceEnvVPC
+      InternetGatewayId:
+        Ref: SourceGateway
+  SourceEnvRouteTable:
+    Type: AWS::EC2::RouteTable
+    DependsOn:
+    - SourceEnvVPC
+    - SourceEnvSubnet
+    Properties:
+      VpcId:
+        Ref: SourceEnvVPC
+      Tags:
+      - Key: Name
+        Value:
+          Fn::Join:
+          - ''
+          - - Ref: SourceVPCName
+            - -public-route-table
+  SourceEnvRouteTableAssociation:
+    Type: AWS::EC2::SubnetRouteTableAssociation
+    DependsOn:
+    - SourceEnvSubnet
+    - SourceEnvRouteTable
+    Properties:
+      SubnetId:
+        Ref: SourceEnvSubnet
+      RouteTableId:
+        Ref: SourceEnvRouteTable
+  SourceEnvAllRoute:
+    Type: AWS::EC2::Route
+    DependsOn:
+    - SourceEnvRouteTable
+    Properties:
+      RouteTableId:
+        Ref: SourceEnvRouteTable
+      DestinationCidrBlock: '0.0.0.0/0'
+      GatewayId:
+        Ref: SourceGateway
+  WebServer:
+    Type: AWS::EC2::Instance
+    DependsOn:
+    - DBServer
+    - SSHKeyGeneratorExecution
+    Properties:
+      InstanceType: t3.small
+      SecurityGroupIds:
+      - Ref: WebServerSG
+      SubnetId:
+        Ref: SourceEnvSubnet
+      KeyName:
+        Ref: KeyName
+      ImageId: ami-0d1cd67c26f5fca19
+      BlockDeviceMappings:
+      - DeviceName: /dev/xvda
+        Ebs:
+          VolumeSize: 16
+      Monitoring: true
+      IamInstanceProfile:
+        Ref: EC2InstanceProfile
+      UserData:
+        Fn::Base64:
+          Fn::Sub: "#!/bin/bash -x\nif [-f \"./dont_run_again\"]\nthen\n  echo \"\
+            Initialization was done already earlier\"\nelse\n  apt-get update\n  apt-get\
+            \ install dos2unix wget -y\n  cd ~ && wget https://application-migration-with-aws-workshop.s3-us-west-2.amazonaws.com/scripts/webserver_ubuntu.sh\n\
+            \  chmod +x ./webserver_ubuntu.sh\n  dos2unix *.sh\n  export DB_IP=${DBServer.PrivateIp}\n\
+            \  export WEBSERVER_DOMAIN_NAME=$(curl http://169.254.169.254/latest/meta-data/public-hostname)\n\
+            \  su -c '/bin/bash webserver_ubuntu.sh'\n  rm ./webserver_ubuntu.sh\n\
+            \  touch ./dont_run_again\nfi\n"
+      Tags:
+      - Key: Name
+        Value: Source-Webserver
+  DBServer:
+    Type: AWS::EC2::Instance
+    DependsOn:
+    - SSHKeyGeneratorExecution
+    Properties:
+      InstanceType: t3.micro
+      SecurityGroupIds:
+      - Ref: DBServerSG
+      SubnetId:
+        Ref: SourceEnvSubnet
+      KeyName:
+        Ref: KeyName
+      ImageId: ami-0d1cd67c26f5fca19
+      Monitoring: true
+      IamInstanceProfile:
+        Ref: EC2InstanceProfile
+      UserData:
+        Fn::Base64:
+          Fn::Sub: "#!/bin/bash -x\nif [-f \"./dont_run_again\"]\nthen\n  echo \"\
+            Initialization was done already earlier\"\nelse\n  apt-get update\n  apt-get\
+            \ install dos2unix wget -y\n  cd ~ && wget https://application-migration-with-aws-workshop.s3-us-west-2.amazonaws.com/scripts/database_ubuntu.sh\n\
+            \  chmod +x ./database_ubuntu.sh\n  dos2unix *.sh\n  su -c '/bin/bash\
+            \ database_ubuntu.sh'\n  rm ./database_ubuntu.sh\n  touch ./dont_run_again\n\
+            fi\n"
+      Tags:
+      - Key: Name
+        Value: Source-DBServer
+  EC2InstanceRole:
+    Type: AWS::IAM::Role
+    Properties:
+      Path: /
+      AssumeRolePolicyDocument:
+        Version: 2012-10-17
+        Statement:
+        - Effect: Allow
+          Principal:
+            Service:
+            - ec2.amazonaws.com
+          Action:
+          - sts:AssumeRole
+      ManagedPolicyArns:
+      - arn:aws:iam::aws:policy/service-role/AmazonEC2RoleforSSM
+  SSHKeyGenerator:
+    Type: AWS::Serverless::Function
+    Properties:
+      Timeout: 60
+      Runtime: python3.8
+      Handler: generate_ssh_key.lambda_handler
+      Role:
+        Fn::GetAtt:
+        - SSHKeyGeneratorRole
+        - Arn
+      CodeUri: s3://application-migration-with-aws-workshop/lambda/8a116868f7d42fd6d751332d02a4326e
+  SSHKeyGeneratorExecution:
+    Type: Custom::SSHKeyGenerator
+    DependsOn:
+    - SSHKeyGenerator
+    Properties:
+      ServiceToken:
+        Fn::GetAtt:
+        - SSHKeyGenerator
+        - Arn
+  SSHKeyGeneratorRole:
+    Type: AWS::IAM::Role
+    Properties:
+      Path: /
+      AssumeRolePolicyDocument:
+        Version: 2012-10-17
+        Statement:
+        - Effect: Allow
+          Principal:
+            Service:
+            - lambda.amazonaws.com
+          Action:
+          - sts:AssumeRole
+      Policies:
+      - PolicyName: root
+        PolicyDocument:
+          Version: 2012-10-17
+          Statement:
+          - Effect: Allow
+            Action:
+            - logs:CreateLogGroup
+            - logs:CreateLogStream
+            - logs:PutLogEvents
+            - ssm:*
+            - ec2:*
+            Resource: '*'
+  EC2InstanceProfile:
+    Type: AWS::IAM::InstanceProfile
+    Properties:
+      Path: /
+      Roles:
+      - Ref: EC2InstanceRole
+  ApiGw:
+    Type: AWS::Serverless::Api
+    Properties:
+      StageName: prod
+  GetSSMParamFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      Timeout: 60
+      Runtime: python3.8
+      Handler: index.lambda_handler
+      Role:
+        Fn::GetAtt:
+        - GetSSMParamFunctionRole
+        - Arn
+      CodeUri: s3://application-migration-with-aws-workshop/lambda/47997b93d8ea743adbd2cbef43361b3e
+      Events:
+        SSMReturningApi:
+          Type: Api
+          Properties:
+            Path: /get_ssm_param
+            Method: GET
+            RestApiId:
+              Ref: ApiGw
+  GetSSMParamFunctionRole:
+    Type: AWS::IAM::Role
+    Properties:
+      Path: /
+      AssumeRolePolicyDocument:
+        Version: 2012-10-17
+        Statement:
+        - Effect: Allow
+          Principal:
+            Service:
+            - lambda.amazonaws.com
+          Action:
+          - sts:AssumeRole
+      Policies:
+      - PolicyName: root
+        PolicyDocument:
+          Version: 2012-10-17
+          Statement:
+          - Effect: Allow
+            Action:
+            - logs:CreateLogGroup
+            - logs:CreateLogStream
+            - logs:PutLogEvents
+            - 'ssm:'
+            - cloudwatch:*
+            - ssm:GetParameter
+            Resource: '*'
+  TargetVPC:
+    Type: AWS::EC2::VPC
+    Properties:
+      EnableDnsSupport: 'true'
+      EnableDnsHostnames: 'true'
+      CidrBlock:
+        Fn::FindInMap:
+        - SubnetConfig
+        - TargetVPC
+        - CIDR
+      Tags:
+      - Key: Name
+        Value:
+          Ref: TargetVPCName
+  PublicSubnet0:
+    Type: AWS::EC2::Subnet
+    Properties:
+      VpcId:
+        Ref: TargetVPC
+      AvailabilityZone:
+        Fn::Sub:
+        - ${AWS::Region}${AZ}
+        - AZ:
+            Fn::Select:
+            - 0
+            - Fn::FindInMap:
+              - AZRegions
+              - Ref: AWS::Region
+              - AZs
+      CidrBlock:
+        Fn::FindInMap:
+        - SubnetConfig
+        - Public0
+        - CIDR
+      MapPublicIpOnLaunch: 'true'
+      Tags:
+      - Key: Network
+        Value: Public
+      - Key: Name
+        Value:
+          Fn::Join:
+          - ''
+          - - Ref: TargetVPCName
+            - -public-
+            - Fn::Select:
+              - 0
+              - Fn::FindInMap:
+                - AZRegions
+                - Ref: AWS::Region
+                - AZs
+  PublicSubnet1:
+    Type: AWS::EC2::Subnet
+    Properties:
+      VpcId:
+        Ref: TargetVPC
+      AvailabilityZone:
+        Fn::Sub:
+        - ${AWS::Region}${AZ}
+        - AZ:
+            Fn::Select:
+            - 1
+            - Fn::FindInMap:
+              - AZRegions
+              - Ref: AWS::Region
+              - AZs
+      CidrBlock:
+        Fn::FindInMap:
+        - SubnetConfig
+        - Public1
+        - CIDR
+      MapPublicIpOnLaunch: 'true'
+      Tags:
+      - Key: Network
+        Value: Public
+      - Key: Name
+        Value:
+          Fn::Join:
+          - ''
+          - - Ref: TargetVPCName
+            - -public-
+            - Fn::Select:
+              - 1
+              - Fn::FindInMap:
+                - AZRegions
+                - Ref: AWS::Region
+                - AZs
+  PrivateSubnet00:
+    Type: AWS::EC2::Subnet
+    Properties:
+      VpcId:
+        Ref: TargetVPC
+      AvailabilityZone:
+        Fn::Sub:
+        - ${AWS::Region}${AZ}
+        - AZ:
+            Fn::Select:
+            - 0
+            - Fn::FindInMap:
+              - AZRegions
+              - Ref: AWS::Region
+              - AZs
+      CidrBlock:
+        Fn::FindInMap:
+        - SubnetConfig
+        - Private00
+        - CIDR
+      Tags:
+      - Key: Network
+        Value: Private
+      - Key: Name
+        Value:
+          Fn::Join:
+          - ''
+          - - Ref: TargetVPCName
+            - -private-
+            - Fn::Select:
+              - 0
+              - Fn::FindInMap:
+                - AZRegions
+                - Ref: AWS::Region
+                - AZs
+            - -web
+  PrivateSubnet01:
+    Type: AWS::EC2::Subnet
+    Properties:
+      VpcId:
+        Ref: TargetVPC
+      AvailabilityZone:
+        Fn::Sub:
+        - ${AWS::Region}${AZ}
+        - AZ:
+            Fn::Select:
+            - 0
+            - Fn::FindInMap:
+              - AZRegions
+              - Ref: AWS::Region
+              - AZs
+      CidrBlock:
+        Fn::FindInMap:
+        - SubnetConfig
+        - Private01
+        - CIDR
+      Tags:
+      - Key: Network
+        Value: Private
+      - Key: Name
+        Value:
+          Fn::Join:
+          - ''
+          - - Ref: TargetVPCName
+            - -private-
+            - Fn::Select:
+              - 0
+              - Fn::FindInMap:
+                - AZRegions
+                - Ref: AWS::Region
+                - AZs
+            - -db
+  PrivateSubnet10:
+    Type: AWS::EC2::Subnet
+    Properties:
+      VpcId:
+        Ref: TargetVPC
+      AvailabilityZone:
+        Fn::Sub:
+        - ${AWS::Region}${AZ}
+        - AZ:
+            Fn::Select:
+            - 1
+            - Fn::FindInMap:
+              - AZRegions
+              - Ref: AWS::Region
+              - AZs
+      CidrBlock:
+        Fn::FindInMap:
+        - SubnetConfig
+        - Private10
+        - CIDR
+      Tags:
+      - Key: Network
+        Value: Private
+      - Key: Name
+        Value:
+          Fn::Join:
+          - ''
+          - - Ref: TargetVPCName
+            - -private-
+            - Fn::Select:
+              - 1
+              - Fn::FindInMap:
+                - AZRegions
+                - Ref: AWS::Region
+                - AZs
+            - -web
+  PrivateSubnet11:
+    Type: AWS::EC2::Subnet
+    Properties:
+      VpcId:
+        Ref: TargetVPC
+      AvailabilityZone:
+        Fn::Sub:
+        - ${AWS::Region}${AZ}
+        - AZ:
+            Fn::Select:
+            - 1
+            - Fn::FindInMap:
+              - AZRegions
+              - Ref: AWS::Region
+              - AZs
+      CidrBlock:
+        Fn::FindInMap:
+        - SubnetConfig
+        - Private11
+        - CIDR
+      Tags:
+      - Key: Network
+        Value: Private
+      - Key: Name
+        Value:
+          Fn::Join:
+          - ''
+          - - Ref: TargetVPCName
+            - -private-
+            - Fn::Select:
+              - 1
+              - Fn::FindInMap:
+                - AZRegions
+                - Ref: AWS::Region
+                - AZs
+            - -db
+  InternetGateway:
+    Type: AWS::EC2::InternetGateway
+    Properties:
+      Tags:
+      - Key: Name
+        Value:
+          Fn::Join:
+          - ''
+          - - Ref: TargetVPCName
+            - -IGW
+  GatewayToInternet:
+    Type: AWS::EC2::VPCGatewayAttachment
+    Properties:
+      VpcId:
+        Ref: TargetVPC
+      InternetGatewayId:
+        Ref: InternetGateway
+  PublicRouteTable:
+    Type: AWS::EC2::RouteTable
+    Properties:
+      VpcId:
+        Ref: TargetVPC
+      Tags:
+      - Key: Network
+        Value: Public
+      - Key: Name
+        Value:
+          Fn::Join:
+          - ''
+          - - Ref: TargetVPCName
+            - -public-route-table
+  PublicRoute:
+    Type: AWS::EC2::Route
+    DependsOn: GatewayToInternet
+    Properties:
+      RouteTableId:
+        Ref: PublicRouteTable
+      DestinationCidrBlock: '0.0.0.0/0'
+      GatewayId:
+        Ref: InternetGateway
+  PublicSubnetRouteTableAssociation0:
+    Type: AWS::EC2::SubnetRouteTableAssociation
+    Properties:
+      SubnetId:
+        Ref: PublicSubnet0
+      RouteTableId:
+        Ref: PublicRouteTable
+  PublicSubnetRouteTableAssociation1:
+    Type: AWS::EC2::SubnetRouteTableAssociation
+    Properties:
+      SubnetId:
+        Ref: PublicSubnet1
+      RouteTableId:
+        Ref: PublicRouteTable
+  PublicNetworkAcl:
+    Type: AWS::EC2::NetworkAcl
+    Properties:
+      VpcId:
+        Ref: TargetVPC
+      Tags:
+      - Key: Network
+        Value: Public
+      - Key: Name
+        Value:
+          Fn::Join:
+          - ''
+          - - Ref: TargetVPCName
+            - -public-nacl
+  InboundHTTPPublicNetworkAclEntry:
+    Type: AWS::EC2::NetworkAclEntry
+    Properties:
+      NetworkAclId:
+        Ref: PublicNetworkAcl
+      RuleNumber: '100'
+      Protocol: '-1'
+      RuleAction: allow
+      Egress: 'false'
+      CidrBlock: '0.0.0.0/0'
+      PortRange:
+        From: '0'
+        To: '65535'
+  OutboundPublicNetworkAclEntry:
+    Type: AWS::EC2::NetworkAclEntry
+    Properties:
+      NetworkAclId:
+        Ref: PublicNetworkAcl
+      RuleNumber: '100'
+      Protocol: '-1'
+      RuleAction: allow
+      Egress: 'true'
+      CidrBlock: '0.0.0.0/0'
+      PortRange:
+        From: '0'
+        To: '65535'
+  PublicSubnetNetworkAclAssociation0:
+    Type: AWS::EC2::SubnetNetworkAclAssociation
+    Properties:
+      SubnetId:
+        Ref: PublicSubnet0
+      NetworkAclId:
+        Ref: PublicNetworkAcl
+  PublicSubnetNetworkAclAssociation1:
+    Type: AWS::EC2::SubnetNetworkAclAssociation
+    Properties:
+      SubnetId:
+        Ref: PublicSubnet1
+      NetworkAclId:
+        Ref: PublicNetworkAcl
+  ElasticIP0:
+    Type: AWS::EC2::EIP
+    Properties:
+      Domain: vpc
+      Tags:
+      - Key: Name
+        Value:
+          Fn::Join:
+          - ''
+          - - Ref: TargetVPCName
+            - -nat-gateway-eip-0
+  ElasticIP1:
+    Type: AWS::EC2::EIP
+    Properties:
+      Domain: vpc
+      Tags:
+      - Key: Name
+        Value:
+          Fn::Join:
+          - ''
+          - - Ref: TargetVPCName
+            - -nat-gateway-eip-1
+  NATGateway0:
+    Type: AWS::EC2::NatGateway
+    Properties:
+      AllocationId:
+        Fn::GetAtt:
+        - ElasticIP0
+        - AllocationId
+      SubnetId:
+        Ref: PublicSubnet0
+      Tags:
+      - Key: Name
+        Value:
+          Fn::Join:
+          - ''
+          - - Ref: TargetVPCName
+            - -nat-gateway-0
+  NATGateway1:
+    Type: AWS::EC2::NatGateway
+    Properties:
+      AllocationId:
+        Fn::GetAtt:
+        - ElasticIP1
+        - AllocationId
+      SubnetId:
+        Ref: PublicSubnet1
+      Tags:
+      - Key: Name
+        Value:
+          Fn::Join:
+          - ''
+          - - Ref: TargetVPCName
+            - -nat-gateway-1
+  PrivateRouteTable0:
+    Type: AWS::EC2::RouteTable
+    Properties:
+      VpcId:
+        Ref: TargetVPC
+      Tags:
+      - Key: Name
+        Value:
+          Fn::Join:
+          - ''
+          - - Ref: TargetVPCName
+            - -private-route-table-0
+  PrivateRouteTable1:
+    Type: AWS::EC2::RouteTable
+    Properties:
+      VpcId:
+        Ref: TargetVPC
+      Tags:
+      - Key: Name
+        Value:
+          Fn::Join:
+          - ''
+          - - Ref: TargetVPCName
+            - -private-route-table-1
+  PrivateRouteToInternet0:
+    Type: AWS::EC2::Route
+    Properties:
+      RouteTableId:
+        Ref: PrivateRouteTable0
+      DestinationCidrBlock: '0.0.0.0/0'
+      NatGatewayId:
+        Ref: NATGateway0
+  PrivateRouteToInternet1:
+    Type: AWS::EC2::Route
+    Properties:
+      RouteTableId:
+        Ref: PrivateRouteTable1
+      DestinationCidrBlock: '0.0.0.0/0'
+      NatGatewayId:
+        Ref: NATGateway1
+  PrivateSubnetRouteTableAssociation00:
+    Type: AWS::EC2::SubnetRouteTableAssociation
+    Properties:
+      SubnetId:
+        Ref: PrivateSubnet00
+      RouteTableId:
+        Ref: PrivateRouteTable0
+  PrivateSubnetRouteTableAssociation01:
+    Type: AWS::EC2::SubnetRouteTableAssociation
+    Properties:
+      SubnetId:
+        Ref: PrivateSubnet01
+      RouteTableId:
+        Ref: PrivateRouteTable0
+  PrivateSubnetRouteTableAssociation10:
+    Type: AWS::EC2::SubnetRouteTableAssociation
+    Properties:
+      SubnetId:
+        Ref: PrivateSubnet10
+      RouteTableId:
+        Ref: PrivateRouteTable1
+  PrivateSubnetRouteTableAssociation11:
+    Type: AWS::EC2::SubnetRouteTableAssociation
+    Properties:
+      SubnetId:
+        Ref: PrivateSubnet11
+      RouteTableId:
+        Ref: PrivateRouteTable1
+  CloudEndureUser:
+    Type: AWS::IAM::User
+    Properties:
+      UserName: CloudEndureUser
+      Path: /
+      Policies:
+      - PolicyName: MigrationPolicy
+        PolicyDocument:
+          Version: '2012-10-17'
+          Statement:
+          - Effect: Allow
+            Action:
+            - ec2:*
+            - elasticloadbalancing:*
+            - cloudwatch:*
+            - autoscaling:*
+            - iam:GetUser
+            - iam:PassRole
+            - iam:ListRoles
+            - iam:GetRole
+            - iam:ListInstanceProfiles
+            - iam:ListAttachedRolePolicies
+            - kms:*
+            - mgh:*
+            - s3:*
+            Resource: '*'
+  MigrationAccessKeys:
+    Type: AWS::IAM::AccessKey
+    DependsOn:
+    - CloudEndureUser
+    Properties:
+      UserName: CloudEndureUser
+  ecsTaskExecutionRole:
+    Type: AWS::IAM::Role
+    Properties:
+      Path: /
+      RoleName: ecsTaskExecutionRole
+      AssumeRolePolicyDocument:
+        Version: 2012-10-17
+        Statement:
+        - Effect: Allow
+          Principal:
+            Service:
+            - ecs-tasks.amazonaws.com
+          Action:
+          - sts:AssumeRole
+      ManagedPolicyArns:
+      - arn:aws:iam::aws:policy/service-role/AmazonECSTaskExecutionRolePolicy
+      Policies:
+      - PolicyName: taskPolicy
+        PolicyDocument:
+          Version: '2012-10-17'
+          Statement:
+          - Effect: Allow
+            Action: ssm:DescribeParameters
+            Resource: '*'
+          - Effect: Allow
+            Action: ssm:GetParameters
+            Resource: '*'
+          - Effect: Allow
+            Action: kms:Decrypt
+            Resource: '*'
+          - Effect: Allow
+            Action: elasticfilesystem:*
+            Resource: '*'
+  ecsAutoscaleRole:
+    Type: AWS::IAM::Role
+    Properties:
+      Path: /
+      RoleName: ecsAutoscaleRole
+      AssumeRolePolicyDocument:
+        Version: 2012-10-17
+        Statement:
+        - Effect: Allow
+          Principal:
+            Service:
+            - application-autoscaling.amazonaws.com
+          Action:
+          - sts:AssumeRole
+      ManagedPolicyArns:
+      - arn:aws:iam::aws:policy/service-role/AmazonEC2ContainerServiceAutoscaleRole
+  AppMigServiceAgentUser:
+    Type: AWS::IAM::User
+    Properties:
+      UserName: AppMigServiceAgentUser
+      Path: /
+      ManagedPolicyArns: 
+      - arn:aws:iam::aws:policy/AWSApplicationMigrationAgentPolicy
+  AppMigServiceAccessKeys:
+    Type: AWS::IAM::AccessKey
+    DependsOn:
+    - AppMigServiceAgentUser
+    Properties:
+      UserName: AppMigServiceAgentUser  
+Outputs:
+  WebServerUsername:
+    Description: Username for webserver
+    Value: ubuntu
+  WebServerDNSName:
+    Description: The Web Server DNS Name
+    Value:
+      Fn::GetAtt:
+      - WebServer
+      - PublicDnsName
+  DBServerUsername:
+    Description: Username for database server
+    Value: ubuntu
+  DBServerDNSName:
+    Description: The DB Server DNS Name
+    Value:
+      Fn::GetAtt:
+      - DBServer
+      - PublicDnsName
+  SSHKeyURL:
+    Description: URL to get the SSH Key
+    Value:
+      Fn::Sub: https://${ApiGw}.execute-api.${AWS::Region}.amazonaws.com/prod/get_ssm_param
+  CloudEndureUserAccessKey:
+    Description: CloudEndure Migration IAM User Access Key
+    Value:
+      Ref: MigrationAccessKeys
+  CloudEndureUserSecretAccessKey:
+    Description: CloudEndure Migration IAM User Secret Access Key
+    Value:
+      Fn::GetAtt:
+      - MigrationAccessKeys
+      - SecretAccessKey
+  AppMigServiceAccessKey:
+    Description: Application Migration Service IAM User Access Key ID
+    Value:
+      Ref: AppMigServiceAccessKeys
+  AppMigServiceSecretAccessKey:
+    Description: Application Migration Service IAM User Secret Access Key
+    Value:
+      Fn::GetAtt:
+      - AppMigServiceAccessKeys
+      - SecretAccessKey
+
