@@ -6,7 +6,7 @@ weight = 80
 
 ### Configure the Webserver to access the target database
 
-When the Cutover is finished and **Application Migration Servuce** has created a running instance of the Webserver in your AWS account, it's time to update the web application configuration to use your replicated AWS RDS database (created in the **Database Migration** step).
+When the Cutover is finished and **Application Migration Service** has created a running instance of the Webserver in your AWS account, it's time to update the web application configuration to use your replicated AWS RDS database (created in the **Database Migration** step).
 
 
 1. Update the **Webserver security group**

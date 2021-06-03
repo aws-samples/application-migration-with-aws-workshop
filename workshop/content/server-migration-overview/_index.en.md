@@ -23,7 +23,7 @@ In this section, you will migrate your web server using different migration stra
 At this point, decide your preferred migration pattern and continue with the related section: 
 
 
-1. [Rehost with Application Migration  Service]({{< ref "/app-mig-service/_index.en.md" >}}) - primary migration service recommended for lift-and-shift migrations to AWS
+1. [Rehost with Application Migration Service]({{< ref "/app-mig-service/_index.en.md" >}}) - primary migration service recommended for lift-and-shift migrations to AWS
 
 1. [Rehost with CloudEndure]({{< ref "/server-migration/_index.en.md" >}})
 

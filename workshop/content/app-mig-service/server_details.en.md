@@ -31,7 +31,7 @@ On this page, by moving between tabs, you can:
 
 4. Manage staging disk settings
 
-    As per default replication settings, to save cost, **Application Migration Service** uses Standard HDD disks for data replication for volumes smaller than 500 GB. You can change staging disk type on this tab.
+    As per default replication settings, to save cost, **Application Migration Service** uses Standard HDD disks for data replication for volumes smaller than 500 GiB. You can change staging disk type on this tab.
 
     ![Disk settings](/app_mig_serv/disk_settings.en.png)
 
@@ -94,7 +94,7 @@ On this page, by moving between tabs, you can:
     ![Confirm action](/app_mig_serv/launch_template_update_version_popup.en.png)
 
 
-11. Go back to the <a href="https://us-west-2.console.aws.amazon.com/mgn/home?region=us-west-2#/sourceServers">Application Migration Service</a> screen, click on **Hostname** of migrated server.
+10. Go back to the <a href="https://us-west-2.console.aws.amazon.com/mgn/home?region=us-west-2#/sourceServers">Application Migration Service</a> screen, click on **Hostname** of migrated server.
 
     While waiting for the **Data replication status** to become **Healthy** (it should take ~30 mins) review parameters <a href="https://docs.aws.amazon.com/mgn/latest/ug/linux-agent.html" target="_blank">you can use for the agent installation</a>, see how agent can be <a href="https://docs.aws.amazon.com/mgn/latest/ug/windows-agent.html" target="_blank">installed on Windows</a> (if you plan to do Windows migration in the future) and additional information for <a href="https://docs.aws.amazon.com/mgn/latest/ug/installing-agent-blocked.html" target="_blank">instalation of agent on a secured network</a>.
 
