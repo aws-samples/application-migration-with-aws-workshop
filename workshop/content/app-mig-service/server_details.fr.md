@@ -99,5 +99,5 @@ Sur la page correspondant au serveur source, en sélectionnant les différents o
 
     ![Data replication healthy](/app_mig_serv/data_replication_healthy.en.png)
 
-    Une fois que **Data replication status** est **Healthy**, la prochaine étape sera de [lancer le serveur de test]({{< ref "/test.en.md" >}}).
+    Une fois que **Data replication status** est **Healthy**, la prochaine étape sera de [lancer le serveur de test]({{< ref "/test.fr.md" >}}).
     

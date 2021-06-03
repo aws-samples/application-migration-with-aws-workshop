@@ -1,5 +1,5 @@
 +++
-title = "Re-host avec AWS Application Migration Service"
+title = "Rehost avec AWS Application Migration Service"
 weight = 22
 pre = "<b>- </b>"
 +++

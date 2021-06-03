@@ -1,5 +1,5 @@
 +++
-title = "Lancement d'une instance de test"
+title = "Lancement du test de réplication"
 weight = 50
 +++
 
@@ -11,7 +11,7 @@ Avant de finaliser la migration, nous devons faire un test.
 
     Confirmez le lancement puis attendez le lancement de la machine de test. Ce test permet de valider la copie du volume de démarrage et la configuration du réseau pour le serveur cible, comme défini dans **EC2 Launch Template**.
 
-    Pour vois la progression du lancement de l'instance de test, cliquez sur **Job ID** dans la section **Lifecycle**.
+    Pour voir la progression du lancement de l'instance de test, cliquez sur **Job ID** dans la section **Lifecycle**.
 
     ![Job id](/app_mig_serv/testing_job_id.en.png)
 

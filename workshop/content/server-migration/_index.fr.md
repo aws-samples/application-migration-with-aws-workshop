@@ -1,8 +1,8 @@
 +++
-title = "Migration de serveur"
+title = "Rehost avec CloudEndure"
 date = 2019-10-22T20:48:41+02:00
-weight = 20
-pre = "<b>2. </b>"
+weight = 25
+pre = "<b>- </b>"
 +++
 
 #### Overview de CloudEndure Migration

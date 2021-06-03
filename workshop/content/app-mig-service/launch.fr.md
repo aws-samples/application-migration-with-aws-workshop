@@ -16,7 +16,7 @@ weight = 60
     {{% notice warning %}} Si vous voyez une erreur avec le texte en anglais **Failed to launch cutover instances. One or more of the Source Servers included in API call are currently being processed by a Job**, cela signifie que l'instance de test n'a toujours pas été stoppée et terminée. Vérifiez ses progrès sur la page <a href="https://us-west-2.console.aws.amazon.com/mgn/home?region=us-west-2#/launchHistory">Launch history</a>. Attendez de voir **Terminate** puis relancer à nouveau le job **Launch cutover instance**.  
 {{% /notice %}}   
 
-2. Cutover terminé
+2. Attente du Cutover terminé
 
     Attendez de voir **Launch status** passer de **Waiting** à **Launched** / **First boot: Started**. Pendant cette étape, le serveur cible sera visible dans la liste des instances EC2 dans **EC2 Console** avec le status **Running**.
 
@@ -28,4 +28,4 @@ weight = 60
 
     ![Finalize cutover](/app_mig_serv/finalize_cutover.en.png)
    
-    La dernière étape consiste à [configurer l'application]({{<ref "/webserver_config.en.md">}}) sur le serveur cible.
+    La dernière étape consiste à [configurer l'application]({{<ref "/webserver_config.fr.md">}}) sur le serveur cible.

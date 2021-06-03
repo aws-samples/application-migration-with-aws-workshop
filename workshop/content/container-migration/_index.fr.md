@@ -1,8 +1,8 @@
 +++
-title = "Migration vers des Containers"
+title = "Replatform vers des Containers"
 date = 2019-10-22T20:48:41+02:00
-weight = 20
-pre = "<b>3. </b>"
+weight = 30
+pre = "<b>- </b>"
 +++
 
 {{% notice info %}}
