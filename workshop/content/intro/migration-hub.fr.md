@@ -21,4 +21,4 @@ En quelques secondes, le statut de l'intégration doit passer de **Not connected
 
 ![Migration Hub - connected DMS](/intro/migration-hub-connect-dms-connected.png)
 
-C'est tout, toutes les nouvelles actions réalisées avec **CloudEndure Migration** et **AWS Database Migration Service** seront tracèes dans le tableau de bord de **AWS Migration Hub**.
+C'est tout, toutes les nouvelles actions réalisées avec **CloudEndure Migration** et **AWS Database Migration Service** seront tracées dans le tableau de bord de **AWS Migration Hub**.

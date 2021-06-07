@@ -11,9 +11,7 @@ Nous savons que chaque migration est différente; toutefois, en capitalisant sur
 
 Dans ce lab, vous allez apprendre à migrer une application trois-tiers vers AWS. Vous allez expérimenter : 
    
-  - Le **Re-hosting** d'un serveur web avec [AWS CloudEndure Migration](https://aws.amazon.com/cloudendure-migration/)  
-  - Le **Re-platforming** d'une base de données avec [AWS Database Migration Service](https://aws.amazon.com/dms/)  
-  - La **Modernization** d'un serveur web vers des containers s'exécutant sur [Amazon Elastic Container Service](https://aws.amazon.com/ecs/)
-  - (en option) L'Amélioration de l'infrastructure déployée selon les 5 piliers du Well Architected Framework : **Excellence Opérationnelle**, **Sécurité**, **Résilience**, **Efficience des Performances** et **Optimisation des Coûts**    
-
-
+  - Le **Re-platforming** d'une base de données avec <a href="https://aws.amazon.com/fr/dms/" target="_blank" >AWS Database Migration Service</a>  
+  - Le **Re-hosting** d'un serveur web avec <a href="https://aws.amazon.com/fr/application-migration-service/">AWS Application Migration Service</a> ou <a href="https://console.cloudendure.com/#/register/register" target="_blank" >CloudEndure Migration</a>
+  - La **Modernization** d'un serveur web vers des containers s'exécutant sur [Amazon Elastic Container Service](https://aws.amazon.com/fr/ecs/)
+  - (en option) L'Amélioration de l'infrastructure déployée selon les 5 piliers du <a href="https://aws.amazon.com/fr/architecture/well-architected/" target="_blank" >AWS Well-Architected</a> : **Excellence Opérationnelle**, **Sécurité**, **Résilience**, **Efficience des Performances** et **Optimisation des Coûts**    

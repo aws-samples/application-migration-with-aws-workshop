@@ -4,7 +4,7 @@ weight = 10
 +++
 
 
-Pour commerncer, vous allez avoir besoin de configurer ClouEndure avec vos **AWS credentials** pour accèder votre compte AWS et la localisation de la **Destination de réplication** (subnet) dans le compte AWS cible pour le serveur de réplication CloudEndure.
+Pour commerncer, vous allez avoir besoin de configurer CloudEndure avec vos **AWS credentials** pour accèder votre compte AWS et la localisation de la **Destination de réplication** (subnet) dans le compte AWS cible pour le serveur de réplication CloudEndure.
 
 ### Configurer les AWS Credentials.
 

@@ -7,7 +7,7 @@ weight = 30
 
 1. Retrieve AWS credentials for the agent
 
-    For the **Application Migration Service** agent to replicate data, you need to have an AWS IAM User with proper privileges created in your target AWS account (see more information <a href="https://docs.aws.amazon.com/mgn/latest/ug/credentials.html">here</a>). We've created a user for you, what you need to do is retrieve its Access Key ID and Secret Access Key to use it during agent installatin.
+    For the **Application Migration Service** agent to replicate data, you need to have an AWS IAM User with proper privileges created in your target AWS account (see more information <a href="https://docs.aws.amazon.com/mgn/latest/ug/credentials.html">here</a>). We've created a user for you, what you need to do is retrieve its Access Key ID and Secret Access Key to use it during agent installation.
 
     For **self-paced lab** - it's described on the **Output** section of the **ApplicationMigrationWorkshop** <a href="https://us-west-2.console.aws.amazon.com/cloudformation/home?region=us-west-2#/" target="_blank">CloudFormation Template</a>.
 
@@ -43,20 +43,20 @@ wget -O ./aws-replication-installer-init.py https://aws-application-migration-se
 sudo python3 aws-replication-installer-init.py
 ```
 
-5. Provide AWS region and AWS credentials
+6. Provide AWS region and AWS credentials
 
     When prompted provide **AWS Region** (us-west-2), then **AWS Access Key ID** and **AWS Secret Access Key** retrieved in step 1.
 
     {{% notice note %}}  When copying-pasting **AWS Secret Access Key**, its content is not displayed for security reasons. Just press **Enter** after paste.
 {{% /notice %}}   
 
-6. Confirm volumes to be replicated
+7. Confirm volumes to be replicated
 
     Once you've entered AWS credentials, installer will identify volumes attached to the system and prompt you to choose which disks you want to replicate. Press **Enter** since we want to replicate all volumes.
 
     ![Application Migration Service - agent installation](/app_mig_serv/install_agent.en.png)
 
-7. Replication start
+8. Replication start
 
     Once the agent is installed, you will see information about it in the <a href="https://us-west-2.console.aws.amazon.com/mgn/home?region=us-west-2#/sourceServers">Application Migration Service Source Servers</a> list.
 

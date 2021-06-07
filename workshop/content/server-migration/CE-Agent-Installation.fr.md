@@ -13,7 +13,7 @@ A partir de la <a href="https://console.cloudendure.com">CloudEndure console</a>
 
 1. Récupérez les informations concernant le serveur web
 
-    Pour **Le lab effectué de manière indépendatne** - c'est décrit dans la section **Output** du "template" **ApplicationMigrationWorkshop** <a href="https://us-west-2.console.aws.amazon.com/cloudformation/home?region=us-west-2#/" target="_blank">CloudFormation</a>.
+    Pour **Le lab effectué de manière indépendante** - c'est décrit dans la section **Output** du "template" **ApplicationMigrationWorkshop** <a href="https://us-west-2.console.aws.amazon.com/cloudformation/home?region=us-west-2#/" target="_blank">CloudFormation</a>.
 
     ![Centos-pem](/ce/webserver-self-paced-info.png)    
 
