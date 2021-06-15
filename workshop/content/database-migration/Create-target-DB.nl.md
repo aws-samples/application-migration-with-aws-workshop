@@ -30,7 +30,7 @@ Voordat je **AWS DMS** configureert, dien je eerst de database in de doelomgevin
 
 1. Selecteer **Databases** uit het menu aan de linkerkant en druk op **Create database**
 
-2. Onder **Engine options**, kies **MySQL** en versie **MySQL 5.7.22**
+2. Onder **Engine options**, kies **MySQL** en versie **MySQL 5.7.33**
 
     ![1](/db-mig/1.png)
 

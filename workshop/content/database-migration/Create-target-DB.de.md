@@ -33,7 +33,7 @@ wählen Sie im Menü links **Subnet Groups** aus und klicken Sie auf **Create DB
 ### Erstellen Sie die Zieldatenbank    
 
 1. Wählen Sie nun im Menü links **Databases** aus und klicken Sie auf **Create database**.
-2. Wählen Sie unter **Engine options** MySQL und die MySQL 5.7.22 Version aus
+2. Wählen Sie unter **Engine options** MySQL und die MySQL 5.7.33 Version aus
 
     ![1](/db-mig/1.png)
 

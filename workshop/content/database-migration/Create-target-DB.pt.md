@@ -29,7 +29,7 @@ Antes de configurar o **AWS DMS**, você precisará criar um banco de dados de d
     
 1. Agora selecione **Databases** no menu à esquerda e clique **Create database** 
 
-2. A partir de **Engine options**, selecione MySQL e Version MySQL 5.7.22
+2. A partir de **Engine options**, selecione MySQL e Version MySQL 5.7.33
 
     ![1](/db-mig/1.png)
 
