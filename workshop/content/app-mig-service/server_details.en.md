@@ -79,12 +79,12 @@ On this page, by moving between tabs, you can:
 
 9.  Update default **EC2 Launch Template**
 
-   - Click on the name of the **EC2 Launch Template**
+    - Click on the name of the **EC2 Launch Template**
 
     ![Click on EC2 Launch Template name](/app_mig_serv/launch_template_new_version.en.png)
 
-    - In the **Launch Templates** screen go to the **Versions** tab
-    - Select the latest version by clicking on the radio box on the left
+    - In the **Launch Templates** screen go to the **Versions** tab and select the latest version by clicking on the radio box on the left.
+
     - From the **Actions** menu select **Set default version**
 
     ![Set default version](/app_mig_serv/launch_template_update_version.en.png)
