@@ -38,9 +38,6 @@ En este paso, creará una instancia de replicación para <a href="https://aws.am
     | ------------------- | ------------------------ |
     | Name                | replication-instance     |
     | Description         | Instancia de replicación DMS |
-    | Instance Class      | dms.t2.medium            |
-    | Engine version      | 3.3.3                    |
-    |Allocated storage (GB)| 50                      |
     | VPC                 | TargetVPC            |
     | Multi-AZ            | Desmarcado                |
     | Publicly accessible | Marcado                  |

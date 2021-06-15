@@ -19,9 +19,6 @@ weight = 20
     | ------------------- | ------------------------ |
     | 名前                 | replication-instance     |
     | 説明                 | DMS replication instance |
-    | インスタンスクラス     | dms.t2.medium            |
-    | エンジンバージョン     | 3.3.3                    |
-    | 割り当てられたストレージ（GiB）| 50                 |
     | VPC                 | TargetVPC                |
     | マルチ AZ            | チェックを外す             |
     | パブリックアクセス可能  | チェックを入れる           |

@@ -38,9 +38,6 @@ In this step you will create an <a href="https://aws.amazon.com/dms/" target="_b
     | ------------------- | ------------------------ |
     | Name                | replication-instance     |
     | Description         | DMS replication instance |
-    | Instance Class      | dms.t2.medium            |
-    | Engine version      | 3.3.3                    |
-    |Allocated storage (GB)| 50                      |
     | VPC                 | TargetVPC            |
     | Multi-AZ            | Unchecked                |
     | Publicly accessible | Checked                  |

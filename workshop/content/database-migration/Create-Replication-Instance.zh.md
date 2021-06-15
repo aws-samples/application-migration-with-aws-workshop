@@ -38,9 +38,6 @@ weight = 20
     | ------------------- | ------------------------ |
     | 名称                 | replication-instance     |
     | 描述                 | DMS replication instance |
-    | 实例类               | dms.t2.medium            |
-    | 引擎版本              | 3.3.1                    |
-    | 分配的存储空间(GB)     | 50                      |
     | VPC                  | TargetVPC               |
     | 多可用区              | 取消选择                |
     | 公开访问              | 选中状态                  |
