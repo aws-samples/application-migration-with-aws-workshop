@@ -9,7 +9,7 @@ weight = 60
 
     ![Launch cutover](/app_mig_serv/launch_cutover_popup.en.png)
 
-    This will trigger the cutover job, you can find its details after clicking on **Cutover Job ID** in the **Lifecycle section**.  
+    This will trigger the cutover job (it will take ~10-15 minutes), you can find its details after clicking on **Cutover Job ID** in the **Lifecycle section**.  
 
     ![Launch cutover](/app_mig_serv/launch_cutover.en.png)  
 

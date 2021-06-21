@@ -15,7 +15,7 @@ Before we can finalize migration, we need to test it.
 
     ![Job id](/app_mig_serv/testing_job_id.en.png)
 
-    Wait for the **Completed** Status (it should take ~5 minutes).
+    Wait for the **Completed** Status (it should take ~10-15 minutes).
 
     ![Job progress](/app_mig_serv/testing_job_details.en.png)
 
