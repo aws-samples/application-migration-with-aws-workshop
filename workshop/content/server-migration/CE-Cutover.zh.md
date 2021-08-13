@@ -19,7 +19,7 @@ weight = 40
    
     确认实例处于 **Continuous Data Replication** 状态，您可以在 **DATA REPLICATION PROGRESS** 列找到它。
 
-    如果复制还没有完成，请等待，直到它处于 **Continuous Data Replication** 状态。在等待期间，您可以查看<a href="https://docs.cloudendure.com/" target="_blank">CloudEndure 文档</a>.
+    如果复制还没有完成，请等待，直到它处于 **Continuous Data Replication** 状态。在等待期间，您可以查看<a href="https://docs.cloudendure.com/" target="_blank" rel="noopener noreferrer">CloudEndure 文档</a>.
 
 2. 触发切换
    
@@ -32,7 +32,7 @@ weight = 40
 
     ![CE-job-progress](/ce/CE-job-progress.zh.png)
 
-    监控 **Job Progress** 日志，直到您看到 **Job finished** 消息（它预计需要 3-5 分钟）。在此期间，您可以查看 <a href="https://docs.cloudendure.com/#Configuring_and_Running_Migration/Performing_a_Migration_Cutover/Performing_a_Migration_Cutover.htm" target="_blank">CloudEndure 文档</a>，这里提供了有关切换过程的详细信息。
+    监控 **Job Progress** 日志，直到您看到 **Job finished** 消息（它预计需要 3-5 分钟）。在此期间，您可以查看 <a href="https://docs.cloudendure.com/#Configuring_and_Running_Migration/Performing_a_Migration_Cutover/Performing_a_Migration_Cutover.htm" target="_blank" rel="noopener noreferrer">CloudEndure 文档</a>，这里提供了有关切换过程的详细信息。
 
     {{% notice tip %}}
 如果在 **Job Progress** 窗口没有找到您的 Job，请刷新浏览器（F5），确保滚动到 CloudEndure jobs下拉列表的顶部，您就会找到它。
@@ -51,5 +51,5 @@ weight = 40
     一旦切换完成，您就会在列表中看到另一个 EC2 实例 - 这个是 CloudEndure 创建的目标 Web 服务器。记下公有和私有 IP，在后续步骤中会用到它们。
 
     {{% notice tip %}}
-如果您想了解那些实例的更多信息，它们的用途和网络需求，可以查看 <a href="https://docs.cloudendure.com/#Preparing_Your_Environments/Network_Requirements/Network_Requirements.htm" target="_blank">CloudEndure 文档</a>。
+如果您想了解那些实例的更多信息，它们的用途和网络需求，可以查看 <a href="https://docs.cloudendure.com/#Preparing_Your_Environments/Network_Requirements/Network_Requirements.htm" target="_blank" rel="noopener noreferrer">CloudEndure 文档</a>。
 {{% /notice %}}

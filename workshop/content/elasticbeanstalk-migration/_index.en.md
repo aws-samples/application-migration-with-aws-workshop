@@ -30,10 +30,9 @@ When you create an environment, **AWS Elastic Beanstalk** prompts you to provide
 - **Instance profile**: The instance profile is applied to the instances in your environment and allows them to retrieve application versions from Amazon Simple Storage  Service (Amazon S3), upload logs to Amazon S3, and perform other tasks that vary depending on the environment type and platform.
 
 {{% notice warning %}}
-When running this workshop on your own (not attending an AWS hosted event) we assume you have the necessary IAM privileges in the AWS account to work with ElasticBeanstalk. If you experience any errors (or freeze) on launching ElasticBeanstalk service in your AWS account, check <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/concepts-roles.html" target="_blank">this article</a> for the required IAM configuration. 
+When running this workshop on your own (not attending an AWS hosted event) we assume you have the necessary IAM privileges in the AWS account to work with ElasticBeanstalk. If you experience any errors (or freeze) on launching ElasticBeanstalk service in your AWS account, check <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/concepts-roles.html" target="_blank" rel="noopener noreferrer">this article</a> for the required IAM configuration. 
 {{% /notice %}}
-
-#### Migrating the Web application to Elastic Beanstalk:
+#### Migrating the Web application to Elastic Beanstalk
 
 In this module, you will perform the following actions:
 

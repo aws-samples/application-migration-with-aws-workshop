@@ -27,8 +27,8 @@ When the Cutover is finished and **Application Migration Service** has created a
     Use the same username (ubuntu) and SSH .ppk key as for the Source Environment.
 
     If you're not sure how to use SSH to access servers, check the following:
-    - For Microsoft Windows users view <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/putty.html" target="_blank">this article</a>.  
-    - For Mac OS users view <a href="https://docs.aws.amazon.com/quickstarts/latest/vmlaunch/step-2-connect-to-instance.html#sshclient" target="_blank">this article</a>.
+    - For Microsoft Windows users view <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/putty.html" target="_blank" rel="noopener noreferrer">this article</a>.  
+    - For Mac OS users view <a href="https://docs.aws.amazon.com/quickstarts/latest/vmlaunch/step-2-connect-to-instance.html#sshclient" target="_blank" rel="noopener noreferrer">this article</a>.
 
 3. Modify the **wordpress configuration**
 
@@ -51,7 +51,7 @@ When the Cutover is finished and **Application Migration Service** has created a
    ```
 
     {{% notice tip %}}
-To edit this file, you can use for example <a href="https://www.howtoforge.com/linux-nano-command/" target="_blank">nano</a> or <a href="https://www.washington.edu/computing/unix/vi.html" target="_blank">vi</a>.
+To edit this file, you can use for example <a href="https://www.howtoforge.com/linux-nano-command/" target="_blank" rel="noopener noreferrer">nano</a> or <a href="https://www.washington.edu/computing/unix/vi.html" target="_blank" rel="noopener noreferrer">vi</a>.
 {{% /notice %}}     
 
 4. Update the RDS instance **VPC security group** to allow inbound traffic from Webserver

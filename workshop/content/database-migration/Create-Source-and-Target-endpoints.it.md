@@ -17,7 +17,7 @@ Sempre nella schermata **AWS DMS**, vai su **Endpoint** e fai clic sul pulsante 
     | Endpoint type       | Source endpoint                                |
     | Endpoint identifier | source-endpoint                                |
     | Source engine       | mysql                                          |
-    | Server name         | Source Environment - per **laboratorio self-paced** usa le informazioni dalla sezione **Output** del **ApplicationMigrationWorkshop** <a href="https://us-west-2.console.aws.amazon.com/cloudformation/home?region=us-west-2#/" target="_blank">Template CloudFormation</a>, <br>per l'**Evento AWS** - usa il **Database Server IP** dal Event Engine - Team Dashboard   |
+    | Server name         | Source Environment - per **laboratorio self-paced** usa le informazioni dalla sezione **Output** del **ApplicationMigrationWorkshop** <a href="https://us-west-2.console.aws.amazon.com/cloudformation/home?region=us-west-2#/" target="_blank" rel="noopener noreferrer">Template CloudFormation</a>, <br>per l'**Evento AWS** - usa il **Database Server IP** dal Event Engine - Team Dashboard   |
     | Port                | 3306                                           |
     | SSL mode            | none                                           |
     | User name           | wordpress-user                                 |

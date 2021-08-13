@@ -10,15 +10,15 @@ Complete esta sección SOLAMENTE si está ejecutando el taller por su cuenta. Si
 
 ### Ambiente de aprendizaje a su propio ritmo
 
-Este laboratorio asume que tiene acceso a **una cuenta de AWS** con <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/getting-started_create-admin-group.html" target="_blank">privilegios de administrador</a>. Para crear una nueva cuenta de AWS, siga el <a href="https://aws.amazon.com/premiumsupport/knowledge-center/create-and-activate-aws-account/" target="_blank">¿Cómo creo y activo una nueva cuenta de Amazon Web Services?</a> artículo.
+Este laboratorio asume que tiene acceso a **una cuenta de AWS** con <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/getting-started_create-admin-group.html" target="_blank" rel="noopener noreferrer">privilegios de administrador</a>. Para crear una nueva cuenta de AWS, siga el <a href="https://aws.amazon.com/premiumsupport/knowledge-center/create-and-activate-aws-account/" target="_blank" rel="noopener noreferrer">¿Cómo creo y activo una nueva cuenta de Amazon Web Services?</a> artículo.
 
-Las instrucciones a continuación implementarán el entorno de origen en su cuenta de AWS. Los recursos implementados consisten en dos máquinas t3.micro EC2 (una para el servidor web, otra para la base de datos), una para NAT Gateway, un API Gateway y dos funciones AWS Lambda (para recuperar fácilmente la clave de acceso EC2). El costo total de los recursos desplegados en todo el laboratorio debe ser inferior a $1 (suponiendo 4 horas de trabajo), algunos de ellos están cubiertos por el <a href="https://aws.amazon.com/free/" target="_blank">nivel gratuito de AWS</a>.
+Las instrucciones a continuación implementarán el entorno de origen en su cuenta de AWS. Los recursos implementados consisten en dos máquinas t3.micro EC2 (una para el servidor web, otra para la base de datos), una para NAT Gateway, un API Gateway y dos funciones AWS Lambda (para recuperar fácilmente la clave de acceso EC2). El costo total de los recursos desplegados en todo el laboratorio debe ser inferior a $1 (suponiendo 4 horas de trabajo), algunos de ellos están cubiertos por el <a href="https://aws.amazon.com/free/" target="_blank" rel="noopener noreferrer">nivel gratuito de AWS</a>.
 
 ¡Recuerde [limpiar]({{< ref "/cleanup/_index.es.md" >}}) su cuenta de AWS después de ejecutar el laboratorio, para evitar cargos innecesarios!
 
 #### Opción 1: Implementación Simple
 
-1. Haga click en el botón de abajo <a href="https://console.aws.amazon.com/cloudformation/home?region=us-west-2#/stacks/new?stackName=ApplicationMigrationWorkshop&templateURL=https://application-migration-with-aws-workshop.s3-us-west-2.amazonaws.com/template/migration_workshop_source_template.yml" target="_blank"><img src="https://application-migration-with-aws-workshop.s3-us-west-2.amazonaws.com/static/cloudformation-launch-stack.png"></a>
+1. Haga click en el botón de abajo <a href="https://console.aws.amazon.com/cloudformation/home?region=us-west-2#/stacks/new?stackName=ApplicationMigrationWorkshop&templateURL=https://application-migration-with-aws-workshop.s3-us-west-2.amazonaws.com/template/migration_workshop_source_template.yml" target="_blank" rel="noopener noreferrer"><img src="https://application-migration-with-aws-workshop.s3-us-west-2.amazonaws.com/static/cloudformation-launch-stack.png"></a>
 
 
 2. En la sección **Step 1 - Specify template** confirme que la plantilla del URL https://application-migration-with-aws-workshop.s3-us-west-2.amazonaws.com/template/migration_workshop_source_template.yml esté ingresada en el campo de **Amazon S3 URL** y presione **Next**
@@ -51,11 +51,11 @@ No necesita continuar con la opción 2 si ya implementó el entorno con la opci�
 
 La sección a continuación describe cómo compilar la plantilla de CloudFormation e implementarla mediante la interfaz de línea de comandos (CLI) de AWS.
 
-1. Instale <a href="https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-sam-cli-install.html" target="_blank">AWS SAM</a>
+1. Instale <a href="https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-sam-cli-install.html" target="_blank" rel="noopener noreferrer">AWS SAM</a>
 
-2. Instale <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-install.html" target="_blank">AWS CLI</a> y <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html" target="_blank">configúrelo</a>
+2. Instale <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-install.html" target="_blank" rel="noopener noreferrer">AWS CLI</a> y <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html" target="_blank" rel="noopener noreferrer">configúrelo</a>
 
-3. Descargue o clone el proyecto desde  <a href="https://github.com/aws-samples/application-migration-with-aws-workshop" target="_blank">https://github.com/aws-samples/application-migration-with-aws-workshop</a>
+3. Descargue o clone el proyecto desde  <a href="https://github.com/aws-samples/application-migration-with-aws-workshop" target="_blank" rel="noopener noreferrer">https://github.com/aws-samples/application-migration-with-aws-workshop</a>
 
 
 4. Cree un depósito S3 único en la región *us-west-2 (Oregon)*, ejecutando lo siguiente (reemplace  **application-migration-workshop** con un nombre de depósito S3 personalizado)

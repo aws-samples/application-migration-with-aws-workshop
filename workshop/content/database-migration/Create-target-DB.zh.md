@@ -5,7 +5,7 @@ weight = 15
 
 ### 数据库迁移
 
-数据库迁移可以通过多种方式执行。在本研讨会中，我们将使用 <a href="https://aws.amazon.com/cn/dms/" target="_blank">AWS Database Migrations Service (DMS)</a> 采用 **持续数据复制** 模式执行迁移。
+数据库迁移可以通过多种方式执行。在本研讨会中，我们将使用 <a href="https://aws.amazon.com/cn/dms/" target="_blank" rel="noopener noreferrer">AWS Database Migrations Service (DMS)</a> 采用 **持续数据复制** 模式执行迁移。
 
 配置 **AWS DMS** 之前，您需要在提供的 AWS 账户中创建目标数据库。使用 **AWS Relation Database Service (RDS)** 执行此活动，以便在云中轻松设置、操作和扩展关系数据库。
 
@@ -60,14 +60,14 @@ weight = 15
 3. 在 **可用性与持久性** 部分，保持 **请勿创建备用实例** 以节省成本。
 
     {{% notice note %}}
-对于生产工作负载，我们建议创建备用实例利用 <a href="https://docs.aws.amazon.com/zh_cn/AmazonRDS/latest/UserGuide/Concepts.MultiAZ.html" target="_blank">多可用区部署</a> 实现更高的可用性
+对于生产工作负载，我们建议创建备用实例利用 <a href="https://docs.aws.amazon.com/zh_cn/AmazonRDS/latest/UserGuide/Concepts.MultiAZ.html" target="_blank" rel="noopener noreferrer">多可用区部署</a> 实现更高的可用性
 {{% /notice %}}  
 
     ![5_db](/db-mig/5_db.zh.png)
 
 4. 在 **连接** 部分：
 
-    * 在 **Virtual Private Cloud (VPC)** 中， 选择 **TargetVPC** （这个是为本实验自动创建的 <a href="https://aws.amazon.com/cn/vpc/" target="_blank">Amazon Virtual Private Cloud</a> ）
+    * 在 **Virtual Private Cloud (VPC)** 中， 选择 **TargetVPC** （这个是为本实验自动创建的 <a href="https://aws.amazon.com/cn/vpc/" target="_blank" rel="noopener noreferrer">Amazon Virtual Private Cloud</a> ）
     * 在 **其它连接配置 -> 现有 VPC 安全组**中，中选择之前创建的 VPC 安全组（比如 "DB-SG"）。
     * 请注意，您之前创建的数据库子网组将被自动选择
 
@@ -87,7 +87,7 @@ weight = 15
     ![8_db](/db-mig/8_db.zh.png)
 
     {{% notice note %}}
-对于生产工作负载，使用 <a href="https://docs.aws.amazon.com/zh_cn/AmazonRDS/latest/UserGuide/USER_Monitoring.OS.html" target="_blank">增强型监控</a> 是一个非常好的主意，在 AWS 主办活动中，由于为参会者配置的 IAM 角色的限制，我们会取消选中此选项。
+对于生产工作负载，使用 <a href="https://docs.aws.amazon.com/zh_cn/AmazonRDS/latest/UserGuide/USER_Monitoring.OS.html" target="_blank" rel="noopener noreferrer">增强型监控</a> 是一个非常好的主意，在 AWS 主办活动中，由于为参会者配置的 IAM 角色的限制，我们会取消选中此选项。
 {{% /notice %}}
 
 6. 最后，审查 **月度估算费用**，点击 **创建数据库** 按钮。

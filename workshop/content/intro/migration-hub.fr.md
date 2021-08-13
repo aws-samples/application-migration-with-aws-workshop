@@ -5,7 +5,7 @@ weight = 40
 
 #### AWS Migration Hub
 
-<a href="https://aws.amazon.com/migration-hub/" target="_blank">AWS Migration Hub</a> fournit un point central permettant de suivre l'avancement de la migration de ses applications utilisant des services AWS ou partenaires. 
+<a href="https://aws.amazon.com/migration-hub/" target="_blank" rel="noopener noreferrer">AWS Migration Hub</a> fournit un point central permettant de suivre l'avancement de la migration de ses applications utilisant des services AWS ou partenaires. 
 
 Pour l'activer, sur **AWS Console** aller dans **Services -> AWS Migration Hub**, puis à partir du menu de gauche, cliquez sur **Migrate** et sélectionnez **US West Oregon** comme région d'origine.
 

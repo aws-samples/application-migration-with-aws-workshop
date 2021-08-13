@@ -28,8 +28,8 @@ Cuando finalice el corte (Cutover) y **CloudEndure Migration** haya creado una i
     Utilice el mismo nombre de usuario (ubuntu) y la clave SSH .ppk como en el entorno de origen.
 
 	Si no está seguro de cómo usar SSH para acceder a los servidores, verifique lo siguiente:
-    - Para usuarios de Microsoft Windows, <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/putty.html" target="_blank">vea este artículo</a>.  
-    - Para usuarios de Mac OS, <a href="https://docs.aws.amazon.com/quickstarts/latest/vmlaunch/step-2-connect-to-instance.html#sshclient" target="_blank">vea este artículo</a>.
+    - Para usuarios de Microsoft Windows, <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/putty.html" target="_blank" rel="noopener noreferrer">vea este artículo</a>.  
+    - Para usuarios de Mac OS, <a href="https://docs.aws.amazon.com/quickstarts/latest/vmlaunch/step-2-connect-to-instance.html#sshclient" target="_blank" rel="noopener noreferrer">vea este artículo</a>.
 
 3. Modificar la **configuración de WordPress**
 
@@ -52,7 +52,7 @@ Cuando finalice el corte (Cutover) y **CloudEndure Migration** haya creado una i
    ```
 
     {{% notice tip %}}
-Para editar este archivo, puede usar, por ejemplo, <a href="https://www.howtoforge.com/linux-nano-command/" target="_blank">nano</a> o <a href="https://www.washington.edu/computing/unix/vi.html" target="_blank">vi</a>.
+Para editar este archivo, puede usar, por ejemplo, <a href="https://www.howtoforge.com/linux-nano-command/" target="_blank" rel="noopener noreferrer">nano</a> o <a href="https://www.washington.edu/computing/unix/vi.html" target="_blank" rel="noopener noreferrer">vi</a>.
 {{% /notice %}}     
 
 4. Actualice el **grupo de seguridad VPC** de la instancia RDS para permitir el tráfico entrante desde el servidor web

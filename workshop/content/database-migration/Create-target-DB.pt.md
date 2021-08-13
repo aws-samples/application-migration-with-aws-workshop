@@ -5,7 +5,7 @@ weight = 10
 
 ### Migração de Banco de Dados
 
-Migração de bancos de dados podem ser executadas de diversas maneiras, para o propósito deste workshop iremos realizar uma migração com  **replicação contínua de dados** usando o <a href="https://aws.amazon.com/dms/" target="_blank">AWS Database Migrations Service (DMS)</a>.
+Migração de bancos de dados podem ser executadas de diversas maneiras, para o propósito deste workshop iremos realizar uma migração com  **replicação contínua de dados** usando o <a href="https://aws.amazon.com/dms/" target="_blank" rel="noopener noreferrer">AWS Database Migrations Service (DMS)</a>.
 
 Antes de configurar o **AWS DMS**, você precisará criar um banco de dados de destino na conta AWS. Use o **AWS Relational Database Service (RDS)** para executar esta atividade, já que ele torna fácil configurar, operar e escalar um banco de dados relacional na nuvem.
 
@@ -53,14 +53,14 @@ Anote o **Master username** e o **Master password**, você os usará daqui a pou
 3. Em **Availability & durability**, escolha **Do not create a standby instance** para economizar custos. 
 
     {{% notice note %}}
-Para cargas em produção, recomendamos habilitar a instância standby usando<a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.MultiAZ.html" target="_blank">Multi-AZ Deployment</a> para uma alta disponibilidade.
+Para cargas em produção, recomendamos habilitar a instância standby usando<a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.MultiAZ.html" target="_blank" rel="noopener noreferrer">Multi-AZ Deployment</a> para uma alta disponibilidade.
 {{% /notice %}}  
 
     ![5_db](/db-mig/5_db.png)
 
 4. Na seção **Connectivity**:
 
-    * Em **Virtual Private Cloud (VPC)**, selecione **TargetVPC** (esta é a <a href="https://aws.amazon.com/vpc/" target="_blank">Amazon Virtual Private Cloud</a> criada automaticamente para este lab)
+    * Em **Virtual Private Cloud (VPC)**, selecione **TargetVPC** (esta é a <a href="https://aws.amazon.com/vpc/" target="_blank" rel="noopener noreferrer">Amazon Virtual Private Cloud</a> criada automaticamente para este lab)
     * Em **Additional connectivity configuration -> VPC Security Group**, selecione **Create new** VPC security group e dê nome a ele (ex. "DB-SG").
     * Note que o DB Subnet group criado anteriormente estará automaticamente selecionado
 
@@ -80,7 +80,7 @@ Nota: Você editará o DB-SG VPC security group mais tarde para garantir que o D
     ![8_db](/db-mig/8_db.png)
 
     {{% notice note %}}
-Usar o <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Monitoring.OS.html" target="_blank">Enhanced monitoring</a> é uma boa ideia para ambientes de produção, durante um evento organizado pela AWS nós desmarcamos esta opção por conta de limitação na role IAM provisionada.
+Usar o <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Monitoring.OS.html" target="_blank" rel="noopener noreferrer">Enhanced monitoring</a> é uma boa ideia para ambientes de produção, durante um evento organizado pela AWS nós desmarcamos esta opção por conta de limitação na role IAM provisionada.
 {{% /notice %}}
 
 6. Finalmente, cheque o **Estimated monthly costs** e clique no botão **Create database**.

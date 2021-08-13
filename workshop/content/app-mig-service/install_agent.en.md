@@ -9,32 +9,32 @@ weight = 30
 
     For the **Application Migration Service** agent to replicate data, you need to have an AWS IAM User with proper privileges created in your target AWS account (see more information <a href="https://docs.aws.amazon.com/mgn/latest/ug/credentials.html">here</a>). We've created a user for you, what you need to do is retrieve its Access Key ID and Secret Access Key to use it during agent installation.
 
-    For **self-paced lab** - it's described on the **Output** section of the **ApplicationMigrationWorkshop** <a href="https://us-west-2.console.aws.amazon.com/cloudformation/home?region=us-west-2#/" target="_blank">CloudFormation Template</a>.
+    For **self-paced lab** - it's described on the **Output** section of the **ApplicationMigrationWorkshop** <a href="https://us-west-2.console.aws.amazon.com/cloudformation/home?region=us-west-2#/" target="_blank" rel="noopener noreferrer">CloudFormation Template</a>.
 
     ![AWS Credentials](/app_mig_serv/install_agent_credentials.en.png)    
 
-    For **AWS Event** - it's described at **Application Migration Service - IAM Access Key ID** and **IAM Secret Access Key** on the <a href="https://dashboard.eventengine.run/dashboard" target="_blank">Team Dashboard</a>.    
+    For **AWS Event** - it's described at **Application Migration Service - IAM Access Key ID** and **IAM Secret Access Key** on the <a href="https://dashboard.eventengine.run/dashboard" target="_blank" rel="noopener noreferrer">Team Dashboard</a>.    
 
     ![AWS Credetentials EE](/app_mig_serv/ee_credentials.en.png)
 
 2. Retrieve the source Webserver connection  information
 
-    For **self-paced lab** - it's described on the **Output** section of the **ApplicationMigrationWorkshop** <a href="https://us-west-2.console.aws.amazon.com/cloudformation/home?region=us-west-2#/" target="_blank">CloudFormation Template</a>.
+    For **self-paced lab** - it's described on the **Output** section of the **ApplicationMigrationWorkshop** <a href="https://us-west-2.console.aws.amazon.com/cloudformation/home?region=us-west-2#/" target="_blank" rel="noopener noreferrer">CloudFormation Template</a>.
 
     ![Centos-pem](/ce/webserver-self-paced-info.png)    
 
-    For **AWS Event** - it's described at **Webserver IP**, **Webserver Username** and **Webserver SSH Key** on the <a href="https://dashboard.eventengine.run/dashboard" target="_blank">Team Dashboard</a>.
+    For **AWS Event** - it's described at **Webserver IP**, **Webserver Username** and **Webserver SSH Key** on the <a href="https://dashboard.eventengine.run/dashboard" target="_blank" rel="noopener noreferrer">Team Dashboard</a>.
 
     ![Centos-pem](/ce/Centos-pem.png)
 
 3. Download and save locally (for example as **webserver.pem** file) the **Webserver SSH key** (.pem) 
 
-    If you're using Microsoft Windows OS, convert the SSH key .pem file to .ppk using PuttyGen and then use Putty to connect (more details <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/putty.html" target="_blank">can be found here</a>).  
+    If you're using Microsoft Windows OS, convert the SSH key .pem file to .ppk using PuttyGen and then use Putty to connect (more details <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/putty.html" target="_blank" rel="noopener noreferrer">can be found here</a>).  
 
 4. Connect to the **Source Webserver** using SSH terminal
 
-    For Microsoft Windows users review <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/putty.html" target="_blank">this article</a>.  
-    For Mac OS users review <a href="https://docs.aws.amazon.com/quickstarts/latest/vmlaunch/step-2-connect-to-instance.html#sshclient" target="_blank">this article</a>.
+    For Microsoft Windows users review <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/putty.html" target="_blank" rel="noopener noreferrer">this article</a>.  
+    For Mac OS users review <a href="https://docs.aws.amazon.com/quickstarts/latest/vmlaunch/step-2-connect-to-instance.html#sshclient" target="_blank" rel="noopener noreferrer">this article</a>.
 
 5. Run the following commands
 
@@ -58,7 +58,7 @@ sudo python3 aws-replication-installer-init.py
 
 8. Replication start
 
-    Once the agent is installed, you will see information about it in the <a href="https://us-west-2.console.aws.amazon.com/mgn/home?region=us-west-2#/sourceServers">Application Migration Service Source Servers</a> list.
+    Once the agent is installed, you will see information about it in the <a href="https://us-west-2.console.aws.amazon.com/mgn/home?region=us-west-2#/sourceServers" target="_blank" rel="noopener noreferrer">Application Migration Service Source Servers</a> list.
 
     ![Application Migration Service - Source Servers list](/app_mig_serv/source_servers.en.png)
 

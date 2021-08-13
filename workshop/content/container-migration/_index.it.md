@@ -25,13 +25,13 @@ Di seguito, vedi il diagramma che mostra l'architettura generale di Amazon ECS u
 
 #### Componenti core di Amazon ECS :
 
-<a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/clusters.html" target="_blank">Amazon ECS Cluster</a> è un raggruppamento logico di risorse.
+<a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/clusters.html" target="_blank" rel="noopener noreferrer">Amazon ECS Cluster</a> è un raggruppamento logico di risorse.
 
-<a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definitions.html" target="_blank">Task Definition</a> è un file JSON, che descrive uno o più contenitori (fino a un massimo di dieci), che formano l'applicazione. Puoi pensare a un'attività come il modello per la tua applicazione.
+<a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definitions.html" target="_blank" rel="noopener noreferrer">Task Definition</a> è un file JSON, che descrive uno o più contenitori (fino a un massimo di dieci), che formano l'applicazione. Puoi pensare a un'attività come il modello per la tua applicazione.
 
-<a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/scheduling_tasks.html" target="_blank">Task</a> è l'istanza di una definizione di attività all'interno di un cluster. Dopo aver creato una definizione di attività per l'applicazione all'interno di Amazon ECS, è possibile specificare il numero di attività che verranno eseguite sul cluster.
+<a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/scheduling_tasks.html" target="_blank" rel="noopener noreferrer">Task</a> è l'istanza di una definizione di attività all'interno di un cluster. Dopo aver creato una definizione di attività per l'applicazione all'interno di Amazon ECS, è possibile specificare il numero di attività che verranno eseguite sul cluster.
 
-<a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs_services.html" target="_blank">Services</a> - Amazon ECS ti consente di eseguire e mantenere contemporaneamente un numero specificato di istanze di una definizione di attività in un cluster. Questo si chiama un servizio. Se una qualsiasi delle tue attività dovesse fallire o interrompersi per qualsiasi motivo, lo scheduler dei servizi Amazon ECS avvia un'altra istanza della definizione delle attività per sostituirla e mantenere il conteggio desiderato delle attività nel servizio a seconda della strategia di pianificazione utilizzata.
+<a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs_services.html" target="_blank" rel="noopener noreferrer">Services</a> - Amazon ECS ti consente di eseguire e mantenere contemporaneamente un numero specificato di istanze di una definizione di attività in un cluster. Questo si chiama un servizio. Se una qualsiasi delle tue attività dovesse fallire o interrompersi per qualsiasi motivo, lo scheduler dei servizi Amazon ECS avvia un'altra istanza della definizione delle attività per sostituirla e mantenere il conteggio desiderato delle attività nel servizio a seconda della strategia di pianificazione utilizzata.
 
 Puoi saperne di più su **AWS Fargate** guardando il video qui sotto.
 <center>

@@ -5,7 +5,7 @@ weight = 25
 
 ### Exécution de la réplication DMS avec le Change Data Capture (CDC)
 
-Afin de minimiser l'interruption de service durant la migration de la base de données, nous allons utiliser la réplication continue des changements (nommé **Change Data Capture (CDC)**) à partir de la base de données source vers la base de données cible. Pour plus d'information à propos de CDC et le support natif de CDC de **AWS DMS** consultez <a href="https://aws.amazon.com/blogs/database/aws-dms-now-supports-native-cdc-support/" target="_blank">cet article</a>.
+Afin de minimiser l'interruption de service durant la migration de la base de données, nous allons utiliser la réplication continue des changements (nommé **Change Data Capture (CDC)**) à partir de la base de données source vers la base de données cible. Pour plus d'information à propos de CDC et le support natif de CDC de **AWS DMS** consultez <a href="https://aws.amazon.com/blogs/database/aws-dms-now-supports-native-cdc-support/" target="_blank" rel="noopener noreferrer">cet article</a>.
 
 #### Activez les log sur la base de données source
 
@@ -13,17 +13,17 @@ Pour la réplication continue de  **AWS DMS** à partir d'une base de données M
 
 1. Connectez vous sur le server **Base de données source**
 
-    Pour **le lab réalisé de manière indépendante** - les informations nécessaires pour accéder à l'environnement base de données sont décrites dans la section **Output** du "Template" **ApplicationMigrationWorkshop** <a href="https://us-west-2.console.aws.amazon.com/cloudformation/home?region=us-west-2#/" target="_blank">CloudFormation</a>.
+    Pour **le lab réalisé de manière indépendante** - les informations nécessaires pour accéder à l'environnement base de données sont décrites dans la section **Output** du "Template" **ApplicationMigrationWorkshop** <a href="https://us-west-2.console.aws.amazon.com/cloudformation/home?region=us-west-2#/" target="_blank" rel="noopener noreferrer">CloudFormation</a>.
 
     ![Informations de connexion à la base de données](/db-mig/db-server-ssh-self-paced.png)    
 
-    Pour **Le lab réalisé lors d'un évènement organisé par AWS** - les informations nécessaires pour accéder à l'environnement base de données sont décrites dans **Database IP**, **Database Username** et **Database SSH Key** sur le<a href="https://dashboard.eventengine.run/dashboard" target="_blank">Tableau de bord d'équipe (Team Dashboard)</a>.
+    Pour **Le lab réalisé lors d'un évènement organisé par AWS** - les informations nécessaires pour accéder à l'environnement base de données sont décrites dans **Database IP**, **Database Username** et **Database SSH Key** sur le<a href="https://dashboard.eventengine.run/dashboard" target="_blank" rel="noopener noreferrer">Tableau de bord d'équipe (Team Dashboard)</a>.
 
     ![Informations de connexion à la base de données](/db-mig/db-server-ssh-event.png)
 
     Si vous ne savez pas comment utiliser une clé SSH pour accéder à un serveur, consultez les liens suivants :
-    - Pour les utilisateurs Micrisift Windows consultez <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/putty.html" target="_blank">cet article</a>.  
-    - Pour les utilisateurs Mac OS consulmtez <a href="https://docs.aws.amazon.com/quickstarts/latest/vmlaunch/step-2-connect-to-instance.html#sshclient" target="_blank">cet article</a>.
+    - Pour les utilisateurs Micrisift Windows consultez <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/putty.html" target="_blank" rel="noopener noreferrer">cet article</a>.  
+    - Pour les utilisateurs Mac OS consulmtez <a href="https://docs.aws.amazon.com/quickstarts/latest/vmlaunch/step-2-connect-to-instance.html#sshclient" target="_blank" rel="noopener noreferrer">cet article</a>.
 
 2. Ajouter des privilègesà l'utilisateur de base de données **wordpress-user**
 
@@ -49,7 +49,7 @@ Pour la réplication continue de  **AWS DMS** à partir d'une base de données M
     exit
     ```
 
-    Vous pouvez trouver plus d'informations sur les log dans la <a href="https://dev.mysql.com/doc/refman/8.0/en/binary-log.html" target="_blank">documentation MySQL</a>.
+    Vous pouvez trouver plus d'informations sur les log dans la <a href="https://dev.mysql.com/doc/refman/8.0/en/binary-log.html" target="_blank" rel="noopener noreferrer">documentation MySQL</a>.
 
 4. Créer et modifier le fichier **/etc/mysql/my.cnf**
 

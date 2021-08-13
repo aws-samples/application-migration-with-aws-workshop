@@ -11,7 +11,7 @@ Web アプリケーションが、データベース移行のセクションで�
 
 1. **Web サーバーのセキュリティグループ**を更新します。
 
-    a. AWS マネジメントコンソール上部の **「サービス」** から **<a href="https://console.aws.amazon.com/ec2/v2/home?region=us-west-2" target="_blank">EC2</a>** のページを開き、**Webserver** インスタンスを選択します。  
+    a. AWS マネジメントコンソール上部の **「サービス」** から **<a href="https://console.aws.amazon.com/ec2/v2/home?region=us-west-2" target="_blank" rel="noopener noreferrer">EC2</a>** のページを開き、**Webserver** インスタンスを選択します。  
     b. **パブリック DNS (IPv4)** と **プライベート IP** の値を、テキストエディタにコピーしておきます。  
     c. インスタンスに割り当てられている**セキュリティグループ**名をクリックします。
 
@@ -27,8 +27,8 @@ Web アプリケーションが、データベース移行のセクションで�
     ソース環境と同じユーザー（ubuntu）と SSH キー（.pem）を使用します。
 
     SSH を使ってサーバーにアクセスする方法がわからない場合は、以下を確認してください：
-    - Microsoft Windows をお使いの場合は<a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/putty.html" target="_blank">こちら</a>
-    - Mac OS をお使いの場合は<a href="https://docs.aws.amazon.com/quickstarts/latest/vmlaunch/step-2-connect-to-instance.html#sshclient" target="_blank">こちら</a>
+    - Microsoft Windows をお使いの場合は<a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/putty.html" target="_blank" rel="noopener noreferrer">こちら</a>
+    - Mac OS をお使いの場合は<a href="https://docs.aws.amazon.com/quickstarts/latest/vmlaunch/step-2-connect-to-instance.html#sshclient" target="_blank" rel="noopener noreferrer">こちら</a>
 
 3. WordPress の設定を更新します。
 
@@ -58,7 +58,7 @@ Web アプリケーションが、データベース移行のセクションで�
 
 4. Web サーバーからのインバウンドトラフィックを許可するために、RDS インスタンスに紐づけている **Virtual Private Cloud (VPC) セキュリティグループ**を更新します。
 
-    a. AWS マネジメントコンソール上部の **「サービス」** から **<a href="https://console.aws.amazon.com/ec2/v2/home?region=us-west-2" target="_blank">EC2</a>** のページを開き、左のメニューから **「セキュリティグループ」** を選択します。RDS インスタンスに紐づけている VPC セキュリティグループ（例：DB-SG）名をクリックします。  
+    a. AWS マネジメントコンソール上部の **「サービス」** から **<a href="https://console.aws.amazon.com/ec2/v2/home?region=us-west-2" target="_blank" rel="noopener noreferrer">EC2</a>** のページを開き、左のメニューから **「セキュリティグループ」** を選択します。RDS インスタンスに紐づけている VPC セキュリティグループ（例：DB-SG）名をクリックします。  
     b. **「インバウンドルール」** のタブを開き、 **「インバウンドのルールの編集」** ボタンをクリックします。  
     c. Web サーバーからのトラフィックを許可するインバウンドルールを追加します。Web サーバーの**プライベート IP** または**所属するセキュリティグループ**からポート3306に対するトラフィックを許可します。編集が完了したら、**「ルールの保存」** ボタンをクリックします。
     

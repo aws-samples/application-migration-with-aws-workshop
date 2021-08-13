@@ -19,7 +19,7 @@ In this lab, you will perform a **Cutover** (this instance conversion was perfor
    
     Confirm that the instance is in a state of **Continuous Data Replication** under the **DATA REPLICATION PROGRESS** column.
 
-    If it's still replicating, wait until it reaches the **Continuous Data Replication** state. While waiting you can review <a href="https://docs.cloudendure.com/" target="_blank">CloudEndure documentation</a>.
+    If it's still replicating, wait until it reaches the **Continuous Data Replication** state. While waiting you can review <a href="https://docs.cloudendure.com/" target="_blank" rel="noopener noreferrer">CloudEndure documentation</a>.
 
 2. Trigger the Cutover
    
@@ -32,7 +32,7 @@ In this lab, you will perform a **Cutover** (this instance conversion was perfor
 
     ![CE-job-progress](/ce/CE-job-progress.png)
 
-    Monitor the **Job Progress** log until you see **Finished starting converters** message (it should take 3-5 minutes). In the meantime you can review <a href="https://docs.cloudendure.com/#Configuring_and_Running_Migration/Performing_a_Migration_Cutover/Performing_a_Migration_Cutover.htm" target="_blank">CloudEndure Documentation providing details on the cutover process</a>.
+    Monitor the **Job Progress** log until you see **Finished starting converters** message (it should take 3-5 minutes). In the meantime you can review <a href="https://docs.cloudendure.com/#Configuring_and_Running_Migration/Performing_a_Migration_Cutover/Performing_a_Migration_Cutover.htm" target="_blank" rel="noopener noreferrer">CloudEndure Documentation providing details on the cutover process</a>.
 
     {{% notice tip %}}
 If you don't see your job in the **Job Progress** window, refresh the browser (F5) and make sure to scroll to the top of the drop-down list of CloudEndure jobs.
@@ -51,5 +51,5 @@ If you don't see your job in the **Job Progress** window, refresh the browser (F
     As soon as the cutover is finished, you will see another EC2 instance on the list - this is your target Webserver created by CloudEndure. Make a note of its public and private IPs, as you will need them in the next step.
 
     {{% notice tip %}}
-If you want to know more about those servers, their purpose and network requirements see <a href="https://docs.cloudendure.com/#Preparing_Your_Environments/Network_Requirements/Network_Requirements.htm" target="_blank">CloudEndure Documentation</a>.
+If you want to know more about those servers, their purpose and network requirements see <a href="https://docs.cloudendure.com/#Preparing_Your_Environments/Network_Requirements/Network_Requirements.htm" target="_blank" rel="noopener noreferrer">CloudEndure Documentation</a>.
 {{% /notice %}}

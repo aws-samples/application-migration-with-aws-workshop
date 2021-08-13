@@ -23,7 +23,7 @@ weight = 20
 
 ### 创建 AWS DMS 复制实例
 
-在此步骤中，您将创建一个 <a href="https://aws.amazon.com/cn/dms/" target="_blank">AWS Database Migration Service</a> 复制实例，该实例启动源数据库到目标数据库之间的连接，传输数据，并缓存在初始数据加载期间发生在源数据库上的任何更改。
+在此步骤中，您将创建一个 <a href="https://aws.amazon.com/cn/dms/" target="_blank" rel="noopener noreferrer">AWS Database Migration Service</a> 复制实例，该实例启动源数据库到目标数据库之间的连接，传输数据，并缓存在初始数据加载期间发生在源数据库上的任何更改。
 
 
 1. 在 **AWS 控制台** 中，从 **服务** 选择 **Database Migration Service**。  
@@ -57,5 +57,5 @@ weight = 20
 4. 点击 **创建** 按钮。
 
     {{% notice note %}}
-创建复制实例需要花几分钟时间，请等待，直到 **状态** 变为 **可用**，再执行后续步骤。在此期间，您可以查看在 <a href="https://aws.amazon.com/cn/dms/" target="_blank">AWS DMS 网页</a> 中描述的 AWS DMS 不同用例。
+创建复制实例需要花几分钟时间，请等待，直到 **状态** 变为 **可用**，再执行后续步骤。在此期间，您可以查看在 <a href="https://aws.amazon.com/cn/dms/" target="_blank" rel="noopener noreferrer">AWS DMS 网页</a> 中描述的 AWS DMS 不同用例。
 {{% /notice %}}

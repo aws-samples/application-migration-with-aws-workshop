@@ -7,7 +7,7 @@ pre = "<b>- </b>"
 
 #### CloudEndure Migration Overview
 
-<a href="https://aws.amazon.com/cloudendure-migration/" target="_blank">CloudEndure Migration</a> enables organizations to migrate even the most complex workloads to Amazon Web Services (AWS) without disruption, or data loss. Through continuous block-level replication, automated machine conversion, and application stack orchestration, **CloudEndure Migration** simplifies the migration process and reduces the potential for human error.
+<a href="https://aws.amazon.com/cloudendure-migration/" target="_blank" rel="noopener noreferrer">CloudEndure Migration</a> enables organizations to migrate even the most complex workloads to Amazon Web Services (AWS) without disruption, or data loss. Through continuous block-level replication, automated machine conversion, and application stack orchestration, **CloudEndure Migration** simplifies the migration process and reduces the potential for human error.
 
 Whether you are migrating to AWS or across regions within AWS, **CloudEndure Migration** gives you the flexibility you need and delivers the security controls you require to succeed in today’s fast-paced digital ecosystem.
 
@@ -23,7 +23,7 @@ Whether you are migrating to AWS or across regions within AWS, **CloudEndure Mig
 
 {{% notice note %}}
 **CloudEndure Migration** is now available **at no charge**  for all migrations to AWS.  
-Go to <a href="https://console.cloudendure.com/#/register/register">CloudEndure Migration Registration page</a> to create an account and start migrating to AWS in minutes!
+Go to <a href="https://console.cloudendure.com/#/register/register" target="_blank" rel="noopener noreferrer">CloudEndure Migration Registration page</a> to create an account and start migrating to AWS in minutes!
 {{% /notice %}}  
 
 You can learn more about **CloudEndure Migration** by watching the video below.

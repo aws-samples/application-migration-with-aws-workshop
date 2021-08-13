@@ -5,7 +5,7 @@ weight = 25
 
 ### Run DMS Replication Task with Change Data Capture (CDC)
 
-To ensure minimal downtime for the database migration, we're going to use continuous replication of changes (also known as **Change Data Capture (CDC)**) from the source database to the target database. For more information about CDC and native CDC support of **AWS DMS** see <a href="https://aws.amazon.com/blogs/database/aws-dms-now-supports-native-cdc-support/" target="_blank">this article</a>.
+To ensure minimal downtime for the database migration, we're going to use continuous replication of changes (also known as **Change Data Capture (CDC)**) from the source database to the target database. For more information about CDC and native CDC support of **AWS DMS** see <a href="https://aws.amazon.com/blogs/database/aws-dms-now-supports-native-cdc-support/" target="_blank" rel="noopener noreferrer">this article</a>.
 
 #### Enable binary log on the source database
 
@@ -13,17 +13,17 @@ For **AWS DMS** continuous replication from MySQL database, you'll need to enabl
 
 1. Login to the **Source Environment Database** server
 
-    For **self-paced lab** - information needed to access the Database environment is described in the **Output** section of the **ApplicationMigrationWorkshop** <a href="https://us-west-2.console.aws.amazon.com/cloudformation/home?region=us-west-2#/" target="_blank">CloudFormation Template</a>.
+    For **self-paced lab** - information needed to access the Database environment is described in the **Output** section of the **ApplicationMigrationWorkshop** <a href="https://us-west-2.console.aws.amazon.com/cloudformation/home?region=us-west-2#/" target="_blank" rel="noopener noreferrer">CloudFormation Template</a>.
 
     ![Database Server login information](/db-mig/db-server-ssh-self-paced.png)    
 
-    For **AWS Event** - information needed to access the Database environment is described at **Database IP**, **Database Username** and **Database SSH Key** on the <a href="https://dashboard.eventengine.run/dashboard" target="_blank">Team Dashboard</a>.
+    For **AWS Event** - information needed to access the Database environment is described at **Database IP**, **Database Username** and **Database SSH Key** on the <a href="https://dashboard.eventengine.run/dashboard" target="_blank" rel="noopener noreferrer">Team Dashboard</a>.
 
     ![Database Server login information](/db-mig/db-server-ssh-event.png)
 
     If you're not sure how to use SSH to access servers, check the following:
-    - For Microsoft Windows users view <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/putty.html" target="_blank">this article</a>.  
-    - For Mac OS users view <a href="https://docs.aws.amazon.com/quickstarts/latest/vmlaunch/step-2-connect-to-instance.html#sshclient" target="_blank">this article</a>.
+    - For Microsoft Windows users view <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/putty.html" target="_blank" rel="noopener noreferrer">this article</a>.  
+    - For Mac OS users view <a href="https://docs.aws.amazon.com/quickstarts/latest/vmlaunch/step-2-connect-to-instance.html#sshclient" target="_blank" rel="noopener noreferrer">this article</a>.
 
 2. Grant additional privileges to the **wordpress-user** database user
 
@@ -49,7 +49,7 @@ For **AWS DMS** continuous replication from MySQL database, you'll need to enabl
     exit
     ```
 
-    More information on the binary log can be found in the <a href="https://dev.mysql.com/doc/refman/8.0/en/binary-log.html" target="_blank">MySQL documentation</a>.
+    More information on the binary log can be found in the <a href="https://dev.mysql.com/doc/refman/8.0/en/binary-log.html" target="_blank" rel="noopener noreferrer">MySQL documentation</a>.
 
 4. Create and modify **/etc/mysql/my.cnf** file
 

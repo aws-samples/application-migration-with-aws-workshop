@@ -9,7 +9,7 @@ Wordpress の設定を行う際にデータベースの認証情報、データ�
 これを実現するための最良の方法は、上記のパラメータを Docker イメージや Amazon Elastic Container Service (ECS) タスク定義の中に保持するのではなく、
 **AWS Systems Manager** パラメータストアで管理することです。
 
-マネジメントコンソール上部の **「サービス」** から **<a href="https://console.aws.amazon.com/systems-manager/home?region=us-west-2" target="_blank">Systems Manager</a>** のページを開き、左のメニューから **「パラメータストア」** を選択します。
+マネジメントコンソール上部の **「サービス」** から **<a href="https://console.aws.amazon.com/systems-manager/home?region=us-west-2" target="_blank" rel="noopener noreferrer">Systems Manager</a>** のページを開き、左のメニューから **「パラメータストア」** を選択します。
 
 **「パラメータの作成」** をクリックして、以下の表をもとに**パラメータの詳細**（名前、説明、タイプ、値）を入力します。
 

@@ -5,7 +5,7 @@ weight = 20
 
 ### Crea un instanza AWS DMS di Replica
 
-In questo passaggio creerai una <a href="https://aws.amazon.com/dms/" target="_blank">AWS Database Migration Service</a> Istanza di Replica che avvia la connessione tra i database di origine e di destinazione, trasferisce i dati e memorizza nella cache tutte le modifiche che si verificano sul database di origine durante il caricamento iniziale dei dati.
+In questo passaggio creerai una <a href="https://aws.amazon.com/dms/" target="_blank" rel="noopener noreferrer">AWS Database Migration Service</a> Istanza di Replica che avvia la connessione tra i database di origine e di destinazione, trasferisce i dati e memorizza nella cache tutte le modifiche che si verificano sul database di origine durante il caricamento iniziale dei dati.
 
 
 1. All'interno della **AWS Console**, vai su **Services** e **Database Migration Service**.  
@@ -39,5 +39,5 @@ In questo passaggio creerai una <a href="https://aws.amazon.com/dms/" target="_b
 4. Clicca sul bottone **Create**.
 
     {{% notice note %}}
-La creazione dell'istanza di replica richiede alcuni minuti, attendere che **Status** diventi **Available** prima di passare ai passaggi successivi. Nel frattempo puoi controllare diversi casi d'uso per AWS DMS descritti nella <a href="https://aws.amazon.com/dms/" target="_blank">Webpage AWS DMS</a>
+La creazione dell'istanza di replica richiede alcuni minuti, attendere che **Status** diventi **Available** prima di passare ai passaggi successivi. Nel frattempo puoi controllare diversi casi d'uso per AWS DMS descritti nella <a href="https://aws.amazon.com/dms/" target="_blank" rel="noopener noreferrer">Webpage AWS DMS</a>
 {{% /notice %}}

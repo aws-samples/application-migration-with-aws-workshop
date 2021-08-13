@@ -27,7 +27,7 @@ wir wissen also, dass sie funktioniert!).
     Bestätigen Sie, dass in der **DATA REPLICATION PROGRESS** Spalte sich die Instanz im Status **Continuous Data Replication** befindet.
 
     Wenn es immer noch repliziert wird, warten Sie, bis der Status **Continuous Data Replication** erreicht wird. 
-    Während des Wartens können Sie die <a href="https://docs.cloudendure.com/" target="_blank">CloudEndure-Dokumentation</a> lesen.
+    Während des Wartens können Sie die <a href="https://docs.cloudendure.com/" target="_blank" rel="noopener noreferrer">CloudEndure-Dokumentation</a> lesen.
 
 2. Aktiviere die Inbetriebnahme
 
@@ -48,7 +48,7 @@ wir wissen also, dass sie funktioniert!).
 
     Überwachen Sie das Protokoll **Job Progress**, bis die **Finished starting converters** Meldung angezeigt wird 
     (dies sollte 3-5 Minuten dauern). 
-    In der Zwischenzeit können Sie die <a href="https://docs.cloudendure.com/#Configuring_and_Running_Migration/Performing_a_Migration_Cutover/Performing_a_Migration_Cutover.htm" target="_blank">CloudEndure-Dokumentation mit Details zu einer Inbetriebnahme/einem Cutover-Prozess</a> 
+    In der Zwischenzeit können Sie die <a href="https://docs.cloudendure.com/#Configuring_and_Running_Migration/Performing_a_Migration_Cutover/Performing_a_Migration_Cutover.htm" target="_blank" rel="noopener noreferrer">CloudEndure-Dokumentation mit Details zu einer Inbetriebnahme/einem Cutover-Prozess</a> 
     überprüfen.
 
 {{% notice tip %}}
@@ -75,5 +75,5 @@ aktualisieren Sie den Browser (F5) und scrollen Sie zum Anfang der Dropdown-List
 
 {{% notice tip %}}
 Weitere Informationen zu diesen Servern, ihrem Zweck und ihren Netzwerkanforderungen 
-finden Sie unter <a href="https://docs.cloudendure.com/#Preparing_Your_Environments/Network_Requirements/Network_Requirements.htm" target="_blank">CloudEndure-Dokumentation</a> URL.
+finden Sie unter <a href="https://docs.cloudendure.com/#Preparing_Your_Environments/Network_Requirements/Network_Requirements.htm" target="_blank" rel="noopener noreferrer">CloudEndure-Dokumentation</a> URL.
 {{% /notice %}}

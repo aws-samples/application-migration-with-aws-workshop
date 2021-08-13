@@ -5,7 +5,7 @@ weight = 40
 
 ### レプリケーションタスクの作成と実行
 
-マネジメントコンソール上部の **「サービス」** から **<a href="https://console.aws.amazon.com/dms/v2/home?region=us-west-2" target="_blank">Database Migration Service (DMS)</a>** のページを開き、左のメニューから **「データベース移行タスク」** をクリックします。**「タスクの作成」** ボタンをクリックして、レプリケーションタスクの作成を開始します。
+マネジメントコンソール上部の **「サービス」** から **<a href="https://console.aws.amazon.com/dms/v2/home?region=us-west-2" target="_blank" rel="noopener noreferrer">Database Migration Service (DMS)</a>** のページを開き、左のメニューから **「データベース移行タスク」** をクリックします。**「タスクの作成」** ボタンをクリックして、レプリケーションタスクの作成を開始します。
 
 1. **「データ移行タスクの作成」** 画面で、以下のパラメータを入力します。
 

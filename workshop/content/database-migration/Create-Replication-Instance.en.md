@@ -23,7 +23,7 @@ One of the pre-requisites for using of **AWS DMS** is having configured a **subn
 
 ### Create AWS DMS Replication Instance
 
-In this step you will create an <a href="https://aws.amazon.com/dms/" target="_blank">AWS Database Migration Service</a> Replication Instance that initiates the connection between the source and target databases, transfers the data, and caches any changes that occur on the source database during the initial data load.
+In this step you will create an <a href="https://aws.amazon.com/dms/" target="_blank" rel="noopener noreferrer">AWS Database Migration Service</a> Replication Instance that initiates the connection between the source and target databases, transfers the data, and caches any changes that occur on the source database during the initial data load.
 
 
 1. Inside **AWS Console**, go to **Services** and **Database Migration Service**.  

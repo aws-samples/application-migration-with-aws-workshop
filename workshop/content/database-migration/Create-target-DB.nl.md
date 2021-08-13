@@ -5,7 +5,7 @@ weight = 15
 
 ### Database Migratie
 
-Database migraties kunnen worden uitgevoerd op een aantal manieren. In deze workshop gebruiken wij **continuous data replication** migratie via <a href="https://aws.amazon.com/dms/" target="_blank">AWS Database Migrations Service (DMS)</a>.
+Database migraties kunnen worden uitgevoerd op een aantal manieren. In deze workshop gebruiken wij **continuous data replication** migratie via <a href="https://aws.amazon.com/dms/" target="_blank" rel="noopener noreferrer">AWS Database Migrations Service (DMS)</a>.
 
 ### Creëer de subnet groep voor de database in de doelomgeving
 
@@ -62,14 +62,14 @@ Onthoudt de **Master username** en het **Master password** goed, want deze heb j
 3. Voor **Availability & durability**, laat de standaardwaarde voor **Do not create a standby instance** staan.
 
     {{% notice note %}}
-Voor echte migraties, is altijd beter en veiliger om een <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.MultiAZ.html" target="_blank">multi-AZ database</a> te gebruiken.
+Voor echte migraties, is altijd beter en veiliger om een <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.MultiAZ.html" target="_blank" rel="noopener noreferrer">multi-AZ database</a> te gebruiken.
 {{% /notice %}}  
  
     ![5_db](/db-mig/5_db.png)
 
 4. In de **Connectivity** sectie:
 
-    * In **Virtual Private Cloud (VPC)**, selecteer **TargetVPC** (dit is een <a href="https://aws.amazon.com/vpc/" target="_blank">Amazon Virtual Private Cloud</a> die automatisch aangemaakt is voor deze workshop)
+    * In **Virtual Private Cloud (VPC)**, selecteer **TargetVPC** (dit is een <a href="https://aws.amazon.com/vpc/" target="_blank" rel="noopener noreferrer">Amazon Virtual Private Cloud</a> die automatisch aangemaakt is voor deze workshop)
     * In **Additional connectivity configuration** -> **VPC Security Group**, selecteer **Create new VPC security group** en geef het een naam (b.v. "DB-SG").
 
     ![6_db](/db-mig/6_db.png)

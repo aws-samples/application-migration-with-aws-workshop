@@ -25,13 +25,13 @@ Veja o diagrama abaixo que mostra a arquitetura geral do Amazon ECS usando AWS F
 
 #### Principais componentes do Amazon ECS:
 
-<a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/clusters.html" target="_blank">Amazon ECS Cluster</a> é um agrupamento lógico de recursos.
+<a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/clusters.html" target="_blank" rel="noopener noreferrer">Amazon ECS Cluster</a> é um agrupamento lógico de recursos.
 
-<a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definitions.html" target="_blank">Task Definition</a> é um arquivo JSON, que descreve um ou mais containers (até o máximo de dez), que compõem sua aplicação. Você pode pensar numa task como a planta baixa da sua aplicação.
+<a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definitions.html" target="_blank" rel="noopener noreferrer">Task Definition</a> é um arquivo JSON, que descreve um ou mais containers (até o máximo de dez), que compõem sua aplicação. Você pode pensar numa task como a planta baixa da sua aplicação.
 
-<a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/scheduling_tasks.html" target="_blank">Task</a> é uma instancialização de uma task definition em um cluster. Após criar uma task definition para sua aplicação dentro do Amazon ECS, você pode especificar o númbero de tasks quer rodarão no cluster.
+<a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/scheduling_tasks.html" target="_blank" rel="noopener noreferrer">Task</a> é uma instancialização de uma task definition em um cluster. Após criar uma task definition para sua aplicação dentro do Amazon ECS, você pode especificar o númbero de tasks quer rodarão no cluster.
 
-<a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs_services.html" target="_blank">Services</a> - o Amazon ECS permite que você rode e  mantenha um número específico de instâncias de uma task definition simultaneamente no cluster. Isto é chamado de service. Caso alguma de suas tasks falhem ou parem por qualquer razão, o agendadador de serviços do Amazon ECS lança outra instância da sua task definition para substituí-la e mantem a contagem desejada de tasks dependendo da estratégia de agendamento usada.
+<a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs_services.html" target="_blank" rel="noopener noreferrer">Services</a> - o Amazon ECS permite que você rode e  mantenha um número específico de instâncias de uma task definition simultaneamente no cluster. Isto é chamado de service. Caso alguma de suas tasks falhem ou parem por qualquer razão, o agendadador de serviços do Amazon ECS lança outra instância da sua task definition para substituí-la e mantem a contagem desejada de tasks dependendo da estratégia de agendamento usada.
 
 Você pode conhecer mais sobre o **AWS Fargate** vendo o vídeo abaixo.
 <center>

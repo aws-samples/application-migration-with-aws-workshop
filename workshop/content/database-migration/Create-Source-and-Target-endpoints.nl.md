@@ -17,7 +17,7 @@ In het **AWS DMS** scherm, ga naar **Endpoints** en klik op **Create endpoint**.
     | Endpoint type       | Source endpoint                                |
     | Endpoint identifier | source-endpoint                                |
     | Source engine       | mysql                                          |
-    | Server name         | Source Environment - for **self-paced lab** use information from the **Output** section of the **ApplicationMigrationWorkshop** <a href="https://us-west-2.console.aws.amazon.com/cloudformation/home?region=us-west-2#/" target="_blank">CloudFormation Template</a>, <br>for **AWS Events** - use **Database Server IP** from the Event Engine - Team Dashboard   |
+    | Server name         | Source Environment - for **self-paced lab** use information from the **Output** section of the **ApplicationMigrationWorkshop** <a href="https://us-west-2.console.aws.amazon.com/cloudformation/home?region=us-west-2#/" target="_blank" rel="noopener noreferrer">CloudFormation Template</a>, <br>for **AWS Events** - use **Database Server IP** from the Event Engine - Team Dashboard   |
     | Port                | 3306                                           |
     | SSL mode            | none                                           |
     | User name           | wordpress-user                                 |

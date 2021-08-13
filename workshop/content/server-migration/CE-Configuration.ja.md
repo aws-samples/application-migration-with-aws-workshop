@@ -15,13 +15,13 @@ AWS の資格情報を使って CloudEndure を設定する必要があります
 
     **自身の環境**でハンズオンを実施している場合は、すでにお持ちの CloudEndure Migration アカウントを使うか、新しく [CloudEndure Migration アカウント](https://console.cloudendure.com/#/register/register)を作成してください。
 
-    **AWS 主催のイベント**の場合は、Event Engine の <A href="https://dashboard.eventengine.run/dashboard" target="_blank">Team Dashboard</a> に表示されている **CloudEndure Username** と **Password** を使用してください。
+    **AWS 主催のイベント**の場合は、Event Engine の <A href="https://dashboard.eventengine.run/dashboard" target="_blank" rel="noopener noreferrer">Team Dashboard</a> に表示されている **CloudEndure Username** と **Password** を使用してください。
 
     ![CloudEndure Credentials](/ce/CE-console-credentials.png)
 
-    <A href="https://dashboard.eventengine.run/dashboard" target="_blank">Team Dashboard</a> に、資格情報が表示されていない場合は、イベント主催者に資格情報を提供してもらうよう依頼してください。
+    <A href="https://dashboard.eventengine.run/dashboard" target="_blank" rel="noopener noreferrer">Team Dashboard</a> に、資格情報が表示されていない場合は、イベント主催者に資格情報を提供してもらうよう依頼してください。
 
-2. **自身の環境**でハンズオンを実施している場合のみ、CloudEndure コンソールの左上にあるプラスボタンをクリックし、新しい <a href="https://docs.cloudendure.com/#Getting_Started_with_CloudEndure/Working_with_Projects/Working_with_Projects.htm#Creating_a_New_Project%3FTocPath%3DNavigation%7CGetting%2520Started%2520with%2520CloudEndure%7CWorking%2520with%2520Projects%7C_____2" target="_blank">Project</a> を作成します。
+2. **自身の環境**でハンズオンを実施している場合のみ、CloudEndure コンソールの左上にあるプラスボタンをクリックし、新しい <a href="https://docs.cloudendure.com/#Getting_Started_with_CloudEndure/Working_with_Projects/Working_with_Projects.htm#Creating_a_New_Project%3FTocPath%3DNavigation%7CGetting%2520Started%2520with%2520CloudEndure%7CWorking%2520with%2520Projects%7C_____2" target="_blank" rel="noopener noreferrer">Project</a> を作成します。
 **AWS 主催のイベント**の場合は、この手順をスキップし、**ステップ3** に進んでください。
     ![CloudEndure Create Project](/ce/CE-create-project-1.ja.png)
 
@@ -34,11 +34,11 @@ AWS の資格情報を使って CloudEndure を設定する必要があります
 
 3. **AWS Access Key ID** と **AWS Secret Access Key** のフィールドに、必要な資格情報を入力します。
 
-    **自身の環境**でハンズオンを実施している場合は、<a href="https://us-west-2.console.aws.amazon.com/cloudformation/home?region=us-west-2#/" target="_blank">CloudFormation スタック</a>（**ApplicationMigrationWorkshop**）の**出力**セクションに表示されている **CloudEndureUserAccessKey** と **CloudEndureUserSecretAccessKey** の値を入力してください（以下例）。
+    **自身の環境**でハンズオンを実施している場合は、<a href="https://us-west-2.console.aws.amazon.com/cloudformation/home?region=us-west-2#/" target="_blank" rel="noopener noreferrer">CloudFormation スタック</a>（**ApplicationMigrationWorkshop**）の**出力**セクションに表示されている **CloudEndureUserAccessKey** と **CloudEndureUserSecretAccessKey** の値を入力してください（以下例）。
 
     ![CloudEndure IAM Access and Secret Access Key](/ce/ce-self-service-accesskeys.ja.png)
 
-    **AWS 主催のイベント**の場合は、Event Engine の<A href="https://dashboard.eventengine.run/dashboard" target="_blank">Team Dashboard</a> 、 **CloudEndure AWS Credentials** のセクションに表示されている資格情報を入力してください（以下例）。
+    **AWS 主催のイベント**の場合は、Event Engine の<A href="https://dashboard.eventengine.run/dashboard" target="_blank" rel="noopener noreferrer">Team Dashboard</a> 、 **CloudEndure AWS Credentials** のセクションに表示されている資格情報を入力してください（以下例）。
 
     ![CloudEndure IAM Access and Secret Access Key](/ce/CE-credentials.png)
 

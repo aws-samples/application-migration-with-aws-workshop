@@ -6,7 +6,7 @@ weight = 10
 
 ### VPC 用のセキュリティグループを作成
 
-マネジメントコンソール上部の **「サービス」** から **<a href="https://console.aws.amazon.com/vpc/home?region=us-west-2" target="_blank">VPC</a>** のページを開き、左のメニューから **「セキュリティ」 → 「セキュリティグループ」** を選択します。セキュリティグループの一覧が表示されたら、**「セキュリティグループを作成」** ボタンをクリックします。
+マネジメントコンソール上部の **「サービス」** から **<a href="https://console.aws.amazon.com/vpc/home?region=us-west-2" target="_blank" rel="noopener noreferrer">VPC</a>** のページを開き、左のメニューから **「セキュリティ」 → 「セキュリティグループ」** を選択します。セキュリティグループの一覧が表示されたら、**「セキュリティグループを作成」** ボタンをクリックします。
 
 #### 1. ロードバランサー用のセキュリティグループを作成
 
@@ -72,7 +72,7 @@ Web サーバーの EFS へのアクセスは、EFS ボリュームをマウン�
 
 {{% notice tip %}}
 Web サーバーに割り当てられているセキュリティグループを確認するには、
-AWS マネジメントコンソール上部の **「サービス」** から **<a href="https://console.aws.amazon.com/ec2/v2/home?region=us-west-2" target="_blank">EC2</a>** のページを開き、**Webserver** インスタンスを選択します。
+AWS マネジメントコンソール上部の **「サービス」** から **<a href="https://console.aws.amazon.com/ec2/v2/home?region=us-west-2" target="_blank" rel="noopener noreferrer">EC2</a>** のページを開き、**Webserver** インスタンスを選択します。
 インスタンスに割り当てられている**セキュリティグループ**名をクリックし、**セキュリティグループ ID** を確認します。
 {{% /notice %}}
 

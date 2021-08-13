@@ -17,7 +17,7 @@ Retournez dans la console AWS, sur l'écran **AWS Database Migration Sercice**, 
     | Endpoint type       | Source endpoint                                |
     | Endpoint identifier | source-endpoint                                |
     | Source engine       | mysql                                          |
-    | Server name         | Source Environment - Pour **le lab effectué de manière indépendante** utilisez les informations dans la section **Output** du "template' **ApplicationMigrationWorkshop** <a href="https://us-west-2.console.aws.amazon.com/cloudformation/home?region=us-west-2#/" target="_blank">CloudFormation</a>, <br>pour **le lab effectué dans le cadre d'un évènement AWS** - utilisez les informations **Database Server IP** de Event Engine - Team Dashboard   |
+    | Server name         | Source Environment - Pour **le lab effectué de manière indépendante** utilisez les informations dans la section **Output** du "template' **ApplicationMigrationWorkshop** <a href="https://us-west-2.console.aws.amazon.com/cloudformation/home?region=us-west-2#/" target="_blank" rel="noopener noreferrer">CloudFormation</a>, <br>pour **le lab effectué dans le cadre d'un évènement AWS** - utilisez les informations **Database Server IP** de Event Engine - Team Dashboard   |
     | Port                | 3306                                           |
     | SSL mode            | none                                           |
     | User name           | wordpress-user                                 |

@@ -9,15 +9,15 @@ weight = 20
 
 ### ハンズオン環境の準備
 
-本ハンズオンでは、**AWS アカウント**に<a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/getting-started_create-admin-group.html" target="_blank">管理者権限</a>でアクセスできることを前提としています。新しく AWS アカウントを作成する場合は、<a href="https://aws.amazon.com/premiumsupport/knowledge-center/create-and-activate-aws-account/" target="_blank">こちらの記事</a>を参考にしてください。
+本ハンズオンでは、**AWS アカウント**に<a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/getting-started_create-admin-group.html" target="_blank" rel="noopener noreferrer">管理者権限</a>でアクセスできることを前提としています。新しく AWS アカウントを作成する場合は、<a href="https://aws.amazon.com/premiumsupport/knowledge-center/create-and-activate-aws-account/" target="_blank" rel="noopener noreferrer">こちらの記事</a>を参考にしてください。
 
-以下の手順では、移行元となる環境（ソース）を、AWS アカウント内にデプロイします。デプロイされるリソースは、2つの t3.micro インスタンス（Web サーバー用に1つ、データベース用に1つ）、NAT Gateway、API Gateway、2つの Lambda 関数（EC2 インスタンスへのアクセスに必要な SSH キーペアの取得を簡略化するために使用）で構成されます。ハンズオン全体を通してデプロイされるリソースの総コストは、約4時間の作業で5ドル未満を想定しており、その一部は <a href="https://aws.amazon.com/free/" target="_blank">AWS 無料利用枠</a>でカバーされます。
+以下の手順では、移行元となる環境（ソース）を、AWS アカウント内にデプロイします。デプロイされるリソースは、2つの t3.micro インスタンス（Web サーバー用に1つ、データベース用に1つ）、NAT Gateway、API Gateway、2つの Lambda 関数（EC2 インスタンスへのアクセスに必要な SSH キーペアの取得を簡略化するために使用）で構成されます。ハンズオン全体を通してデプロイされるリソースの総コストは、約4時間の作業で5ドル未満を想定しており、その一部は <a href="https://aws.amazon.com/free/" target="_blank" rel="noopener noreferrer">AWS 無料利用枠</a>でカバーされます。
 
 不要な請求を避けるために、ハンズオンの完了後は必ず [ハンズオン環境の削除]({{< ref "/cleanup/_index.ja.md" >}})を実施してください。
 
 #### オプション1： CloudFormation による自動デプロイ
 
-1. 以下のボタンをクリックします。 <a href="https://console.aws.amazon.com/cloudformation/home?region=us-west-2#/stacks/new?stackName=ApplicationMigrationWorkshop&templateURL=https://application-migration-with-aws-workshop.s3-us-west-2.amazonaws.com/template/migration_workshop_source_template.yml" target="_blank"><img src="https://application-migration-with-aws-workshop.s3-us-west-2.amazonaws.com/static/cloudformation-launch-stack.png"></a>
+1. 以下のボタンをクリックします。 <a href="https://console.aws.amazon.com/cloudformation/home?region=us-west-2#/stacks/new?stackName=ApplicationMigrationWorkshop&templateURL=https://application-migration-with-aws-workshop.s3-us-west-2.amazonaws.com/template/migration_workshop_source_template.yml" target="_blank" rel="noopener noreferrer"><img src="https://application-migration-with-aws-workshop.s3-us-west-2.amazonaws.com/static/cloudformation-launch-stack.png"></a>
 
 2. **「ステップ1 ： テンプレートの指定」** で、画面右上に表示されるリージョンが**オレゴン**になっていること、
 **Amazon S3 URL** のフィールドにテンプレートの URL https://application-migration-with-aws-workshop.s3-us-west-2.amazonaws.com/template/migration_workshop_source_template.yml が入力されていることを確認し、**「次へ」** をクリックします。
@@ -33,7 +33,7 @@ weight = 20
 
 スタックの状態が **CREATE_COMPLETE** になったことを確認し、
 以下のスクリーンショットのように、**「出力」** タブから作成されたソース環境に関する情報を確認します。  
-作成中に、スタックのページから離れてしまった場合は、マネジメントコンソール上部の **「サービス」** から **<a href="https://console.aws.amazon.com/cloudformation/home?region=us-west-2" target="_blank">CloudFormation</a>** のページを開き、上の手順で作成した**スタック**（ApplicationMigrationWorkshop）を選択することで、元のページに戻ることが可能です。
+作成中に、スタックのページから離れてしまった場合は、マネジメントコンソール上部の **「サービス」** から **<a href="https://console.aws.amazon.com/cloudformation/home?region=us-west-2" target="_blank" rel="noopener noreferrer">CloudFormation</a>** のページを開き、上の手順で作成した**スタック**（ApplicationMigrationWorkshop）を選択することで、元のページに戻ることが可能です。
 ![Source Environment Information in AWS Console](/intro/self-service-env-awsconsole-info.ja.png)
 
 上で確認した情報は、ハンズオンで使用するため、テキストエディタ等にコピーを取っておいてください。
@@ -54,11 +54,11 @@ AWS アカウント内に、既に同じ名前の IAM ロールが存在する�
 
 以下のセクションでは、CloudFormation のテンプレートを作成し、AWS Command Line Interface（CLI）を使用して、環境をデプロイする方法について説明します。
 
-1. <a href="https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-sam-cli-install.html" target="_blank">AWS Serverless Application Model (SAM)</a> をインストールします。
+1. <a href="https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-sam-cli-install.html" target="_blank" rel="noopener noreferrer">AWS Serverless Application Model (SAM)</a> をインストールします。
 
-2. <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-install.html" target="_blank">AWS CLI</a> をインストールし、<a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html" target="_blank">設定</a>します。
+2. <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-install.html" target="_blank" rel="noopener noreferrer">AWS CLI</a> をインストールし、<a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html" target="_blank" rel="noopener noreferrer">設定</a>します。
 
-3. <a href="https://github.com/aws-samples/application-migration-with-aws-workshop" target="_blank">https://github.com/aws-samples/application-migration-with-aws-workshop</a> からプロジェクトをダウンロードまたはクローンします。
+3. <a href="https://github.com/aws-samples/application-migration-with-aws-workshop" target="_blank" rel="noopener noreferrer">https://github.com/aws-samples/application-migration-with-aws-workshop</a> からプロジェクトをダウンロードまたはクローンします。
    ```
    git clone https://github.com/aws-samples/application-migration-with-aws-workshop.git
    ```  
@@ -79,7 +79,7 @@ AWS アカウント内に、既に同じ名前の IAM ロールが存在する�
 6. デプロイが完了すると、以下のスクリーンショットのように、ソース環境に関する情報がコンソールに表示されます。
 ![Source Environment in CLI Console](/intro/self-service-env-cli-info.ja.png)
 
-マネジメントコンソール上部の **「サービス」** から **<a href="https://console.aws.amazon.com/cloudformation/home?region=us-west-2" target="_blank">CloudFormation</a>** のページを開き、上の手順で作成した**スタック**（ApplicationMigrationWorkshop）を選択、**「出力」** タブを開くことで、同様の情報をいつでも確認することができます。
+マネジメントコンソール上部の **「サービス」** から **<a href="https://console.aws.amazon.com/cloudformation/home?region=us-west-2" target="_blank" rel="noopener noreferrer">CloudFormation</a>** のページを開き、上の手順で作成した**スタック**（ApplicationMigrationWorkshop）を選択、**「出力」** タブを開くことで、同様の情報をいつでも確認することができます。
 ![Source Environment Information in AWS Console](/intro/self-service-env-awsconsole-info.ja.png)
 
 {{% notice tip %}}

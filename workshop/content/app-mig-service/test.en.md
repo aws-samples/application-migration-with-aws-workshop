@@ -19,7 +19,7 @@ Before we can finalize migration, we need to test it.
 
     ![Job progress](/app_mig_serv/testing_job_details.en.png)
 
-2. Go back to <a href="https://us-west-2.console.aws.amazon.com/mgn/home?region=us-west-2#/sourceServers">Source Servers</a>, click on your server **Hostname**, then **Test and Cutover** -> **Mark as "ready for cutover"** and  **Continue** on the popup to confirm that the testing went succesful and testing instance can be terminated.
+2. Go back to <a href="https://us-west-2.console.aws.amazon.com/mgn/home?region=us-west-2#/sourceServers" target="_blank" rel="noopener noreferrer">Source Servers</a>, click on your server **Hostname**, then **Test and Cutover** -> **Mark as "ready for cutover"** and  **Continue** on the popup to confirm that the testing went succesful and testing instance can be terminated.
 
     ![Ready for cutover](/app_mig_serv/ready_for_cutover.en.png)
 

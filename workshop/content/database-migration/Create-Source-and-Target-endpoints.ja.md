@@ -17,7 +17,7 @@ weight = 30
     | エンドポイントタイプ    | ソースエンドポイント                                |
     | エンドポイント識別子    | source-endpoint                                |
     | ソースエンジン         | mysql                                          |
-    | サーバー名            | **自身の環境**でハンズオンを実施している場合は、<a href="https://us-west-2.console.aws.amazon.com/cloudformation/home?region=us-west-2#/" target="_blank">CloudFormation スタック</a>（**ApplicationMigrationWorkshop**）の**出力**セクションに表示されている **DBServerDNSName** の値を入力。<br> **AWS 主催のイベント**の場合は、Event Engine の Team Dashboard に表示されている **Database Server IP** を入力。   |
+    | サーバー名            | **自身の環境**でハンズオンを実施している場合は、<a href="https://us-west-2.console.aws.amazon.com/cloudformation/home?region=us-west-2#/" target="_blank" rel="noopener noreferrer">CloudFormation スタック</a>（**ApplicationMigrationWorkshop**）の**出力**セクションに表示されている **DBServerDNSName** の値を入力。<br> **AWS 主催のイベント**の場合は、Event Engine の Team Dashboard に表示されている **Database Server IP** を入力。   |
     | ポート                | 3306                                           |
     | SSL モード            | none                                           |
     | ユーザー名            | wordpress-user                                 |

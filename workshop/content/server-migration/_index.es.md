@@ -7,7 +7,7 @@ pre = "<b>2. </b>"
 
 #### Descripción general de CloudEndure Migration
 
-<a href="https://aws.amazon.com/cloudendure-migration/" target="_blank">CloudEndure Migration</a> permite a las organizaciones migrar las cargas de trabajo más complejas a Amazon Web Services (AWS) sin interrupciones, ni pérdida de datos. A través de la replicación continua a nivel de bloque, la conversión automática de máquinas y la organización de la pila de aplicaciones, **CloudEndure Migration** simplifica el proceso de migración y reduce la posibilidad de errores humanos.
+<a href="https://aws.amazon.com/cloudendure-migration/" target="_blank" rel="noopener noreferrer">CloudEndure Migration</a> permite a las organizaciones migrar las cargas de trabajo más complejas a Amazon Web Services (AWS) sin interrupciones, ni pérdida de datos. A través de la replicación continua a nivel de bloque, la conversión automática de máquinas y la organización de la pila de aplicaciones, **CloudEndure Migration** simplifica el proceso de migración y reduce la posibilidad de errores humanos.
 
 Ya sea que esté migrando a AWS o a través de regiones dentro de AWS, **CloudEndure Migration** le brinda la flexibilidad que necesita y le brinda los controles de seguridad que requiere para tener éxito en el ecosistema digital acelerado de hoy.
 
@@ -24,7 +24,7 @@ Ya sea que esté migrando a AWS o a través de regiones dentro de AWS, **CloudEn
 
 {{% notice note %}}
 **CloudEndure Migration** ahora está disponible **sin cargo** para todas las migraciones a AWS.
-¡Vaya a la página de <a href="https://console.cloudendure.com/#/register/register">Registro de Migración de CloudEndure</a> para crear una cuenta y comenzar a migrar a AWS en minutos!
+¡Vaya a la página de <a href="https://console.cloudendure.com/#/register/register"  target="_blank" rel="noopener noreferrer">Registro de Migración de CloudEndure</a> para crear una cuenta y comenzar a migrar a AWS en minutos!
 {{% /notice %}}  
 
 Puede obtener más información sobre **CloudEndure Migration** viendo el video a continuación.

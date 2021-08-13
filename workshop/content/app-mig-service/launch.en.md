@@ -13,7 +13,7 @@ weight = 60
 
     ![Launch cutover](/app_mig_serv/launch_cutover.en.png)  
 
-    {{% notice warning %}} If you see **Failed to launch cutover instances. One or more of the Source Servers included in API call are currently being processed by a Job** error, this means that the test instance is still getting terminated. Check progress of that activity at <a href="https://us-west-2.console.aws.amazon.com/mgn/home?region=us-west-2#/launchHistory">Launch history</a> page. Wait for the **Terminate** job to finish and then **Launch cutover instance** again.  
+    {{% notice warning %}} If you see **Failed to launch cutover instances. One or more of the Source Servers included in API call are currently being processed by a Job** error, this means that the test instance is still getting terminated. Check progress of that activity at <a href="https://us-west-2.console.aws.amazon.com/mgn/home?region=us-west-2#/launchHistory" target="_blank" rel="noopener noreferrer">Launch history</a> page. Wait for the **Terminate** job to finish and then **Launch cutover instance** again.  
 {{% /notice %}}   
 
 2. Cutover completed

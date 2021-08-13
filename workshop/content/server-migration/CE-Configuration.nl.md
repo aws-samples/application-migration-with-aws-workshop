@@ -12,9 +12,9 @@ Voordat je kunt beginnen, dien je eerst de **AWS inloggegevens** in CloudEndure 
 
     ![CE-login](/ce/CE-login.png)
 
-    Voor het zelfstandig uitvoeren van deze workshop, gebruik je je eigen bestaande **CloudEndure Migration Account** of maak je een nieuw account aan via [CloudEndure Migration Account](https://console.cloudendure.com/#/register/register) en een nieuw <a href="https://docs.cloudendure.com/#Getting_Started_with_CloudEndure/Working_with_Projects/Working_with_Projects.htm#Creating_a_New_Project%3FTocPath%3DNavigation%7CGetting%2520Started%2520with%2520CloudEndure%7CWorking%2520with%2520Projects%7C_____2" target="_blank">CloudEndure Project</a>
+    Voor het zelfstandig uitvoeren van deze workshop, gebruik je je eigen bestaande **CloudEndure Migration Account** of maak je een nieuw account aan via [CloudEndure Migration Account](https://console.cloudendure.com/#/register/register) en een nieuw <a href="https://docs.cloudendure.com/#Getting_Started_with_CloudEndure/Working_with_Projects/Working_with_Projects.htm#Creating_a_New_Project%3FTocPath%3DNavigation%7CGetting%2520Started%2520with%2520CloudEndure%7CWorking%2520with%2520Projects%7C_____2" target="_blank" rel="noopener noreferrer">CloudEndure Project</a>
 
-    Voor het uitvoeren tijdens een **AWS Event** - gebruik je de **CloudEndure Username** and **Password** die je kunt vinden in de <A href="https://dashboard.eventengine.run/dashboard" target="_blank">Event Engine - Team Dashboard</a>.
+    Voor het uitvoeren tijdens een **AWS Event** - gebruik je de **CloudEndure Username** and **Password** die je kunt vinden in de <A href="https://dashboard.eventengine.run/dashboard" target="_blank" rel="noopener noreferrer">Event Engine - Team Dashboard</a>.
 
     ![CloudEndure Credentials](/ce/CE-console-credentials.png)
 
@@ -26,11 +26,11 @@ Voordat je kunt beginnen, dien je eerst de **AWS inloggegevens** in CloudEndure 
 
 3. Druk op **EDIT** en voer de **AWS Access Key ID** en de **AWS Secret Access Key** in. 
    
-    Voor het zelfstandig uitvoeren van deze workshop - kopieëer de informatie van de **Output** sectie van de **ApplicationMigrationWorkshop** <a href="https://us-west-2.console.aws.amazon.com/cloudformation/home?region=us-west-2#/" target="_blank">CloudFormation Template</a>, zoals onderstaand voorbeeld.
+    Voor het zelfstandig uitvoeren van deze workshop - kopieëer de informatie van de **Output** sectie van de **ApplicationMigrationWorkshop** <a href="https://us-west-2.console.aws.amazon.com/cloudformation/home?region=us-west-2#/" target="_blank" rel="noopener noreferrer">CloudFormation Template</a>, zoals onderstaand voorbeeld.
 
     ![CloudEndure IAM Access and Secret Access Key](/ce/ce-self-service-accesskeys.png)
 
-    Voor het uitvoeren tijdens een **AWS Event** - kopieëer de informatie van het <A href="https://dashboard.eventengine.run/dashboard" target="_blank">Event Engine - Team Dashboard</a> - **CloudEndure AWS Credentials** sectie, zoals onderstaand voorbeeld.
+    Voor het uitvoeren tijdens een **AWS Event** - kopieëer de informatie van het <A href="https://dashboard.eventengine.run/dashboard" target="_blank" rel="noopener noreferrer">Event Engine - Team Dashboard</a> - **CloudEndure AWS Credentials** sectie, zoals onderstaand voorbeeld.
 
     ![CloudEndure IAM Access and Secret Access Key](/ce/CE-credentials.png)
 

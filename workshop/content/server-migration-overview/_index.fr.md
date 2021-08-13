@@ -11,9 +11,9 @@ Dans cette étape, vous allez migrer un serveur web en utilisant une ou plusieur
 
 Voici une liste des principales stratégies :
 
-1. **REHOST**: Migrer une application sans aucune modification, également appelé lift-and-shift. Pour réaliser une telle migration, il est possible d'utiliser des services avec un agent à installer sur le serveur source comme <a href="https://aws.amazon.com/fr/application-migration-service/">AWS Application Migration Service</a> ou <a href="https://console.cloudendure.com/#/register/register" target="_blank">CloudEndure Migration</a> mais aussi sans agent comme <a href="https://aws.amazon.com/server-migration-service/" target="_blank">AWS Server Migration Service</a>.
+1. **REHOST**: Migrer une application sans aucune modification, également appelé lift-and-shift. Pour réaliser une telle migration, il est possible d'utiliser des services avec un agent à installer sur le serveur source comme <a href="https://aws.amazon.com/fr/application-migration-service/">AWS Application Migration Service</a> ou <a href="https://console.cloudendure.com/#/register/register" target="_blank" rel="noopener noreferrer">CloudEndure Migration</a> mais aussi sans agent comme <a href="https://aws.amazon.com/server-migration-service/" target="_blank" rel="noopener noreferrer">AWS Server Migration Service</a>.
 2. **REPLATFORM**: Faire de simples modifications pour obtenir un bénéfice tangible. L'architecture de l'application restera la même.
-3. **REPURCHASE**: Passer de licenses classiques à un nouveau modèle adapté aux software-as-a-service. <a href="https://aws.amazon.com/mp/migration/" target="_blank">AWS Marketplace</a> propose un catalogue numérique organisé de solutions logicielles qui prennent en charge chaque phase de migration.
+3. **REPURCHASE**: Passer de licenses classiques à un nouveau modèle adapté aux software-as-a-service. <a href="https://aws.amazon.com/mp/migration/" target="_blank" rel="noopener noreferrer">AWS Marketplace</a> propose un catalogue numérique organisé de solutions logicielles qui prennent en charge chaque phase de migration.
 4. **REFACTOR**: Réimaginer comment l'application doit être structurée et la réécrire en utilisant toutes les possibilités du cloud.
 
 

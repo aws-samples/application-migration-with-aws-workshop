@@ -4,7 +4,7 @@ weight = 20
 +++
 
 
-In der <a href="https://console.cloudendure.com">CloudEndure Konsole</a>, wählen Sie **Machines** 
+In der <a href="https://console.cloudendure.com" target="_blank" rel="noopener noreferrer">CloudEndure Konsole</a>, wählen Sie **Machines** 
 eine **How to Add Machines** Schritt-für-Schritt Anleitung wird angezeigt. 
 
 ![CE-Agent-install](/ce/CE-Agent-install.png)
@@ -15,13 +15,13 @@ eine **How to Add Machines** Schritt-für-Schritt Anleitung wird angezeigt.
 1. Rufen Sie die Quell-Webserver-Informationen ab
 
     Für den Workshop **in einem eigenem AWS-Konto** - finden Sie die Informationen in Ihren CloudFormation Stack **Output** 
-    von **ApplicationMigrationWorkshop** <a href="https://us-west-2.console.aws.amazon.com/cloudformation/home?region=us-west-2#/" target="_blank">CloudFormation Template</a>.
+    von **ApplicationMigrationWorkshop** <a href="https://us-west-2.console.aws.amazon.com/cloudformation/home?region=us-west-2#/" target="_blank" rel="noopener noreferrer">CloudFormation Template</a>.
 
     ![Centos-pem](/ce/webserver-self-paced-info.png)    
 
     Bei Teilnahme an eine von **AWS gehostete Veranstaltung** - es wird unter **Webserver IP**, 
     **Webserver Username** und **Webserver SSH Key** 
-    im <a href="https://dashboard.eventengine.run/dashboard" target="_blank">Team Dashboard</a> beschrieben. 
+    im <a href="https://dashboard.eventengine.run/dashboard" target="_blank" rel="noopener noreferrer">Team Dashboard</a> beschrieben. 
 
     ![Centos-pem](/ce/Centos-pem.png)
 
@@ -30,12 +30,12 @@ eine **How to Add Machines** Schritt-für-Schritt Anleitung wird angezeigt.
     Wenn Sie ein Microsoft Windows-Betriebssystem verwenden, 
     konvertieren Sie die .pem-Datei mit dem SSH-Schlüssel mithilfe von PuttyGen 
     in .ppk und stellen Sie dann mit Putty eine Verbindung her 
-    (mehr Informationen <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/putty.html" target="_blank">finden Sie hier</a>).  
+    (mehr Informationen <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/putty.html" target="_blank" rel="noopener noreferrer">finden Sie hier</a>).  
 
 3. Stellen Sie über das SSH-Terminal eine Verbindung zum **Source Webserver** her.
 
-    Eine Anleitung für die Microsoft Windows Benutzer <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/putty.html" target="_blank">finden Sie hier</a>.  
-    Eine Anleitung für die Mac OS/Linux Benutzer <a href="https://docs.aws.amazon.com/quickstarts/latest/vmlaunch/step-2-connect-to-instance.html#sshclient" target="_blank">finden Sie hier</a>.
+    Eine Anleitung für die Microsoft Windows Benutzer <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/putty.html" target="_blank" rel="noopener noreferrer">finden Sie hier</a>.  
+    Eine Anleitung für die Mac OS/Linux Benutzer <a href="https://docs.aws.amazon.com/quickstarts/latest/vmlaunch/step-2-connect-to-instance.html#sshclient" target="_blank" rel="noopener noreferrer">finden Sie hier</a>.
 
 4. Führen Sie die Befehle aus, die vom **How to Add Machines** kopiert wurden, 
 um den Agenten herunterzuladen und zu installieren: 

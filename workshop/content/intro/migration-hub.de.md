@@ -5,7 +5,7 @@ weight = 50
 
 #### AWS Migration Hub
 
-<a href="https://aws.amazon.com/migration-hub/" target="_blank">AWS Migration Hub</a> 
+<a href="https://aws.amazon.com/migration-hub/" target="_blank" rel="noopener noreferrer">AWS Migration Hub</a> 
 bietet einen zentralen Speicherort, um den Fortschritt von Anwendungsmigrationen über mehrere AWS- und Partnerlösungen hinweg zu verfolgen.
 
 

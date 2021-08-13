@@ -17,7 +17,7 @@ Ainda na tela do **AWS DMS**, vá para **Endpoints** e clique em **Create endpoi
     | Endpoint type       | Source endpoint                                |
     | Endpoint identifier | source-endpoint                                |
     | Source engine       | mysql                                          |
-    | Server name         | Source Environment - para **quem está rodando o lab por conta própria** use a informação da seção **Output** do **ApplicationMigrationWorkshop** <a href="https://us-west-2.console.aws.amazon.com/cloudformation/home?region=us-west-2#/" target="_blank">CloudFormation Template</a>, <br>para **Eventos AWS** - use **Database Server IP** presente no Event Engine - Team Dashboard   |
+    | Server name         | Source Environment - para **quem está rodando o lab por conta própria** use a informação da seção **Output** do **ApplicationMigrationWorkshop** <a href="https://us-west-2.console.aws.amazon.com/cloudformation/home?region=us-west-2#/" target="_blank" rel="noopener noreferrer">CloudFormation Template</a>, <br>para **Eventos AWS** - use **Database Server IP** presente no Event Engine - Team Dashboard   |
     | Port                | 3306                                           |
     | SSL mode            | none                                           |
     | User name           | wordpress-user                                 |

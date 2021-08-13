@@ -11,7 +11,7 @@ weight = 15
 
 AWS DMS を利用するための最初のステップとして、**DMS レプリケーションインスタンス** で使用するサブネットの集合体である、**サブネットグループ** を設定する必要があります。
 
-1. マネジメントコンソール上部の **「サービス」** から **<a href="https://console.aws.amazon.com/dms/v2/home?region=us-west-2" target="_blank">Database Migration Service (DMS)</a>** のページを開き、左のメニューから **「サブネットグループ」** をクリックします。
+1. マネジメントコンソール上部の **「サービス」** から **<a href="https://console.aws.amazon.com/dms/v2/home?region=us-west-2" target="_blank" rel="noopener noreferrer">Database Migration Service (DMS)</a>** のページを開き、左のメニューから **「サブネットグループ」** をクリックします。
 2. **「サブネットグループの作成」** ボタンをクリックします。
 3. **「レプリケーションサブネットグループの作成」** では、次のパラメータを入力します。
 
@@ -32,7 +32,7 @@ AWS DMS を利用するための最初のステップとして、**DMS レプリ
 
 1. **DMS レプリケーションインスタンス** 用のセキュリティグループを作成します。
 
-    a. マネジメントコンソール上部の **「サービス」** から **<a href="https://console.aws.amazon.com/ec2/v2/home?region=us-west-2" target="_blank">EC2</a>** のページを開き、左のメニューから **「セキュリティグループ」** をクリックします。
+    a. マネジメントコンソール上部の **「サービス」** から **<a href="https://console.aws.amazon.com/ec2/v2/home?region=us-west-2" target="_blank" rel="noopener noreferrer">EC2</a>** のページを開き、左のメニューから **「セキュリティグループ」** をクリックします。
 
     b. **「セキュリティグループの作成」** ボタンをクリックします。
 
@@ -46,7 +46,7 @@ AWS DMS を利用するための最初のステップとして、**DMS レプリ
 
 2. **DB-SG** セキュリティグループにインバウンドルールを追加します。
 
-    a. マネジメントコンソール上部の **「サービス」** から **<a href="https://console.aws.amazon.com/ec2/v2/home?region=us-west-2" target="_blank">EC2</a>** のページを開き、左のメニューから **「セキュリティグループ」** をクリックします。
+    a. マネジメントコンソール上部の **「サービス」** から **<a href="https://console.aws.amazon.com/ec2/v2/home?region=us-west-2" target="_blank" rel="noopener noreferrer">EC2</a>** のページを開き、左のメニューから **「セキュリティグループ」** をクリックします。
   
     b. 前頁で作成したデータベースインスタンス用のセキュリティグループ **DB-SG** の**セキュリティグループ ID** をクリックします。
     

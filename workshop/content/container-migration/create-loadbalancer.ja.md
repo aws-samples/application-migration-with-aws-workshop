@@ -3,7 +3,7 @@ title = "Elastic Load Balancing の設定"
 weight = 35
 +++
 
-マネジメントコンソール上部の **「サービス」** から **<a href="https://console.aws.amazon.com/ec2/home?region=us-west-2" target="_blank">EC2</a>** のページを開き、左のメニューから **「ロードバランサー」** を選択します。
+マネジメントコンソール上部の **「サービス」** から **<a href="https://console.aws.amazon.com/ec2/home?region=us-west-2" target="_blank" rel="noopener noreferrer">EC2</a>** のページを開き、左のメニューから **「ロードバランサー」** を選択します。
 
 **「ロードバランサーの作成」** ボタンをクリックし、以下のように **Application Load Balancer** を選択します。
 

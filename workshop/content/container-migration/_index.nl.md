@@ -25,13 +25,13 @@ Zie onderstaand diagram als overzicht van de belangrijkste componenten van een g
 
 #### Amazon ECS belangrijkste componenten:
 
-<a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/clusters.html" target="_blank">Amazon ECS Cluster</a> is een groepering van resources. 
+<a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/clusters.html" target="_blank" rel="noopener noreferrer">Amazon ECS Cluster</a> is een groepering van resources. 
 
-<a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definitions.html" target="_blank">Task Definition</a> is een tekstbestand, in JSON formaat, dat één of meerdere containers beschrijft (max. 10), die gezamelijk jouw applicatie vormen. Je kunt dit zien als een soort blauwdruk voor jouw applicatie.
+<a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definitions.html" target="_blank" rel="noopener noreferrer">Task Definition</a> is een tekstbestand, in JSON formaat, dat één of meerdere containers beschrijft (max. 10), die gezamelijk jouw applicatie vormen. Je kunt dit zien als een soort blauwdruk voor jouw applicatie.
 
-<a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/scheduling_tasks.html" target="_blank">Task</a> is het product van een **task definition** in een cluster. Nadat je de taak definitie hebt gecreëerd voor jouw applicatie in Amazon ECS, kun je specificeren hoeveel daarop gebaseerde taken je wilt draaien op de cluster.
+<a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/scheduling_tasks.html" target="_blank" rel="noopener noreferrer">Task</a> is het product van een **task definition** in een cluster. Nadat je de taak definitie hebt gecreëerd voor jouw applicatie in Amazon ECS, kun je specificeren hoeveel daarop gebaseerde taken je wilt draaien op de cluster.
 
-<a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs_services.html" target="_blank">Services</a> - Amazon ECS maakt het mogelijk een gespecificeerde hoeveelheid taken gebaseerd op een taak definitie te draaien op een ECS Cluster. Dit wordt een **service** (dienst) genoemd. Als een taak stopt te functioneren voor welke reden dan ook, zal de **Amazon ECS service scheduler** een nieuwe taak instantiëren gebaseerd op de taak definitie om deze te vervangen. Hierdoor wordt de vereiste hoeveelheid taken als onderdeel van de dienst gewaarborgd.
+<a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs_services.html" target="_blank" rel="noopener noreferrer">Services</a> - Amazon ECS maakt het mogelijk een gespecificeerde hoeveelheid taken gebaseerd op een taak definitie te draaien op een ECS Cluster. Dit wordt een **service** (dienst) genoemd. Als een taak stopt te functioneren voor welke reden dan ook, zal de **Amazon ECS service scheduler** een nieuwe taak instantiëren gebaseerd op de taak definitie om deze te vervangen. Hierdoor wordt de vereiste hoeveelheid taken als onderdeel van de dienst gewaarborgd.
 
 Je kunt meer leren over **AWS Fargate** via de onderstaande video.
 <center>

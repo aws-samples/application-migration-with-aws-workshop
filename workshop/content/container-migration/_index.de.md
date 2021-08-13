@@ -27,17 +27,17 @@ Das folgende Diagramm zeigt die allgemeine Architektur von Amazon ECS unter Verw
 
 #### Amazon ECS haupt Komponenten:
 
-<a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/clusters.html" target="_blank">Amazon ECS Cluster</a> ist eine logische Gruppierung von Ressourcen.
+<a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/clusters.html" target="_blank" rel="noopener noreferrer">Amazon ECS Cluster</a> ist eine logische Gruppierung von Ressourcen.
 
-<a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definitions.html" target="_blank">Task Definition</a> ist eine JSON-Datei, 
+<a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definitions.html" target="_blank" rel="noopener noreferrer">Task Definition</a> ist eine JSON-Datei, 
 die einen oder mehrere Container (bis zu maximal zehn) beschreibt, die Ihre Anwendung bilden. 
 Sie können sich ein Task als eine Vorlage/Blueprint für Ihre Anwendung vorstellen.
 
-<a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/scheduling_tasks.html" target="_blank">Task</a> ist die Instanziierung 
+<a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/scheduling_tasks.html" target="_blank" rel="noopener noreferrer">Task</a> ist die Instanziierung 
 einer Task-Definition innerhalb eines Clusters. Nachdem Sie in Amazon ECS eine Task-Definition für Ihre Anwendung 
 erstellt haben, können Sie die Anzahl der Aufgaben angeben, die in Ihrem Cluster ausgeführt werden.
 
-<a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs_services.html" target="_blank">Services</a> 
+<a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs_services.html" target="_blank" rel="noopener noreferrer">Services</a> 
 - mit Amazon ECS können Sie eine bestimmte Anzahl von Instanzen einer Task-Definition gleichzeitig 
 in einem Cluster ausführen und verwalten. Dies wird als ein Dienst (service) bezeichnet. 
 Sollte eine Ihrer Tasks aus irgendeinem Grund fehlschlagen oder anhalten, startet der Amazon ECS-Dienstplaner (scheduler) 

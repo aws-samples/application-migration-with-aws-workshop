@@ -12,13 +12,13 @@ weight = 10
 
     ![CE-login](/ce/CE-login.png)
 
-    针对 **自行操作的实验** - 使用您现有的 CloudEndure Migration 帐号或者创建一个新的 [CloudEndure Migration 帐号](https://console.cloudendure.com/#/register/register) 和一个新的 <a href="https://docs.cloudendure.com/#Getting_Started_with_CloudEndure/Working_with_Projects/Working_with_Projects.htm#Creating_a_New_Project%3FTocPath%3DNavigation%7CGetting%2520Started%2520with%2520CloudEndure%7CWorking%2520with%2520Projects%7C_____2" target="_blank">CloudEndure 项目</a>
+    针对 **自行操作的实验** - 使用您现有的 CloudEndure Migration 帐号或者创建一个新的 [CloudEndure Migration 帐号](https://console.cloudendure.com/#/register/register) 和一个新的 <a href="https://docs.cloudendure.com/#Getting_Started_with_CloudEndure/Working_with_Projects/Working_with_Projects.htm#Creating_a_New_Project%3FTocPath%3DNavigation%7CGetting%2520Started%2520with%2520CloudEndure%7CWorking%2520with%2520Projects%7C_____2" target="_blank" rel="noopener noreferrer">CloudEndure 项目</a>
 
-    针对 **AWS 活动** - 使用 <A href="https://dashboard.eventengine.run/dashboard" target="_blank">Event Engine 仪表板</a> 中为您提供的 **CloudEndure Username** 和 **Password**
+    针对 **AWS 活动** - 使用 <A href="https://dashboard.eventengine.run/dashboard" target="_blank" rel="noopener noreferrer">Event Engine 仪表板</a> 中为您提供的 **CloudEndure Username** 和 **Password**
 
     ![CloudEndure Credentials](/ce/CE-console-credentials.png)
 
-    如果您在 <A href="https://dashboard.eventengine.run/dashboard" target="_blank">Event Engine 仪表板</a> 中没有找到，请联系支持人员。
+    如果您在 <A href="https://dashboard.eventengine.run/dashboard" target="_blank" rel="noopener noreferrer">Event Engine 仪表板</a> 中没有找到，请联系支持人员。
 
 2. 导航到 **Setup & Info** > **AWS Credentials** 页面
 
@@ -26,11 +26,11 @@ weight = 10
 
 3. 点击 **EDIT** 按钮，输入 **AWS Access Key ID** 和 **AWS Secret Access Key** 
    
-    针对 **自行操作的实验** - 从 **ApplicationMigrationWorkshop** <a href="https://us-west-2.console.aws.amazon.com/cloudformation/home?region=us-west-2#/" target="_blank">CloudFormation 模板</a>中的 **输出** 部分拷贝此信息，如下面的截图所示。
+    针对 **自行操作的实验** - 从 **ApplicationMigrationWorkshop** <a href="https://us-west-2.console.aws.amazon.com/cloudformation/home?region=us-west-2#/" target="_blank" rel="noopener noreferrer">CloudFormation 模板</a>中的 **输出** 部分拷贝此信息，如下面的截图所示。
 
     ![CloudEndure IAM Access and Secret Access Key](/ce/ce-self-service-accesskeys.zh.png)
 
-    针对 **AWS 活动** - 从 <A href="https://dashboard.eventengine.run/dashboard" target="_blank">Event Engine 仪表板</a> 的 **CloudEndure AWS Credentials** 部分拷贝此信息，如下面的截图所示。  
+    针对 **AWS 活动** - 从 <A href="https://dashboard.eventengine.run/dashboard" target="_blank" rel="noopener noreferrer">Event Engine 仪表板</a> 的 **CloudEndure AWS Credentials** 部分拷贝此信息，如下面的截图所示。  
 
     ![CloudEndure IAM Access and Secret Access Key](/ce/CE-credentials.png)
 

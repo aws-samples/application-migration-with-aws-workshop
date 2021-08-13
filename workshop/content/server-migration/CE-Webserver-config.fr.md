@@ -26,8 +26,8 @@ Lorsque le Cutover est terminé et que **CloudEndure Migration** a créé une in
     Utilisez le même compte (ubuntu) et la clé SSH .ppk de l'environnement source.
 
     Si vous ne savez pas comment accéder aux serveurs avec une clé SSH, regardez :
-    - Pour les utilisateurs Microsoft Windows regardez <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/putty.html" target="_blank">cet article</a>.  
-    - Pour les utilisateurs Mac OS users regardez <a href="https://docs.aws.amazon.com/quickstarts/latest/vmlaunch/step-2-connect-to-instance.html#sshclient" target="_blank">cet article</a>.
+    - Pour les utilisateurs Microsoft Windows regardez <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/putty.html" target="_blank" rel="noopener noreferrer">cet article</a>.  
+    - Pour les utilisateurs Mac OS users regardez <a href="https://docs.aws.amazon.com/quickstarts/latest/vmlaunch/step-2-connect-to-instance.html#sshclient" target="_blank" rel="noopener noreferrer">cet article</a>.
 
 3. Modifiez la **configuration wordpress**
 
@@ -50,7 +50,7 @@ Lorsque le Cutover est terminé et que **CloudEndure Migration** a créé une in
    ```
 
     {{% notice tip %}}
-Pour éditer ce fichier, vous pouvez par exemple utiliser <a href="https://www.howtoforge.com/linux-nano-command/" target="_blank">nano</a> ou <a href="https://www.washington.edu/computing/unix/vi.html" target="_blank">vi</a>.
+Pour éditer ce fichier, vous pouvez par exemple utiliser <a href="https://www.howtoforge.com/linux-nano-command/" target="_blank" rel="noopener noreferrer">nano</a> ou <a href="https://www.washington.edu/computing/unix/vi.html" target="_blank" rel="noopener noreferrer">vi</a>.
 {{% /notice %}}     
 
 4. Mettez à jour le **VPC security group** de l'instance RDS pour autoriser le traffic "inbound" venant du serveur web

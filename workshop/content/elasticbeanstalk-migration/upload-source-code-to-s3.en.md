@@ -16,7 +16,7 @@ Make note of your S3 bucket name. You will use it in the next step.
 {{% /notice %}}
 
 ### 2. Upload your source code to S3 bucket
-Connect to the *Source Webserver* using SSH terminal (for Microsoft Windows see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/putty.html" target="_blank">this article</a>, for Mac OS see <a href="https://docs.aws.amazon.com/quickstarts/latest/vmlaunch/step-2-connect-to-instance.html#sshclient" target="_blank">this article</a>).
+Connect to the *Source Webserver* using SSH terminal (for Microsoft Windows see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/putty.html" target="_blank" rel="noopener noreferrer">this article</a>, for Mac OS see <a href="https://docs.aws.amazon.com/quickstarts/latest/vmlaunch/step-2-connect-to-instance.html#sshclient" target="_blank" rel="noopener noreferrer">this article</a>).
 
 1. Go into ***tmp*** folder where your source code bundle **wordpress-beanstalk.zip** is located and copy it to the S3 bucket you've created in the previous step.
 

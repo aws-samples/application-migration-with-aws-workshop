@@ -21,7 +21,7 @@ weight = 40
     CloudEndure コンソールの **Machines** 画面を開き、移行対象マシンの **DATA REPLICATION PROGRESS** のステータスが、
     **Continuous Data Replication** になっていることを確認します。
 
-    ボリュームのレプリケーションが完了していない場合は、マシンが **Continuous Data Replication** の状態になるまで待機してください。その間に、 <a href="https://docs.cloudendure.com/" target="_blank">CloudEndure のドキュメント</a>を確認してみましょう。
+    ボリュームのレプリケーションが完了していない場合は、マシンが **Continuous Data Replication** の状態になるまで待機してください。その間に、 <a href="https://docs.cloudendure.com/" target="_blank" rel="noopener noreferrer">CloudEndure のドキュメント</a>を確認してみましょう。
 
 2. カットオーバーを実行します。
    
@@ -33,7 +33,7 @@ weight = 40
 
     ![CE-job-progress](/ce/CE-job-progress.png)
 
-    **Job Progress** からジョブの進行状況をモニタリングして、**"Finished machine conversions"** いうメッセージが表示されるまで待機します（3～5分）。その間、カットオーバーのプロセスの詳細について <a href="https://docs.cloudendure.com/#Configuring_and_Running_Migration/Performing_a_Migration_Cutover/Performing_a_Migration_Cutover.htm" target="_blank">CloudEndure のドキュメント</a>を確認してみましょう。
+    **Job Progress** からジョブの進行状況をモニタリングして、**"Finished machine conversions"** いうメッセージが表示されるまで待機します（3～5分）。その間、カットオーバーのプロセスの詳細について <a href="https://docs.cloudendure.com/#Configuring_and_Running_Migration/Performing_a_Migration_Cutover/Performing_a_Migration_Cutover.htm" target="_blank" rel="noopener noreferrer">CloudEndure のドキュメント</a>を確認してみましょう。
     
 
     {{% notice tip %}}
@@ -42,7 +42,7 @@ weight = 40
 
 3. CloudEndure が作成したリソースを AWS アカウント上で確認します。
    
-    AWS マネジメントコンソールに戻り、上部の **「サービス」** から **<a href="https://console.aws.amazon.com/ec2/v2/home?region=us-west-2" target="_blank">EC2</a>** のページを開きます。
+    AWS マネジメントコンソールに戻り、上部の **「サービス」** から **<a href="https://console.aws.amazon.com/ec2/v2/home?region=us-west-2" target="_blank" rel="noopener noreferrer">EC2</a>** のページを開きます。
     必要に応じて対象の AWS リージョン（us-west-2/オレゴン）に移動してください。
 
     CloudEndure で管理されている2つの EC2 インスタンスが、追加で表示されます：
@@ -54,5 +54,5 @@ weight = 40
     カットオーバーが完了すると、リストに新しい EC2 インスタンスが表示されます - これはCloudEndure によって作成されたターゲットの Web サーバーです。後続のセクションで必要になるため、**パブリック DNS (IPv4)** と**プライベート IP** の値を、テキストエディタにコピーしておいてください。
 
     {{% notice tip %}}
-CloudEndure が管理するインスタンスや、その目的、ネットワーク要件の詳細は、<a href="https://docs.cloudendure.com/#Preparing_Your_Environments/Network_Requirements/Network_Requirements.htm" target="_blank">CloudEndure のドキュメント</a>を参照してください。
+CloudEndure が管理するインスタンスや、その目的、ネットワーク要件の詳細は、<a href="https://docs.cloudendure.com/#Preparing_Your_Environments/Network_Requirements/Network_Requirements.htm" target="_blank" rel="noopener noreferrer">CloudEndure のドキュメント</a>を参照してください。
 {{% /notice %}}

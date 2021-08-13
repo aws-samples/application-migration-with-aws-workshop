@@ -5,9 +5,9 @@ weight = 20
 
 ### DMS レプリケーションインスタンスの作成
 
-このステップでは、<a href="https://aws.amazon.com/dms/" target="_blank">AWS Database Migration Service (DMS)</a> レプリケーションインスタンスを作成します。DMS レプリケーションインスタンスは ソースデータベース、ターゲットデータベースとの接続を確立し、データの転送と、データのロード中にソースデータベースに発生した変更のキャッシュを行います。
+このステップでは、<a href="https://aws.amazon.com/dms/" target="_blank" rel="noopener noreferrer">AWS Database Migration Service (DMS)</a> レプリケーションインスタンスを作成します。DMS レプリケーションインスタンスは ソースデータベース、ターゲットデータベースとの接続を確立し、データの転送と、データのロード中にソースデータベースに発生した変更のキャッシュを行います。
 
-1. マネジメントコンソール上部の **「サービス」** から **<a href="https://console.aws.amazon.com/dms/v2/home?region=us-west-2" target="_blank">Database Migration Service (DMS)</a>** のページを開きます。
+1. マネジメントコンソール上部の **「サービス」** から **<a href="https://console.aws.amazon.com/dms/v2/home?region=us-west-2" target="_blank" rel="noopener noreferrer">Database Migration Service (DMS)</a>** のページを開きます。
 
 2. 左のメニューから **「レプリケーションインスタンス」** を選択し、**「レプリケーションインスタンスの作成」** ボタンをクリックします。
 

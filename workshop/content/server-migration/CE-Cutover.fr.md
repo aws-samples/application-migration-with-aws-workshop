@@ -18,7 +18,7 @@ Dans ce lab, vous allez réaliser un **Cutover** (Cette conversion d'instance a 
    
     Confirmez que l'instance est dans l'état de **Continuous Data Replication** sous la colonne **DATA REPLICATION PROGRESS**.
 
-    Si la réplication est toujours en cours, attendez jusqu'à qu'elle atteigne l'état **Continuous Data Replication**. En attendant, vous pouvez revoir <a href="https://docs.cloudendure.com/" target="_blank">la documentation CloudEndure</a>.
+    Si la réplication est toujours en cours, attendez jusqu'à qu'elle atteigne l'état **Continuous Data Replication**. En attendant, vous pouvez revoir <a href="https://docs.cloudendure.com/" target="_blank" rel="noopener noreferrer">la documentation CloudEndure</a>.
 
 2. Déclenchez le Cutover
    
@@ -31,7 +31,7 @@ Dans ce lab, vous allez réaliser un **Cutover** (Cette conversion d'instance a 
 
     ![CE-job-progress](/ce/CE-job-progress.png)
 
-    Surveillez la log **Job Progress** jusqu'à ce que vous voyiez le message **Finished starting converters** (cela doit prendre de 3 à 5 minutes). Pendant ce temps vous pouvez revoir <a href="https://docs.cloudendure.com/#Configuring_and_Running_Migration/Performing_a_Migration_Cutover/Performing_a_Migration_Cutover.htm" target="_blank">la Documentation CloudEndure fournissant des détails sur le processus de Cutover</a>.
+    Surveillez la log **Job Progress** jusqu'à ce que vous voyiez le message **Finished starting converters** (cela doit prendre de 3 à 5 minutes). Pendant ce temps vous pouvez revoir <a href="https://docs.cloudendure.com/#Configuring_and_Running_Migration/Performing_a_Migration_Cutover/Performing_a_Migration_Cutover.htm" target="_blank" rel="noopener noreferrer">la Documentation CloudEndure fournissant des détails sur le processus de Cutover</a>.
 
     {{% notice tip %}}
 Si vous ne voyez pas votre job dans la fenêtre **Job Progress**, rafraîchissez votre browser (F5) et assurez-vous de paginer jusqu'en haut de la liste déroulante des jobs CloudEndure. 
@@ -50,5 +50,5 @@ Si vous ne voyez pas votre job dans la fenêtre **Job Progress**, rafraîchissez
     Dès que le Cutover est terminé, vous verrez une nouvelle instance EC2 dans la liste - c'est votre serveur web cible créé par CloudEndure. Notez ses adresses IP privées et publiques, vous en aurez besoin pour les étapes suivantes.
 
     {{% notice tip %}}
-Si vous voulez en savoir plus à propos de ces serveurs, leur objectif et leurs prérequis réseau, regardez  <a href="https://docs.cloudendure.com/#Preparing_Your_Environments/Network_Requirements/Network_Requirements.htm" target="_blank">La Documentation CloudEndure</a>.
+Si vous voulez en savoir plus à propos de ces serveurs, leur objectif et leurs prérequis réseau, regardez  <a href="https://docs.cloudendure.com/#Preparing_Your_Environments/Network_Requirements/Network_Requirements.htm" target="_blank" rel="noopener noreferrer">La Documentation CloudEndure</a>.
 {{% /notice %}}

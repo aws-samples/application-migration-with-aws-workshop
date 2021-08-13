@@ -12,13 +12,13 @@ Pour commerncer, vous allez avoir besoin de configurer CloudEndure avec vos **AW
 
     ![CE-login](/ce/CE-login.png)
 
-    Pour **Le lab effectué de manière autonome** - utilisez votre compte existant CloudEndure Migration Account ou créez en un [CloudEndure Migration Account](https://console.cloudendure.com/#/register/register) ainsi qu'un nouveau <a href="https://docs.cloudendure.com/#Getting_Started_with_CloudEndure/Working_with_Projects/Working_with_Projects.htm#Creating_a_New_Project%3FTocPath%3DNavigation%7CGetting%2520Started%2520with%2520CloudEndure%7CWorking%2520with%2520Projects%7C_____2" target="_blank">Projet CloudEndure</a>
+    Pour **Le lab effectué de manière autonome** - utilisez votre compte existant CloudEndure Migration Account ou créez en un [CloudEndure Migration Account](https://console.cloudendure.com/#/register/register) ainsi qu'un nouveau <a href="https://docs.cloudendure.com/#Getting_Started_with_CloudEndure/Working_with_Projects/Working_with_Projects.htm#Creating_a_New_Project%3FTocPath%3DNavigation%7CGetting%2520Started%2520with%2520CloudEndure%7CWorking%2520with%2520Projects%7C_____2" target="_blank" rel="noopener noreferrer">Projet CloudEndure</a>
 
-    Pour **Le lab effectué dans le cadre d'un évènement AWS** - utilisez **CloudEndure Username** et **Password** listés dans <A href="https://dashboard.eventengine.run/dashboard" target="_blank">le tableau de bord Event Engine - Team Dashboard</a>.
+    Pour **Le lab effectué dans le cadre d'un évènement AWS** - utilisez **CloudEndure Username** et **Password** listés dans <A href="https://dashboard.eventengine.run/dashboard" target="_blank" rel="noopener noreferrer">le tableau de bord Event Engine - Team Dashboard</a>.
 
     ![CloudEndure Credentials](/ce/CE-console-credentials.png)
 
-    Si ils ne sont pas indiqués dans le tableau de bord <A href="https://dashboard.eventengine.run/dashboard" target="_blank">Event Engine - Team Dashboard</a>, merci de contacter l'animateur pour vous fournir les accès.
+    Si ils ne sont pas indiqués dans le tableau de bord <A href="https://dashboard.eventengine.run/dashboard" target="_blank" rel="noopener noreferrer">Event Engine - Team Dashboard</a>, merci de contacter l'animateur pour vous fournir les accès.
 
 2. Naviguez jusqu'à l'onglet **Setup & Info** > **AWS Credentials**.
 
@@ -26,11 +26,11 @@ Pour commerncer, vous allez avoir besoin de configurer CloudEndure avec vos **AW
 
 3. Cliquez sur le bouton **EDIT** et entrez **AWS Access Key ID** et **AWS Secret Access Key** 
    
-    Pour **Le lab effectué de manière autonome** - copiez cette information à parir de la section **Output** du "template" **ApplicationMigrationWorkshop** <a href="https://us-west-2.console.aws.amazon.com/cloudformation/home?region=us-west-2#/" target="_blank">CloudFormation </a>, Ceci devrait ressembler à la copie d'écran ci-dessous.
+    Pour **Le lab effectué de manière autonome** - copiez cette information à parir de la section **Output** du "template" **ApplicationMigrationWorkshop** <a href="https://us-west-2.console.aws.amazon.com/cloudformation/home?region=us-west-2#/" target="_blank" rel="noopener noreferrer">CloudFormation </a>, Ceci devrait ressembler à la copie d'écran ci-dessous.
 
     ![CloudEndure IAM Access and Secret Access Key](/ce/ce-self-service-accesskeys.png)
 
-    Pour **Le lab effectué dans le cadre d'un évènement AWS** - copiez cette information à partir de la section <A href="https://dashboard.eventengine.run/dashboard" target="_blank">Event Engine - Team Dashboard</a> - **CloudEndure AWS Credentials**, Ceci devrait ressembler à la copie d'écran ci-dessous.  
+    Pour **Le lab effectué dans le cadre d'un évènement AWS** - copiez cette information à partir de la section <A href="https://dashboard.eventengine.run/dashboard" target="_blank" rel="noopener noreferrer">Event Engine - Team Dashboard</a> - **CloudEndure AWS Credentials**, Ceci devrait ressembler à la copie d'écran ci-dessous.  
 
     ![CloudEndure IAM Access and Secret Access Key](/ce/CE-credentials.png)
 

@@ -6,7 +6,7 @@ pre = "<b>- </b>"
 
 #### Application Migration Service Overview
 
-<a href="https://aws.amazon.com/application-migration-service/" target="_blank">Application Migration Service</a> allows you to quickly realize the benefits of migrating applications to the cloud without changes and with minimal downtime.
+<a href="https://aws.amazon.com/application-migration-service/" target="_blank" rel="noopener noreferrer">Application Migration Service</a> allows you to quickly realize the benefits of migrating applications to the cloud without changes and with minimal downtime.
 
 **AWS Application Migration Service** minimizes time-intensive, error-prone manual processes by automatically converting your source servers from physical, virtual, or cloud infrastructure to run natively on AWS. It further simplifies your migration by enabling you to use the same automated process for a wide range of applications.
 

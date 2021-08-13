@@ -7,7 +7,7 @@ pre = "<b>2. </b>"
 
 #### Panoramica sulla Migrazione CloudEndure 
 
-<a href="https://aws.amazon.com/cloudendure-migration/" target="_blank">CloudEndure Migration</a> consente alle organizzazioni di migrare anche i carichi di lavoro più complessi su Amazon Web Services (AWS) senza interruzioni o perdita di dati. Attraverso la replica continua a livello di blocco, la conversione automatica delle macchine e l'orchestrazione dello stack di applicazioni, ** CloudEndure Migration ** semplifica il processo di migrazione e riduce il rischio di errori umani
+<a href="https://aws.amazon.com/cloudendure-migration/" target="_blank" rel="noopener noreferrer">CloudEndure Migration</a> consente alle organizzazioni di migrare anche i carichi di lavoro più complessi su Amazon Web Services (AWS) senza interruzioni o perdita di dati. Attraverso la replica continua a livello di blocco, la conversione automatica delle macchine e l'orchestrazione dello stack di applicazioni, ** CloudEndure Migration ** semplifica il processo di migrazione e riduce il rischio di errori umani
 
 Sia che tu stia migrando verso AWS o attraverso le regioni all'interno di AWS, **CloudEndure Migration** ti offre la flessibilità di cui hai bisogno e ti offre i controlli di sicurezza necessari per avere successo nell'ecosistema digitale frenetico di oggi.
 
@@ -23,7 +23,7 @@ Sia che tu stia migrando verso AWS o attraverso le regioni all'interno di AWS, *
 
 {{% notice note %}}
 **CloudEndure Migration** è ora disponibile **gratuitamente**  per tutte le migrazioni verso AWS.  
-Vai alla pagina  <a href="https://console.cloudendure.com/#/register/register">di registrazione di CloudEndure Migration </a> per creare un account e iniziare a migrare su AWS in pochi minuti!
+Vai alla pagina  <a href="https://console.cloudendure.com/#/register/register" target="_blank" rel="noopener noreferrer">di registrazione di CloudEndure Migration </a> per creare un account e iniziare a migrare su AWS in pochi minuti!
 {{% /notice %}}  
 
 Puoi saperne di piu su **CloudEndure Migration** guardando il video qui sotto.

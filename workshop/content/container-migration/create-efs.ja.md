@@ -3,7 +3,7 @@ title = "Amazon EFS ファイルシステムの作成"
 weight = 20
 +++
 
-マネジメントコンソール上部の **「サービス」** から **<a href="https://console.aws.amazon.com/efs/home?region=us-west-2" target="_blank">Amazon Elastic File System (EFS)</a>** のページを開き、**「ファイルシステムの作成」** ボタンをクリックします。
+マネジメントコンソール上部の **「サービス」** から **<a href="https://console.aws.amazon.com/efs/home?region=us-west-2" target="_blank" rel="noopener noreferrer">Amazon Elastic File System (EFS)</a>** のページを開き、**「ファイルシステムの作成」** ボタンをクリックします。
 
 **「名前」** に **webserver-filesystem**、 EFS のデプロイ先となる **「Virtual Private Cloud (VPC)」** に **TargetVPC** を指定し、
 **「作成」** ボタンをクリックします。

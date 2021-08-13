@@ -19,7 +19,7 @@ In deze workshop ga je direct voor de definitieve omschakeling (**Cutover**). De
    
     Verifieer dat de status van de machine **Continuous Data Replication** is. Dit staat in de **DATA REPLICATION PROGRESS** kolom.
 
-    Indien de machine nog niet volledige in sync is, wacht totdat de status **Continuous Data Replication** is bereikt. Terwijl je wacht kun je wellicht even de <a href="https://docs.cloudendure.com/" target="_blank">CloudEndure documentatie</a> bekijken.
+    Indien de machine nog niet volledige in sync is, wacht totdat de status **Continuous Data Replication** is bereikt. Terwijl je wacht kun je wellicht even de <a href="https://docs.cloudendure.com/" target="_blank" rel="noopener noreferrer">CloudEndure documentatie</a> bekijken.
 
 2. Start de omschakeling
    
@@ -31,7 +31,7 @@ In deze workshop ga je direct voor de definitieve omschakeling (**Cutover**). De
 
     ![CE-job-progress](/ce/CE-job-progress.png)
 
-    Volg de voortgang van de omschakeling via **Job Progress** totdat je **Finished starting converters** ziet (dit kan 3-5 minuten duren). Terwijl je wacht, bekijk <a href="https://docs.cloudendure.com/#Configuring_and_Running_Migration/Performing_a_Migration_Cutover/Performing_a_Migration_Cutover.htm" target="_blank">CloudEndure Documentatie met informatie en details over het omschakelingsproces.</a>.
+    Volg de voortgang van de omschakeling via **Job Progress** totdat je **Finished starting converters** ziet (dit kan 3-5 minuten duren). Terwijl je wacht, bekijk <a href="https://docs.cloudendure.com/#Configuring_and_Running_Migration/Performing_a_Migration_Cutover/Performing_a_Migration_Cutover.htm" target="_blank" rel="noopener noreferrer">CloudEndure Documentatie met informatie en details over het omschakelingsproces.</a>.
 
 
     {{% notice tip %}}
@@ -51,5 +51,5 @@ Indien je de omschakelingstaak niet kunt zien in het **Job Progress** scherm, ve
     Zodra de omschakeling is voltooid, zie je nog een EC2 machine in de lijst - Dit is de nieuwe web server in de doelomgeving die door CloudEndure is aangemaakt. Noteer het public en private IP adres, want dat hebben we nodig in de volgende stap.
 
     {{% notice tip %}}
-Indien je meer wilt weten over deze machines, hun gebruik en netwerkvereisten, kijk dan naar de <a href="https://docs.cloudendure.com/#Preparing_Your_Environments/Network_Requirements/Network_Requirements.htm" target="_blank">CloudEndure Documentatie</a>.
+Indien je meer wilt weten over deze machines, hun gebruik en netwerkvereisten, kijk dan naar de <a href="https://docs.cloudendure.com/#Preparing_Your_Environments/Network_Requirements/Network_Requirements.htm" target="_blank" rel="noopener noreferrer">CloudEndure Documentatie</a>.
 {{% /notice %}}

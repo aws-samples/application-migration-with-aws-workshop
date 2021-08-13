@@ -7,7 +7,7 @@ pre = "<b>2. </b>"
 
 #### CloudEndure Servermigration Übersicht
 
-<a href="https://aws.amazon.com/cloudendure-migration/" target="_blank">CloudEndure Servermigration</a> 
+<a href="https://aws.amazon.com/cloudendure-migration/" target="_blank" rel="noopener noreferrer">CloudEndure Servermigration</a> 
 ermöglicht es Unternehmen, selbst die komplexesten Workloads ohne Unterbrechung oder Datenverlust 
 auf Amazon Web Services (AWS) zu migrieren. 
 Durch kontinuierliche Replikation auf Blockebene, automatisierte Maschinenkonvertierung und 
@@ -30,7 +30,7 @@ um im schnelllebigen digitalen Ökosystem von heute erfolgreich zu sein.
 
 {{% notice note %}}
 **CloudEndure Migration** ist verfübar ohne **Zusatzkosten** für alle Migrationen nach AWS.  
-Besuchen Sie <a href="https://console.cloudendure.com/#/register/register">CloudEndure Migration Registration page</a> 
+Besuchen Sie <a href="https://console.cloudendure.com/#/register/register" target="_blank" rel="noopener noreferrer">CloudEndure Migration Registration page</a> 
 um ein Account zu erstellen und eine Migration zu AWS zu starten!
 {{% /notice %}}  
 

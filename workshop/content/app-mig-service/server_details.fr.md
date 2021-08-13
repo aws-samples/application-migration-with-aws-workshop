@@ -3,7 +3,7 @@ title = "Configuration détaillée de la réplication"
 weight = 40
 +++
 
-Dans la liste du menu <a href="https://us-west-2.console.aws.amazon.com/mgn/home?region=us-west-2#/sourceServers">Source Servers</a> cliquez sur le **Hostname** du serveur source.
+Dans la liste du menu <a href="https://us-west-2.console.aws.amazon.com/mgn/home?region=us-west-2#/sourceServers" target="_blank" rel="noopener noreferrer">Source Servers</a> cliquez sur le **Hostname** du serveur source.
 
 Sur la page correspondant au serveur source, en sélectionnant les différents onglets, vous pouvez :
 
@@ -93,9 +93,9 @@ Sur la page correspondant au serveur source, en sélectionnant les différents o
 
     ![Confirm action](/app_mig_serv/launch_template_update_version_popup.en.png)
 
-10. Retourner dans la <a href="https://us-west-2.console.aws.amazon.com/mgn/home?region=us-west-2#/sourceServers">liste des serveurs sources</a>, puis choisir le **Hostname** correspondant au serveur source.
+10. Retourner dans la <a href="https://us-west-2.console.aws.amazon.com/mgn/home?region=us-west-2#/sourceServers" target="_blank" rel="noopener noreferrer">liste des serveurs sources</a>, puis choisir le **Hostname** correspondant au serveur source.
 
-    En attendant que **Data replication status** devienne **Healthy** (cela devrait prendre environ 30 minutes), vous pouvez lire comment l'agent de réplication s'installe sous <a href="https://docs.aws.amazon.com/mgn/latest/ug/linux-agent.html" target="_blank">Linux</a> ou <a href="https://docs.aws.amazon.com/mgn/latest/ug/windows-agent.html" target="_blank">Windows</a>. La documentation explique également comment <a href="https://docs.aws.amazon.com/mgn/latest/ug/installing-agent-blocked.html" target="_blank">installer l'agent dans un réseau sécurisé</a> (en anglais).
+    En attendant que **Data replication status** devienne **Healthy** (cela devrait prendre environ 30 minutes), vous pouvez lire comment l'agent de réplication s'installe sous <a href="https://docs.aws.amazon.com/mgn/latest/ug/linux-agent.html" target="_blank" rel="noopener noreferrer">Linux</a> ou <a href="https://docs.aws.amazon.com/mgn/latest/ug/windows-agent.html" target="_blank" rel="noopener noreferrer">Windows</a>. La documentation explique également comment <a href="https://docs.aws.amazon.com/mgn/latest/ug/installing-agent-blocked.html" target="_blank" rel="noopener noreferrer">installer l'agent dans un réseau sécurisé</a> (en anglais).
 
     ![Data replication healthy](/app_mig_serv/data_replication_healthy.en.png)
 

@@ -15,7 +15,7 @@ In below steps, you will:
 ### 1. Install necessary toolset into your source machine
 In order to prepare the source environment for Elastic Beanstalk migration, you will need to install some tools into your source machine. Please follow below steps.
 
-Connect to the *Source Webserver* using SSH terminal (for Microsoft Windows see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/putty.html" target="_blank">this article</a>, for Mac OS see <a href="https://docs.aws.amazon.com/quickstarts/latest/vmlaunch/step-2-connect-to-instance.html#sshclient" target="_blank">this article</a>).
+Connect to the *Source Webserver* using SSH terminal (for Microsoft Windows see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/putty.html" target="_blank" rel="noopener noreferrer">this article</a>, for Mac OS see <a href="https://docs.aws.amazon.com/quickstarts/latest/vmlaunch/step-2-connect-to-instance.html#sshclient" target="_blank" rel="noopener noreferrer">this article</a>).
 
 1. Install zip
    ```

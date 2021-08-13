@@ -13,11 +13,11 @@ Veranstaltung), gehen Sie zu Start des Workshops bei einer AWS-Veranstaltung. [S
 
 ### Lernen im eigenen Tempo
 In dieser Übung wird davon ausgegangen, dass Sie Zugriff auf ein AWS-Konto mit 
-<a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/getting-started_create-admin-group.html" target="_blank">Administratorrechten</a> 
+<a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/getting-started_create-admin-group.html" target="_blank" rel="noopener noreferrer">Administratorrechten</a> 
 haben.
 
 Um ein neues AWS-Konto zu erstellen, folgen Sie bitte 
-<a href="https://aws.amazon.com/premiumsupport/knowledge-center/create-and-activate-aws-account/" target="_blank">
+<a href="https://aws.amazon.com/premiumsupport/knowledge-center/create-and-activate-aws-account/" target="_blank" rel="noopener noreferrer">
 How do I create and activate a new Amazon Web Services account?</a> Artikel.
 
 
@@ -28,13 +28,13 @@ AWS Lambda-Funktionen (zum einfachen Abrufen des EC2-Zugangsschlüssels).
 
 Die Gesamtkosten der im gesamten Umgebung von bereitgestellten Ressourcen sollten 
 weniger als 5 US-Dollar betragen (unter der Annahme von 4 Arbeitsstunden).
-Einige von ihnen werden von <a href="https://aws.amazon.com/free/" target="_blank"> AWS Free Tier </a> abgedeckt.
+Einige von ihnen werden von <a href="https://aws.amazon.com/free/" target="_blank" rel="noopener noreferrer"> AWS Free Tier </a> abgedeckt.
 
 Denken Sie bitte daran, alle Ressourcen in Ihrem AWS-Konto nach dem Ausführen des Workshops zu [entfernen]({{<ref "/cleanup/_index.de.md">}}), um unnötige Kosten zu vermeiden!
 
 #### Option 1: Einfache Deployment
 
-1. Klicken Sie bitte auf die "Launch Stack" Schaltfläche <a href="https://console.aws.amazon.com/cloudformation/home?region=us-west-2#/stacks/new?stackName=ApplicationMigrationWorkshop&templateURL=https://application-migration-with-aws-workshop.s3-us-west-2.amazonaws.com/template/migration_workshop_source_template.yml" target="_blank"><img src="https://application-migration-with-aws-workshop.s3-us-west-2.amazonaws.com/static/cloudformation-launch-stack.png"></a>
+1. Klicken Sie bitte auf die "Launch Stack" Schaltfläche <a href="https://console.aws.amazon.com/cloudformation/home?region=us-west-2#/stacks/new?stackName=ApplicationMigrationWorkshop&templateURL=https://application-migration-with-aws-workshop.s3-us-west-2.amazonaws.com/template/migration_workshop_source_template.yml" target="_blank" rel="noopener noreferrer"><img src="https://application-migration-with-aws-workshop.s3-us-west-2.amazonaws.com/static/cloudformation-launch-stack.png"></a>
 
 
 2. Als erste Schritt **Step 1 - verifizieren Sie, ob die richtige Vorlage (YAML Template) ausgewählt wurde.** 
@@ -78,12 +78,12 @@ Sie müssen nicht mit der Option 2 fortfahren, wenn Sie die Umgebung bereits mit
 Im folgenden Abschnitt wird beschrieben, wie Sie die CloudFormation-Vorlage erstellen und mithilfe 
 der AWS Command Line Interface (CLI) bereitstellen.
 
-1. Installieren Sie  <a href="https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-sam-cli-install.html" target="_blank">AWS SAM</a>
+1. Installieren Sie  <a href="https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-sam-cli-install.html" target="_blank" rel="noopener noreferrer">AWS SAM</a>
 
-2. Installieren Sie <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-install.html" target="_blank">AWS CLI</a> 
-und <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html" target="_blank">konfigurieren</a> Sie sie.
+2. Installieren Sie <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-install.html" target="_blank" rel="noopener noreferrer">AWS CLI</a> 
+und <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html" target="_blank" rel="noopener noreferrer">konfigurieren</a> Sie sie.
 
-3. Laden Sie das Projekt runter oder klonen Sie es bitte <a href="https://github.com/aws-samples/application-migration-with-aws-workshop" target="_blank">https://github.com/aws-samples/application-migration-with-aws-workshop</a>
+3. Laden Sie das Projekt runter oder klonen Sie es bitte <a href="https://github.com/aws-samples/application-migration-with-aws-workshop" target="_blank" rel="noopener noreferrer">https://github.com/aws-samples/application-migration-with-aws-workshop</a>
 
 4. Erstellen Sie bitte einen neuen, eindeutigen S3-Bucket in der Region us-west-2 (Oregon), 
 indem Sie Folgendes ausführen (ersetzen Sie den **Application-Migration-Workshop** durch einen benutzerdefinierten S3-Bucket-Namen).

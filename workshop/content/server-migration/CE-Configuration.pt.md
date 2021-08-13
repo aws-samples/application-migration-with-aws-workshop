@@ -12,13 +12,13 @@ Para começar, você precisará configurar o CloudEndure com **credenciais AWS**
 
     ![CE-login](/ce/CE-login.png)
 
-    Para **quem está fazendo o lab sozinho** - use sua conta CloudEndure Migration e crie um novo [CloudEndure Migration Account](https://console.cloudendure.com/#/register/register) and a new <a href="https://docs.cloudendure.com/#Getting_Started_with_CloudEndure/Working_with_Projects/Working_with_Projects.htm#Creating_a_New_Project%3FTocPath%3DNavigation%7CGetting%2520Started%2520with%2520CloudEndure%7CWorking%2520with%2520Projects%7C_____2" target="_blank">CloudEndure Project</a>
+    Para **quem está fazendo o lab sozinho** - use sua conta CloudEndure Migration e crie um novo [CloudEndure Migration Account](https://console.cloudendure.com/#/register/register) and a new <a href="https://docs.cloudendure.com/#Getting_Started_with_CloudEndure/Working_with_Projects/Working_with_Projects.htm#Creating_a_New_Project%3FTocPath%3DNavigation%7CGetting%2520Started%2520with%2520CloudEndure%7CWorking%2520with%2520Projects%7C_____2" target="_blank" rel="noopener noreferrer">CloudEndure Project</a>
 
-    Para **quem está num Evento AWS** - use o **CloudEndure Username** e **Password** listados no <A href="https://dashboard.eventengine.run/dashboard" target="_blank">Event Engine - Team Dashboard</a>.
+    Para **quem está num Evento AWS** - use o **CloudEndure Username** e **Password** listados no <A href="https://dashboard.eventengine.run/dashboard" target="_blank" rel="noopener noreferrer">Event Engine - Team Dashboard</a>.
 
     ![CloudEndure Credentials](/ce/CE-console-credentials.png)
 
-    Se eles não aparecem no <A href="https://dashboard.eventengine.run/dashboard" target="_blank">Event Engine - Team Dashboard</a>, contate o organizador para obter as credenciais.
+    Se eles não aparecem no <A href="https://dashboard.eventengine.run/dashboard" target="_blank" rel="noopener noreferrer">Event Engine - Team Dashboard</a>, contate o organizador para obter as credenciais.
 
 2. Navegue para a aba **Setup & Info** > **AWS Credentials**.
 
@@ -26,11 +26,11 @@ Para começar, você precisará configurar o CloudEndure com **credenciais AWS**
 
 3. Clique o botão **EDIT** e entre **AWS Access Key ID** e **AWS Secret Access Key** 
    
-    Para **quem está fazendo o lab sozinho** - copie esta informação da seção **Output** do template **ApplicationMigrationWorkshop** <a href="https://us-west-2.console.aws.amazon.com/cloudformation/home?region=us-west-2#/" target="_blank">CloudFormation</a>, será parecido com a imagem abaixo.
+    Para **quem está fazendo o lab sozinho** - copie esta informação da seção **Output** do template **ApplicationMigrationWorkshop** <a href="https://us-west-2.console.aws.amazon.com/cloudformation/home?region=us-west-2#/" target="_blank" rel="noopener noreferrer">CloudFormation</a>, será parecido com a imagem abaixo.
 
     ![CloudEndure IAM Access and Secret Access Key](/ce/ce-self-service-accesskeys.png)
 
-    Para **Eventos AWS** - copie esta informação da seção <A href="https://dashboard.eventengine.run/dashboard" target="_blank">Event Engine - Team Dashboard</a> - **CloudEndure AWS Credentials**, como na imagem abaixo.  
+    Para **Eventos AWS** - copie esta informação da seção <A href="https://dashboard.eventengine.run/dashboard" target="_blank" rel="noopener noreferrer">Event Engine - Team Dashboard</a> - **CloudEndure AWS Credentials**, como na imagem abaixo.  
 
     ![CloudEndure IAM Access and Secret Access Key](/ce/CE-credentials.png)
 

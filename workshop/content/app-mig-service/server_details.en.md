@@ -3,7 +3,7 @@ title = "Update server details"
 weight = 40
 +++
 
-Go to <a href="https://us-west-2.console.aws.amazon.com/mgn/home?region=us-west-2#/sourceServers">Source servers</a> list and click on the **Hostname** of your server.
+Go to <a href="https://us-west-2.console.aws.amazon.com/mgn/home?region=us-west-2#/sourceServers" target="_blank" rel="noopener noreferrer">Source servers</a> list and click on the **Hostname** of your server.
 
 On this page, by moving between tabs, you can:
 
@@ -94,9 +94,9 @@ On this page, by moving between tabs, you can:
     ![Confirm action](/app_mig_serv/launch_template_update_version_popup.en.png)
 
 
-10. Go back to the <a href="https://us-west-2.console.aws.amazon.com/mgn/home?region=us-west-2#/sourceServers">Application Migration Service</a> screen, click on **Hostname** of migrated server.
+10. Go back to the <a href="https://us-west-2.console.aws.amazon.com/mgn/home?region=us-west-2#/sourceServers" target="_blank" rel="noopener noreferrer">Application Migration Service</a> screen, click on **Hostname** of migrated server.
 
-    While waiting for the **Data replication status** to become **Healthy** (it should take ~30 mins) review parameters <a href="https://docs.aws.amazon.com/mgn/latest/ug/linux-agent.html" target="_blank">you can use for the agent installation</a>, see how agent can be <a href="https://docs.aws.amazon.com/mgn/latest/ug/windows-agent.html" target="_blank">installed on Windows</a> (if you plan to do Windows migration in the future) and additional information for <a href="https://docs.aws.amazon.com/mgn/latest/ug/installing-agent-blocked.html" target="_blank">instalation of agent on a secured network</a>.
+    While waiting for the **Data replication status** to become **Healthy** (it should take ~30 mins) review parameters <a href="https://docs.aws.amazon.com/mgn/latest/ug/linux-agent.html" target="_blank" rel="noopener noreferrer">you can use for the agent installation</a>, see how agent can be <a href="https://docs.aws.amazon.com/mgn/latest/ug/windows-agent.html" target="_blank" rel="noopener noreferrer">installed on Windows</a> (if you plan to do Windows migration in the future) and additional information for <a href="https://docs.aws.amazon.com/mgn/latest/ug/installing-agent-blocked.html" target="_blank" rel="noopener noreferrer">instalation of agent on a secured network</a>.
 
     ![Data replication healthy](/app_mig_serv/data_replication_healthy.en.png)
 

@@ -7,7 +7,7 @@ pre = "<b>2. </b>"
 
 #### CloudEndure Migratie Overzicht
 
-<a href="https://aws.amazon.com/cloudendure-migration/" target="_blank">CloudEndure Migratie</a> stelt organisaties in staat om zelfs de meest complexe workloads naar Amazon Web Services (AWS) te migreren zonder onderbreking of gegevensverlies.
+<a href="https://aws.amazon.com/cloudendure-migration/" target="_blank" rel="noopener noreferrer">CloudEndure Migratie</a> stelt organisaties in staat om zelfs de meest complexe workloads naar Amazon Web Services (AWS) te migreren zonder onderbreking of gegevensverlies.
 
 Met behulp van continue replicatie op blokniveau, geautomatiseerde conversies en beheer van de applicatie-stack, vereenvoudigd **CloudEndure Migration** het migratieproces en verminderd de kans op menselijke fouten.
 
@@ -25,7 +25,7 @@ De voordelen van **CloudEndure Live Migration** zijn onderanderen:
 
 {{% notice note %}}
 **CloudEndure Migration** is nu **gratis** beschikbaar voor alle migratieprojecten naar AWS.  
-Ga naar de <a href="https://console.cloudendure.com/#/register/register">CloudEndure Migration Registration pagina</a> om een account aan te maken en begin met migreren binnen enkele minuten!
+Ga naar de <a href="https://console.cloudendure.com/#/register/register" target="_blank" rel="noopener noreferrer">CloudEndure Migration Registration pagina</a> om een account aan te maken en begin met migreren binnen enkele minuten!
 {{% /notice %}}  
 
 Je kunt meer leren over het gebruik van **CloudEndure Migration** via de onderstaande video:

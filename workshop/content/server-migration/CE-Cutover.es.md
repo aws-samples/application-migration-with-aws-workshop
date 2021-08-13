@@ -21,7 +21,7 @@ En este laboratorio, realizará un corte (**Cutover**) (esta conversión de inst
    
     Confirme que la instancia se encuentra en un estado de replicación continua de datos (**Continuous Data Replication**) en la columna **DATA REPLICATION PROGRESS**.
 
-    Si todavía se está replicando, espere hasta que alcance el estado **Replicación continua de datos**. Mientras espera, puede revisar la <a href="https://docs.cloudendure.com/" target="_blank">documentación de CloudEndure</a>.
+    Si todavía se está replicando, espere hasta que alcance el estado **Replicación continua de datos**. Mientras espera, puede revisar la <a href="https://docs.cloudendure.com/" target="_blank" rel="noopener noreferrer">documentación de CloudEndure</a>.
 
 2. Active el corte
    
@@ -34,7 +34,7 @@ En este laboratorio, realizará un corte (**Cutover**) (esta conversión de inst
 
     ![CE-job-progress](/ce/CE-job-progress.png)
 
-    Supervise el registro de progreso **Job Progress** hasta que vea el mensaje **Finished starting converters** (debería tardar entre 3 y 5 minutos). Mientras tanto, puede revisar la  <a href="https://docs.cloudendure.com/#Configuring_and_Running_Migration/Performing_a_Migration_Cutover/Performing_a_Migration_Cutover.htm" target="_blank">documentación de CloudEndure que proporciona detalles sobre el proceso de transición</a>.
+    Supervise el registro de progreso **Job Progress** hasta que vea el mensaje **Finished starting converters** (debería tardar entre 3 y 5 minutos). Mientras tanto, puede revisar la  <a href="https://docs.cloudendure.com/#Configuring_and_Running_Migration/Performing_a_Migration_Cutover/Performing_a_Migration_Cutover.htm" target="_blank" rel="noopener noreferrer">documentación de CloudEndure que proporciona detalles sobre el proceso de transición</a>.
 
     {{% notice tip %}}
 Si no ve su trabajo en la ventana **Job Progress**, actualice el navegador (F5) y asegúrese de desplazarse a la parte superior de la lista desplegable de trabajos de CloudEndure.
@@ -54,5 +54,5 @@ Si no ve su trabajo en la ventana **Job Progress**, actualice el navegador (F5) 
 
 
     {{% notice tip %}}
-Si desea saber más sobre esos servidores, su propósito y los requisitos de red, consulte la <a href="https://docs.cloudendure.com/#Preparing_Your_Environments/Network_Requirements/Network_Requirements.htm" target="_blank">documentación de CloudEndure</a>.
+Si desea saber más sobre esos servidores, su propósito y los requisitos de red, consulte la <a href="https://docs.cloudendure.com/#Preparing_Your_Environments/Network_Requirements/Network_Requirements.htm" target="_blank" rel="noopener noreferrer">documentación de CloudEndure</a>.
 {{% /notice %}}

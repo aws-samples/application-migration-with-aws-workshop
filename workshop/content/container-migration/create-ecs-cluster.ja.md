@@ -6,7 +6,7 @@ weight = 40
 
 ### Amazon Elastic Container Service (ECS) クラスターの作成
 
-マネジメントコンソール上部の **「サービス」** から **<a href="https://console.aws.amazon.com/ecs/home?region=us-west-2" target="_blank">Elastic Container Service</a>** のページを開き、左のメニューから **「クラスター」** を選択します。クラスターの一覧が表示されたら、**「クラスターの作成」** ボタンをクリックします。
+マネジメントコンソール上部の **「サービス」** から **<a href="https://console.aws.amazon.com/ecs/home?region=us-west-2" target="_blank" rel="noopener noreferrer">Elastic Container Service</a>** のページを開き、左のメニューから **「クラスター」** を選択します。クラスターの一覧が表示されたら、**「クラスターの作成」** ボタンをクリックします。
 
 「ステップ 1: クラスターテンプレートの選択 」では、 **「ネットワーキングのみ」** を選択し、**「次のステップ」** をクリックします。
 

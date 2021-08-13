@@ -7,7 +7,7 @@ weight = 10
 
 Datenbankmigrationen können auf verschiedene Arten durchgeführt werden. 
 Für Zweck dieses Workshops führen wir eine **kontinuierliche Datenreplikation** mit 
-dem <a href = "https://aws.amazon.com/dms/" durch = "_ blank">AWS Database Migrations Service (DMS)</a> aus.
+dem <a href = "https://aws.amazon.com/dms/" target="_blank" rel="noopener noreferrer">AWS Database Migrations Service (DMS)</a> aus.
 
 Bevor Sie **AWS DMS** konfigurieren, müssen Sie Ihre Zieldatenbank in dem bereitgestellten 
 AWS-Konto erstellen. Verwenden Sie **AWS Relation Database Service (RDS)**, um diese Aktivität 
@@ -57,12 +57,12 @@ Wählen Sie die **db.t3.medium** aus "Burstable DB instance" Klasse aus und mark
 
 {{% notice note %}}
 Für Produktions-Workloads, um eine höhere Verfügbarkeit zu erreichen, empfehlen wir, die Standby-Instanz in einem 
-<a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.MultiAZ.html" target="_blank">Multi-AZ Deployment</a> zu aktivieren.
+<a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.MultiAZ.html" target="_blank" rel="noopener noreferrer">Multi-AZ Deployment</a> zu aktivieren.
 {{% /notice %}}  
     ![5_db](/db-mig/5_db.png)
 
 4. Im Abschnitt **Connectivity**:
-    * Wählen Sie **Virtual Private Cloud (VPC)**, dann **TargetVPC** (dies ist die <a href="https://aws.amazon.com/vpc/" target="_blank"> Amazon Virtual Private Cloud</a>, 
+    * Wählen Sie **Virtual Private Cloud (VPC)**, dann **TargetVPC** (dies ist die <a href="https://aws.amazon.com/vpc/" target="_blank" rel="noopener noreferrer"> Amazon Virtual Private Cloud</a>, 
     die automatisch für dieser Workshop erstellt wurde).
     * Bei **Additional connectivity configuration -> VPC Security Group** wählen Sie die Option **Create new** um eine neue VPC-Sicherheitsgruppe zu erstellen 
     und geben Sie ihr einen Namen (z. B. "DB-SG").
@@ -86,7 +86,7 @@ das Kontrollkästchen **Enable Enhanced monitoring** im Abschnitt **Monitoring**
     ![8_db](/db-mig/8_db.png)
 
 {{% notice note %}}
-Die Verwendung von <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Monitoring.OS.html" target="_blank">Enhanced monitoring</a> 
+Die Verwendung von <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Monitoring.OS.html" target="_blank" rel="noopener noreferrer">Enhanced monitoring</a> 
 ist eine sehr gute Idee für die Produktions-Workloads. Bei einem von AWS gehosteten Veranstaltungen deaktivieren wir diese Option 
 aufgrund von Einschränkungen der IAM-Rolle, die wir für die Teilnehmer bereitstellen.
 {{% /notice %}}

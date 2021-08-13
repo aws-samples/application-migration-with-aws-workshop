@@ -19,7 +19,7 @@ Neste lab, você executará um **Cutover** (esta conversão de instância já fo
    
     Confirme que a instância está em um estado de **Continuous Data Replication** na coluna **DATA REPLICATION PROGRESS**.
 
-    Caso ainda esteja replicando, espere até chegar no estado **Continuous Data Replication**. Enquanto espera, dê uma olha na <a href="https://docs.cloudendure.com/" target="_blank">documentação do CloudEndure</a>.
+    Caso ainda esteja replicando, espere até chegar no estado **Continuous Data Replication**. Enquanto espera, dê uma olha na <a href="https://docs.cloudendure.com/" target="_blank" rel="noopener noreferrer">documentação do CloudEndure</a>.
 
 2. Dispare o Cutover (virada)
    
@@ -32,7 +32,7 @@ Neste lab, você executará um **Cutover** (esta conversão de instância já fo
 
     ![CE-job-progress](/ce/CE-job-progress.png)
 
-    Monitore o **Job Progress** até ver a mensagem **Finished starting converters** (deve levar entre 3-5 minuteo). Neste meio tempo revise a <a href="https://docs.cloudendure.com/#Configuring_and_Running_Migration/Performing_a_Migration_Cutover/Performing_a_Migration_Cutover.htm" target="_blank">documentação do CloudEndure sobre detalhes no processo de cutover (virada)</a>.
+    Monitore o **Job Progress** até ver a mensagem **Finished starting converters** (deve levar entre 3-5 minuteo). Neste meio tempo revise a <a href="https://docs.cloudendure.com/#Configuring_and_Running_Migration/Performing_a_Migration_Cutover/Performing_a_Migration_Cutover.htm" target="_blank" rel="noopener noreferrer">documentação do CloudEndure sobre detalhes no processo de cutover (virada)</a>.
 
     {{% notice tip %}}
 Caso não veja sua virada no **Job Progress**, atualize o browser (F5) e certifique de escolhar o Job no topo da lista do CloudEndure jobs.
@@ -51,5 +51,5 @@ Caso não veja sua virada no **Job Progress**, atualize o browser (F5) e certifi
     Assim que o cutover terminar, você verá outra instância EC2 na lista - é o seu Webserver destino criado pelo CloudEndure. Anote os IPs público e privado, você precisará deles no próximo passo.
 
     {{% notice tip %}}
-Caso queira saber mais sobre as instâncias gerenciadas, seu propósito e requerimentos de rede veja a <a href="https://docs.cloudendure.com/#Preparing_Your_Environments/Network_Requirements/Network_Requirements.htm" target="_blank">documentação do CloudEndure</a>.
+Caso queira saber mais sobre as instâncias gerenciadas, seu propósito e requerimentos de rede veja a <a href="https://docs.cloudendure.com/#Preparing_Your_Environments/Network_Requirements/Network_Requirements.htm" target="_blank" rel="noopener noreferrer">documentação do CloudEndure</a>.
 {{% /notice %}}

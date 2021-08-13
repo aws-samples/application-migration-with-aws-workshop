@@ -5,7 +5,7 @@ weight = 40
 
 #### AWS Migration Hub
 
-<a href="https://aws.amazon.com/migration-hub/" target="_blank">AWS Migration Hub</a> biedt één locatie om de voortgang van applicatie migraties in meerdere AWS- en partneroplossingen bij te houden.
+<a href="https://aws.amazon.com/migration-hub/" target="_blank" rel="noopener noreferrer">AWS Migration Hub</a> biedt één locatie om de voortgang van applicatie migraties in meerdere AWS- en partneroplossingen bij te houden.
 
 Voor het opzetten van **Migration Hub**, ga in de AWS console naar **Services -> AWS Migration Hub**. Druk dan op **Migrate** in het menu aan de linkerkant en kies **US West Oregon** als je AWS regio (home region).
 

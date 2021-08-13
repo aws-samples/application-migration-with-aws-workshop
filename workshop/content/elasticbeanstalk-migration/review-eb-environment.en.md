@@ -46,6 +46,6 @@ You can manage your application's versions through Elastic Beanstalk and deploy 
 
 ### Sources
 
-- <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/using-features.CNAMESwap.html" target="_blank">Blue/Green deployments</a>.
-- <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/troubleshooting.html" target="_blank">Elastic Beanstalk Troubleshooting</a>.
-- <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/create_deploy_PHP_eb.html" target="_blank">Working with PHP on Elastic Beanstalk</a>.
+- <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/using-features.CNAMESwap.html" target="_blank" rel="noopener noreferrer">Blue/Green deployments</a>.
+- <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/troubleshooting.html" target="_blank" rel="noopener noreferrer">Elastic Beanstalk Troubleshooting</a>.
+- <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/create_deploy_PHP_eb.html" target="_blank" rel="noopener noreferrer">Working with PHP on Elastic Beanstalk</a>.

@@ -5,7 +5,7 @@ weight = 20
 
 ### Erstelle die AWS DMS Replication Instance
 
-Bei dem Schritt erstellen Sie mit <a href="https://aws.amazon.com/dms/" target="_blank"
+Bei dem Schritt erstellen Sie mit <a href="https://aws.amazon.com/dms/" target="_blank" rel="noopener noreferrer"
 AWS Database Migration Service</a> eine Replication Instance. 
 Die Instanz wird eine Verbindung zwischen den Quel- und Ziel-Datenbank herstellen
 um die Daten auf der Zieldatenbank zu synchronisieren. 
@@ -44,5 +44,5 @@ mit folgenden Parameterwerten:
 Das Erstellen einer Replikationsinstanz dauert einige Minuten. Warten Sie, bis sich der **Status** auf **Available** 
 sich ändert, bevor Sie mit den nächsten Schritten fortfahren. 
 In der Zwischenzeit können Sie verschiedene Anwendungsfälle für AWS DMS überprüfen, 
-die auf der <a href="https://aws.amazon.com/dms/" target="_blank">AWS DMS-Webseite</a> zu finden sind.
+die auf der <a href="https://aws.amazon.com/dms/" target="_blank" rel="noopener noreferrer">AWS DMS-Webseite</a> zu finden sind.
 {{% /notice %}}

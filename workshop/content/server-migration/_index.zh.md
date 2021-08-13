@@ -7,7 +7,7 @@ pre = "<b>2. </b>"
 
 #### CloudEndure Migration 概述
 
-<a href="https://aws.amazon.com/cloudendure-migration/" target="_blank">CloudEndure Migration</a> 使组织能够将最复杂的工作负载迁移到 Amazon Web Services (AWS)，而不会造成中断或数据丢失。通过连续块级复制，自动机器转换和应用堆栈编排，**CloudEndure Migration** 简化了迁移过程，并减少了人为错误的可能性。
+<a href="https://aws.amazon.com/cloudendure-migration/" target="_blank" rel="noopener noreferrer">CloudEndure Migration</a> 使组织能够将最复杂的工作负载迁移到 Amazon Web Services (AWS)，而不会造成中断或数据丢失。通过连续块级复制，自动机器转换和应用堆栈编排，**CloudEndure Migration** 简化了迁移过程，并减少了人为错误的可能性。
 
 无论您是迁移到 AWS 还是在 AWS 内部进行跨区域迁移，**CloudEndure Migration** 都为您提供了所需的灵活性，并为您提供了在当今快节奏的数字生态系统中取得成功所需的安全控制。
 

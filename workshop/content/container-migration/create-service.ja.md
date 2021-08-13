@@ -5,7 +5,7 @@ weight = 60
 
 **Amazon Elastic Container Service (ECS) タスク定義**の作成が完了したら、いよいよ **Amazon ECS サービス**の作成に移ります。
 
-マネジメントコンソール上部の **「サービス」** から **<a href="https://console.aws.amazon.com/ecs/home?region=us-west-2" target="_blank">Elastic Container Service</a>** のページを開き、左のメニューから **「クラスター」** を選択します。前頁で作成した **unicorn-cluster** を選択し、**「サービス」** タブの **「作成」** ボタンをクリックします。
+マネジメントコンソール上部の **「サービス」** から **<a href="https://console.aws.amazon.com/ecs/home?region=us-west-2" target="_blank" rel="noopener noreferrer">Elastic Container Service</a>** のページを開き、左のメニューから **「クラスター」** を選択します。前頁で作成した **unicorn-cluster** を選択し、**「サービス」** タブの **「作成」** ボタンをクリックします。
 
 ![create-service](/ecs/create-service.ja.png)
 
@@ -65,7 +65,7 @@ Auto Scaling の設定では、**「Service Auto Scaling の設定を変更す�
 設定内容を確認し、**「サービスの作成」** をクリックして、Amazon ECS サービスを作成します。
 
 サービスのステータスが **Active** になり、すべてのタスクのステータスが **実行中** または **RUNNING** になったら、
-<a href="https://console.aws.amazon.com/ec2/v2/home?region=us-west-2#LoadBalancers:" target="_blank">ロードバランサー</a>の **DNS 名**にブラウザでアクセスして、Web アプリケーションが稼働していることを確認します。
+<a href="https://console.aws.amazon.com/ec2/v2/home?region=us-west-2#LoadBalancers:" target="_blank" rel="noopener noreferrer">ロードバランサー</a>の **DNS 名**にブラウザでアクセスして、Web アプリケーションが稼働していることを確認します。
 
 {{% notice note %}}
 ECS ノードの Auto Scaling を設定する必要がある場合は、[こちらのチュートリアル](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/cloudwatch_alarm_autoscaling.html) を確認してください。

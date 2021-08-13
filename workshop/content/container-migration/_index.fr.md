@@ -25,13 +25,13 @@ Merci de regarder ci-dessous le diagramme qui présente l'architecture général
 
 #### composants de base de Amazon ECS :
 
-<a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/clusters.html" target="_blank">Amazon ECS Cluster</a> est un regroupement logique de ressources. 
+<a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/clusters.html" target="_blank" rel="noopener noreferrer">Amazon ECS Cluster</a> est un regroupement logique de ressources. 
 
-<a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definitions.html" target="_blank">Task Definition</a> est un fichier JSON qui décrit un ou plusieurs containers (jusqu'à dix), qui forment l'applications. Vous pouvez considérer la "task" comme la définition de votre applications.
+<a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definitions.html" target="_blank" rel="noopener noreferrer">Task Definition</a> est un fichier JSON qui décrit un ou plusieurs containers (jusqu'à dix), qui forment l'applications. Vous pouvez considérer la "task" comme la définition de votre applications.
 
-<a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/scheduling_tasks.html" target="_blank">Task</a> est l'instanciation de la "task definition" au sein du cluster. Après avoir créé une "task definition" pour votre application dans Amazon ECS, vous pouvez définir le nombre de "tasks" qui seront exécutées sur le cluster. 
+<a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/scheduling_tasks.html" target="_blank" rel="noopener noreferrer">Task</a> est l'instanciation de la "task definition" au sein du cluster. Après avoir créé une "task definition" pour votre application dans Amazon ECS, vous pouvez définir le nombre de "tasks" qui seront exécutées sur le cluster. 
 
-<a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs_services.html" target="_blank">Services</a> - Amazon ECS vous permet d'exécuter un nombre défini d'instances de "task definition" simultanément dans le cluster grâce à la fonction service. Si l'une de vos tâches échoue ou s'arrête pour quelque raison que ce soit, le "service scheduler" de Amazon ECS lance une nouvelle instance de votre "task definition" pour la remplacer et maintenir le nombre voulu de tâches. 
+<a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs_services.html" target="_blank" rel="noopener noreferrer">Services</a> - Amazon ECS vous permet d'exécuter un nombre défini d'instances de "task definition" simultanément dans le cluster grâce à la fonction service. Si l'une de vos tâches échoue ou s'arrête pour quelque raison que ce soit, le "service scheduler" de Amazon ECS lance une nouvelle instance de votre "task definition" pour la remplacer et maintenir le nombre voulu de tâches. 
 
 Vous pouver en apprendre plus sur **AWS Fargate** en regardant la video ci-dessous.
 <center>

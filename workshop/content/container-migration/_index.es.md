@@ -25,13 +25,13 @@ Por favor mira debajo el diagrama que muestra la arquitectura general de Amazon 
 
 #### Componentes de Amazon ECS:
 
-<a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/clusters.html" target="_blank">Amazon ECS Cluster</a> es una agrupación logica de recursos.
+<a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/clusters.html" target="_blank" rel="noopener noreferrer">Amazon ECS Cluster</a> es una agrupación logica de recursos.
 
-<a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definitions.html" target="_blank">Definición de Tareas (Task Definition)</a> es un fichero en formato JSON, que describe uno o mas contenedores (hasta un máximo de diez), que forman tu aplicación. Puedes pensar en las tareas como el esquema de tu aplicación.
+<a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definitions.html" target="_blank" rel="noopener noreferrer">Definición de Tareas (Task Definition)</a> es un fichero en formato JSON, que describe uno o mas contenedores (hasta un máximo de diez), que forman tu aplicación. Puedes pensar en las tareas como el esquema de tu aplicación.
 
-<a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/scheduling_tasks.html" target="_blank">Tareas</a> es la instancia de una definición de una tarea dentro de un cluster. Despues de haber creado una definición de tareas para tu aplicación dentro de Amazon ECS, puedes especificar el numero de tareas que se ejecutaran en tu cluster.
+<a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/scheduling_tasks.html" target="_blank" rel="noopener noreferrer">Tareas</a> es la instancia de una definición de una tarea dentro de un cluster. Despues de haber creado una definición de tareas para tu aplicación dentro de Amazon ECS, puedes especificar el numero de tareas que se ejecutaran en tu cluster.
 
-<a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs_services.html" target="_blank">Servicios</a> - Amazon ECS permite correr y mantener un numero especifico de instancias de una definicion de tareas de forma simultanea en un cluster. A esto se le llama Servicio. Si cualquiera de las tareas se cae o se para por cualquier razon, el servicio de planificador de Amazon ECS lanza otra instancia de su definición de tareas para reemplazar la y mantener el numero deseado de tareas en el servicio dependiendo de la estrategia de planificación usada.
+<a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs_services.html" target="_blank" rel="noopener noreferrer">Servicios</a> - Amazon ECS permite correr y mantener un numero especifico de instancias de una definicion de tareas de forma simultanea en un cluster. A esto se le llama Servicio. Si cualquiera de las tareas se cae o se para por cualquier razon, el servicio de planificador de Amazon ECS lanza otra instancia de su definición de tareas para reemplazar la y mantener el numero deseado de tareas en el servicio dependiendo de la estrategia de planificación usada.
 
 Puedes aprender mas sobre **AWS Fargate** viendo el video de abajo.
 <center>

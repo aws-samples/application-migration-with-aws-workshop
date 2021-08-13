@@ -3,7 +3,7 @@ title = "Amazon ECS タスク定義の作成"
 weight = 50
 +++
 
-マネジメントコンソール上部の **「サービス」** から **<a href="https://console.aws.amazon.com/ecs/home?region=us-west-2" target="_blank">Elastic Container Service (ECS)</a>** のページを開き、左のメニューから **「タスク定義」** を選択します。タスク定義の一覧が表示されたら、**「新しいタスク定義の作成」** をクリックします。
+マネジメントコンソール上部の **「サービス」** から **<a href="https://console.aws.amazon.com/ecs/home?region=us-west-2" target="_blank" rel="noopener noreferrer">Elastic Container Service (ECS)</a>** のページを開き、左のメニューから **「タスク定義」** を選択します。タスク定義の一覧が表示されたら、**「新しいタスク定義の作成」** をクリックします。
 
 ![create-task-def](/ecs/create-task-def.ja.png)
 
@@ -32,7 +32,7 @@ weight = 50
 
 ![add-container](/ecs/add-container.ja.png)
 
-**「コンテナの追加」** をクリックし、**コンテナ名**（例：unicorn-web-container）と**イメージ**（今回は <a href="https://hub.docker.com/_/wordpress" target="_blank">WordPress の 公式 Docker イメージ</a>を使用するため、**wordpress:latest** を指定する必要があります）を入力します。**メモリ制限（MiB）**と**ポートマッピング**を、以下のスクリーンショットのように設定します。
+**「コンテナの追加」** をクリックし、**コンテナ名**（例：unicorn-web-container）と**イメージ**（今回は <a href="https://hub.docker.com/_/wordpress" target="_blank" rel="noopener noreferrer">WordPress の 公式 Docker イメージ</a>を使用するため、**wordpress:latest** を指定する必要があります）を入力します。**メモリ制限（MiB）**と**ポートマッピング**を、以下のスクリーンショットのように設定します。
 
 ![add-container-details](/ecs/add-container-details.ja.png)
 

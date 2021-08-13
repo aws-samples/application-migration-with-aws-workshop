@@ -5,7 +5,7 @@ weight = 50
 
 #### AWS Migration Hub
 
-<a href="https://aws.amazon.com/cn/migration-hub/" target="_blank">AWS Migration Hub</a> 让您可以在一个位置跟踪不同 AWS 和合作伙伴解决方案中的应用程序迁移进度。
+<a href="https://aws.amazon.com/cn/migration-hub/" target="_blank" rel="noopener noreferrer">AWS Migration Hub</a> 让您可以在一个位置跟踪不同 AWS 和合作伙伴解决方案中的应用程序迁移进度。
 
 要启用它，请在 **AWS 控制台** 内转到 **服务 -> AWS Migration Hub**，然后从左侧菜单中单击 **Migrate** 并选择 **US West (Oregon)** 作为您的使用区域（home region）。
 

@@ -23,7 +23,7 @@ Un des prérequis pour l'utilisation de **AWS DMS** consite à configurer un **"
 
 ### Création de l'instance de réplication AWS DMS
 
-Dans cette étape, vous allez créer une <a href="https://aws.amazon.com/dms/" target="_blank">AWS Database Migration Service</a> Instance de réplication qui va initier la connexion entre les bases de données source et destination, transférer les données et traquer tous les changements qui auront lieu durant le chargement initial des données.
+Dans cette étape, vous allez créer une <a href="https://aws.amazon.com/dms/" target="_blank" rel="noopener noreferrer">AWS Database Migration Service</a> Instance de réplication qui va initier la connexion entre les bases de données source et destination, transférer les données et traquer tous les changements qui auront lieu durant le chargement initial des données.
 
 
 1. Dans **AWS Console**, aller dans **Services** et **Database Migration Service**.  
@@ -38,6 +38,9 @@ Dans cette étape, vous allez créer une <a href="https://aws.amazon.com/dms/" t
     | ------------------- | ------------------------ |
     | Name                | replication-instance     |
     | Description         | DMS replication instance |
+    | Instance Class      | dms.t2.medium            |
+    | Engine version      | 3.3.3                    |
+    |Allocated storage (GB)| 50                      |
     | VPC                 | TargetVPC                |
     | Multi-AZ            | Unchecked                |
     | Publicly accessible | Checked                  |

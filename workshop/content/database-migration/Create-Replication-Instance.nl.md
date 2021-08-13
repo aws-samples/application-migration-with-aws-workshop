@@ -24,7 +24,7 @@ weight = 20
 
 ### Creëer de AWS DMS Replicatie Machine
 
-In deze stap creëer je de <a href="https://aws.amazon.com/dms/" target="_blank">AWS Database Migration Service</a> Replicatie Machine die de verbinding opzet tussen de databases in the bron- en doelomgeving, de data overbrengt en veranderingen bijhoudt die in de database in de bronomgeving plaatsvinden tijdens het overbrengen van de data.
+In deze stap creëer je de <a href="https://aws.amazon.com/dms/" target="_blank" rel="noopener noreferrer">AWS Database Migration Service</a> Replicatie Machine die de verbinding opzet tussen de databases in the bron- en doelomgeving, de data overbrengt en veranderingen bijhoudt die in de database in de bronomgeving plaatsvinden tijdens het overbrengen van de data.
 
 1. In het **AWS Console**, ga naar **Services** en **Database Migration Service**.  
 
@@ -38,6 +38,9 @@ In deze stap creëer je de <a href="https://aws.amazon.com/dms/" target="_blank"
     | ------------------- | ------------------------ |
     | Name                | replication-instance     |
     | Description         | DMS replication instance |
+    | Instance Class      | dms.t2.medium            |
+    | Engine version      | 3.3.3                    |
+    |Allocated storage (GB)| 50                      |
     | VPC                 | TargetVPC            |
     | Multi-AZ            | Unchecked                |
     | Publicly accessible | Checked                  |

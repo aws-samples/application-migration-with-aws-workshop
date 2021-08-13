@@ -9,9 +9,9 @@ pre = "<b>2. </b>"
 
 In this section, you will migrate your web server using different migration strategies. Each migration strategy requires different set of activities and tools. Most common server migration strategies are listed as below.
 
-1. **REHOST**: Move applications without changes, (also known as lift-and-shift). Benefit from AWS migration tools like agent-based <a href="https://aws.amazon.com/application-migration-service/">Application Migration Service</a>, <a href="https://aws.amazon.com/cloudendure-migration/" target="_blank">CloudEndure Migration</a> or agent-less <a href="https://aws.amazon.com/server-migration-service/" target="_blank">Server Migration Service</a>.
+1. **REHOST**: Move applications without changes, (also known as lift-and-shift). Benefit from AWS migration tools like agent-based <a href="https://aws.amazon.com/application-migration-service/">Application Migration Service</a>, <a href="https://aws.amazon.com/cloudendure-migration/" target="_blank" rel="noopener noreferrer">CloudEndure Migration</a> or agent-less <a href="https://aws.amazon.com/server-migration-service/" target="_blank" rel="noopener noreferrer">Server Migration Service</a>.
 2. **REPLATFORM**: Make a few cloud optimizations to achieve a tangible benefit. You will not change the core architecture of the application.
-3. **REPURCHASE**: Move from perpetual licenses to a software-as-a-service model. <a href="https://aws.amazon.com/mp/migration/" target="_blank">AWS Marketplace</a> offers a curated digital catalog of software solutions that support each phase of migration.
+3. **REPURCHASE**: Move from perpetual licenses to a software-as-a-service model. <a href="https://aws.amazon.com/mp/migration/" target="_blank" rel="noopener noreferrer">AWS Marketplace</a> offers a curated digital catalog of software solutions that support each phase of migration.
 4. **REFACTOR**: Re-imagine how the application is architected and developed using cloud-native features.
 
 

@@ -30,8 +30,8 @@ verwenden zu können.
     und denselben SSH-PPK-Schlüssel wie für die Quellumgebung.
 
     Wenn Sie nicht sicher sind, wie Sie mit SSH auf Server zugreifen können, überprüfen Sie Folgendes:
-    - Eine Anleitung für die Microsoft Windows Benutzer <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/putty.html" target="_blank">finden Sie hier</a>.  
-    - Eine Anleitung für die Mac OS/Linux Benutzer <a href="https://docs.aws.amazon.com/quickstarts/latest/vmlaunch/step-2-connect-to-instance.html#sshclient" target="_blank">finden Sie hier</a>.    
+    - Eine Anleitung für die Microsoft Windows Benutzer <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/putty.html" target="_blank" rel="noopener noreferrer">finden Sie hier</a>.  
+    - Eine Anleitung für die Mac OS/Linux Benutzer <a href="https://docs.aws.amazon.com/quickstarts/latest/vmlaunch/step-2-connect-to-instance.html#sshclient" target="_blank" rel="noopener noreferrer">finden Sie hier</a>.    
 
 3. Ändern Sie die **Wordpress Konfiguration**
 
@@ -57,7 +57,7 @@ verwenden zu können.
 
 {{% notice tip %}}
 Zum Bearbeiten dieser Datei können Sie beispielsweise 
-<a href="https://www.howtoforge.com/linux-nano-command/" target="_blank">nano</a> 
+<a href="https://www.howtoforge.com/linux-nano-command/" target="_blank" rel="noopener noreferrer">nano</a> 
 oder <a href="https://www.washington.edu/computing/unix/vi.html" target ="_blank">vi</a> verwenden.
 {{% /notice %}}     
 

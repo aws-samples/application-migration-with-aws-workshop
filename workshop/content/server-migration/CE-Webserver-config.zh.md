@@ -26,8 +26,8 @@ weight = 50
     使用与源环境相同的用户名 (ubuntu) 和 SSH .pem key。
 
     如果您不知道如何使用 SSH 访问服务器，请检查以下内容：
-     - 对于微软 Windows 用户，请查看 <a href="https://docs.aws.amazon.com/zh_cn/AWSEC2/latest/UserGuide/putty.html" target="_blank">这篇文章</a>。 
-    - 对于 Mac OS 用户，请查看 <a href="https://docs.aws.amazon.com/quickstarts/latest/vmlaunch/step-2-connect-to-instance.html#sshclient" target="_blank">这篇文章</a>。
+     - 对于微软 Windows 用户，请查看 <a href="https://docs.aws.amazon.com/zh_cn/AWSEC2/latest/UserGuide/putty.html" target="_blank" rel="noopener noreferrer">这篇文章</a>。 
+    - 对于 Mac OS 用户，请查看 <a href="https://docs.aws.amazon.com/quickstarts/latest/vmlaunch/step-2-connect-to-instance.html#sshclient" target="_blank" rel="noopener noreferrer">这篇文章</a>。
 
 3. 修改 **wordpress 配置**
 
@@ -50,7 +50,7 @@ weight = 50
    ```
 
     {{% notice tip %}}
-为了编辑这个文件，您可以使用 <a href="https://www.howtoforge.com/linux-nano-command/" target="_blank">nano</a> 或者 <a href="https://www.washington.edu/computing/unix/vi.html" target="_blank">vi</a>。
+为了编辑这个文件，您可以使用 <a href="https://www.howtoforge.com/linux-nano-command/" target="_blank" rel="noopener noreferrer">nano</a> 或者 <a href="https://www.washington.edu/computing/unix/vi.html" target="_blank" rel="noopener noreferrer">vi</a>。
 {{% /notice %}}     
 
 4. 更新 RDS 实例的 **VPC 安全组**，允许来自 Webserver 的入站流量

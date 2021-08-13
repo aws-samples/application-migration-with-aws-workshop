@@ -26,8 +26,8 @@ Zodra de omschakeling (Cutover) is afgerond en **CloudEndure Migration** de EC2 
     Gebruik hiervoor dezelfde **username (ubuntu)** en **SSH .ppk key** als voor de bronomgeving.
 
     Indien je hulp nodig hebt met het inloggen op de servers via SSH, kijk dan naar de onderstaande documentatie:
-    - Voor Microsoft Windows gebruikers, kijk naar <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/putty.html" target="_blank">dit artikel</a>.  
-    - Voor Mac OS gebruikers, kijk naar <a href="https://docs.aws.amazon.com/quickstarts/latest/vmlaunch/step-2-connect-to-instance.html#sshclient" target="_blank">dit artikel</a>.
+    - Voor Microsoft Windows gebruikers, kijk naar <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/putty.html" target="_blank" rel="noopener noreferrer">dit artikel</a>.  
+    - Voor Mac OS gebruikers, kijk naar <a href="https://docs.aws.amazon.com/quickstarts/latest/vmlaunch/step-2-connect-to-instance.html#sshclient" target="_blank" rel="noopener noreferrer">dit artikel</a>.
 
 3. Pas de **wordpress configuratie** aan
 
@@ -50,7 +50,7 @@ Zodra de omschakeling (Cutover) is afgerond en **CloudEndure Migration** de EC2 
    ```
    
     {{% notice tip %}}
-Voor het bewerken van dit bestand, kun je bijvoorbeeld gebruik maken van <a href="https://www.howtoforge.com/linux-nano-command/" target="_blank">nano</a> of <a href="https://www.washington.edu/computing/unix/vi.html" target="_blank">vi</a>.
+Voor het bewerken van dit bestand, kun je bijvoorbeeld gebruik maken van <a href="https://www.howtoforge.com/linux-nano-command/" target="_blank" rel="noopener noreferrer">nano</a> of <a href="https://www.washington.edu/computing/unix/vi.html" target="_blank" rel="noopener noreferrer">vi</a>.
 {{% /notice %}}     
 
 4. Pas de configuratie van de RDS database **VPC security group** aan om toegang toe te staan voor dataverkeer van de Webserver

@@ -21,18 +21,18 @@ an der Quellendatenbank vornehmen.
 
 Für **self paced lab** - die Informationen, die für den Zugriff auf die Datenbankumgebung 
 erforderlich sind, werden im Abschnitt **Output** des **ApplicationMigrationWorkshop** CF Stack 
-<a href="https://us-west-2.console.aws.amazon.com/cloudformation/home?region=us-west-2#/" target="_blank">CloudFormation Template</a> zu finden sein.
+<a href="https://us-west-2.console.aws.amazon.com/cloudformation/home?region=us-west-2#/" target="_blank" rel="noopener noreferrer">CloudFormation Template</a> zu finden sein.
     ![Database Server login information](/db-mig/db-server-ssh-self-paced.png)    
 
 Für **AWS Event** - die Informationen, die für den Zugriff auf die Datenbankumgebung erforderlich sind, 
 finden Sie unter **Datenbank-IP**, **Datenbank-Benutzername** und **Datenbank-SSH-Schlüssel** 
-auf der <a href="https://dashboard.eventengine.run/dashboard" target="_blank">Team Dashboard</a>.
+auf der <a href="https://dashboard.eventengine.run/dashboard" target="_blank" rel="noopener noreferrer">Team Dashboard</a>.
 
    ![Database Server login information](/db-mig/db-server-ssh-event.png)
 
     Wenn Sie nicht sicher sind, wie Sie mit SSH auf Server zugreifen sollen, probieren Sie Folgendes aus:
-    - Microsoft Windows Benutzer <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/putty.html" target="_blank">this article</a>.  
-    - Mac OS und Linux Benutzer <a href="https://docs.aws.amazon.com/quickstarts/latest/vmlaunch/step-2-connect-to-instance.html#sshclient" target="_blank">this article</a>.
+    - Microsoft Windows Benutzer <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/putty.html" target="_blank" rel="noopener noreferrer">this article</a>.  
+    - Mac OS und Linux Benutzer <a href="https://docs.aws.amazon.com/quickstarts/latest/vmlaunch/step-2-connect-to-instance.html#sshclient" target="_blank" rel="noopener noreferrer">this article</a>.
 
 2. Geben Sie zusätzliche Rechte (Grant) den **wordpress-user** Datenbank-Benutzer
 
@@ -58,7 +58,7 @@ auf der <a href="https://dashboard.eventengine.run/dashboard" target="_blank">Te
     exit
     ```
 
-    Mehr Informationen zum **binary log** finden sie bei <a href="https://dev.mysql.com/doc/refman/8.0/en/binary-log.html" target="_blank">MySQL-Dokumentation</a>.
+    Mehr Informationen zum **binary log** finden sie bei <a href="https://dev.mysql.com/doc/refman/8.0/en/binary-log.html" target="_blank" rel="noopener noreferrer">MySQL-Dokumentation</a>.
 
 4. Erstellen Sie bitte oder ändern Sie **/etc/mysql/my.cnf** Datei
 

@@ -5,13 +5,13 @@ weight = 10
 
 ### データベース移行
 
-データベースの移行には様々な方法がありますが、本ハンズオンでは <a href="https://aws.amazon.com/dms/" target="_blank">AWS Database Migrations Service (DMS)</a> を利用した継続的なデータレプリケーションによる移行を行います。
+データベースの移行には様々な方法がありますが、本ハンズオンでは <a href="https://aws.amazon.com/dms/" target="_blank" rel="noopener noreferrer">AWS Database Migrations Service (DMS)</a> を利用した継続的なデータレプリケーションによる移行を行います。
 
 AWS DMS の設定を行う前に、移行先の AWS アカウントで、ターゲットデータベースを作成する必要があります。**AWS Relational Database Service (RDS)** を使用することで、クラウド上でのリレーショナルデータベースのセットアップ、運用、スケーリングを簡単に行うことができます。
 
 ### ターゲットデータベース用のサブネットグループの作成
 
-1. マネジメントコンソール上部の **「サービス」** から **<a href="https://console.aws.amazon.com/rds/home?region=us-west-2" target="_blank">RDS</a>** のページを開き、左のメニューから **「サブネットグループ」** を選択します。サブネットグループの一覧が表示されたら、**「DB サブネットグループを作成」** をクリックします。
+1. マネジメントコンソール上部の **「サービス」** から **<a href="https://console.aws.amazon.com/rds/home?region=us-west-2" target="_blank" rel="noopener noreferrer">RDS</a>** のページを開き、左のメニューから **「サブネットグループ」** を選択します。サブネットグループの一覧が表示されたら、**「DB サブネットグループを作成」** をクリックします。
 
 2.  **「DB サブネットグループを作成」** 画面で、以下のパラメータを入力します：
 
@@ -29,7 +29,7 @@ AWS DMS の設定を行う前に、移行先の AWS アカウントで、ター�
 
 ### ターゲットデータベースの作成
 
-1. ターゲットデータベース用のセキュリティグループを作成します。マネジメントコンソール上部の **「サービス」** から **<a href="https://console.aws.amazon.com/vpc/home?region=us-west-2" target="_blank">VPC</a>** のページを開き、左のメニューから **「セキュリティ」 → 「セキュリティグループ」** を選択します。セキュリティグループの一覧が表示されたら、**「セキュリティグループを作成」** ボタンをクリックします。
+1. ターゲットデータベース用のセキュリティグループを作成します。マネジメントコンソール上部の **「サービス」** から **<a href="https://console.aws.amazon.com/vpc/home?region=us-west-2" target="_blank" rel="noopener noreferrer">VPC</a>** のページを開き、左のメニューから **「セキュリティ」 → 「セキュリティグループ」** を選択します。セキュリティグループの一覧が表示されたら、**「セキュリティグループを作成」** ボタンをクリックします。
 
     以下のパラメータを入力して、セキュリティグループを作成します：
 
@@ -43,7 +43,7 @@ AWS DMS の設定を行う前に、移行先の AWS アカウントで、ター�
 後ほど、この VPC セキュリティグループを編集して、DMS レプリケーションインスタンスと Web サーバーから ターゲットデータベースへのアクセスを許可するようにします。
 {{% /notice %}}
 
-1. マネジメントコンソール上部の **「サービス」** から **<a href="https://console.aws.amazon.com/rds/home?region=us-west-2" target="_blank">RDS</a>** のページを開き、**「データベースの作成」** をクリックします。
+1. マネジメントコンソール上部の **「サービス」** から **<a href="https://console.aws.amazon.com/rds/home?region=us-west-2" target="_blank" rel="noopener noreferrer">RDS</a>** のページを開き、**「データベースの作成」** をクリックします。
 
 2. **「エンジンのタイプ」** で MySQL、**「バージョン」** で **MySQL 5.7.22** を選択します。
 
@@ -80,14 +80,14 @@ AWS DMS の設定を行う前に、移行先の AWS アカウントで、ター�
 3. **「可用性と耐久性」** のセクションでは、**「スタンバイインスタンスを作成しないでください」** が選択されていることを確認してください。
 
     {{% notice note %}}
-本番環境のワークロードでは、より高い可用性を実現するために、スタンバイインスタンスを有効にし、<a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.MultiAZ.html" target="_blank">マルチ AZ デプロイメント</a>  を有効にすることをお勧めします。
+本番環境のワークロードでは、より高い可用性を実現するために、スタンバイインスタンスを有効にし、<a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.MultiAZ.html" target="_blank" rel="noopener noreferrer">マルチ AZ デプロイメント</a>  を有効にすることをお勧めします。
 {{% /notice %}}  
 
     ![5_db](/db-mig/5_db.ja.png)
 
 4. **「接続」** のセクションでは：
 
-    * **Virtual Private Cloud (VPC)** に、**TargetVPC**（事前準備で自動作成された <a href="https://aws.amazon.com/vpc/" target="_blank">Amazon Virtual Private Cloud</a>） を選択します。
+    * **Virtual Private Cloud (VPC)** に、**TargetVPC**（事前準備で自動作成された <a href="https://aws.amazon.com/vpc/" target="_blank" rel="noopener noreferrer">Amazon Virtual Private Cloud</a>） を選択します。
     * **「追加の接続設定」 → 「既存の VPC セキュリティグループ」** で、さきほど作成したセキュリティグループ **DB-SG** を選択します。
 
     ![6_db](/db-mig/6_db.ja.png)
@@ -101,7 +101,7 @@ AWS DMS の設定を行う前に、移行先の AWS アカウントで、ター�
     ![8_db](/db-mig/8_db.ja.png)
 
     {{% notice note %}}
-本番環境のワークロードでは、<a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Monitoring.OS.html" target="_blank">拡張モニタリング</a>を有効化することをお勧めしますが、AWS が主催するイベントでは、参加者用にプロビジョニングされている IAM ロールに制限があるため、チェックを外しています。
+本番環境のワークロードでは、<a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Monitoring.OS.html" target="_blank" rel="noopener noreferrer">拡張モニタリング</a>を有効化することをお勧めしますが、AWS が主催するイベントでは、参加者用にプロビジョニングされている IAM ロールに制限があるため、チェックを外しています。
 {{% /notice %}}
 
 7. 最後に、月間コストの見積もりを確認して、**「データベースの作成」** ボタンをクリックします。

@@ -25,13 +25,13 @@ pre = "<b>3. </b>"
 
 #### Amazon ECS 核心组件
 
-<a href="https://docs.aws.amazon.com/zh_cn/AmazonECS/latest/developerguide/clusters.html" target="_blank">Amazon ECS 集群</a> 是资源的逻辑分组。
+<a href="https://docs.aws.amazon.com/zh_cn/AmazonECS/latest/developerguide/clusters.html" target="_blank" rel="noopener noreferrer">Amazon ECS 集群</a> 是资源的逻辑分组。
 
-<a href="https://docs.aws.amazon.com/zh_cn/AmazonECS/latest/developerguide/task_definitions.html" target="_blank">任务定义</a> 是一个 JSON 文件，描述构成应用程序的一个或多个容器（最多 10 个）。您可以将任务视为应用程序的蓝图。
+<a href="https://docs.aws.amazon.com/zh_cn/AmazonECS/latest/developerguide/task_definitions.html" target="_blank" rel="noopener noreferrer">任务定义</a> 是一个 JSON 文件，描述构成应用程序的一个或多个容器（最多 10 个）。您可以将任务视为应用程序的蓝图。
 
-<a href="https://docs.aws.amazon.com/zh_cn/AmazonECS/latest/developerguide/scheduling_tasks.html" target="_blank">任务</a> 是集群内任务定义的实例化。在 Amazon ECS 中为应用程序创建任务定义后，您可以指定集群上运行的任务数。
+<a href="https://docs.aws.amazon.com/zh_cn/AmazonECS/latest/developerguide/scheduling_tasks.html" target="_blank" rel="noopener noreferrer">任务</a> 是集群内任务定义的实例化。在 Amazon ECS 中为应用程序创建任务定义后，您可以指定集群上运行的任务数。
 
-<a href="https://docs.aws.amazon.com/zh_cn/AmazonECS/latest/developerguide/ecs_services.html" target="_blank">服务</a> - Amazon ECS 允许您在集群中同时运行和维护指定数量的任务定义实例。这称为服务。如果您的任何任务因任何原因而失败或停止，Amazon ECS 服务调度程序会启动您的任务定义的另一个实例来替换它，并根据使用的调度策略保持服务中所需的任务数量。
+<a href="https://docs.aws.amazon.com/zh_cn/AmazonECS/latest/developerguide/ecs_services.html" target="_blank" rel="noopener noreferrer">服务</a> - Amazon ECS 允许您在集群中同时运行和维护指定数量的任务定义实例。这称为服务。如果您的任何任务因任何原因而失败或停止，Amazon ECS 服务调度程序会启动您的任务定义的另一个实例来替换它，并根据使用的调度策略保持服务中所需的任务数量。
 
 您可以通过观看以下视频了解有关 **AWS Fargate** 的更多信息。
 <center>

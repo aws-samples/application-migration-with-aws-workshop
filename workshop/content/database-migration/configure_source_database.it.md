@@ -5,7 +5,7 @@ weight = 35
 
 ### Esegui DMS Replication Task con Change Data Capture (CDC)
 
-Per garantire tempi di inattività minimi per la migrazione del database, utilizzeremo la replica continua delle modifiche (nota anche come **Change Data Capture (CDC)**) dal database di origine al database di destinazione. Per ulteriori informazioni su CDC e supporto CDC nativo di **AWS DMS** consultare <a href="https://aws.amazon.com/blogs/database/aws-dms-now-supports-native-cdc-support/" target="_blank">this article</a>.
+Per garantire tempi di inattività minimi per la migrazione del database, utilizzeremo la replica continua delle modifiche (nota anche come **Change Data Capture (CDC)**) dal database di origine al database di destinazione. Per ulteriori informazioni su CDC e supporto CDC nativo di **AWS DMS** consultare <a href="https://aws.amazon.com/blogs/database/aws-dms-now-supports-native-cdc-support/" target="_blank" rel="noopener noreferrer">this article</a>.
 
 #### Abilita il binary log sul source database
 
@@ -13,17 +13,17 @@ Per la replica continua **AWS DMS** dal database MySQL, è necessario abilitare 
 
 1. Accedi al server **Source Environment Database** 
 
-    Per il  **laboratorio self-paced** - le informazioni necessarie per accedere all'ambiente Database sono descritte nella sezione **Output** del **ApplicationMigrationWorkshop** <a href="https://us-west-2.console.aws.amazon.com/cloudformation/home?region=us-west-2#/" target="_blank">Template di CloudFormation</a>.
+    Per il  **laboratorio self-paced** - le informazioni necessarie per accedere all'ambiente Database sono descritte nella sezione **Output** del **ApplicationMigrationWorkshop** <a href="https://us-west-2.console.aws.amazon.com/cloudformation/home?region=us-west-2#/" target="_blank" rel="noopener noreferrer">Template di CloudFormation</a>.
 
     ![Database Server login information](/db-mig/db-server-ssh-self-paced.png)    
 
-    Per **Evento AWS** - le informazioni necessarie per accedere all'ambiente database sono descritte in **Database IP**, **Database Username** e **Database SSH Key** sulla <a href="https://dashboard.eventengine.run/dashboard" target="_blank">Dashboard Team</a>.
+    Per **Evento AWS** - le informazioni necessarie per accedere all'ambiente database sono descritte in **Database IP**, **Database Username** e **Database SSH Key** sulla <a href="https://dashboard.eventengine.run/dashboard" target="_blank" rel="noopener noreferrer">Dashboard Team</a>.
 
     ![Database Server login information](/db-mig/db-server-ssh-event.png)
 
     Se non sei sicuro di come utilizzare SSH per accedere ai server, controlla quanto segue:
-    - Per gli utenti di Microsoft Windows visualizzare <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/putty.html" target="_blank">questo articolo</a>.  
-    - Per gli utenti di MacOs visualizzare <a href="https://docs.aws.amazon.com/quickstarts/latest/vmlaunch/step-2-connect-to-instance.html#sshclient" target="_blank">questo articol</a>.
+    - Per gli utenti di Microsoft Windows visualizzare <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/putty.html" target="_blank" rel="noopener noreferrer">questo articolo</a>.  
+    - Per gli utenti di MacOs visualizzare <a href="https://docs.aws.amazon.com/quickstarts/latest/vmlaunch/step-2-connect-to-instance.html#sshclient" target="_blank" rel="noopener noreferrer">questo articol</a>.
 
 2. Concedere ulteriori privilegi all'utente del database **wordpress-user**
     Esegui i seguenti comandi sul server database:
@@ -49,7 +49,7 @@ Per la replica continua **AWS DMS** dal database MySQL, è necessario abilitare 
     exit
     ```
 
-    Ulteriori informazioni sul binary log sono disponibili sulla <a href="https://dev.mysql.com/doc/refman/8.0/en/binary-log.html" target="_blank">documentazione MySQL</a>.
+    Ulteriori informazioni sul binary log sono disponibili sulla <a href="https://dev.mysql.com/doc/refman/8.0/en/binary-log.html" target="_blank" rel="noopener noreferrer">documentazione MySQL</a>.
 
 4. Crea e modifica il file **/etc/mysql/my.cnf**
 

@@ -9,15 +9,15 @@ Voltooi deze sectie alleen als je de workshop zelf doorloopt. Als je bij een AWS
 
 ### Leeromgeving in eigen tempo
 
-Dit lab gaat ervan uit dat je toegang hebt tot een **AWS Account** met <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/getting-started_create-admin-group.html" target="_blank">Administrator rechten</a>. Om een nieuw AWS account aan te maken, volg de instructies in dit artikel <a href="https://aws.amazon.com/premiumsupport/knowledge-center/create-and-activate-aws-account/" target="_blank">How do I create and activate a new Amazon Web Services account?</a>
+Dit lab gaat ervan uit dat je toegang hebt tot een **AWS Account** met <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/getting-started_create-admin-group.html" target="_blank" rel="noopener noreferrer">Administrator rechten</a>. Om een nieuw AWS account aan te maken, volg de instructies in dit artikel <a href="https://aws.amazon.com/premiumsupport/knowledge-center/create-and-activate-aws-account/" target="_blank" rel="noopener noreferrer">How do I create and activate a new Amazon Web Services account?</a>
 
 De onderstaande instructies zullen de bronomgeving implementeren in je AWS-account, de geïmplementeerde bronomgeving bestaat uit twee **t3.micro** EC2 machines (één voor webserver, één voor database), een **NAT Gateway**, een **API Gateway** en twee **AWS Lambda functies** (voor het eenvoudig ophalen van **EC2 Access Keys**). 
 
-De totale kosten van middelen die in het hele lab worden ingezet, zijn minder dan $5 (gebasseerd op 4 uur werk), sommige kosten worden gedekt door <a href="https://aws.amazon.com/free/" target="_blank">AWS Free tier</a>. Vergeet niet om uw AWS-account [op te ruimen]({{< ref "/cleanup/_index.nl.md" >}}) na het uitvoeren van de workshop, om onnoodzakelijke kosten te voorkomen!
+De totale kosten van middelen die in het hele lab worden ingezet, zijn minder dan $5 (gebasseerd op 4 uur werk), sommige kosten worden gedekt door <a href="https://aws.amazon.com/free/" target="_blank" rel="noopener noreferrer">AWS Free tier</a>. Vergeet niet om uw AWS-account [op te ruimen]({{< ref "/cleanup/_index.nl.md" >}}) na het uitvoeren van de workshop, om onnoodzakelijke kosten te voorkomen!
 
 #### Optie 1: Eenvoudige implementatie
 
-1. Druk op de onderstaande knop: <a href="https://console.aws.amazon.com/cloudformation/home?region=us-west-2#/stacks/new?stackName=ApplicationMigrationWorkshop&templateURL=https://application-migration-with-aws-workshop.s3-us-west-2.amazonaws.com/template/migration_workshop_source_template.yml" target="_blank"><img src="https://application-migration-with-aws-workshop.s3-us-west-2.amazonaws.com/static/cloudformation-launch-stack.png"></a>
+1. Druk op de onderstaande knop: <a href="https://console.aws.amazon.com/cloudformation/home?region=us-west-2#/stacks/new?stackName=ApplicationMigrationWorkshop&templateURL=https://application-migration-with-aws-workshop.s3-us-west-2.amazonaws.com/template/migration_workshop_source_template.yml" target="_blank" rel="noopener noreferrer"><img src="https://application-migration-with-aws-workshop.s3-us-west-2.amazonaws.com/static/cloudformation-launch-stack.png"></a>
 
 2. In **Step 1 - Specify template** bevestig dat de URL https://application-migration-with-aws-workshop.s3-us-west-2.amazonaws.com/template/migration_workshop_source_template.yml is ingevuld in het veld **Amazon S3 URL** en druk op **Next**
   ![CloudFormation Step 1](/intro/cloudformation-step1.en.png)
@@ -46,11 +46,11 @@ Je hoeft **Optie 2** niet uit te voren indien je de bronomgeving al hebt geïmpl
 
 De onderstaande sectie beschrijft hoe je het **CloudFormation template** kunt configureren en implementeren via de **AWS Command Line Interface (CLI)**.
 
-1. Installeer  <a href="https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-sam-cli-install.html" target="_blank">AWS SAM</a>
+1. Installeer  <a href="https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-sam-cli-install.html" target="_blank" rel="noopener noreferrer">AWS SAM</a>
 
-2. Installeer <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-install.html" target="_blank">AWS CLI</a> en <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html" target="_blank">configureer het</a>
+2. Installeer <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-install.html" target="_blank" rel="noopener noreferrer">AWS CLI</a> en <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html" target="_blank" rel="noopener noreferrer">configureer het</a>
 
-3. Download of clone het project van <a href="https://github.com/aws-samples/application-migration-with-aws-workshop" target="_blank">https://github.com/aws-samples/application-migration-with-aws-workshop</a>
+3. Download of clone het project van <a href="https://github.com/aws-samples/application-migration-with-aws-workshop" target="_blank" rel="noopener noreferrer">https://github.com/aws-samples/application-migration-with-aws-workshop</a>
 
 4. Creëer een unieke **S3 bucket** in the *us-west-2 (Oregon)* regio, via onderstaand commando (vervang **application-migration-workshop** met je eigen unieke **S3 bucket** naam)
 

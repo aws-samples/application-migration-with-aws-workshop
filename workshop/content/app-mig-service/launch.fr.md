@@ -13,7 +13,7 @@ weight = 60
 
     ![Launch cutover](/app_mig_serv/launch_cutover.en.png)  
 
-    {{% notice warning %}} Si vous voyez une erreur avec le texte en anglais **Failed to launch cutover instances. One or more of the Source Servers included in API call are currently being processed by a Job**, cela signifie que l'instance de test n'a toujours pas été stoppée et terminée. Vérifiez ses progrès sur la page <a href="https://us-west-2.console.aws.amazon.com/mgn/home?region=us-west-2#/launchHistory">Launch history</a>. Attendez de voir **Terminate** puis relancer à nouveau le job **Launch cutover instance**.  
+    {{% notice warning %}} Si vous voyez une erreur avec le texte en anglais **Failed to launch cutover instances. One or more of the Source Servers included in API call are currently being processed by a Job**, cela signifie que l'instance de test n'a toujours pas été stoppée et terminée. Vérifiez ses progrès sur la page <a href="https://us-west-2.console.aws.amazon.com/mgn/home?region=us-west-2#/launchHistory" target="_blank" rel="noopener noreferrer">Launch history</a>. Attendez de voir **Terminate** puis relancer à nouveau le job **Launch cutover instance**.  
 {{% /notice %}}   
 
 2. Attente du Cutover terminé

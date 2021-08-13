@@ -17,7 +17,7 @@ Vuelva a la consola de AWS, a la pantalla de **AWS Database Migration Sercice**,
     | Endpoint type       | Source endpoint                                |
     | Endpoint identifier | source-endpoint                                |
     | Source engine       | mysql                                          |
-    | Server name         | Para obtener esta información cuando está utilizando **el laboratorio a su propio ritmo** vaya a la pestaña **Outputs** en la sección de <a href="https://us-west-2.console.aws.amazon.com/cloudformation/home?region=us-west-2#/" target="_blank">plantilla de CloudFormation</a> de **ApplicationMigrationWorkshop**, <br>Para **eventos de AWS** - use el **IP del servidor de bases de datos** del Panel de equipo de Event Engine.   |
+    | Server name         | Para obtener esta información cuando está utilizando **el laboratorio a su propio ritmo** vaya a la pestaña **Outputs** en la sección de <a href="https://us-west-2.console.aws.amazon.com/cloudformation/home?region=us-west-2#/" target="_blank" rel="noopener noreferrer">plantilla de CloudFormation</a> de **ApplicationMigrationWorkshop**, <br>Para **eventos de AWS** - use el **IP del servidor de bases de datos** del Panel de equipo de Event Engine.   |
     | Port                | 3306                                           |
     | SSL mode            | none                                           |
     | User name           | wordpress-user                                 |
