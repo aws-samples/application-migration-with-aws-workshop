@@ -73,15 +73,10 @@ For production workloads, we recommend enabling the standby instance to enable <
 4. In the **Connectivity** section:
 
     * In **Virtual Private Cloud (VPC)**, select **TargetVPC** (this is the <a href="https://aws.amazon.com/vpc/" target="_blank" rel="noopener noreferrer">Amazon Virtual Private Cloud</a> that was automatically created for this lab)
-    * In **Additional connectivity configuration -> VPC Security Group**, select **Create new** VPC security group and give it a name (e.g. "DB-SG").
+    * In **Additional connectivity configuration -> VPC Security Group**, select **Existing VPC Security Groups** (use "DB-SG").
     * Note that the DB Subnet group you have created earlier will be automatically selected
 
     ![6_db](/db-mig/6_db.png)
-
-
-    {{% notice note %}}
-Note: You will edit the DB-SG VPC security group later to make sure that the DMS Replication Instance is able to access the target database and to allow access from your Webserver.
-{{% /notice %}}
 
 5. For the **Database authentication**, choose **Password authentication**.
 
