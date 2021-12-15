@@ -34,7 +34,7 @@ weight = 50
 
 ![add-container](/ecs/add-container.zh.png)
 
-单击 “容器定义” 部分中的 **添加容器**，输入 **容器名称**（例如，unicorn-web-container）和 **映像**（必须是 **wordpress:latest** - 我们使用的是 <a href="https://hub.docker.com/_/wordpress" target="_blank" rel="noopener noreferrer"> WordPress 容器官方映像 </a>）。**内存限制** 和 **端口映射** 应按照下面的屏幕截图进行配置。
+单击 “容器定义” 部分中的 **添加容器**，输入 **容器名称**（例如，unicorn-web-container）和 **映像**（必须是 **public.ecr.aws/docker/library/wordpress:latest** - 我们使用的是 <a href="https://hub.docker.com/_/wordpress" target="_blank" rel="noopener noreferrer"> WordPress 容器官方映像 </a>）。**内存限制** 和 **端口映射** 应按照下面的屏幕截图进行配置。
 
 ![add-container-details](/ecs/add-container-details.zh.png)
 
