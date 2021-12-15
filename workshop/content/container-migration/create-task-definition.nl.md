@@ -31,7 +31,7 @@ Druk op de **Add** knop, en scroll omhoog naar **Container definition** in de ta
 
 ![add-container](/ecs/add-container.png)
 
-Klik op **Add container** in de **Container definitions** sectie, voer een naam in voor **Container name** (b.v. unicorn-web-container). **Image** (moet **public.ecr.aws/docker/library/wordpress:latest** zijn - we gebruiken <a href="https://hub.docker.com/_/wordpress" target="_blank" rel="noopener noreferrer">WordPress docker official image</a>). **Memory Limits** en **Port mappings** dienen geconfigureerd te worden zoals in de onderstaande illustratie.
+Klik op **Add container** in de **Container definitions** sectie, voer een naam in voor **Container name** (b.v. unicorn-web-container). **Image** (moet **public.ecr.aws/docker/library/wordpress:latest** zijn - we gebruiken <a href="https://gallery.ecr.aws/docker/library/wordpress" target="_blank" rel="noopener noreferrer">WordPress docker official image</a>). **Memory Limits** en **Port mappings** dienen geconfigureerd te worden zoals in de onderstaande illustratie.
 
 ![add-container-details](/ecs/add-container-details.png)
 
