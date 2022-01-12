@@ -32,7 +32,7 @@ weight = 50
 
 ![add-container](/ecs/add-container.ja.png)
 
-**「コンテナの追加」** をクリックし、**コンテナ名**（例：unicorn-web-container）と**イメージ**（今回は <a href="https://hub.docker.com/_/wordpress" target="_blank" rel="noopener noreferrer">WordPress の 公式 Docker イメージ</a>を使用するため、**wordpress:latest** を指定する必要があります）を入力します。**メモリ制限（MiB）**と**ポートマッピング**を、以下のスクリーンショットのように設定します。
+**「コンテナの追加」** をクリックし、**コンテナ名**（例：unicorn-web-container）と**イメージ**（今回は <a href="https://gallery.ecr.aws/docker/library/wordpress" target="_blank" rel="noopener noreferrer">WordPress の 公式 Docker イメージ</a>を使用するため、**public.ecr.aws/docker/library/wordpress:latest** を指定する必要があります）を入力します。**メモリ制限（MiB）**と**ポートマッピング**を、以下のスクリーンショットのように設定します。
 
 ![add-container-details](/ecs/add-container-details.ja.png)
 

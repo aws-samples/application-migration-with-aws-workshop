@@ -34,7 +34,7 @@ Enfin, pressez le bouton **Add**, maintenant paginez vers le haut jusqu'à **Con
 
 ![add-container](/ecs/add-container.png)
 
-Cliquez sur **Add container** dans la section "Container definitions", entrez **Container name** (ex : unicorn-web-container) et **Image** (doit être **wordpress:latest** - nous allons utiliser l'<a href="https://hub.docker.com/_/wordpress" target="_blank" rel="noopener noreferrer">image docker officielle pour wordpress</a>). **Memory Limits** et **Port mappings** doivent être configurés comme indiqué dans la copie d'écran ci-dessous.
+Cliquez sur **Add container** dans la section "Container definitions", entrez **Container name** (ex : unicorn-web-container) et **Image** (doit être **public.ecr.aws/docker/library/wordpress:latest** - nous allons utiliser l'<a href="https://hub.docker.com/_/wordpress" target="_blank" rel="noopener noreferrer">image docker officielle pour wordpress</a>). **Memory Limits** et **Port mappings** doivent être configurés comme indiqué dans la copie d'écran ci-dessous.
 
 ![add-container-details](/ecs/add-container-details.png)
 
