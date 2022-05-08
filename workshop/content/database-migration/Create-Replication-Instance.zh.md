@@ -39,7 +39,7 @@ weight = 20
     | 名称                 | replication-instance     |
     | 描述                 | DMS replication instance |
     | VPC                  | TargetVPC               |
-    | 多可用区              | 取消选择                |
+    | 多可用区(Multi AZ)    | Dev or test workload (Single-AZ) |
     | 公开访问              | 选中状态                  |
 
     如下图所示。
