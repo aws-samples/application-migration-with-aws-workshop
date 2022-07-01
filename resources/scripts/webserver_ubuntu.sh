@@ -47,7 +47,7 @@ unzip ./uploads.zip
 rm ./uploads.zip
 
 # configure mysql
-wget https://app2container-workshop-artifacts.s3.us-west-2.amazonaws.com/db_import.sql
+wget https://application-migration-with-aws-workshop.s3-us-west-2.amazonaws.com/scripts/db_import.sql
 # update server name
 sed -i "s/SERVER_NAME/${WEBSERVER_DOMAIN_NAME}/g" ./db_import.sql
 # import file into the mysql
