@@ -50,6 +50,7 @@ weight = 35
     | 用户名                | 保留自动填充的值                                         |
     | 密码                 | 输入您创建 RDS 数据库时使用的密码                           |
 
+    ![target-endpoint-inputs](/db-mig/target-endpoint-inputs.zh.png)
 
 3. 在 **特定于终端节点的设置 -> 额外的连接属性** 拷贝粘贴下面的连接参数：
 
@@ -57,9 +58,13 @@ weight = 35
     parallelLoadThreads=1; initstmt=SET FOREIGN_KEY_CHECKS=0
     ```
 
+    ![target-endpoint-inputs-endpoint-settings](/db-mig/target-endpoint-inputs-endpoint-settings.zh.png)
+
 4. 在 **测试终端节点连接（可选）** 下，从 **VPC** 下拉列表中选择 **TargetVPC**，点击 **运行测试** 按钮验证终端节点的有效性。
 
     测试运行一会后，您应当会在 **状态** 列看到 **successful** 的消息。点击 **创建终端节点** 按钮创建终端节点。
+
+    ![test-target-endpoint](/db-mig/test-target-endpoint.zh.png)
 
 如果出现任何错误，请确保 RDS 数据库的 **VPC 安全组** 允许来自 **AWS DMS 复制实例** 安全组在端口 3306 上的入站流量（或者来自整个 **TargetVPC** - 10.0.0.0/16）。
 
